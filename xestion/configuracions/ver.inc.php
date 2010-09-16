@@ -32,10 +32,10 @@ $editar = false;
 $color = false;
 $erros = array();
 
-$id_conf = $PFN_vars->get('id_conf');
+$id = $PFN_vars->get('id');
 
-$existe = $PFN_usuarios->init('configuracion', $id_conf);
-$nome_arq = $PFN_niveles->path_correcto($PFN_paths['conf'].$PFN_usuarios->get('conf').'.inc.php');
+$existe = $PFN_usuarios->init('configuracion', $id);
+$nome_arq = $PFN_paths['conf'].$PFN_niveles->nome_correcto($PFN_usuarios->get('conf').'.inc.php');
 
 if ($existe && is_file($nome_arq)) {
 	if (is_writable($nome_arq)) {

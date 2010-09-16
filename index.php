@@ -26,7 +26,6 @@ programa. Si no ha sido así, escriba a la Free Software Foundation, Inc., en
 675 Mass Ave, Cambridge, MA 02139, EEUU. 
 *******************************************************************************/
 
-
 include ('paths.php');
 include_once ($PFN_paths['include'].'class_tempo.php');
 include_once ($PFN_paths['include'].'funcions.php');
@@ -42,7 +41,13 @@ $PFN_conf->textos('web');
 
 $PFN_tempo->rexistra('preplantillas');
 
-$txt_erro = '';
+$erro = intval(base64_decode(urldecode($PFN_vars->get('erro'))));
+
+if ($erro > 0) {
+	$txt_erro = $PFN_conf->t('alertas_login', $erro);
+} else {
+	$txt_erro = '';
+}
 
 include ($PFN_paths['plantillas'].'cab.inc.php');
 include ($PFN_paths['plantillas'].'login.inc.php');

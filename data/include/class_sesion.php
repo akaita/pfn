@@ -28,6 +28,8 @@ programa. Si no ha sido así, escriba a la Free Software Foundation, Inc., en
 
 defined('OK') or die();
 
+include_once ($PFN_paths['include'].'class_encriptar.php');
+
 /**
 * class PFN_Sesion
 *
@@ -35,7 +37,6 @@ defined('OK') or die();
 */
 class PFN_Sesion {
 	var $activa = true;
-	var $clave;
 	var $id_sesion;
 	var $encriptar = array('r' => true, 'w' => true);
 	var $vars;
@@ -52,7 +53,6 @@ class PFN_Sesion {
 		global $PFN_vars;
 
 		$this->vars = &$PFN_vars;
-		$this->clave = $PFN_conf->g('clave');
 		$this->tabla = $PFN_conf->g('db','prefixo').'sesions';
 
 		if ($this->activa && function_exists('ini_set')) {
@@ -141,7 +141,7 @@ class PFN_Sesion {
 	*/
 	// Original: function ler ($id) {
 	function ler () {
-		global $PFN_clases;
+		global $PFN_clases, $PFN_encriptar;
 
 		$PFN_clases->FILE = __FILE__;
 		$PFN_clases->LINE = __LINE__+1;
@@ -160,10 +160,10 @@ class PFN_Sesion {
 			$contido = $PFN_clases->get('contido');
 
 			if ($this->encriptar['r'] && strlen($contido)) {
-				$contido = $this->desencripta($contido);
+				return $PFN_encriptar->desencripta($contido);
+			} else {
+				return $contido;
 			}
-
-			return $contido;
 		} else {
 			return '';
 		}
@@ -178,14 +178,14 @@ class PFN_Sesion {
 	* return boolean
 	*/
 	function escribir ($id, $sess_data) {
-		global $PFN_clases;
+		global $PFN_clases, $PFN_encriptar;
 
 		if (empty($sess_data)) {
 			return true;
 		}
 
 		if ($this->encriptar['w']) {
-			$contido = $this->encripta($sess_data);
+			$contido = $PFN_encriptar->encripta($sess_data);
 		} else {
 			$contido = $sess_data;
 		}
@@ -251,73 +251,6 @@ class PFN_Sesion {
 		$PFN_clases->unlock();
 
 		return true;
-	}
-
-	/**
-	* function keyED (string $cad)
-	*
-	* Genera una clave para la cadena recibida 
-	*
-	* return string
-	*/
-	function keyED ($cad) {
-		$lonx_clave = strlen($this->clave);
-		$lonx_cad = strlen($cad);
-		$cnt = 0;
-		$resultado = '';
-
-		for ($i=0; $i < $lonx_cad; $i++) {
-			$cnt = ($cnt == $lonx_clave)?0:$cnt;
-			$resultado .= substr($cad, $i, 1) ^ substr($this->clave, $cnt, 1);
-			$cnt++;
-		} 
-
-		return $resultado;
-	} 
-
-	/**
-	* function encripta (string $cad)
-	*
-	* Encripta una cadena de texto $cad y devuelve el resultado
-	*
-	* return string
-	*/
-	function encripta ($cad) {
-		srand((double)microtime()*1000000);
-		$aleatorio = md5(rand(0,32000));
-		$lonx_clave = strlen($this->clave);
-		$lonx_cad = strlen($cad);
-		$cnt = 0;
-		$resultado = '';
-
-		for ($i=0; $i < $lonx_cad; $i++){
-			$cnt = ($cnt == $lonx_clave)?0:$cnt;
-			$resultado .= substr($aleatorio, $cnt, 1).(substr($cad, $i, 1) ^ substr($aleatorio, $cnt, 1));
-			$cnt++;
-		} 
-
-		return base64_encode($this->keyED($resultado));
-	} 
-	
-	/**
-	* function desencripta (string $cad)
-	*
-	* Desencripta una cadena de texto $cad y devuelve el resultado
-	*
-	* return string
-	*/
-	function desencripta ($cad) {
-		$cad = $this->keyED(base64_decode($cad));
-		$lonx_cad = strlen($cad);
-		$resultado = '';
-
-		for ($i=0; $i < $lonx_cad; $i++){
-			$md5 = substr($cad ,$i, 1);
-			$i++;
-			$resultado .= (substr($cad, $i, 1) ^ $md5);
-		}
-
-		return $resultado;
 	}
 }
 

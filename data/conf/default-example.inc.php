@@ -98,7 +98,7 @@ return array(
 	// with errors, it replaces by alternative chars:
 	//	true: Strong check, don't allow spaces, accents, rare symbols, ...
 	//	false: Allow spaces, accents and some rare symbols
-	'nome_riguroso' => false,
+	'nome_riguroso' => true,
 
 	// confirmacion de eliminacion de ficheros y directorios
 	// Confirm delete files and directories
@@ -150,7 +150,7 @@ return array(
 	// Must be an array
 	'editables' => array('','txt','nfo','log','ini','html','htm'
 		,'php','php3','phtml','asp','cfg','conf','sql','pl','sh'
-		,'js','css','dat','inc'), 
+		,'js','css','dat','inc','xml'), 
 
 	// Guardar registros de log para acciones y/o errores MySQL
 	// Pon el nombre del fichero a crear o false para desactivar el registro
@@ -168,7 +168,9 @@ return array(
 	// realizarse alguna de las siguientes acciones
 	// Allow decide if the users in a root will recive notify in the next acctions
 	'avisos' => array(
-		'subida' => true, // Cuando se sube un fichero / When a file is uploaded
+		// Cuando se sube un fichero. Valores: true = opcional, false = desactivo, 'always' = siempre activo
+		// When a file is uploaded. Values: true = optional, false = disabled, 'always' = always enabled
+		'subida' => true,
 	),
 
 	// Tiempo durante el que se mantienen los registros estadísticos de usuarios
@@ -182,7 +184,7 @@ return array(
 		'tipo' => true, // Extension
 		'tamano' => true, // Size
 		'data' => true, // Data
-		'permisos' => true, // Permissions
+		'permisos' => false, // Permissions
 		'accions' => true // Actions
 	),
 
@@ -194,7 +196,7 @@ return array(
 		'eliminar' => true, // Delete
 		'mover' => true, // Move
 		'copiar' => true, // Copy
-		'descargar' => false, // Download
+		'descargar' => true, // Download
 		'renomear' => true, // Rename
 		'crear_dir' => true, // Create directory
 		'subir_arq' => true, // Upload file
@@ -205,7 +207,7 @@ return array(
 		'comprimir' => true, // Download Compressed
 		'ver_comprimido' => true, // View Compressed content
 		'ver_contido' => true, // View Content
-		'editar' => false, // Edit
+		'editar' => true, // Edit
 		'subir_url' => true, // Upload URL
 		'extraer' => true, // Extract compressed file in server
 		'permisos' => true, // Cambio de permisos / Chmod change
@@ -214,7 +216,7 @@ return array(
 		'multiple_mover' => true, // Multi move
 		'multiple_eliminar' => true, // Multi delete
 		'multiple_permisos' => true, // Multi change perms
-		'multiple_descargar' => false, // Multi download zip
+		'multiple_descargar' => true, // Multi download zip
 		'multiple_correo' => true, // Send multiple files in email
 		'buscador' => true, // Search
 		'arbore' => true, // Directories tree // Árbol de directorios

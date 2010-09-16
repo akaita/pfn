@@ -1,0 +1,203 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Lito <lito@eordes.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "lista_idiomas_ae"
+msgstr "&Aacute;rabe"
+
+msgid "lista_idiomas_af"
+msgstr "Africano"
+
+msgid "lista_idiomas_al"
+msgstr "Alban&eacute;s"
+
+msgid "lista_idiomas_am"
+msgstr "Armenio"
+
+msgid "lista_idiomas_ba"
+msgstr "Bosnio"
+
+msgid "lista_idiomas_bg"
+msgstr "B&uacute;lgaro"
+
+msgid "lista_idiomas_br"
+msgstr "Portugu&eacute;s do Brasil"
+
+msgid "lista_idiomas_bv"
+msgstr "Bieloruso"
+
+msgid "lista_idiomas_ca"
+msgstr "Canadiense"
+
+msgid "lista_idiomas_ch"
+msgstr "Chino"
+
+msgid "lista_idiomas_ct"
+msgstr "Catal&aacute;n"
+
+msgid "lista_idiomas_cz"
+msgstr "Checo"
+
+msgid "lista_idiomas_de"
+msgstr "Alem&aacute;n"
+
+msgid "lista_idiomas_dk"
+msgstr "Dan&eacute;s"
+
+msgid "lista_idiomas_ee"
+msgstr "Estonio"
+
+msgid "lista_idiomas_en"
+msgstr "Ingl&eacute;s"
+
+msgid "lista_idiomas_es"
+msgstr "Castellano"
+
+msgid "lista_idiomas_fr"
+msgstr "Franc&eacute;s"
+
+msgid "lista_idiomas_fi"
+msgstr "Finland&eacute;s"
+
+msgid "lista_idiomas_gl"
+msgstr "Gallego"
+
+msgid "lista_idiomas_gn"
+msgstr "Guaran&iacute;"
+
+msgid "lista_idiomas_gr"
+msgstr "Griego"
+
+msgid "lista_idiomas_hr"
+msgstr "Croata"
+
+msgid "lista_idiomas_hu"
+msgstr "H&uacute;ngaro"
+
+msgid "lista_idiomas_id"
+msgstr "Indonesio"
+
+msgid "lista_idiomas_ie"
+msgstr "Irland&eacute;s"
+
+msgid "lista_idiomas_il"
+msgstr "Hebreo"
+
+msgid "lista_idiomas_in"
+msgstr "Ind&uacute;"
+
+msgid "lista_idiomas_is"
+msgstr "Island&eacute;s"
+
+msgid "lista_idiomas_it"
+msgstr "Italiano"
+
+msgid "lista_idiomas_jp"
+msgstr "Japon&eacute;s"
+
+msgid "lista_idiomas_kr"
+msgstr "Coreano"
+
+msgid "lista_idiomas_ku"
+msgstr "Kurdo"
+
+msgid "lista_idiomas_ls"
+msgstr "Let&oacute;n"
+
+msgid "lista_idiomas_lt"
+msgstr "Lituano"
+
+msgid "lista_idiomas_mk"
+msgstr "Macedonio"
+
+msgid "lista_idiomas_mn"
+msgstr "Mongol"
+
+msgid "lista_idiomas_mt"
+msgstr "Malt&eacute;s"
+
+msgid "lista_idiomas_my"
+msgstr "Malayo"
+
+msgid "lista_idiomas_nl"
+msgstr "Holand&eacute;s"
+
+msgid "lista_idiomas_no"
+msgstr "Noruego"
+
+msgid "lista_idiomas_np"
+msgstr "Nepal&iacute;"
+
+msgid "lista_idiomas_pl"
+msgstr "Polaco"
+
+msgid "lista_idiomas_pr"
+msgstr "Persa"
+
+msgid "lista_idiomas_pt"
+msgstr "Portugu&eacute;s"
+
+msgid "lista_idiomas_ro"
+msgstr "Rumano"
+
+msgid "lista_idiomas_ru"
+msgstr "Ruso"
+
+msgid "lista_idiomas_sd"
+msgstr "Sudan&eacute;s"
+
+msgid "lista_idiomas_se"
+msgstr "Sueco"
+
+msgid "lista_idiomas_sh"
+msgstr "Serbo-Croata"
+
+msgid "lista_idiomas_si"
+msgstr "Esloveno"
+
+msgid "lista_idiomas_sk"
+msgstr "Eslovaco"
+
+msgid "lista_idiomas_so"
+msgstr "Somal&iacute;"
+
+msgid "lista_idiomas_sr"
+msgstr "Serbio"
+
+msgid "lista_idiomas_sv"
+msgstr "Sueco"
+
+msgid "lista_idiomas_sw"
+msgstr "Suajili"
+
+msgid "lista_idiomas_th"
+msgstr "Tailand&eacute;s"
+
+msgid "lista_idiomas_tr"
+msgstr "Turco"
+
+msgid "lista_idiomas_tt"
+msgstr "T&aacute;rtaro"
+
+msgid "lista_idiomas_ua"
+msgstr "Ucraniano"
+
+msgid "lista_idiomas_uz"
+msgstr "Uzbeco"
+
+msgid "lista_idiomas_vc"
+msgstr "Vasco"
+
+msgid "lista_idiomas_vn"
+msgstr "Vietnamita"
+
+msgid "lista_idiomas_zu"
+msgstr "Zul&uacute;"
+

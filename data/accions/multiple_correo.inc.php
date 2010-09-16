@@ -94,21 +94,25 @@ if ($PFN_conf->g('columnas','multiple')
 	if ($estado === 1) {
 		$PFN_usuarios->init('usuario', $PFN_conf->g('usuario','id'));
 
-		$from = array($PFN_usuarios->get('email'), $PFN_usuarios->get('nome'));
+		include_once ($PFN_paths['include'].'phpmailer/class.phpmailer.php');
 
-		include ($PFN_paths['include'].'class_nxs.php');
+		$mail = new PHPMailer();
 
-		$nxs = new PFN_nxs_mimemail($PFN_conf);
-		$nxs->imaxes($PFN_imaxes);
+		$mail->From = $PFN_usuarios->get('email');
+		$mail->FromName = $PFN_usuarios->get('nome');
+		$mail->Subject = $titulo;
+		$mail->Body = $mensaxe;
+
+		foreach ($cada_correo as $correo) {
+			$mail->AddBCC($correo);
+		}
 
 		if ($so_lista == 'true') {
-			$mensaxe .= "\n";
+			$mail->Body .= "\n";
 
 			foreach ($multiple_escollidos as $v) {
-				$mensaxe .= "\n".$PFN_niveles->enlace($dir, $v);
+				$mail->Body .= "\n".$PFN_niveles->enlace($dir, $v);
 			}
-
-			$nxs->new_mail($from, $cada_correo, $titulo, $mensaxe);
 		} else {
 			$PFN_accions->arquivos($PFN_arquivos);
 
@@ -133,13 +137,11 @@ if ($PFN_conf->g('columnas','multiple')
 			}
 
 			if ($estado == 1) {
-				$nxs->new_mail($from, $cada_correo, $titulo, $mensaxe);
-
 				foreach ($multiple_escollidos as $v) {
 					$v = $PFN_accions->nome_correcto($v);
 					$arquivo = $PFN_conf->g('raiz','path').$PFN_accions->path_correcto($dir.'/').'/'.$v;
 
-					if ($nxs->add_attachment($arquivo, str_replace(' ','_',$v))) {
+					if (!$mail->AddAttachment($arquivo, str_replace(' ', '_', $v))) {
 						$estado = 7;
 						$estado_accion .= $PFN_conf->t('estado.correo', $estado);
 					}
@@ -148,7 +150,8 @@ if ($PFN_conf->g('columnas','multiple')
 		}
 
 		if ($estado == 1) {
-			$estado = $nxs->send();
+			$mail->Send();
+
 			$estado_accion .= $PFN_conf->t('estado.correo', $estado);
 		}
 

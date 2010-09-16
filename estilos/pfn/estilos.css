@@ -80,6 +80,10 @@ a:hover {
 	background-color: #069;
 }
 
+a:focus, a:active {
+  outline: none;
+}
+
 li, ul {
 	list-style: none outside;
 	white-space: nowrap;
@@ -119,6 +123,11 @@ h2 {
 	color: #CC0;
 	font-size: 12px;
 	border-bottom: 1px solid #CC0;
+}
+
+hr {
+	border-bottom: 1px solid #9CF;
+	margin: 10px 0;
 }
 
 /* ----- Cuerpo ----- */
@@ -191,35 +200,25 @@ h2 {
 
 /* ----- Pantalla de acceso ----- */
 
-#benvido {
+#benvido, #cab_menu {
+	background: url(imx/logo-grande.png) no-repeat;
+	width: 327px;
+	height: 127px;
 	margin: 100px auto 0 auto;
-	color: #FFF;
-	padding: 10px;
-	width: 240px;
-	font-weight: bold;
-	background: #C00;
-	border: 1px solid #000;
-	text-align: center;
+	border: 0;
 }
 
-* html #benvido {
-	width: 260px;
+#benvido span, #cab_menu span {
+	display: none;
 }
 
 #login {
-	margin: 5px auto 0 auto;
-	padding: 10px;
-	width: 240px;
-	height: 151px;
+	margin: 15px auto 0 auto;
+	padding: 10px 0;
+	width: 372px;
 	text-align: center;
 	color: #FFF;
-	border: 1px solid #000;
-	background-color: #09C;
-}
-
-* html #login {
-	width: 260px;
-	height: 171px;
+	background-color: #92c426;
 }
 
 #login .formulario {
@@ -230,31 +229,31 @@ h2 {
 	padding: 5px;
 }
 
-#login_olvido_contrasinal {
-	width: 240px;
+div#login_mais_opcions {
+	width: 372px;
 	text-align: right;
 	margin: 5px auto 0 auto;
 }
 
-* html #login_olvido_contrasinal {
-	width: 260px;
+#login_mais_opcions ul {
+	display: none;
+	margin-left: 5px;
+	border: 1px solid #CCC;
+	background: #EEE;
+	padding: 5px;
+	float: right;
+	width: 170px;
+}
+
+#login_mais_opcions ul li {
+	padding: 3px 0;
+	text-align: left;
 }
 
 /* ----- Menú de Raíces ----- */
 
 #cab_menu {
-	width: 380px;
 	margin: 50px auto 0 auto;
-	color: #FFF;
-	padding: 10px 20px 10px 20px;
-	font-weight: bold;
-	background: #C00;
-	border: 1px solid #000;
-	text-align: left;
-}
-
-* html #cab_menu {
-	width: 420px;
 }
 
 #menu_raices {
@@ -262,7 +261,7 @@ h2 {
 	border: 1px dotted #CCC;
 	background: #EEE;
 	padding: 20px;
-	margin: 10px auto 0 auto;
+	margin: 20px auto 0 auto;
 	text-align: left;
 	font-size: 14px;
 	font-weight: bold;
@@ -410,6 +409,7 @@ h2 {
 #navegacion {
 	text-align: left;
 	float: left;
+	margin-bottom: 10px;
 }
 
 #buscador {
@@ -681,6 +681,16 @@ li.correo a:hover {
 	background: url(imx/correo.png) 50% -19px no-repeat;
 }
 
+li.ksi a {
+	height: 17px;
+	width: 22px;
+	background: url(imx/ksi.png) no-repeat center top;
+}
+
+li.ksi a:hover {
+	background: url(imx/ksi.png) 50% -19px no-repeat;
+}
+
 /* ----- Cabecera para las pantallas de acciones ----- */
 
 #ver_info {
@@ -791,6 +801,55 @@ li.correo a:hover {
 	background-image: url(imx/semitrans.png);
 }
 
+/* ----- Disenho de los tabs ----- */
+
+.capa_tab {
+	border: 1px #778 solid;
+	border-top: 0;
+	padding: 20px 10px 10px 10px;
+}
+
+#tabs, .tabs {
+	padding: 3px 0;
+	margin-top: 5px;
+	border-bottom: 1px solid #778;
+	font-weight: bold;
+	text-align: left;
+}
+
+#tabs li, .tabs li {
+	list-style: none;
+	display: inline;
+}
+
+#tabs li a, .tabs li a {
+	padding: 3px 0.5em;
+	margin-left: 3px;
+	border: 1px solid #778;
+	border-bottom: none;
+	background: #DDE;
+	text-decoration: none;
+}
+
+#tabs li a:link, .tabs li a:link {
+	color: #448;
+}
+
+#tabs li a:visited, .tabs li a:visited {
+	color: #667;
+}
+
+#tabs li a:hover, .tabs li a:hover {
+	color: #000;
+	background: #AAE;
+	border-color: #227;
+}
+
+#tabs li a.activo, .tabs li a.activo {
+	background: white;
+	border-bottom: 1px solid white;
+}
+
 /* ----- Estilos genéricos ----- */
 
 .boton {
@@ -878,4 +937,86 @@ a.subcontido:hover {
 	margin: 3px;
 	background-color: #EEE;
 	float: left;
+}
+
+.columnas3 {
+	width: 30%;
+	padding-right: 10px;
+	margin-right: 10px;
+	border-right: 1px solid #CCC;
+	float: left;
+	overflow: hidden;
+}
+
+.columnas3.ultima {
+	padding-right: 0;
+	margin-right: 0;
+	border-right: 0;
+}
+
+.columna1de4 {
+	float: left;
+	width: 22%;
+	padding: 10px;
+	margin-right: 2%;
+	background: #d6dff7;
+}
+
+.columna1de4 p img {
+	margin-right: 15px;
+}
+
+.columnas2a4 {
+	float: left;
+	width: 72%;
+}
+
+.firmas {
+	display: none;
+}
+
+.linha {
+	margin: 10px 0;
+	padding: 3px 0;
+	border-bottom: 1px solid #EEE;
+}
+
+.campo {
+	display: block;
+	float: left;
+	width: 120px;
+	font-weight: bold;
+}
+
+.left {
+	float: left;
+}
+
+.ok {
+	background: #CFC url(imx/ok.png) no-repeat 10px center;
+	border-bottom: 1px solid #093;
+	padding: 10px 10px 10px 60px;
+	margin: 5px 0 10px 0;
+}
+
+.erro {
+	background: #FCC url(imx/erro.png) no-repeat 10px center;
+	border-bottom: 1px solid #C33;
+	padding: 10px 10px 10px 60px;
+	margin: 5px 0 10px 0;
+}
+
+.atencion {
+	background: #e7e48f url(imx/atencion.png) no-repeat 10px center;
+	border-bottom: 1px solid #aaa869;
+	padding: 10px 10px 10px 60px;
+	margin: 5px 0 10px 0;
+}
+
+ul.espacio li {
+	padding: 5px 0;
+}
+
+div.paragrafos p {
+	margin: 15px 0;
 }

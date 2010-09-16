@@ -38,7 +38,7 @@ $query = '';
 $erros = array();
 $ok = 0;
 
-$id_raiz = intval($PFN_vars->post('id_raiz'));
+$id = intval($PFN_vars->post('id'));
 $nome = addslashes(trim($PFN_vars->post('nome')));
 $path = $PFN_niveles->path_correcto($PFN_vars->post('path')).'/';
 $web = $PFN_niveles->path_correcto($PFN_vars->post('web')).'/';
@@ -59,9 +59,9 @@ $Fconfs = (array)$PFN_vars->post('Fconfs');
 
 if (empty($nome) || empty($path) || empty($web) || empty($host)) {
 	$erros[] = 1;
-} elseif (($id_raiz == $sPFN['raiz']['id']) && ($estado == 0)) {
+} elseif (($id == $sPFN['raiz']['id']) && ($estado == 0)) {
 	$erros[] = 3;
-} elseif (($sPFN['raiz']['id'] == $id_raiz)
+} elseif (($sPFN['raiz']['id'] == $id)
 && !@in_array($sPFN['usuario']['id'], $Fusuarios[$sPFN['usuario']['id_grupo']])) {
 	$erros[] = 7;
 } elseif (!@is_dir($path)) {
@@ -69,11 +69,11 @@ if (empty($nome) || empty($path) || empty($web) || empty($host)) {
 } elseif (!preg_match('/^[0-9\.,]+$/', $peso_maximo)) {
 	$erros[] = 36;
 } else {
-	if (($peso_maximo > 0) && (($id_raiz == 0) || $revisar_peso_actual)) {
+	if (($peso_maximo > 0) && (($id == 0) || $revisar_peso_actual)) {
 		$peso_actual = $PFN_niveles->get_tamano($path);
 	}
 
-	if (empty($id_raiz)) {
+	if (empty($id)) {
 		$query = 'INSERT INTO '.$PFN_usuarios->tabla('raices')
 			.' SET nome = "'.$nome.'"'
 			.', path = "'.$path.'"'
@@ -91,7 +91,7 @@ if (empty($nome) || empty($path) || empty($web) || empty($host)) {
 			.', estado = "'.$estado.'"'
 			.($revisar_peso_actual?(', peso_actual = "'.intval($peso_actual).'"'):'')
 			.', peso_maximo = "'.($peso_maximo*(($unidades == 'MB')?1024*1024:1024*1024*1024)).'"'
-			.' WHERE id = "'.$id_raiz.'"'
+			.' WHERE id = "'.$id.'"'
 			.' LIMIT 1;';
 	}
 
@@ -101,10 +101,10 @@ if (empty($nome) || empty($path) || empty($web) || empty($host)) {
 }
 
 if (!count($erros)) {
-	$id_raiz = empty($id_raiz)?$PFN_usuarios->id_ultimo():$id_raiz;
+	$id = empty($id)?$PFN_usuarios->id_ultimo():$id;
 
 	$query = 'DELETE FROM '.$PFN_usuarios->tabla('r_u')
-		.' WHERE id_raiz="'.$id_raiz.'";';
+		.' WHERE id_raiz="'.$id.'";';
 	$PFN_usuarios->actualizar($query);
 
 	if (is_array($Fusuarios) && count($Fusuarios)) {
@@ -114,10 +114,10 @@ if (!count($erros)) {
 		foreach ($Fusuarios as $v) {
 			if (is_array($v)) {
 				foreach ($v as $v2) {
-					$query .= '("'.$id_raiz.'","'.intval($v2).'"),';
+					$query .= '("'.$id.'","'.intval($v2).'"),';
 				}
 			} else {
-				$query .= '("'.$id_raiz.'","'.intval($v).'"),';
+				$query .= '("'.$id.'","'.intval($v).'"),';
 			}
 		}
 
@@ -129,13 +129,13 @@ if (!count($erros)) {
 			.' (id_raiz,id_grupo,id_conf) VALUES ';
 
 		foreach ($Fgrupos as $k => $v) {
-			$query .= '("'.$id_raiz.'","'.intval($v).'","'.intval($Fconfs[$k]).'"),';
+			$query .= '("'.$id.'","'.intval($v).'","'.intval($Fconfs[$k]).'"),';
 		}
 
 		$PFN_clases->actualizar(substr($query,0,-1).';');
 	}
 
-	$info_raiz = $PFN_niveles->path_correcto($PFN_paths['info'].'raiz'.$id_raiz);
+	$info_raiz = $PFN_paths['info'].'raiz'.$id;
 
 	if (!is_dir($info_raiz)) {
 		@mkdir($info_raiz, 0755);
@@ -157,8 +157,8 @@ include ($PFN_paths['xestion'].'Xopcions.inc.php');
 
 $PFN_tempo->rexistra('precodigo');
 
-include ($PFN_paths['xestion'].'raices/index.inc.php');
-include ($PFN_paths['plantillas'].'Xraices.inc.php');
+include ($PFN_paths['xestion'].'raices/editar.inc.php');
+include ($PFN_paths['plantillas'].'Xraiz.inc.php');
 
 $PFN_tempo->rexistra('postcodigo');
 

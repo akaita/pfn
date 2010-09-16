@@ -62,7 +62,7 @@ if (is_object($PFN_clases)) {
 	<?php } else { ?>
 	<table id="pe_utiles" summary=""><tr><td style="border: 0;">&nbsp;</td></tr></table>
 	<?php } ?>
-	<div id="pe_texto"><a href="http://pfn.sourceforge.net/" onclick="window.open(this.href, '_blank'); return false"><?php echo $PFN_conf->t('PFN').'</a> - '.$PFN_conf->t('tempo_execucion').': '.$PFN_tempo->total().' '.$PFN_conf->t('segundos'); ?></div>
+	<div id="pe_texto"><a href="http://www.phpfilenavigator.com/" onclick="window.open(this.href, '_blank'); return false"><?php echo $PFN_conf->t('PFN').'</a> - '.$PFN_conf->t('tempo_execucion').': '.$PFN_tempo->total().' '.$PFN_conf->t('segundos'); ?></div>
 </div>
 <!--
 

@@ -32,38 +32,38 @@ include ($relativo.'paths.php');
 include_once ($PFN_paths['include'].'basicweb.php');
 include_once ($PFN_paths['include'].'Xusuarios.php');
 
-PFN_quita_url_SERVER('id_conf');
+PFN_quita_url_SERVER('id');
 
 session_write_close();
 
 $ok = 0;
 $erros = array();
 
-$id_conf = $PFN_vars->get('id_conf');
-$existe = $PFN_usuarios->init('configuracion', $id_conf);
-$nome_arq = $PFN_niveles->path_correcto($PFN_paths['conf'].$PFN_usuarios->get('conf').'.inc.php');
+$id = $PFN_vars->get('id');
+$existe = $PFN_usuarios->init('configuracion', $id);
+$nome_arq = $PFN_paths['conf'].$PFN_niveles->nome_correcto($PFN_usuarios->get('conf').'.inc.php');
 
 if (!$existe) {
 	$erros[] = 18;
 } elseif ($PFN_usuarios->get('vale') != 1) {
 	$erros[] = 25;
-} elseif ($PFN_usuarios->init('configuracion_raices', $id_conf)) {
+} elseif ($PFN_usuarios->init('configuracion_raices', $id)) {
 	$erros[] = 26;
-} elseif ($PFN_usuarios->init('configuracion_grupos', $id_conf)) {
+} elseif ($PFN_usuarios->init('configuracion_grupos', $id)) {
 	$erros[] = 27;
 }
 
 if (count($erros) == 0) {
-	$PFN_usuarios->accion('conf_eliminar', $id_conf);
+	$PFN_usuarios->accion('conf_eliminar', $id);
 	@unlink($nome_arq);
 }
 
 $ok = count($erros)?false:4;
 
 if ($ok) {
-	Header('Location: ../index.php?'.PFN_cambia_url(array('id_conf','opc','ok'), array('',4,$ok), false, true));
+	Header('Location: index.php?'.PFN_cambia_url(array('id', 'ok'), array(false, $ok), false, true));
 } else {
-	Header('Location: index.php?'.PFN_cambia_url(array('id_conf','erros'), array($id_conf,implode(',', $erros)), false, true));
+	Header('Location: resumo.php?'.PFN_cambia_url(array('id', 'erros'), array($id, implode(',', $erros)), false, true));
 }
 
 exit;

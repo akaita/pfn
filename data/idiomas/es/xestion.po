@@ -1,0 +1,773 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Lito <lito@eordes.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "xestion"
+msgstr "Administraci&oacute;n"
+
+msgid "Xmenu_principal"
+msgstr "Men&uacute; Principal"
+
+msgid "Xcrear_usuario"
+msgstr "Crear Usuario"
+
+msgid "Xcrear_raiz"
+msgstr "Crear Ra&iacute;z"
+
+msgid "Xraices"
+msgstr "Raices"
+
+msgid "Xusuarios"
+msgstr "Usuarios"
+
+msgid "Xmodificar"
+msgstr "Modificar"
+
+msgid "Xnome"
+msgstr "Nombre"
+
+msgid "Xestado"
+msgstr "Estado"
+
+msgid "Xcambiar"
+msgstr "Cambiar"
+
+msgid "Xadmin_raices"
+msgstr "Administraci&oacute;n de raices"
+
+msgid "Xmodi_raiz"
+msgstr "Modificaci&oacute;n de Ra&iacute;z"
+
+msgid "Xusuarios_relacionados"
+msgstr "Usuarios Relacionados"
+
+msgid "Xpath"
+msgstr "Path"
+
+msgid "Xraiz_web"
+msgstr "Ra&iacute;z Web"
+
+msgid "Xhost"
+msgstr "Servidor"
+
+msgid "Xconf"
+msgstr "Configuraci&oacute;n"
+
+msgid "Xdatos_principales"
+msgstr "Datos Principales"
+
+msgid "Xadmin_usuarios"
+msgstr "Administraci&oacute;n de usuarios"
+
+msgid "Xmodi_usuario"
+msgstr "Modificaci&oacute;n de Usuario"
+
+msgid "Xusuario"
+msgstr "Usuario"
+
+msgid "Xcontrasinal"
+msgstr "Contrase&ntilde;a"
+
+msgid "Xrep_contrasinal"
+msgstr "Repite la Contrase&ntilde;a"
+
+msgid "Xcodigo_acceso"
+msgstr "Identificador de Acceso"
+
+msgid "Xadministrador"
+msgstr "Administrador"
+
+msgid "Xactivo"
+msgstr "Activo"
+
+msgid "Xmodo_acceso"
+msgstr "Modo de acceso"
+
+msgid "Xcon_usuario_contrasinal"
+msgstr "Con usuario/contrase&ntilde;a"
+
+msgid "Xcon_certificado"
+msgstr "Con certificado"
+
+msgid "Xraices_relacionadas"
+msgstr "Raices Relacionadas"
+
+msgid "Xeliminar_usuario"
+msgstr "Confirma la eliminaci&oacute;n de este usuario???"
+
+msgid "Xeliminar_raiz"
+msgstr "Confirma la eliminaci&oacute;n de esta ra&iacute;z? Recuerde que no se eliminar&aacute; el directorio f&iacute;sico, s&oacute;lo de la lista del PHPfileNavigator"
+
+msgid "Xreindexar"
+msgstr "Reindexar"
+
+msgid "Xreindexar_info"
+msgstr "Este proceso permite reindexar todos los datos de los ficheros de informaci&oacute;n adicional as&iacute; como las b&uacute;squedas por nombre. Conviene reindexar los datos cada cierto tiempo para que las b&uacute;squedas no contengan errores en los resultados."
+
+msgid "Xconfirmar_reindexar"
+msgstr "Desea realmente reindexar todo el contenido de esta ra&iacute;z?<br />(Este proceso puede llevar alg&uacute;n tiempo, por favor espere)"
+
+msgid "Xagarde_reindexar"
+msgstr "Este proceso puede llevar alg&uacute;n tiempo, por favor espere"
+
+msgid "Xok_reindexar"
+msgstr "Actualizaci&oacute;n realizada con &eacute;xito. Se ha reindexado un total de:"
+
+msgid "Xpeso_max"
+msgstr "Peso M&aacute;ximo"
+
+msgid "Xpeso_actual"
+msgstr "Peso Actual"
+
+msgid "Xerros_1"
+msgstr "Los campos marcados con <b>*</b> son obligatorios."
+
+msgid "Xerros_2"
+msgstr "Ha ocurrido un error guardando el registro, por favor compruebe el informe de errores de MySQL."
+
+msgid "Xerros_3"
+msgstr "No se puede desactivar la ra&iacute;z con la que accedi&oacute; al PHPfileNavigator."
+
+msgid "Xerros_4"
+msgstr "El directorio data/info/ no tiene permisos de escritura. No se guardar&aacute; el l&iacute;mite de tama&ntilde;o."
+
+msgid "Xerros_5"
+msgstr "No se puede eliminar la ra&iacute;z con la que accedi&oacute; al PHPfileNavigator."
+
+msgid "Xerros_6"
+msgstr "Ha ocurrido un error eliminando el registro, por favor compruebe el informe de errores de MySQL."
+
+msgid "Xerros_7"
+msgstr "No se puede quitar la relaci&oacute;n con el usuario actual, ya que se accedi&oacute; al PHPfileNavigator a trav&eacute;s de esta ra&iacute;z."
+
+msgid "Xerros_8"
+msgstr "Ya existe ese Usuario."
+
+msgid "Xerros_9"
+msgstr "No se puede quitar la relaci&oacute;n con la ra&iacute;z desde la que accedi&oacute; al PHPfileNavigator."
+
+msgid "Xerros_10"
+msgstr "No se puede desactivar el usuario con el que accedi&oacute; al PHPfileNavigator."
+
+msgid "Xerros_11"
+msgstr "El campo Contrase&ntilde;a no coincide con el de Repite Contrase&ntilde;a."
+
+msgid "Xerros_12"
+msgstr "No se puede quitar la opci&oacute;n de administrador al usuario con el que accedi&oacute; al PHPfileNavigator."
+
+msgid "Xerros_13"
+msgstr "No se puede eliminar el usuario con el que accedi&oacute; al PHPfileNavigator"
+
+msgid "Xerros_14"
+msgstr "No se puede desactivar el grupo del usuario con el que accedi&oacute; al PHPfileNavigator"
+
+msgid "Xerros_15"
+msgstr "Ya existe un Grupo con ese nombre"
+
+msgid "Xerros_16"
+msgstr "No se puede eliminar el grupo del usuario con el que se accedi&oacute; al PHPfileNavigator"
+
+msgid "Xerros_17"
+msgstr "No se puede eliminar este grupo porque tiene relaci&oacute;n con alg&uacute;n usuario."
+
+msgid "Xerros_18"
+msgstr "El fichero de configuraci&oacute;n seleccionado no existe."
+
+msgid "Xerros_19"
+msgstr "El fichero de configuraci&oacute;n seleccionado no tiene permisos de escritura."
+
+msgid "Xerros_20"
+msgstr "Debes definir un nombre para el nuevo fichero de configuraci&oacute;n."
+
+msgid "Xerros_21"
+msgstr "Ya existe un fichero de configuraci&oacute;n con ese nombre."
+
+msgid "Xerros_22"
+msgstr "Ya existe una configuraci&oacute;n con ese nombre."
+
+msgid "Xerros_23"
+msgstr "Ocurri&oacute; un error duplicando esta configuraci&oacute;n, por favor revisa el registro de errores de MySQL."
+
+msgid "Xerros_24"
+msgstr "Ocurri&oacute; un error duplicando esta configuraci&oacute;n, por favor revisa los permisos del directorio data/conf/"
+
+msgid "Xerros_25"
+msgstr "El fichero actual no tiene permisos para ser eliminado."
+
+msgid "Xerros_26"
+msgstr "No se puede eliminar esta configuraci&oacute;n ya que tiene relaci&oacute;n con alguna ra&iacute;z o grupo, por favor primero elimina estas relaciones."
+
+msgid "Xerros_27"
+msgstr "No se puede eliminar este fichero de configuraci&oacute;n ya que es la configuraci&oacute;n por defecto de alg&uacute;n grupo, por favor primero elimine esta relaci&oacute;n."
+
+msgid "Xerros_28"
+msgstr "Ha ocurrido un error durante la edici&oacute;n de esta configuraci&oacute;n."
+
+msgid "Xerros_29"
+msgstr "No existe o est&aacute; vac&iacute;o el fichero de logs de MySQL."
+
+msgid "Xerros_30"
+msgstr "No existe o est&aacute; vac&iacute;o el fichero de logs de Acciones."
+
+msgid "Xerros_31"
+msgstr "El directorio \"PATH\" no existe."
+
+msgid "Xerros_32"
+msgstr "El idioma de origen que est&aacute; a seleccionar no existe en esta instalaci&oacute;n."
+
+msgid "Xerros_33"
+msgstr "El directorio data/idiomas, el directorio para el idioma de destino o el fichero a traducir seleccionado no tienen permisos de escritura. Por favor comprueba los permisos y establece permiso de escritura para el usuario asignado al servidor web."
+
+msgid "Xerros_34"
+msgstr "No fue posible escribir la traducci&oacute;n en el fichero seleccionado. Por favor comprueba los permisos y establece permiso de escritura para el usuario del servidor web."
+
+msgid "Xerros_35"
+msgstr "El valor para l&iacute;mite de tama&ntilde;o no es un n&uacute;mero v&aacute;lido."
+
+msgid "Xerros_36"
+msgstr "No existe la ra&iacute;z escogida para reindexar."
+
+msgid "Xok_1"
+msgstr "El registro fue guardado correctamente."
+
+msgid "Xok_2"
+msgstr "El registro fue eliminado correctamente."
+
+msgid "Xok_3"
+msgstr "La configuraci&oacute;n fue duplicada correctamente."
+
+msgid "Xok_4"
+msgstr "La configuraci&oacute;n fue eliminada correctamente."
+
+msgid "Xok_5"
+msgstr "La configuraci&oacute;n fue editada correctamente."
+
+msgid "Xok_6"
+msgstr "La traducci&oacute;n fue guardada correctamente."
+
+msgid "Xok_7"
+msgstr "Los ficheros de logs seleccionados fueron eliminados correctamente."
+
+msgid "Xaxuda_raiz_nome"
+msgstr "Nombre gen&eacute;rico de la ra&iacute;z, para reconocerla en los listados. <strong>p.j.: Ra&iacute;z Inicial</strong>"
+
+msgid "Xaxuda_raiz_path"
+msgstr "Ruta absoluta del directorio desde la ra&iacute;z del servidor. <strong>p.j.: /var/www/html/web/docs/</strong>"
+
+msgid "Xaxuda_raiz_web"
+msgstr "Ruta para acceso por web desde la ra&iacute;z del dominio. <strong>p.j.: /docs/</strong>"
+
+msgid "Xaxuda_raiz_host"
+msgstr "Nombre del dominio que se va a gestionar. <strong>p.j.: www.dominio.com</strong>"
+
+msgid "Xaxuda_raiz_peso_max"
+msgstr "Peso m&aacute;ximo permitido de ocupaci&oacute;n. <strong>p.j.: 50 Megas</strong>"
+
+msgid "Xaxuda_raiz_peso_actual"
+msgstr "Peso actual de la ra&iacute;z. S&oacute;lo existe si la ra&iacute;z tiene un peso m&aacute;ximo."
+
+msgid "Xaxuda_raiz_estado"
+msgstr "Activar o desactivar el acceso a esta ra&iacute;z para todos los usuarios."
+
+msgid "Xaxuda_usuario_nome"
+msgstr "Nombre gen&eacute;rico del usuario. <strong>p.j.: Usuario Invitado</strong>"
+
+msgid "Xaxuda_usuario_usuario"
+msgstr "Datos de usuario para realizar el acceso. <strong>p.j.: invitado</strong>"
+
+msgid "Xaxuda_usuario_contrasinal"
+msgstr "Contrase&ntilde;a de acceso al PHPfileNavigator. <strong>p.j.: n8DMe4whR6</strong>"
+
+msgid "Xaxuda_usuario_rep_contrasinal"
+msgstr "Repita la misma contrase&ntilde;a del campo anterior. <strong>p.j.: n8DMe4whR6</strong>"
+
+msgid "Xaxuda_usuario_codigo_acceso"
+msgstr "Indica el identificador mediante el cual un usuario se podr&aacute; autenticar con tarjeta criptogr&aacute;fica. p.j. el valor del NIF: <strong>12345678A</strong>"
+
+msgid "Xaxuda_usuario_email"
+msgstr "Correo electr&oacute;nico del usuario para futuros envios de informaci&oacute;n o posibilidad de solicitar otra contrase&ntilde;a."
+
+msgid "Xaxuda_usuario_max_descargas"
+msgstr "M&aacute;ximo uso de ancho de banda permitido en megas durante un mes para descargas desde el PHPfileNavigator. <strong>p.j.: 500</strong>"
+
+msgid "Xaxuda_usuario_actual_descargas"
+msgstr "Ancho de banda usado durante este mes."
+
+msgid "Xaxuda_usuario_grupo"
+msgstr "Grupo al que pertenece este usuario. <strong>p.j.: Invitados</strong>"
+
+msgid "Xaxuda_usuario_administrador"
+msgstr "Si este usuario puede gestionar el PHPfileNavigator en su totalidad. No se recomienda activar esta opci&oacute;n para m&aacute;s de un usuario, ya que otorga control total sobre toda la aplicaci&oacute;n."
+
+msgid "Xaxuda_usuario_estado"
+msgstr "Activar o desactivar el acceso de este usuario al PHPfileNavigator."
+
+msgid "Xaxuda_usuario_modo_acceso"
+msgstr "Define como puede un usuario acceder al sistema."
+
+msgid "Xaxuda_grupo_nome"
+msgstr "Nombre gen&eacute;rico del grupo. <strong>p.j.: Invitados</strong>"
+
+msgid "Xaxuda_grupo_conf"
+msgstr "Configuraci&oacute;n por defecto para este grupo. Para cada ra&iacute;z existente ser&aacute; posible asignarle otra configuraci&oacute;n para cada grupo existente. <strong>p.j.: invitados</strong>"
+
+msgid "Xaxuda_grupo_estado"
+msgstr "Activar o desactivar el acceso de todos los usuarios de este grupo al PHPfileNavigator."
+
+msgid "Xaxuda_borrar_inc"
+msgstr "Elimina todos los ficheros de informaci&oacute;n adicional de esta ra&iacute;z. No elimina ning&uacute;n fichero personal subido por los usuarios."
+
+msgid "Xaxuda_borrar_imx"
+msgstr "Elimina todas las im&aacute;genes reducidas para la previsualizaci&oacute;n. No elimina ninguna im&aacute;gen personal subida por los usuarios."
+
+msgid "Xaxuda_revisar_peso_actual"
+msgstr "Permite revisar y actualizar el peso de la ra&iacute;z actual."
+
+msgid "Xaxuda_cambiar_datos"
+msgstr "Permitir al usuario recuperar su contrase&ntilde;a en caso de olvido o cambiar datos como el nombre o su contrase&ntilde;a."
+
+msgid "Xaxuda_revisar_relacions_raices"
+msgstr "Si cambia la configuraci&oacute;n por defecto de este grupo marque esta opci&oacute;n para revisar todas las relaciones de ra&iacute;ces-grupos-configuraciones y reasignarle esta configuraci&oacute;n a este grupo en todas las ra&iacute;ces."
+
+msgid "Xinformes"
+msgstr "Informes"
+
+msgid "Xtit_mysql"
+msgstr "MySQL"
+
+msgid "Xdesc_mysql"
+msgstr "Errores en las consultas de MySQL"
+
+msgid "Xtit_accions"
+msgstr "Acciones"
+
+msgid "Xdesc_accions"
+msgstr "Registro de acciones sobre los ficheros y directorios"
+
+msgid "Xtit_accesos"
+msgstr "Accesos"
+
+msgid "Xdesc_accesos"
+msgstr "Registro de entradas, salidas e intentos en la aplicaci&oacute;n"
+
+msgid "Xtit_uso_disco"
+msgstr "Uso de disco"
+
+msgid "Xdesc_uso_disco"
+msgstr "Permite crear informes de uso de disco para todos los usuarios que tengan limitado el espacio."
+
+msgid "Xtit_ancho_banda"
+msgstr "Ancho de banda"
+
+msgid "Xdesc_ancho_banda"
+msgstr "Permite visualizar el ancho de banda consumido por los usuarios."
+
+msgid "Xescolle_informe"
+msgstr "Escoge un informe"
+
+msgid "Xamosar_lineas"
+msgstr "N&uacute;mero de lineas a ense&ntilde;ar"
+
+msgid "Xbuscar_texto"
+msgstr "Buscar texto"
+
+msgid "Xamosar_entradas"
+msgstr "Accesos correctos"
+
+msgid "Xamosar_certificado"
+msgstr "Accesos con certificado"
+
+msgid "Xamosar_saidas"
+msgstr "Salidas"
+
+msgid "Xamosar_erros"
+msgstr "Intentos errados"
+
+msgid "Xamosar_bloqueados"
+msgstr "Bloqueados"
+
+msgid "Xamosar_sen_datos"
+msgstr "Sesi&oacute;n caducada (sin datos)"
+
+msgid "Xbuscar_usuario"
+msgstr "Buscar usuario"
+
+msgid "Xamosar_copiar_dir"
+msgstr "Copiar directorio"
+
+msgid "Xamosar_copiar_arq"
+msgstr "Copiar fichero"
+
+msgid "Xamosar_mover_dir"
+msgstr "Mover directorio"
+
+msgid "Xamosar_mover_arq"
+msgstr "Mover fichero"
+
+msgid "Xamosar_eliminar_arq"
+msgstr "Borrar fichero"
+
+msgid "Xamosar_eliminar_dir"
+msgstr "Borrar directorio"
+
+msgid "Xamosar_crear_dir"
+msgstr "Crear directorio"
+
+msgid "Xamosar_subir_arq"
+msgstr "Subir fichero"
+
+msgid "Xamosar_renomear"
+msgstr "Renombrar"
+
+msgid "Xamosar_enlazar_arq"
+msgstr "Enlazar fichero"
+
+msgid "Xamosar_editar"
+msgstr "Editar"
+
+msgid "Xamosar_subir_url"
+msgstr "Subir URL"
+
+msgid "Xamosar_extraer"
+msgstr "Descomprimir fichero"
+
+msgid "Xamosar_enviar_correo"
+msgstr "Enviar correo"
+
+msgid "Xamosar_descargar"
+msgstr "Descargar"
+
+msgid "Xcol_data"
+msgstr "Fecha"
+
+msgid "Xcol_destino"
+msgstr "Destino"
+
+msgid "Xcol_arquivo"
+msgstr "Fichero"
+
+msgid "Xcol_linha"
+msgstr "L&iacute;nea"
+
+msgid "Xcol_erro"
+msgstr "Error"
+
+msgid "Xcol_raiz"
+msgstr "Ra&iacute;z"
+
+msgid "Xcol_usuario"
+msgstr "Usuario"
+
+msgid "Xcol_accion"
+msgstr "Acci&oacute;n"
+
+msgid "Xcol_login"
+msgstr "Usuario"
+
+msgid "Xcol_ip"
+msgstr "IP"
+
+msgid "Xcol_estado"
+msgstr "Estado"
+
+msgid "Xcol_donde"
+msgstr "D&oacute;nde"
+
+msgid "Xcol_sesion"
+msgstr "ID sesi&oacute;n"
+
+msgid "Xcol_id"
+msgstr "ID"
+
+msgid "Xcol_nome"
+msgstr "Nombre"
+
+msgid "Xcol_orixe"
+msgstr "Origen"
+
+msgid "Xcol_peso_actual"
+msgstr "Peso Actual"
+
+msgid "Xcol_peso_limite"
+msgstr "Peso M&aacute;ximo"
+
+msgid "Xcol_porcent_libre"
+msgstr "% de Libre"
+
+msgid "Xcol_ancho_banda_actual"
+msgstr "Ancho de Banda Actual"
+
+msgid "Xcol_ancho_banda_limite"
+msgstr "Ancho de Banda M&aacute;ximo"
+
+msgid "Xarqs_conf"
+msgstr "Ficheros de Configuraci&oacute;n"
+
+msgid "Xarq_conf"
+msgstr "Fichero de Configuraci&oacute;n"
+
+msgid "Xdetalle"
+msgstr "Detalle"
+
+msgid "Xconf_ver"
+msgstr "Detalle de configuraci&oacute;n"
+
+msgid "Xpeso_exacto"
+msgstr "Peso Exacto"
+
+msgid "Xmodificado"
+msgstr "Modificado"
+
+msgid "Xuid"
+msgstr "ID Usuario"
+
+msgid "Xgid"
+msgstr "ID Grupo"
+
+msgid "Xeliminar_conf"
+msgstr "Est&aacute; seguro de que desea eliminar este fichero de configuraci&oacute;n?"
+
+msgid "Xadmin_configuracions"
+msgstr "Administraci&oacute;n de configuraciones"
+
+msgid "Xconf_editar"
+msgstr "Edici&oacute;n de Configuraci&oacute;n"
+
+msgid "Xconf_editar_erro"
+msgstr "La edici&oacute;n contiene alg&uacute;n error"
+
+msgid "Xcomprobar_sintaxis"
+msgstr "Comprobar Sintaxis"
+
+msgid "Xintro_sintaxis"
+msgstr "Proceso de comprobaci&oacute;n de sintaxis de un fichero de configuraci&oacute;n.<br />Si en alg&uacute;n momento da un error, debe revisar y corregir el problema."
+
+msgid "Xsintaxis_ok"
+msgstr "El fichero de configuraci&oacute;n tiene la sintaxis correcta."
+
+msgid "Xeliminar_ok"
+msgstr "El fichero de configuraci&oacute;n fue correctamente eliminado."
+
+msgid "Xconf_eliminar"
+msgstr "Eliminar Configuraci&oacute;n"
+
+msgid "Xintro_eliminar"
+msgstr "La eliminaci&oacute;n del fichero de configuraci&oacute;n devolvi&oacute; el siguiente resultado:"
+
+msgid "Xduplicar"
+msgstr "Nuevo a partir de &eacute;ste"
+
+msgid "Xnovo_nome"
+msgstr "Nombre del nuevo fichero de configuraci&oacute;n:"
+
+msgid "Xgrupos_relacionados"
+msgstr "Grupos Relacionados"
+
+msgid "Xconfiguracions"
+msgstr "Configuraciones"
+
+msgid "Xconfiguracion"
+msgstr "Configuraci&oacute;n"
+
+msgid "Xgrupos"
+msgstr "Grupos"
+
+msgid "Xgrupo"
+msgstr "Grupo"
+
+msgid "Xmarca_desmarca"
+msgstr "Marcar/Desmarcar todos"
+
+msgid "Xconf_defecto"
+msgstr "Configuraci&oacute;n por defecto"
+
+msgid "Xcrear_grupo"
+msgstr "Crear Grupo"
+
+msgid "Xemail"
+msgstr "Email"
+
+msgid "Xadmin_grupos"
+msgstr "Administraci&oacute;n de grupos"
+
+msgid "Xmodi_grupo"
+msgstr "Modificaci&oacute;n de Grupo"
+
+msgid "Xeliminar_grupo"
+msgstr "Realmente desea eliminar este Grupo?"
+
+msgid "Xescolle_raiz"
+msgstr "Seleccionar una ra&iacute;z"
+
+msgid "Xescolle_usuario"
+msgstr "Seleccionar un usuario"
+
+msgid "Xm_crear_raiz"
+msgstr "A&ntilde;adir Ra&iacute;z"
+
+msgid "Xm_crear_usuario"
+msgstr "A&ntilde;adir Usuario"
+
+msgid "Xm_crear_grupo"
+msgstr "A&ntilde;adir Grupo"
+
+msgid "Xm_indexador"
+msgstr "Indexar Datos"
+
+msgid "Xm_informes"
+msgstr "Informes"
+
+msgid "Xm_traduccion"
+msgstr "Traducci&oacute;n"
+
+msgid "Xen_megas"
+msgstr "en Megas"
+
+msgid "Xmax_descargas_mes"
+msgstr "M&aacute;ximo de descargas mensual"
+
+msgid "Xpeso_actual_off"
+msgstr "El peso m&aacute;ximo est&aacute; desactivado."
+
+msgid "Xtraduccion"
+msgstr "Traducci&oacute;n"
+
+msgid "Xtraduccion_intro"
+msgstr "Desde aqu&iacute; puedes traducir o cambiar los textos de traducci&oacute;n que necesites. S&oacute;lo tienes que escoger un idioma de origen y uno de destino e ir traduciendo los campos que van apareciendo.<br /><br />Los pasos a seguir son los siguientes:<br /><br /><strong>1) Escoge el juego de caracteres.</strong><br /><strong>2) Escoge si listar todo o s&oacute;lo lo que est&aacute; sin traducir.</strong><br /><strong>3) Escoge el fichero a traducir.</strong><br /><strong>4) Escoge el idioma de origen.</strong><br /><strong>5) Escoge el idioma de destino.</strong><br /><br />Cuando te encuentres con algo como <strong>%s</strong>, mantenlo igual.<br /><br /><strong>IMPORTANTE: </strong>Dado que la sesi&oacute;n tiene una duraci&oacute;n limitada debes guardar cada cierto tiempo para que no te caduque la sesi&oacute;n y te expulse fuera perdiendo todo lo traducido!!!!."
+
+msgid "Xarquivo"
+msgstr "Fichero"
+
+msgid "Xclave"
+msgstr "Clave"
+
+msgid "Xsub_clave"
+msgstr "Subclave"
+
+msgid "Xreiniciar_campos"
+msgstr "Volver a la versi&oacute;n Original"
+
+msgid "Xgardar_idioma"
+msgstr "Guardar este idioma"
+
+msgid "Xlistar"
+msgstr "Listar"
+
+msgid "Xtodas"
+msgstr "Todas"
+
+msgid "Xtodos"
+msgstr "Todos"
+
+msgid "Xsen_traducir"
+msgstr "Sin traducir"
+
+msgid "Xcomprobar_traduccions"
+msgstr "Comprobar el estado de las traducciones"
+
+msgid "Xescolle_idioma"
+msgstr "- Escoge idioma -"
+
+msgid "Xtraduccion_estado"
+msgstr "Ten en cuenta que el proceso puede ser largo ya que se necesita comprobar todos los directorios disponibles de idiomas y todos los ficheros incluidos.<br /><br />El c&oacute;digo de colores para el listado es el siguiente:<br /><br /><table summary=\"\"><tr><td style=\"background: #6c6; padding: 5px;\">El color verde indica que el fichero coincidente en esa celda con el idioma listado tiene el mismo n&uacute;mero de valores que el escogido como origen, con lo cual la traducci&oacute;n es completa.</td></tr><tr><td style=\"background: #69E; padding: 5px;\">El color azul indica que el idioma listado tiene m&aacute;s claves traducidas que el seleccionado como origen.</td></tr><tr><td style=\"background: #E66; padding: 5px;\">El color rojo indica que en el fichero del idioma listado faltan algunas claves por traducir.</td></tr><tr><td style=\"background: #000; color: #FFF; padding: 5px;\">El color negro indica que no existe a&uacute;n ese fichero para el idioma listado.</td></tr></table><br /><br />Selecciona el idioma a partir del cual se comparar&aacute; el estado con los otros idiomas."
+
+msgid "Xvaciar_inc"
+msgstr "Desea eliminar todos los ficheros de informaci&oacute;n adicional y las copias de reducidas de las im&aacute;genes generadas por el PHPfileNavigator? Esta acci&oacute;n no eliminar&aacute; ning&uacute;n fichero personal."
+
+msgid "Xm_varios"
+msgstr "Varios"
+
+msgid "Xvarios"
+msgstr "Configuraciones diversas"
+
+msgid "Xver_detalle"
+msgstr "Ver Detalle Completo"
+
+msgid "Xarquivos_logs"
+msgstr "Ficheros de LOG"
+
+msgid "Xlogs_info"
+msgstr "Aqu&iacute; te permitir&aacute; eliminar los ficheros de registro con errores de MySQL o de las acciones sobre ficheros y directorios de cada ra&iacute;z."
+
+msgid "Xlogs_arq_accions"
+msgstr "Registro de acciones de la ra&iacute;z"
+
+msgid "Xlogs_arq_mysql"
+msgstr "Registro de errores de MySQL"
+
+msgid "Xborrar_inc"
+msgstr "Borrar ficheros de<br />informaci&oacute;n adicional"
+
+msgid "Xborrar_imx"
+msgstr "Borrar previsualizaci&oacute;n<br />de im&aacute;genes"
+
+msgid "Xrevisar_peso_actual"
+msgstr "Revisar Peso Actual"
+
+msgid "Xcambiar_datos"
+msgstr "Cambiar Datos"
+
+msgid "Xm_doazon"
+msgstr "Realizar una muy agradecida donaci&oacute;n"
+
+msgid "Xm_doazon_texto"
+msgstr "Este proyecto ha sido desarrollado durante un sinf&iacute;n de horas libres.<br /><br />Desde Septiembre de 2004 ha estado en continua evoluci&oacute;n pasando por diversas formas, pero siempre encaminadas a facilitar en lo m&aacute;ximo posible su uso y disfrute, con mejoras que los propios usuarios han propuesto.<br /><br />Su desarrollo no ha cesado en ning&uacute;n momento y espero que tampoco cese en el futuro.<br /><br />Para continuar con su desarrollo y permitirme dedicarle el tiempo necesario para implementar nuevas funcionalidades, realizar las pruebas necesarias y corregir los problemas encontrados, necesito tu ayuda.<br /><br />Haz una donaci&oacute;n:"
+
+msgid "Xdoar"
+msgstr "Donar"
+
+msgid "Xdoar_paypal"
+msgstr "Donar con PayPal"
+
+msgid "Xdoar_tarxeta"
+msgstr "Donar con tarjeta de cr&eacute;dito/d&eacute;bito"
+
+msgid "Xrevisar_relacions_raices"
+msgstr "Reasignar relaciones"
+
+msgid "Xedicion_directa"
+msgstr "Edici&oacute;n directa de ficheros de configuraci&oacute;n"
+
+msgid "Xactualizar"
+msgstr "Actualizar"
+
+msgid "Xamosar"
+msgstr "Mostrar"
+
+msgid "Xpaxina"
+msgstr "P&aacute;gina"
+
+msgid "Xbuscar"
+msgstr "Buscar"
+
+msgid "Xinfo_raices"
+msgstr "Informaci&oacute;n de las raices del sistema"
+
+msgid "Xinfo_raices_txt"
+msgstr "En este momento existen en el sistema <a href=\"raices/\">%s</a> raices.</a>"
+
+msgid "Xinfo_usuarios"
+msgstr "Informaci&oacute;n de los usuarios del sistema"
+
+msgid "Xinfo_usuarios_txt"
+msgstr "En este momento existen en el sistema <a href=\"usuarios/\">%s</a> usuarios.</a>"
+
+msgid "Xinfo_grupos"
+msgstr "Informaci&oacute;n de los grupos del sistema"
+
+msgid "Xinfo_grupos_txt"
+msgstr "En este momento existen en el sistema <a href=\"grupos/\">%s</a> grupos.</a>"
+
+msgid "Xdata_inicio"
+msgstr "Fecha de inicio"
+
+msgid "Xdata_fin"
+msgstr "Fecha de fin"
+

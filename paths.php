@@ -5,7 +5,9 @@
 * Carga las rutas necesarias para la realización de los includes y requires
 *
 
-PHPfileNavigator versión 2.3.2
+$Id: paths.php 2 2010-09-08 22:34:10Z Lito $
+
+PHPfileNavigator versión 2.4.0
 
 Copyright (C) 2004-2005 Lito <lito@eordes.com>
 
@@ -30,9 +32,9 @@ define('OK', true);
 
 error_reporting(E_ERROR | E_WARNING | E_PARSE);
 
-$PFN_version = '233';
+$PFN_version = '1000';
 $borra_cache = true;
-$b = dirname(__FILE__);
+$b = str_replace('\\', '/', dirname(__FILE__));
 
 $PFN_paths = array(
 	'web' => $b.'/',
@@ -47,6 +49,7 @@ $PFN_paths = array(
 	'accions' => $b.'/data/accions/',
 	'info' => $b.'/data/servidor/info/',
 	'extra' => $b.'/data/servidor/extra/',
+	'bin' => $b.'/data/bin/',
 	'servidor' => $b.'/data/servidor/'
 );
 ?>

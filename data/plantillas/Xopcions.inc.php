@@ -35,8 +35,8 @@ defined('OK') && defined('XESTION') or die();
 	<h1 id="logo"><a href="<?php echo $relativo; ?>navega.php?<?php echo PFN_quita_url('dir',false); ?>"><span>&nbsp;</span><?php echo $PFN_conf->t('PFN'); ?></a></h1>
 
 	<ul id="menu1">
-		<li class="admin"><a href="<?php echo $Xopcions['m_comezo']; ?>"><?php echo $PFN_conf->t('comezo'); ?></a></li>
-		<li><a href="<?php echo $Xopcions['m_admin']; ?>"><?php echo $PFN_conf->t('zona_admin'); ?></a></li>
+		<li><a href="<?php echo $Xopcions['m_comezo']; ?>"><?php echo $PFN_conf->t('comezo'); ?></a></li>
+		<li class="admin"><a href="<?php echo $Xopcions['m_admin']; ?>"><?php echo $PFN_conf->t('zona_admin'); ?></a></li>
 		<li><a href="<?php echo $Xopcions['m_sair']; ?>"><?php echo $PFN_conf->t('sair'); ?></a></li>
 	</ul>
 
@@ -49,7 +49,6 @@ defined('OK') && defined('XESTION') or die();
 		<li><a href="<?php echo $Xopcions['Xm_informes']; ?>" onmouseover="amosa('menu_txt_informes');" onmouseout="oculta('menu_txt_informes');"><img src="<?php echo $relativo.$PFN_conf->g('estilo'); ?>imx/informes.png" alt="<?php echo $PFN_conf->t('Xm_informes'); ?>" /></a></li>
 		<li><a href="<?php echo $Xopcions['Xm_varios']; ?>" onmouseover="amosa('menu_txt_varios');" onmouseout="oculta('menu_txt_varios');"><img src="<?php echo $relativo.$PFN_conf->g('estilo'); ?>imx/varios.png" alt="<?php echo $PFN_conf->t('Xm_varios'); ?>" /></a></li>
 		<li><a href="<?php echo $Xopcions['Xm_traduccion']; ?>" onmouseover="amosa('menu_txt_traduccion');" onmouseout="oculta('menu_txt_traduccion');"><img src="<?php echo $relativo.$PFN_conf->g('estilo'); ?>imx/traduccion.png" alt="<?php echo $PFN_conf->t('Xm_traduccion'); ?>" /></a></li>
-		<li><a href="<?php echo $Xopcions['Xm_doazon']; ?>" onmouseover="amosa('menu_txt_doazon');" onmouseout="oculta('menu_txt_doazon');"><img src="<?php echo $relativo.$PFN_conf->g('estilo'); ?>imx/doazon.png" alt="<?php echo $PFN_conf->t('Xm_doazon'); ?>" /></a></li>
 		<li id="menu_texto">
 			<span id="menu_txt_crear_raiz" style="display: none;"><?php echo $PFN_conf->t('Xm_crear_raiz'); ?></span>
 			<span id="menu_txt_crear_usuario" style="display: none;"><?php echo $PFN_conf->t('Xm_crear_usuario'); ?></span>
@@ -57,7 +56,6 @@ defined('OK') && defined('XESTION') or die();
 			<span id="menu_txt_informes" style="display: none;"><?php echo $PFN_conf->t('Xm_informes'); ?></span>
 			<span id="menu_txt_varios" style="display: none;"><?php echo $PFN_conf->t('Xm_varios'); ?></span>
 			<span id="menu_txt_traduccion" style="display: none;"><?php echo $PFN_conf->t('Xm_traduccion'); ?></span>
-			<span id="menu_txt_doazon" style="display: none;"><?php echo $PFN_conf->t('Xm_doazon'); ?></span>
 		</li>
 	</ul>
 </div>

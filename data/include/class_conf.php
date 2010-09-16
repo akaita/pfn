@@ -28,6 +28,8 @@ programa. Si no ha sido así, escriba a la Free Software Foundation, Inc., en
 
 defined('OK') or die();
 
+include_once ($PFN_conf->paths['include'].'class_gettext.php');
+
 /**
 * class PFN_Conf
 *
@@ -46,10 +48,14 @@ class PFN_Conf {
 	* data/include/usuarios.php
 	*/
 	function PFN_Conf () {
-		global $PFN_paths;
+		global $PFN_paths, $PFN_gettext;
 
 		$this->paths = &$PFN_paths;
-		$this->var = @include_once ($this->paths['conf'].'basicas.inc.php');
+		$this->gettext = &$PFN_gettext;
+
+		if (is_file($this->paths['conf'].'basicas.inc.php')) {
+			$this->var = include_once ($this->paths['conf'].'basicas.inc.php');
+		}
 	}
 
 	/**
@@ -84,15 +90,13 @@ class PFN_Conf {
 	* carga los textos del idioma
 	*/
 	function textos ($texto) {
-		$arq = $this->paths['idiomas'].$this->g('idioma')."/$texto.inc.php";
+		$arq = $this->paths['idiomas'].$this->g('idioma').'/'.$texto.'.mo';
 
-		is_file($arq) or die(
-			'Debes configurar correctamente el idioma en el fichero data/conf/basicas.inc.php'
-			.'<br />You must configure correctly the language in the file data/conf/basicas.inc.php'
-		);
+		if (!is_file($arq)) {
+			die('No existe el fichero de idiomas que intentas cargar: '.$arq);
+		}
 
-		$txt = include ($arq);
-		$this->txt = is_array($this->txt)?array_merge($this->txt, $txt):$txt;
+		$this->gettext->load($arq);
 	}
 
 	/**
@@ -137,22 +141,22 @@ class PFN_Conf {
 	*
 	* return string
 	*/
-	function t ($t1, $t2='') {
+	function t ($t1, $t2 = null) {
 		if (is_array($t1)) {
-			if (count($t1) == 1) {
-				$str = vsprintf($this->txt[$t1[0]], $t2);
-			} else {
-				$str = vsprintf($this->txt[$t1[0]][$t1[1]], $t2);
-			}
+			$text = implode('_', $t1);
+		} else if ($t2) {
+			$text = $t1.'_'.$t2;
 		} else {
-			if (strlen($t2)) {
-				$str = $this->txt[$t1][$t2];
-			} else {
-				$str = $this->txt[$t1];
-			}
+			$text = $t1;
 		}
 
-		return str_replace("'", '&#39;', $str);
+		$text = $this->gettext->translate($text);
+
+		if (is_null($t2) || is_string($t1)) {
+			return $text;
+		}
+
+		return vsprintf($text, $t2);
 	}
 }
 

@@ -36,7 +36,7 @@ if (count($erros) == 0) {
 	$consultas = explode(';', $consultas);
 
 	foreach ((array)$consultas as $q) {
-		$q = trim($q);
+		$q = preg_replace("/''([0-9-]*)''/", "'\\1'", trim($q)); 
 
 		if (empty($q)) {
 			continue;

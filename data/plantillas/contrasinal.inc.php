@@ -30,20 +30,30 @@ programa. Si no ha sido así, escriba a la Free Software Foundation, Inc., en
 defined('OK') or die();
 ?>
 
-<h1 id="benvido"><?php echo $PFN_conf->t('novo_contrasinal'); ?></h1>
+<h1 id="benvido"><span><?php echo $PFN_conf->t('novo_contrasinal'); ?></span></h1>
+
 <div class="aviso" style="width: 230px; text-align: center; margin-left: 250px;"><?php echo $txt_erro; ?></div>
+
 <?php if ($ok !== 1) { ?>
 <div id="login">
 	<form action="contrasinal.php" method="post" id="formulario">
-	<fieldset>
-	<input type="hidden" name="executa" value="true" />
-	<p><label for="recuperar_usuario"><?php echo $PFN_conf->t('usuario'); ?>:</label>
-	<br /><input type="text" id="recuperar_usuario" name="recuperar_usuario" class="formulario" /></p>
-	<p><label for="recuperar_email"><?php echo $PFN_conf->t('correo'); ?>:</label>
-	<br /><input type="text" id="recuperar_email" name="recuperar_email" class="formulario" /></p>
-	<p><input type="submit" name="Submit" value=" <?php echo $PFN_conf->t('enviar'); ?> " class="boton" /></p>
-	</fieldset>
+		<fieldset>
+			<input type="hidden" name="executa" value="true" />
+
+			<p>
+				<label for="recuperar_usuario"><?php echo $PFN_conf->t('usuario'); ?>:</label>
+				<br /><input type="text" id="recuperar_usuario" name="recuperar_usuario" class="formulario" />
+			</p>
+
+			<p>
+				<label for="recuperar_email"><?php echo $PFN_conf->t('correo'); ?>:</label>
+				<br /><input type="text" id="recuperar_email" name="recuperar_email" class="formulario" />
+			</p>
+
+			<p><input type="submit" name="Submit" value=" <?php echo $PFN_conf->t('enviar'); ?> " class="boton" /></p>
+		</fieldset>
 	</form>
+
 	<script type="text/javascript"><!--
 
 	document.getElementById('recuperar_usuario').focus();
@@ -51,4 +61,7 @@ defined('OK') or die();
 	//--></script>
 </div>
 <?php } ?>
-<p id="login_olvido_contrasinal"><a href="index.php"><?php echo $PFN_conf->t('voltar'); ?></a></p>
+
+<div id="login_mais_opcions">
+	<a href="index.php"><?php echo $PFN_conf->t('voltar'); ?></a>
+</div>

@@ -29,24 +29,42 @@ programa. Si no ha sido así, escriba a la Free Software Foundation, Inc., en
 defined('OK') or die();
 ?>
 
-<h1 id="benvido"><?php echo $PFN_conf->t('benvido'); ?></h1>
-<?php if ($PFN_vars->get('erro')) { ?>
-<div class="aviso" style="width: 230px; text-align: center; margin-left: 250px;"><?php echo $PFN_conf->t('alerta_login'); ?></div>
+<h1 id="benvido"><span><?php echo $PFN_conf->t('benvido'); ?></span></h1>
+
+<?php if ($erro > 0) { ?>
+<div class="aviso" style="width: 230px; text-align: center; margin-left: 250px;"><?php echo $txt_erro; ?></div>
 <?php } ?>
+
 <div id="login">
 	<form action="comprobar.php" method="post" id="formulario">
-	<fieldset>
-	<p><label for="login_usuario"><?php echo $PFN_conf->t('usuario'); ?>:</label>
-	<br /><input type="text" id="login_usuario" name="login_usuario" class="formulario" /></p>
-	<p><label for="login_contrasinal"><?php echo $PFN_conf->t('contrasinal'); ?>:</label>
-	<br /><input type="password" id="login_contrasinal" name="login_contrasinal" class="formulario" /></p>
-	<p><input type="submit" name="Submit" value=" <?php echo $PFN_conf->t('enviar'); ?> " class="boton" /></p>
-	</fieldset>
+		<fieldset>
+			<p>
+				<label for="login_usuario"><?php echo $PFN_conf->t('usuario'); ?>:</label>
+				<br /><input type="text" id="login_usuario" name="login_usuario" class="formulario" />
+			</p>
+			<p>
+				<label for="login_contrasinal"><?php echo $PFN_conf->t('contrasinal'); ?>:</label>
+				<br /><input type="password" id="login_contrasinal" name="login_contrasinal" class="formulario" />
+			</p>
+			<p><input type="submit" name="Submit" value=" <?php echo $PFN_conf->t('enviar'); ?> " class="boton" /></p>
+		</fieldset>
 	</form>
+
 	<script type="text/javascript"><!--
 
 	document.getElementById('login_usuario').focus();
 
 	//--></script>
 </div>
-<p id="login_olvido_contrasinal"><a href="contrasinal.php"><?php echo $PFN_conf->t('contrasinal_olvidada'); ?></a></p>
+
+<div id="login_mais_opcions">
+	<a href="#" onclick="$('#login_mais_opcions ul').slideToggle('slow'); return false;"><?php echo $PFN_conf->t('mais_opcions'); ?> &raquo;</a>
+
+	<ul>
+		<li><a href="contrasinal.php"><?php echo $PFN_conf->t('contrasinal_olvidada'); ?></a></li>
+		<li><a href="desbloquear.php"><?php echo $PFN_conf->t('desbloquear_usuario'); ?></a></li>
+		<li><a href="ssl/dnie.php"><?php echo $PFN_conf->t('acceder_con_certificado'); ?></a></li>
+		<li><a href="activex/index.php"><?php echo $PFN_conf->t('acceder_con_activex'); ?></a></li>
+		<li><a href="applet/index.php"><?php echo $PFN_conf->t('acceder_con_applet'); ?></a></li>
+	</ul>
+</div>

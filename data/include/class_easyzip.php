@@ -122,11 +122,25 @@ class PFN_EasyZIP {
 	}
 
 	/**
+	* function get_filelist ()
+	*
+	* Devuelve la lista de ficheros seleccionados para ser
+	* comprimidos
+	*
+	* return array
+	*/
+	function get_filelist () {
+		return $this->filelist;
+	}
+
+	/**
 	* function comeza (string $base)
 	*
 	* Inicia la compresión a partir del directorio $base
 	*/
 	function comeza ($base) {
+		$this->filelist = array();
+
 		$this->pon_dirbase($base);
 
 		if (is_dir($base)) {
@@ -162,6 +176,8 @@ class PFN_EasyZIP {
 
 			closedir($handle); 
 		}
+
+		return $this->filelist;
 	}
 
 	function zipFile ($zipfilename='') {

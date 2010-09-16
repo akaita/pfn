@@ -29,22 +29,16 @@ programa. Si no ha sido así, escriba a la Free Software Foundation, Inc., en
 defined('OK') or die();
 
 function envia_erro ($erro) {
-	global $PFN_vars, $PFN_conf, $relativo;
+	global $PFN_vars, $PFN_conf, $PFN_paths, $relativo;
 
 	if ($PFN_conf->g('envio_alertas')) {
-		$erros = array(
-			1 => 'Intento de colar datos de usuario',
-			2 => 'No existen los datos de usuario',
-			3 => 'Datos de usuario incorrectos',
-			4 => "Intento de acceso en la administración de usuario no válido",
-		);
+		$PFN_conf->textos('web');
 
-		$t = 'Alerta de seguridad en '.$PFN_vars->server('SERVER_NAME');
 		$m = 'Alerta por intento de acceso al servidor '.$PFN_vars->server('SERVER_NAME')
 			."\nEn la URL ".$PFN_vars->server('PHP_SELF')
 			."\nA las ".date('Y-m-d H:i')
 			."\nDesde la IP ".$PFN_vars->ip()
-			."\n\n".$erros[$erro];
+			."\n\n".$PFN_conf->t('alertas_sesion', $erro);
 
 		ob_start();
 		echo "\n\nDatos de GET:\n";
@@ -57,9 +51,21 @@ function envia_erro ($erro) {
 		var_dump($PFN_vars->session(''));
 
 		$m .= ob_get_contents();
+
 		ob_end_clean();
 
-		@mail($PFN_conf->g('email'),$t,$m);
+		include_once ($PFN_paths['include'].'phpmailer/class.phpmailer.php');
+
+		$mail = new PHPMailer();
+
+		$mail->From = 'no-reply@'.getenv('SERVER_NAME');
+		$mail->FromName = 'System Administrator';
+		$mail->Subject = 'Alerta de seguridad en '.$PFN_vars->server('SERVER_NAME');
+		$mail->Body = $m;
+
+		$mail->AddAddress($PFN_conf->g('email'));
+
+		$mail->Send();
 	}
 
 	$PFN_conf->inicial('default');
@@ -70,11 +76,11 @@ function envia_erro ($erro) {
 	session_register('sPFN');
 	session_unregister('sPFN');
 	
-	$url = $PFN_conf->g('saida');
+	$url = preg_replace('/[\?&]erro=[^&]*/', '', $PFN_conf->g('saida'));
 	$url = 'index.php'?"$relativo$url":$url;
 	$url .= (strstr($url, '?')?'&':'?');
 
-	if ($PFN_conf->g("manter_session")) {
+	if ($PFN_conf->g('manter_session')) {
 		$url .= session_name().'='.session_id().'&';
 	} else {
 		@session_unset();
@@ -83,7 +89,10 @@ function envia_erro ($erro) {
 
 	session_write_close();
 
-	Header('Location: '.$url.'erro=1');
+//	$url = str_replace('?&', '?', $url.'&erro='.base64_encode($erro));
+	$url = str_replace('?&', '?', $url.'&erro=MQ%3D%3D');
+
+	Header('Location: '.$url);
 	exit;
 }
 
@@ -119,10 +128,11 @@ if (empty($id)
 
 	Header('Location: '.$relativo.'menu.php?'.session_name().'='.session_id());
 	exit;
-} elseif (!empty($id)) {
+} elseif (!empty($id) && strstr(getenv('REQUEST_URI'), 'navega.php')) {
 	$sPFN['raiz']['id'] = $id;
 
 	session_register('sPFN');
+
 	$PFN_vars->session('sPFN', $sPFN);
 }
 

@@ -329,29 +329,24 @@ function PFN_check_nome ($nome) {
 			'â','ê','î','ô','û','ä','ë','ï','ö','ü',
 			'Á','É','Í','Ó','Ú','À','È','Ì','Ò','Ù',
 			'Â','Ê','Î','Ô','Û','Ä','Ë','Ï','Ö','Ü',
-			'ñ','Ñ','ç','Ç',' ','(',')','?','¿','/',
-			'#','º','ª','!','·','#','%','¬','=','¡',
-			'^',';','"',"'",'+','[',']','{','}',';',
-			'~','¤','¶','ø','ş','æ','ß','ğ','«','»',
-			'¢','µ','€','\\',':','*','<','>','|','$',
-			'&','@','`');
+			'ñ','Ñ','ç','Ç');
 		$cambia = array (
 			'a','e','i','o','u','a','e','i','o','u',
 			'a','e','i','o','u','a','e','i','o','u',
 			'A','E','I','O','U','A','E','I','O','U',
 			'A','E','I','O','U','A','E','I','O','U',
-			'n','N','c','C','_','_','_','_','_','_',
-			'_','o','a','_','_','_','_','_','_','_',
-			'_','_','_','_','_','_','_','_','_','_',
-			'_','_','_','_','_','_','_','_','_','_',
-			'_','_','_','_','_','_','_','_','_','_',
-			'_','_','_');
+			'n','N','c','C');
+
+		$nome = str_replace($busca, $cambia, trim($nome));
+		$nome = preg_replace('/[^\w_\.-]/', '_', $nome);
+
+		return preg_replace('/_+/', '_', $nome);
 	} else {
 		$busca = array ('?','/','\\',':','*','|','<','>','"');
 		$cambia = array ('_','_','_','_','_','_','_','_','_');
-	}
 
-	return str_replace($busca, $cambia, trim($nome));
+		return preg_replace('/_+/', '_', str_replace($busca, $cambia, trim($nome)));
+	}
 }
 
 /**
@@ -629,7 +624,11 @@ function PFN_crea_path_extra ($cal) {
 function PFN_get_path_extra ($cal) {
 	global $PFN_paths;
 
-	return $PFN_paths['extra'].str_replace(array('//','/./'), array('/','/'), $cal);
+	if (strtoupper(substr(PHP_OS, 0, 3)) == 'WIN') {
+		return str_replace(array('//','/./'), array('/','/'), $PFN_paths['extra'].preg_replace('/^[^:]*:/', '', $cal));
+	} else {
+		return str_replace(array('//','/./'), array('/','/'), $PFN_paths['extra'].$cal);
+	}
 }
 
 /**
@@ -651,5 +650,213 @@ function PFN_crea_directorio_recursivo ($dir) {
 	}
 
 	return @mkdir($dir, $mode);
+}
+
+/**
+* function PFN_array_key_exists (string $clave, array $array)
+*
+* Busca un indice en un array de manera recursiva
+*
+* return boolean
+*/
+function PFN_array_key_exists ($clave, $array) {
+	if (isset($array[$clave])) {
+		return $array[$clave];
+	}
+
+	foreach ($array as $k => $v) {
+		if (is_array($v) || is_object($v)) {
+			if ($existe = PFN_array_key_exists($clave, $v)) {
+				return $existe;
+			}
+    } else if ($k == $clave) {
+			return $v;
+		}
+	}
+
+	return false;
+}
+
+/**
+* xml2array() will convert the given XML text to an array in the XML structure.
+* Link: http://www.bin-co.com/php/scripts/xml2array/
+* Arguments :
+*   $contents - The XML text
+*   $get_attributes - 1 or 0. If this is 1 the function will get the attributes
+*                     as well as the tag values - this results in a different
+*                     array structure in the return value.
+*   $priority - Can be 'tag' or 'attribute'. This will change the way the resulting
+*               array sturcture. For 'tag', the tags are given more importance.
+*
+* Return: The parsed XML in an array form. Use print_r() to see the resulting array structure.
+*
+* Examples:
+*   $array =  xml2array(file_get_contents('feed.xml'));
+*   $array =  xml2array(file_get_contents('feed.xml', 1, 'attribute'));
+*/
+function xml2array ($contents, $get_attributes = 1, $priority = 'tag') {
+	if (!$contents) {
+		return array();
+	}
+
+	if (!function_exists('xml_parser_create')) {
+		return 1;
+	}
+
+	//Get the XML parser of PHP - PHP must have this module for the parser to work
+	$parser = xml_parser_create('');
+
+	# http://minutillo.com/steve/weblog/2004/6/17/php-xml-and-character-encodings-a-tale-of-sadness-rage-and-data-loss
+	xml_parser_set_option($parser, XML_OPTION_TARGET_ENCODING, 'UTF-8');
+	xml_parser_set_option($parser, XML_OPTION_CASE_FOLDING, 0);
+	xml_parser_set_option($parser, XML_OPTION_SKIP_WHITE, 1);
+	xml_parse_into_struct($parser, trim($contents), $xml_values);
+	xml_parser_free($parser);
+
+	if (!$xml_values) {
+		return 2;
+	}
+
+	//Initializations
+	$xml_array = $parents = $opened_tags = $arr = array();
+	$current = &$xml_array; //Refference
+
+	//Go through the tags.
+	//Multiple tags with same name will be turned into an array
+	$repeated_tag_index = array();
+
+	foreach ($xml_values as $data) {
+		//Remove existing values, or there will be trouble
+		unset($attributes, $value);
+
+		//This command will extract these variables into the foreach scope
+		// tag(string), type(string), level(int), attributes(array).
+		//We could use the array by itself, but this cooler.
+		extract($data);
+
+		$result = $attributes_data = array();
+
+		if (isset($value)) {
+			if ($priority == 'tag') {
+				$result = $value;
+			} else {
+				//Put the value in a assoc array if we are in the 'Attribute' mode
+				$result['value'] = $value;
+			}
+		}
+
+		//Set the attributes too.
+		if (isset($attributes) and $get_attributes) {
+			foreach ($attributes as $attr => $val) {
+				if ($priority == 'tag') {
+					$attributes_data[$attr] = $val;
+				} else {
+					//Set all the attributes in a array called 'attr'
+					$result['attr'][$attr] = $val;
+				}
+			}
+		}
+
+		//See tag status and do the needed.
+		//The starting of the tag '<tag>'
+		if ($type == 'open') {
+			$parent[$level-1] = &$current;
+
+			//Insert New tag
+			if (!is_array($current) || (!in_array($tag, array_keys($current)))) {
+				$current[$tag] = $result;
+
+				if ($attributes_data) {
+					$current[$tag. '_attr'] = $attributes_data;
+				}
+
+				$repeated_tag_index[$tag.'_'.$level] = 1;
+				$current = &$current[$tag];
+			//There was another element with the same tag name
+			} else {
+				//If there is a 0th element it is already an array
+				if (isset($current[$tag][0])) {
+					$current[$tag][$repeated_tag_index[$tag.'_'.$level]] = $result;
+					$repeated_tag_index[$tag.'_'.$level]++;
+				//This section will make the value an array if multiple tags with the same name appear together
+				} else {
+					//This will combine the existing item and the new item together to make an array
+					$current[$tag] = array($current[$tag],$result);
+					$repeated_tag_index[$tag.'_'.$level] = 2;
+                    
+					//The attribute of the last(0th) tag must be moved as well
+					if (isset($current[$tag.'_attr'])) {
+						$current[$tag]['0_attr'] = $current[$tag.'_attr'];
+						unset($current[$tag.'_attr']);
+					}
+				}
+
+				$last_item_index = $repeated_tag_index[$tag.'_'.$level]-1;
+				$current = &$current[$tag][$last_item_index];
+			}
+		//Tags that ends in 1 line '<tag />'
+		} elseif ($type == 'complete') {
+			//See if the key is already taken.
+			//New Key
+			if (!isset($current[$tag])) {
+				$current[$tag] = $result;
+				$repeated_tag_index[$tag.'_'.$level] = 1;
+
+				if ($priority == 'tag' && $attributes_data) {
+					$current[$tag. '_attr'] = $attributes_data;
+				}
+			//If taken, put all things inside a list(array)
+			} else {
+				//If it is already an array...
+				if (isset($current[$tag][0]) && is_array($current[$tag])) {
+					// ...push the new element into that array.
+					$current[$tag][$repeated_tag_index[$tag.'_'.$level]] = $result;
+
+					if ($priority == 'tag' && $get_attributes && $attributes_data) {
+						$current[$tag][$repeated_tag_index[$tag.'_'.$level] . '_attr'] = $attributes_data;
+					}
+
+					$repeated_tag_index[$tag.'_'.$level]++;
+				//If it is not an array...
+				} else {
+					//...Make it an array using using the existing value and the new value
+					$current[$tag] = array($current[$tag],$result);
+					$repeated_tag_index[$tag.'_'.$level] = 1;
+
+					if ($priority == 'tag' && $get_attributes) {
+						//The attribute of the last(0th) tag must be moved as well
+						if (isset($current[$tag.'_attr'])) {
+							$current[$tag]['0_attr'] = $current[$tag.'_attr'];
+							unset($current[$tag.'_attr']);
+						}
+
+						if ($attributes_data) {
+							$current[$tag][$repeated_tag_index[$tag.'_'.$level] . '_attr'] = $attributes_data;
+						}
+					}
+
+					//0 and 1 index is already taken
+					$repeated_tag_index[$tag.'_'.$level]++;
+				}
+			}
+		//End of tag '</tag>'
+		} elseif($type == 'close') {
+			$current = &$parent[$level-1];
+		}
+	}
+
+	return $xml_array;
+}
+
+if (!function_exists('sys_get_temp_dir')) {
+	function sys_get_temp_dir () {
+		if (!empty($_ENV['TMP'])) {
+			return realpath($_ENV['TMP']);
+		} else if (!empty($_ENV['TMPDIR'])) {
+			return realpath( $_ENV['TMPDIR']);
+		} else if (!empty($_ENV['TEMP'])) {
+			return realpath( $_ENV['TEMP']);
+		}
+  }
 }
 ?>

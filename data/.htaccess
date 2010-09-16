@@ -1,6 +1,3 @@
 Options -Indexes
 
-<Files ~ '^.*$'>
-	Order allow,deny
-	Deny from all
-</Files>
+Deny from all

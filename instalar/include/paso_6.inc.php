@@ -33,9 +33,9 @@ $doar_paypal = $PFN_conf->t('i:doar_paypal');
 $doar_tarxeta = $PFN_conf->t('i:doar_tarxeta');
 
 if (is_file($PFN_paths['tmp'].'instalar.lock')) {
-	unlink($PFN_paths['tmp'].'instalar.lock');
+	@unlink($PFN_paths['tmp'].'instalar.lock');
 } elseif (is_file($PFN_paths['web'].'tmp/instalar.lock')) {
-	unlink($PFN_paths['web'].'tmp/instalar.lock');
+	@unlink($PFN_paths['web'].'tmp/instalar.lock');
 }
 
 include ($PFN_paths['instalar'].'plantillas/paso_6.inc.php');

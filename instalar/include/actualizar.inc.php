@@ -77,12 +77,20 @@ if (count($erros) == 0) {
 		$erros = array();
 	}
 
+	if ($basicas['version'] < 240) {
+		include_once ($PFN_paths['instalar'].'include/actualizar_233-240.inc.php');
+	}
+
+	if ($PFN_vars->post('ignorar') == 'true') {
+		$erros = array();
+	}
+
 	$PFN_conf->inicial('default');
 
 	if (count($erros) == 0) {
 		include ($PFN_paths['instalar'].'include/basicas.inc.php');
 
-		basicas(array(
+		$novo_basicas = basicas(array(
 			'version' => $PFN_version,
 			'idioma' => $form['idioma'],
 			'estilo' => 'estilos/pfn/',
@@ -95,10 +103,36 @@ if (count($erros) == 0) {
 			'db:base_datos' => $basicas['db']['base_datos'],
 			'db:usuario' => $basicas['db']['usuario'],
 			'db:contrasinal' => $basicas['db']['contrasinal'],
-			'db:prefixo' => $basicas['db']['prefixo']
+			'db:prefixo' => $basicas['db']['prefixo'],
+			'smtp:host' => $basicas['smtp']['host'],
+			'smtp:user' => $basicas['smtp']['user'],
+			'smtp:password' => $basicas['smtp']['password'],
+			'smtp:port' => $basicas['smtp']['port'],
+			'smtp:secure' => $basicas['smtp']['secure'],
+			'smtp:auth' => $basicas['smtp']['auth'],
+			'smtp:timeout' => $basicas['smtp']['timeout'],
+			'smtp:debug' => $basicas['smtp']['debug']
 		));
 
 		$PFN_conf->inicial('basicas');
+
+		if (is_file($PFN_paths['conf'].$basicas['clave'].'.lic')) {
+			rename($PFN_paths['conf'].$basicas['clave'].'.lic', $PFN_paths['conf'].$novo_basicas['clave'].'.lic');
+		} else if (is_file($PFN_paths['conf'].'licencia.lic')) {
+			rename($PFN_paths['conf'].'licencia.lic', $PFN_paths['conf'].$novo_basicas['clave'].'.lic');
+		}
+
+		if (is_file($PFN_paths['conf'].$basicas['clave'].'.ini')) {
+			rename($PFN_paths['conf'].$basicas['clave'].'.ini', $PFN_paths['conf'].$novo_basicas['clave'].'.ini');
+		} else if (is_file($PFN_paths['conf'].'conf.ini')) {
+			rename($PFN_paths['conf'].'conf.ini', $PFN_paths['conf'].$novo_basicas['clave'].'.ini');
+		}
+
+		if (is_file($PFN_paths['conf'].$basicas['clave'].'.conv')) {
+			rename($PFN_paths['conf'].$basicas['clave'].'.conv', $PFN_paths['conf'].$novo_basicas['clave'].'.conv');
+		} else if (is_file($PFN_paths['conf'].'control.conv')) {
+			rename($PFN_paths['conf'].'control.conv', $PFN_paths['conf'].$novo_basicas['clave'].'.conv');
+		}
 
 		$feito[] = 'conf';
 	}

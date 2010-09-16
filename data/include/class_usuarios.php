@@ -43,7 +43,7 @@ class PFN_Usuarios extends PFN_Clases {
 	var $FILE = __FILE__;
 	var $sesion_iniciada = false;
 	var $correxir = array(true,true,true);
-	var $intentos_errados = 3; // Máximo número de intentos de acceso cada 10 segundos
+	var $intentos_errados = 5;
 
 	/**
 	* function PFN_Usuarios (void)
@@ -79,7 +79,7 @@ class PFN_Usuarios extends PFN_Clases {
 	}
 
 	/**
-	* function init (string $modo, string $a1, string $a2)
+	* function init (string $modo, string $a1, string $a2, string $a3)
 	*
 	* genera y ejecuta las consulta para la comprobación de usuarios:
 	*		'login': comprueba los permisos de usuario para acceder desde
@@ -89,9 +89,10 @@ class PFN_Usuarios extends PFN_Clases {
 	*
 	* return integer
 	*/
-	function init ($modo, $a1='', $a2='') {
+	function init ($modo, $a1='', $a2='', $a3='') {
 		$a1 = $this->corrixe($a1);
 		$a2 = $this->corrixe($a2);
+		$a3 = $this->corrixe($a3);
 
 		if ($modo == 'login') {
 			$this->usuario = $a1;
@@ -108,20 +109,34 @@ class PFN_Usuarios extends PFN_Clases {
 		switch ($modo) {
 			case 'intentos':
 				$this->LINE = __LINE__+1;
-				$this->query = 'SELECT COUNT(*) as intentos'
-					.' FROM '.$this->tablas['accesos']
-					.' WHERE ip = "'.$this->vars->ip().'"'
-					.' AND ultimo >= "'.(time() - 10).'"'
-					.' AND estado = 0;';
+				$this->query = 'SELECT '.$this->tablas['accesos'].'.login, '.$this->tablas['bloqueo'].'.ip'
+					.', '.$this->tablas['accesos'].'.estado, '.$this->tablas['accesos'].'.donde'
+					.' FROM '.$this->tablas['accesos'].',  '.$this->tablas['bloqueo']
+					.' WHERE ('.$this->tablas['accesos'].'.login = "'.$a1.'")'
+					.' OR ('.$this->tablas['bloqueo'].'.ip = "'.$this->vars->ip().'")'
+					.' ORDER BY id DESC'
+					.' LIMIT '.$this->intentos_errados.';';
+				break;
+			case 'intentos_id_control':
+				$this->LINE = __LINE__+1;
+				$this->query = 'SELECT '.$this->tablas['accesos'].'.login, '.$this->tablas['bloqueo'].'.ip'
+					.', '.$this->tablas['accesos'].'.estado, '.$this->tablas['accesos'].'.donde'
+					.' FROM '.$this->tablas['accesos'].',  '.$this->tablas['bloqueo']
+					.' WHERE ('.$this->tablas['accesos'].'.login = "'.$a1.'")'
+					.' OR ('.$this->tablas['bloqueo'].'.ip = "'.$this->vars->ip().'")'
+					.' ORDER BY id DESC'
+					.' LIMIT '.$this->intentos_errados.';';
 				break;
 			case 'login':
 				$this->LINE = __LINE__+1;
 				$this->query = 'SELECT '.$this->tablas['usuarios'].'.id'
+					.', '.$this->tablas['usuarios'].'.nome'
 					.', '.$this->tablas['usuarios'].'.admin'
 					.', '.$this->tablas['usuarios'].'.id_grupo'
 					.', '.$this->tablas['usuarios'].'.mantemento'
 					.', '.$this->tablas['usuarios'].'.descargas_maximo'
 					.', '.$this->tablas['usuarios'].'.cambiar_datos'
+					.', '.$this->tablas['usuarios'].'.estado'
 					.', '.$this->tablas['confs'].'.conf as conf_defecto'
 					.' FROM '.$this->tablas['usuarios'].', '.$this->tablas['raices']
 					.', '.$this->tablas['r_u'].', '.$this->tablas['grupos']
@@ -129,7 +144,34 @@ class PFN_Usuarios extends PFN_Clases {
 					.' WHERE '.$this->tablas['bloqueo'].'.ip NOT IN ("'.$this->vars->ip().'")'
 					.' AND '.$this->tablas['usuarios'].'.usuario = BINARY("'.$this->usuario.'")'
 					.' AND '.$this->tablas['usuarios'].'.contrasinal = BINARY("'.$this->contrasinal.'")'
-					.' AND '.$this->tablas['usuarios'].'.estado = 1'
+					.' AND '.$this->tablas['usuarios'].'.login_usuario = 1'
+					.' AND '.$this->tablas['grupos'].'.id = '.$this->tablas['usuarios'].'.id_grupo'
+					.' AND '.$this->tablas['grupos'].'.estado = 1'
+					.' AND '.$this->tablas['confs'].'.id = '.$this->tablas['grupos'].'.id_conf'
+					.' AND '.$this->tablas['r_u'].'.id_usuario = '.$this->tablas['usuarios'].'.id'
+					.' AND '.$this->tablas['raices'].'.id = '.$this->tablas['r_u'].'.id_raiz'
+					.' AND '.$this->tablas['raices'].'.estado = 1'
+					.' LIMIT 1;';
+				break;
+			case 'login_id_control':
+				$this->LINE = __LINE__+1;
+				$this->query = 'SELECT '.$this->tablas['usuarios'].'.id'
+					.', '.$this->tablas['usuarios'].'.usuario'
+					.', '.$this->tablas['usuarios'].'.nome'
+					.', '.$this->tablas['usuarios'].'.contrasinal'
+					.', '.$this->tablas['usuarios'].'.admin'
+					.', '.$this->tablas['usuarios'].'.id_grupo'
+					.', '.$this->tablas['usuarios'].'.mantemento'
+					.', '.$this->tablas['usuarios'].'.descargas_maximo'
+					.', '.$this->tablas['usuarios'].'.cambiar_datos'
+					.', '.$this->tablas['usuarios'].'.estado'
+					.', '.$this->tablas['confs'].'.conf as conf_defecto'
+					.' FROM '.$this->tablas['usuarios'].', '.$this->tablas['raices']
+					.', '.$this->tablas['r_u'].', '.$this->tablas['grupos']
+					.', '.$this->tablas['confs'].', '.$this->tablas['bloqueo']
+					.' WHERE '.$this->tablas['bloqueo'].'.ip NOT IN ("'.$this->vars->ip().'")'
+					.' AND '.$this->tablas['usuarios'].'.id_control = "'.$a1.'"'
+					.' AND '.$this->tablas['usuarios'].'.login_certificado = 1'
 					.' AND '.$this->tablas['grupos'].'.id = '.$this->tablas['usuarios'].'.id_grupo'
 					.' AND '.$this->tablas['grupos'].'.estado = 1'
 					.' AND '.$this->tablas['confs'].'.id = '.$this->tablas['grupos'].'.id_conf'
@@ -195,13 +237,23 @@ class PFN_Usuarios extends PFN_Clases {
 			case 'raices_total':
 				$this->LINE = __LINE__+1;
 				$this->query = 'SELECT COUNT(*) as total'
-					.' FROM '.$this->tablas['raices'].';';
+					.' FROM '.$this->tablas['raices']
+					.($a1?(' WHERE (nome LIKE "%'.$a1.'%" OR path LIKE "%'.$a1.'%")'):'')
+					.';';
 				break;
 			case 'raices_pax':
 				$this->LINE = __LINE__+1;
 				$this->query = 'SELECT * FROM '.$this->tablas['raices']
+					.($a3?(' WHERE (nome LIKE "%'.$a3.'%" OR path LIKE "%'.$a3.'%")'):'')
 					.' ORDER BY nome ASC'
 					.' LIMIT '.intval($a1).', '.intval($a2).';';
+				break;
+			case 'raices_base':
+				$this->LINE = __LINE__+1;
+				$this->query = 'SELECT id, nome'
+					.' FROM '.$this->tablas['raices']
+					.' WHERE base = 1'
+					.' ORDER BY nome ASC;';
 				break;
 			case 'raiz':
 				$this->LINE = __LINE__+1;
@@ -228,11 +280,14 @@ class PFN_Usuarios extends PFN_Clases {
 			case 'usuarios_total':
 				$this->LINE = __LINE__+1;
 				$this->query = 'SELECT COUNT(*) as total'
-					.' FROM '.$this->tablas['usuarios'].';';
+					.' FROM '.$this->tablas['usuarios']
+					.($a1?(' WHERE (nome LIKE "%'.$a1.'%" OR usuario LIKE "%'.$a1.'%" OR email LIKE "%'.$a1.'%")'):'')
+					.';';
 				break;
 			case 'usuarios_pax':
 				$this->LINE = __LINE__+1;
 				$this->query = 'SELECT * FROM '.$this->tablas['usuarios']
+					.($a3?(' WHERE (nome LIKE "%'.$a3.'%" OR usuario LIKE "%'.$a3.'%" OR email LIKE "%'.$a3.'%")'):'')
 					.' ORDER BY nome ASC'
 					.' LIMIT '.intval($a1).', '.intval($a2).';';
 				break;
@@ -274,11 +329,14 @@ class PFN_Usuarios extends PFN_Clases {
 			case 'grupos_total':
 				$this->LINE = __LINE__+1;
 				$this->query = 'SELECT COUNT(*) as total'
-					.' FROM '.$this->tablas['grupos'].';';
+					.' FROM '.$this->tablas['grupos']
+					.($a1?(' WHERE nome LIKE "%'.$a1.'%"'):'')
+					.';';
 				break;
 			case 'grupos_pax':
 				$this->LINE = __LINE__+1;
 				$this->query = 'SELECT * FROM '.$this->tablas['grupos']
+					.($a3?(' WHERE nome LIKE "%'.$a3.'%"'):'')
 					.' ORDER BY nome ASC'
 					.' LIMIT '.intval($a1).', '.intval($a2).';';
 				break;
@@ -387,12 +445,35 @@ class PFN_Usuarios extends PFN_Clases {
 				break;
 			case 'w:usuarios_raiz':
 				$this->LINE = __LINE__+1;
-				$this->query = 'SELECT '.$this->tablas['usuarios'].'.id, '.$this->tablas['usuarios'].'.email'
+				$this->query = 'SELECT '.$this->tablas['usuarios'].'.id, '.$this->tablas['usuarios'].'.nome'
 					.' FROM '.$this->tablas['usuarios'].', '.$this->tablas['r_u']
 					.' WHERE '.$this->tablas['r_u'].'.id_raiz = "'.intval($a1).'"'
 					.' AND '.$this->tablas['usuarios'].'.id = '.$this->tablas['r_u'].'.id_usuario'
 					.' AND '.$this->tablas['usuarios'].'.estado = 1'
-					.' AND '.$this->tablas['usuarios'].'.email != "";';
+					.' ORDER BY '.$this->tablas['usuarios'].'.nome ASC;';
+				break;
+			case 'w:usuarios_raiz_email':
+				$this->LINE = __LINE__+1;
+				$this->query = 'SELECT '.$this->tablas['usuarios'].'.id, '.$this->tablas['usuarios'].'.email'
+					.', '.$this->tablas['usuarios'].'.nome'
+					.' FROM '.$this->tablas['usuarios'].', '.$this->tablas['r_u']
+					.' WHERE '.$this->tablas['r_u'].'.id_raiz = "'.intval($a1).'"'
+					.' AND '.$this->tablas['usuarios'].'.id = '.$this->tablas['r_u'].'.id_usuario'
+					.' AND '.$this->tablas['usuarios'].'.estado = 1'
+					.' AND '.$this->tablas['usuarios'].'.email != ""'
+					.' ORDER BY '.$this->tablas['usuarios'].'.nome ASC;';
+				break;
+			case 'w:buscar_usuarios_raiz_email':
+				$this->LINE = __LINE__+1;
+				$this->query = 'SELECT '.$this->tablas['usuarios'].'.id, '.$this->tablas['usuarios'].'.email'
+					.', '.$this->tablas['usuarios'].'.nome'
+					.' FROM '.$this->tablas['usuarios'].', '.$this->tablas['r_u'].', '.$this->tablas['raices']
+					.' WHERE '.$this->tablas['raices'].'.path = "'.addslashes($a1).'"'
+					.' AND '.$this->tablas['r_u'].'.id_raiz = '.$this->tablas['raices'].'.id'
+					.' AND '.$this->tablas['usuarios'].'.id = '.$this->tablas['r_u'].'.id_usuario'
+					.' AND '.$this->tablas['usuarios'].'.estado = 1'
+					.' AND '.$this->tablas['usuarios'].'.email != ""'
+					.' ORDER BY '.$this->tablas['usuarios'].'.nome ASC;';
 				break;
 			default:
 				$this->query = '';
@@ -620,6 +701,8 @@ class PFN_Usuarios extends PFN_Clases {
 			return 2;
 		}
 
+		$this->contrasinal_temporal();
+
 		return 1;
 	}
 
@@ -658,13 +741,23 @@ class PFN_Usuarios extends PFN_Clases {
 		$url = parse_url($this->vars->server('HTTP_REFERER'));
 		$url['scheme'] = empty($url['scheme'])?'http':$url['scheme'];
 
-		mail($email,
-			PFN_quitaHtmlentities($this->conf->t('novo_contrasinal_correo_asunto')),
-			PFN_quitaHtmlentities($this->conf->t('novo_contrasinal_correo_texto'))
-				.' '.$novo
-				."\n\n".$url['scheme'].'://'.getenv('SERVER_NAME').dirname(getenv('SCRIPT_NAME'))
-				.'/activar_contrasinal.php',
-			'FROM: '.$this->conf->g('email'));
+		global $PFN_paths;
+
+		include_once ($PFN_paths['include'].'phpmailer/class.phpmailer.php');
+
+		$mail = new PHPMailer();
+
+		$mail->From = $this->conf->g('email');
+		$mail->FromName = 'System Administrator';
+		$mail->Subject = PFN_quitaHtmlentities($this->conf->t('novo_contrasinal_correo_asunto'));
+		$mail->Body = PFN_quitaHtmlentities($this->conf->t('novo_contrasinal_correo_texto'))
+			.' '.$novo
+			."\n\n".$url['scheme'].'://'.getenv('SERVER_NAME').dirname(getenv('SCRIPT_NAME'))
+			.'/activar_contrasinal.php';
+
+		$mail->AddAddress($mail);
+
+		$mail->Send();
 	}
 
 	/**
@@ -736,6 +829,138 @@ class PFN_Usuarios extends PFN_Clases {
 		$this->lock($this->tablas['usuarios']);
 		$this->actualizar($this->query);
 		$this->unlock();
+	}
+
+	/**
+	* function bloquear_usuario (string $usuario)
+	*
+	* Realiza el bloqueo de un usuario despues de $this->intentos_errados
+	* intentos fallidos con un mismo usuario
+	*/
+	function bloquear_usuario ($usuario) {
+		$usuario = $this->corrixe($usuario);
+
+		$this->LINE = __LINE__+1;
+		$this->query = 'UPDATE '.$this->tablas['usuarios']
+			.' SET estado = 2'
+			.' WHERE usuario = "'.$usuario.'"'
+			.' LIMIT 1;';
+
+		$this->lock($this->tablas['usuarios']);
+		$this->actualizar($this->query);
+		$this->unlock();
+	}
+
+	/**
+	* function bloquear_id_control (string $id_control)
+	*
+	* Realiza el bloqueo de un usuario despues de $this->intentos_errados
+	* intentos fallidos con en el acceso a traves de certificado
+	*/
+	function bloquear_id_control ($id_control) {
+		$id_control = $this->corrixe($id_control);
+
+		$this->LINE = __LINE__+1;
+		$this->query = 'UPDATE '.$this->tablas['usuarios']
+			.' SET estado = 2'
+			.' WHERE id_control = "'.$id_control.'"'
+			.' LIMIT 1;';
+
+		$this->lock($this->tablas['usuarios']);
+		$this->actualizar($this->query);
+		$this->unlock();
+	}
+
+	/**
+	* function desbloquear_usuario (integer $id)
+	*
+	* Desbloquea un usuario previamente bloqueado
+	*/
+	function desbloquear_usuario ($id) {
+		$this->LINE = __LINE__+1;
+		$this->query = 'UPDATE '.$this->tablas['usuarios']
+			.' SET estado = 1'
+			.' WHERE id = "'.intval($id).'"'
+			.' AND estado = 2'
+			.' LIMIT 1;';
+
+		$this->lock($this->tablas['usuarios']);
+		$this->actualizar($this->query);
+		$this->unlock();
+	}
+
+	/**
+	* function bloquear_ip (void)
+	*
+	* Realiza el bloqueo de la IP desde la que se conecta un usuario despues
+	* de $this->intentos_errados intentos fallidos con diferentes usuarios
+	*/
+	function bloquear_ip () {
+		$this->LINE = __LINE__+1;
+		$this->query = 'INSERT IGNORE INTO '.$this->tablas['bloqueo']
+			.' SET ip = "'.$this->vars->ip().'";';
+
+		$this->lock($this->tablas['bloqueo']);
+		$this->actualizar($this->query);
+		$this->unlock();
+	}
+
+	/**
+	* function correo_desbloqueo (void)
+	*
+	* Comprueba e envia un correo para desbloquear la cuenta de un usuario
+	* bloqueada por demasiados intentos de acceso fallidos
+	*
+	* return boolean
+	*/
+	function correo_desbloqueo () {
+		$usuario = $this->corrixe($this->vars->post('desbloquear_usuario'));
+
+		$this->LINE = __LINE__+1;
+		$this->query = 'SELECT id, email, nome, estado'
+			.' FROM '.$this->tablas['usuarios']
+			.' WHERE usuario = "'.$usuario.'"'
+			.' LIMIT 1;';
+
+		$this->lock($this->tablas['usuarios'], 'READ');
+		$this->serializa();
+		$this->unlock();
+
+		if ($this->filas() != 1) {
+			return 2;
+		}
+
+		if (intval($this->get('estado')) !== 2) {
+			return 4;
+		}
+
+		if ($this->get('email') == '') {
+			return 3;
+		}
+
+		if ($this->get('email') != $this->vars->post('desbloquear_email')) {
+			return 5;
+		}
+
+		$url = parse_url($this->vars->server('HTTP_REFERER'));
+		$url['scheme'] = empty($url['scheme'])?'http':$url['scheme'];
+
+		global $PFN_encriptar, $PFN_paths;
+
+		include_once ($PFN_paths['include'].'phpmailer/class.phpmailer.php');
+
+		$mail = new PHPMailer();
+
+		$mail->From = $this->conf->g('email');
+		$mail->FromName = 'System Administrator';
+		$mail->Subject = PFN_quitaHtmlentities($this->conf->t('desbloquear_usuario_correo_asunto'));
+		$mail->Body = PFN_quitaHtmlentities($this->conf->t('novo_contrasinal_correo_texto'))
+			."\n\n".$url['scheme'].'://'.getenv('SERVER_NAME').dirname(getenv('SCRIPT_NAME'))
+			.'/activar_desbloqueo.php?'.urlencode($PFN_encriptar->encripta(time().'|'.$this->get('id')));
+
+		$mail->AddAddress($this->get('email'), $this->get('nome'));
+
+		return $mail->Send();
 	}
 }
 

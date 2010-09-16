@@ -110,7 +110,7 @@ if ($PFN_vars->post('executa')) {
 				}
 
 				if ($PFN_conf->g('inc','indexar')) {
-					$PFN_indexador->alta_modificacion("$dir/", $v, $arq_inc);
+					$PFN_indexador->alta_modificacion($dir.'/', $v, $arq_inc);
 				}
 
 				if ($PFN_conf->g('imaxes','pequena') && $opc_imaxes[$i] != '') {
@@ -145,29 +145,36 @@ if ($PFN_vars->post('executa')) {
 				if ($aviso_subida[$i] && $PFN_conf->g('avisos','subida')) {
 					$correo_emisor = 'pfn@'.getenv('SERVER_NAME');
 
-					$tit_subida = PFN_quitaHtmlentities(strlen($titulos[$k])?$titulos[$k]:$PFN_conf->t('tit_aviso_subida'));
-					$txt_subida = str_replace('{ARQUIVO}', "$dir/$v", $PFN_conf->t('txt_aviso_subida'));
-					$txt_subida = PFN_quitaHtmlentities($descricions[$k]."\n\n".$txt_subida)
+					include_once ($PFN_paths['include'].'phpmailer/class.phpmailer.php');
+
+					$mail = new PHPMailer();
+
+					$mail->From = 'no-reply@'.getenv('SERVER_NAME');
+					$mail->FromName = 'System Administrator';
+					$mail->Subject = PFN_quitaHtmlentities(strlen($titulos[$k])?$titulos[$k]:$PFN_conf->t('tit_aviso_subida'));
+					$mail->Body = str_replace('{ARQUIVO}', $dir.'/'.$v, $PFN_conf->t('txt_aviso_subida'));
+					$mail->Body = PFN_quitaHtmlentities($descricions[$k]."\n\n".$mail->Body)
 						."\n\n".$PFN_conf->g('protocolo')
 						.$PFN_vars->server('SERVER_NAME')
 						.dirname($PFN_vars->server('SCRIPT_NAME')).'/';
 
-					$PFN_usuarios->init('w:usuarios_raiz', $PFN_conf->g('raiz','id'));
+					$PFN_usuarios->init('w:usuarios_raiz_email', $PFN_conf->g('raiz','id'));
 
 					for (; $PFN_usuarios->mais(); $PFN_usuarios->seguinte()) {
 						if ($PFN_usuarios->get('id') == $PFN_conf->g('usuario','id')) {
-							$correo_emisor = $PFN_usuarios->get('email');
-							break;
+							$mail->From = $PFN_usuarios->get('email');
+							$mail->FromName = $PFN_usuarios->get('nome');
+							$mail->AddAddress($mail->From, $mail->FromName);
+						} else {
+							$mail->AddBCC($PFN_usuarios->get('email'), $PFN_usuarios->get('nome'));
 						}
 					}
 
-					for ($PFN_usuarios->indice(0); $PFN_usuarios->mais(); $PFN_usuarios->seguinte()) {
-						@mail($PFN_usuarios->get('email'), $tit_subida, $txt_subida, 'FROM: '.$correo_emisor);
-					}
+					$mail->Send();
 				}
 			}
 
-			$estado_accion .= $v.': '.$PFN_conf->t('estado.subir_arq',intval($estado)).'<br />';
+			$estado_accion .= $v.': '.$PFN_conf->t('estado.subir_arq', intval($estado)).'<br />';
 		}
 
 		if ($i++ && ($i > $PFN_conf->g('inc','limite'))) {
@@ -184,7 +191,7 @@ if ($PFN_vars->post('executa')) {
 
 		if (count($recortar)) {
 			foreach ($recortar as $k => $v) {
-				$PFN_vars->get("mais_$k", $v);
+				$PFN_vars->get('mais_'.$k, $v);
 			}
 		}
 

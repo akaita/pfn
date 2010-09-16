@@ -31,21 +31,52 @@ defined('OK') && defined('XESTION') or die();
 $ae_buscar = trim($PFN_vars->post('ae_buscar'));
 $ae_lineas = intval($PFN_vars->post('ae_lineas'));
 $ae_lineas = ($ae_lineas < 1 || $ae_lineas > 500)?50:$ae_lineas;
+$ae_data_inicio_d = intval($PFN_vars->post('ae_data_inicio_d'));
+$ae_data_inicio_m = intval($PFN_vars->post('ae_data_inicio_m'));
+$ae_data_inicio_y = intval($PFN_vars->post('ae_data_inicio_y'));
+$ae_data_fin_d = intval($PFN_vars->post('ae_data_fin_d'));
+$ae_data_fin_m = intval($PFN_vars->post('ae_data_fin_m'));
+$ae_data_fin_y = intval($PFN_vars->post('ae_data_fin_y'));
 $ae_amosar = is_array($PFN_vars->post('ae_amosar'))?$PFN_vars->post('ae_amosar'):array();
 $ae_entradas = in_array('entradas', $ae_amosar);
+$ae_certificado = in_array('certificado', $ae_amosar);
 $ae_saidas = in_array('saidas', $ae_amosar);
 $ae_erros = in_array('erros', $ae_amosar);
+$ae_bloqueados = in_array('bloqueados', $ae_amosar);
 $ae_sen_datos = in_array('sen_datos', $ae_amosar);
 
-if (!$ae_entradas && !$ae_saidas && !$ae_erros && !$ae_sen_datos) {
-	$ae_entradas = $ae_saidas = $ae_erros = $ae_sen_datos = true;
+if (count($ae_amosar) == 0) {
+	$ae_entradas = $ae_certificado = $ae_saidas = $ae_erros = $ae_sen_datos = $ae_bloqueados = true;
 }
 
-$w = $ae_entradas?'WHERE ((donde = "login" AND estado = 1)':'';
-$w .= $ae_saidas?(($w?' OR':'WHERE (').' donde = "sair"'):'';
-$w .= $ae_erros?(($w?' OR':'WHERE (').' (donde = "login" AND estado = 0)'):'';
-$w .= $ae_sen_datos?(($w?' OR':'WHERE (').' ((donde = "vacios" OR donde = "session") AND estado = 0)'):'';
-$w .= $ae_buscar?(($w?') AND':'WHERE').' login LIKE "%'.addslashes($ae_buscar).'%"'):($w?')':'');
+if (checkdate($ae_data_inicio_m, $ae_data_inicio_d, $ae_data_inicio_y)) {
+	$ae_data_inicio = mktime(0, 0, 0, $ae_data_inicio_m, $ae_data_inicio_d, $ae_data_inicio_y);
+} else {
+	$ae_data_inicio_d = $ae_data_inicio_m = $ae_data_inicio_y = $ae_data_inicio = false;
+}
+
+if (checkdate($ae_data_fin_m, $ae_data_fin_d, $ae_data_fin_y)) {
+	$ae_data_fin = mktime(23, 59, 59, $ae_data_fin_m, $ae_data_fin_d, $ae_data_fin_y);
+} else {
+	$ae_data_fin_d = $ae_data_fin_m = $ae_data_fin_y = $ae_data_fin = false;
+}
+
+$w = 'WHERE 1 = 1';
+$w .= $ae_data_inicio?(' AND data >= "'.intval($ae_data_inicio).'"'):'';
+$w .= $ae_data_fin?(' AND data <= "'.intval($ae_data_fin).'"'):'';
+$w .= $ae_buscar?(' AND login LIKE "%'.addslashes($ae_buscar).'%"'):'';
+
+if ($ae_entradas || $ae_certificado || $ae_saidas || $ae_erros || $ae_sen_datos) {
+	$w .= ' AND (';
+	$w .= $ae_entradas?(' (donde = "login" AND estado = 1) OR'):'';
+	$w .= $ae_certificado?(' (donde = "certificado" AND estado = 1) OR'):'';
+	$w .= $ae_saidas?(' donde = "sair" OR'):'';
+	$w .= $ae_bloqueados?(' donde = "bloqueado" OR'):'';
+	$w .= $ae_erros?(' ((donde = "login" || donde = "certificado") AND estado = 0) OR'):'';
+	$w .= $ae_sen_datos?(' ((donde = "vacios" OR donde = "session") AND estado = 0) OR'):'';
+	$w = substr($w, 0, -2).')';
+}
+
 $w .= ' ORDER BY data DESC';
 $w .= ' LIMIT 0,'.intval($ae_lineas).';';
 

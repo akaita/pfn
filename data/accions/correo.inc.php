@@ -101,22 +101,26 @@ if (($estado === true) && $PFN_vars->post('executa')) {
 	if ($estado === 1) {
 		$PFN_usuarios->init('usuario', $PFN_conf->g('usuario','id'));
 
-		$from = array($PFN_usuarios->get('email'), $PFN_usuarios->get('nome'));
+		include_once ($PFN_paths['include'].'phpmailer/class.phpmailer.php');
 
-		include ($PFN_paths['include'].'class_nxs.php');
+		$mail = new PHPMailer();
 
-		$nxs = new PFN_nxs_mimemail($PFN_conf);
-		$nxs->imaxes($PFN_imaxes);
+		$mail->From = $PFN_usuarios->get('email');
+		$mail->FromName = $PFN_usuarios->get('nome');
+		$mail->Subject = $titulo;
+		$mail->Body = $mensaxe;
 
-		$nxs->new_mail($from,$cada_correo,$titulo,$mensaxe);
+		foreach ($cada_correo as $correo) {
+			$mail->AddBCC($correo);
+		}
 
-		if ($nxs->add_attachment($arquivo, str_replace(' ','_',$cal))) {
+		if (!$mail->AddAttachment($arquivo, str_replace(' ', '_', $cal))) {
 			$estado = 7;
 			$estado_accion .= $PFN_conf->t('estado.correo', $estado);
 		}
 
 		if ($estado === 1) {
-			$estado = $nxs->send();
+			$estado = $mail->Send();
 			$estado_accion .= $PFN_conf->t('estado.correo', $estado);
 		}
 

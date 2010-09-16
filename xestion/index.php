@@ -34,7 +34,7 @@ include_once ($PFN_paths['include'].'Xusuarios.php');
 
 session_write_close();
 
-PFN_quita_url_SERVER(array('id_raiz','id_usuario','id_grupo','id_conf','opc','erros','ok','lista_usuarios','lista_raices','lista_grupos'));
+PFN_quita_url_SERVER(array('id','erros','ok'));
 
 $PFN_tempo->rexistra('precarga');
 
@@ -42,15 +42,6 @@ include ($PFN_paths['plantillas'].'cab.inc.php');
 include ($PFN_paths['xestion'].'Xopcions.inc.php');
 
 $PFN_tempo->rexistra('precodigo');
-
-$erros = $PFN_vars->get('erros');
-$ok = $PFN_vars->get('ok');
-
-$paxinar = 50;
-
-$lista_raices = intval($PFN_vars->get('lista_raices'));
-$lista_usuarios = intval($PFN_vars->get('lista_usuarios'));
-$lista_grupos = intval($PFN_vars->get('lista_grupos'));
 
 include ($PFN_paths['plantillas'].'Xmenu.inc.php');
 

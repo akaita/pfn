@@ -40,7 +40,7 @@ defined('OK') or die();
 			<div class="aviso"><?php echo $txt_estado; ?></div>
 		<?php } ?>
 
-		<form action="preferencias.php?<?php echo PFN_get_url(false); ?>" method="post" id="formulario" onsubmit="return submitonce();">
+		<form action="preferencias.php?<?php echo PFN_get_url(false); ?>" method="post" id="formulario" enctype="multipart/form-data" onsubmit="return validar_campos();">
 		<fieldset>
 		<input type="hidden" name="executa" value="true" />
 
@@ -61,14 +61,12 @@ defined('OK') or die();
 				<th><label for="preferencias_contrasinal_rep"><?php echo $PFN_conf->t('contrasinal_rep'); ?>:</label></th>
 				<td><input type="password" name="preferencias_contrasinal_rep" id="preferencias_contrasinal_rep" class="text" /></td>
 			</tr>
-			<tr>
-				<th>&nbsp;</th>
-				<td>
-					<input type="reset" value=" <?php echo $PFN_conf->t('cancelar'); ?> " class="boton" onclick="enlace('navega.php?<?php echo PFN_get_url(false); ?>');" />
-					<input type="submit" value=" <?php echo $PFN_conf->t('aceptar'); ?> " class="boton" style="margin-left: 40px;" />
-				</td>
-			</tr>
 		</table>
+
+		<br /><div class="centro">
+			<input type="reset" value=" <?php echo $PFN_conf->t('cancelar'); ?> " class="boton" onclick="enlace('navega.php?<?php echo PFN_get_url(false); ?>');" tabindex="130" />
+			<input type="submit" value=" <?php echo $PFN_conf->t('aceptar'); ?> " class="boton" style="margin-left: 40px;" tabindex="140" />
+		</div>
 
 		</fieldset>
 		</form>

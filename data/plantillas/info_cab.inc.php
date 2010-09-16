@@ -47,7 +47,7 @@ defined('OK') && defined('ACCION') or die();
 		<li class="permisos"><a href="accion.php?<?php echo PFN_cambia_url(array('dir','cal','accion'),array($dir,$cal,'permisos'),false); ?>"<?php echo (($accion == 'permisos')?' class="active"':''); ?> title="<?php echo $PFN_conf->t('permisos'); ?>"><span class="oculto"><?php echo $PFN_conf->t('permisos'); ?></span></a></li>
 		<?php } if ($redimensionar) { ?>
 		<li class="redimensionar"><a href="accion.php?<?php echo PFN_cambia_url(array('dir','cal','accion'),array($dir,$cal,'redimensionar'),false); ?>"<?php echo (($accion == 'redimensionar')?' class="active"':''); ?> title="<?php echo $PFN_conf->t('redimensionar'); ?>"><span class="oculto"><?php echo $PFN_conf->t('redimensionar'); ?></span></a></li>
-		<?php } if ($PFN_extraer) { ?>
+		<?php } if ($extraer) { ?>
 		<li class="extraer"><a href="accion.php?<?php echo PFN_cambia_url(array('dir','cal','accion'),array($dir,$cal,'extraer'),false); ?>"<?php echo (($accion == 'extraer')?' class="active"':''); ?> title="<?php echo $PFN_conf->t('extraer'); ?>"><span class="oculto"><?php echo $PFN_conf->t('extraer'); ?></span></a></li>
 		<?php } if ($ver_comprimido) { ?>
 		<li class="ver_comprimido"><a href="accion.php?<?php echo PFN_cambia_url(array('dir','cal','accion'),array($dir,$cal,'ver_comprimido'),false); ?>"<?php echo (($accion == 'ver_comprimido')?' class="active"':''); ?> title="<?php echo $PFN_conf->t('ver_comprimido'); ?>"><span class="oculto"><?php echo $PFN_conf->t('ver_comprimido'); ?></span></a></li>

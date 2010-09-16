@@ -206,6 +206,54 @@ class PFN_Arquivos {
 	}
 
 	/**
+	* function crea_arq_array (string $arq, array $datos)
+	*
+	* Crea un fichero con un array como contenido para devolver
+	* en formato return array(
+	*
+	* El array recibido puede ser unidimensional o multidimensional
+	*
+	* return boolean
+	*/
+	function crea_arq_array ($arq, $datos) {
+		$this->txt = '';
+
+		$this->recorre_array($datos, 1);
+
+		$this->txt = "<?php\ndefined('OK') or die();"
+			."\nreturn array(".substr($this->txt, 0, -1)."\n);\n?>";
+
+		return $this->abre_escribe($arq, $this->txt);
+	}
+
+	/**
+	* function recorre_array (array $datos, integer $nivel)
+	*
+	* Recorre recursivamente todos los elementos de un array
+	* para crear un texto multidimensional
+	*/
+	function recorre_array ($datos, $nivel) {
+		foreach ((array)$datos as $k => $v) {
+			$k = trim($k);
+
+			if (is_array($v)) {
+				$this->txt .= "\n".str_repeat("\t", $nivel)."'".$k."' => array(";
+
+				$nivel++;
+
+				$this->recorre_array($v, $nivel);
+
+				$nivel--;
+
+				$this->txt .= "\n".str_repeat("\t", $nivel).'),';
+			} else {
+				$v = $this->params['html']?PFN_textoForm2interno($v):$v;
+				$this->txt .= "\n".str_repeat("\t", $nivel)."'".$k."' => '".$v."',";
+			}
+		}
+	}
+
+	/**
 	* function permisos (string $cal, int $perms)
 	*
 	* SOLO FUNCIONA EN LINUX/UNIX, OMITIDO EN WINDOWS

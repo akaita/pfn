@@ -34,7 +34,7 @@ include_once ($PFN_paths['include'].'Xusuarios.php');
 
 session_write_close();
 
-$id_grupo = intval($PFN_vars->post('id_grupo'));
+$id = intval($PFN_vars->post('id'));
 $nome = addslashes(trim($PFN_vars->post('nome')));
 $id_conf = intval($PFN_vars->post('id_conf'));
 $estado = intval($PFN_vars->post('estado'));
@@ -45,12 +45,12 @@ $ok = 0;
 
 if (empty($nome) || empty($id_conf)) {
 	$erros[] = 1;
-} elseif (($id_grupo == $sPFN['usuario']['id_grupo']) && ($estado == 0)) {
+} elseif (($id == $sPFN['usuario']['id_grupo']) && ($estado == 0)) {
 	$erros[] = 14;
-} elseif ($PFN_usuarios->init('existe_grupo', $nome, $id_grupo)) {
+} elseif ($PFN_usuarios->init('existe_grupo', $nome, $id)) {
 	$erros[] = 15;
 } else {
-	if (empty($id_grupo)) {
+	if (empty($id)) {
 		$query = 'INSERT INTO '.$PFN_usuarios->tabla('grupos')
 			.' SET nome = "'.$nome.'"'
 			.', id_conf = "'.$id_conf.'"'
@@ -60,7 +60,7 @@ if (empty($nome) || empty($id_conf)) {
 			.' SET nome = "'.$nome.'"'
 			.', id_conf = "'.$id_conf.'"'
 			.', estado = "'.$estado.'"'
-			.' WHERE id = "'.$id_grupo.'"'
+			.' WHERE id = "'.$id.'"'
 			.' LIMIT 1;';
 	}
 
@@ -70,8 +70,8 @@ if (empty($nome) || empty($id_conf)) {
 }
 
 if (!count($erros)) {
-	if (empty($id_grupo)) {
-		$id_grupo = $PFN_usuarios->id_ultimo();
+	if (empty($id)) {
+		$id = $PFN_usuarios->id_ultimo();
 
 		$PFN_usuarios->init('raices');
 
@@ -79,14 +79,14 @@ if (!count($erros)) {
 			.' (id_raiz,id_grupo,id_conf) VALUES ';
 
 		for (; $PFN_usuarios->mais(); $PFN_usuarios->seguinte()) {
-			$query .= '("'.$PFN_usuarios->get('id').'","'.$id_grupo.'","'.$id_conf.'"),';
+			$query .= '("'.$PFN_usuarios->get('id').'","'.$id.'","'.$id_conf.'"),';
 		}
 
 		$PFN_usuarios->actualizar(substr($query,0,-1).';');
 	} elseif ($PFN_vars->post('revisar_relacions_raices') == 'true') {
 		$query = 'UPDATE '.$PFN_usuarios->tabla('r_g_c')
 			.' SET id_conf = "'.$id_conf.'"'
-			.' WHERE id_grupo = "'.$id_grupo.'";';
+			.' WHERE id_grupo = "'.$id.'";';
 
 		$PFN_usuarios->actualizar($query);
 	}
@@ -101,8 +101,8 @@ include ($PFN_paths['xestion'].'Xopcions.inc.php');
 
 $PFN_tempo->rexistra('precodigo');
 
-include ($PFN_paths['xestion'].'grupos/index.inc.php');
-include ($PFN_paths['plantillas'].'Xgrupos.inc.php');
+include ($PFN_paths['xestion'].'grupos/editar.inc.php');
+include ($PFN_paths['plantillas'].'Xgrupo.inc.php');
 
 $PFN_tempo->rexistra('postcodigo');
 

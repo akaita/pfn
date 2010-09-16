@@ -29,6 +29,8 @@ programa. Si no ha sido así, escriba a la Free Software Foundation, Inc., en
 
 defined('OK') or die();
 
+$PFN_conf->textos('estado');
+
 $txt_erro = $txt_estado = '';
 
 if ($PFN_conf->g('usuario','cambiar_datos')) {
@@ -42,8 +44,6 @@ if ($PFN_conf->g('usuario','cambiar_datos')) {
 }
 
 if (empty($txt_erro) && ($PFN_vars->post('executa') == 'true')) {
-	$PFN_conf->textos('estado');
-
 	$nome = trim($PFN_vars->post('preferencias_nome'));
 	$email = trim($PFN_vars->post('preferencias_email'));
 	$contrasinal = trim($PFN_vars->post('preferencias_contrasinal'));
@@ -51,8 +51,6 @@ if (empty($txt_erro) && ($PFN_vars->post('executa') == 'true')) {
 
 	if (empty($nome)) {
 		$txt_estado = $PFN_conf->t('estado.preferencias',2);
-	} elseif (empty($email)) {
-		$txt_estado = $PFN_conf->t('estado.preferencias',5);
 	} elseif (strlen($contrasinal) > 0) {
 		if (!preg_match('/^[a-z0-9]{8,}$/im', $contrasinal)) {
 			$txt_estado = $PFN_conf->t('estado.preferencias',3);
@@ -80,7 +78,9 @@ if (empty($txt_erro) && ($PFN_vars->post('executa') == 'true')) {
 				$PFN_vars->session('sPFN', $sPFN);
 			}
 
-			$txt_estado = $PFN_conf->t('estado.preferencias',1);
+			if (empty($txt_estado)) {
+				$txt_estado = $PFN_conf->t('estado.preferencias',1);
+			}
 		}
 	}
 

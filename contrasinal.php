@@ -57,7 +57,6 @@ if (($PFN_vars->post('recuperar_usuario') != '')
 
 	if ($ok === 1) {
 		$txt_erro = $PFN_conf->t('avisos_novo_contrasinal', 1);
-		$PFN_usuarios->contrasinal_temporal();
 	} else {
 		$txt_erro = $PFN_conf->t('avisos_novo_contrasinal', $ok);
 	}

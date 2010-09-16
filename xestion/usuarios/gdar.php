@@ -32,9 +32,10 @@ include ($relativo.'paths.php');
 include_once ($PFN_paths['include'].'basicweb.php');
 include_once ($PFN_paths['include'].'Xusuarios.php');
 
-$id_usuario = intval($PFN_vars->post('id_usuario'));
+$id = intval($PFN_vars->post('id'));
 $nome = addslashes(trim($PFN_vars->post('nome')));
 $usuario = addslashes(trim($PFN_vars->post('usuario')));
+$id_control = addslashes(trim($PFN_vars->post('id_control')));
 $contrasinal = addslashes(trim($PFN_vars->post('contrasinal')));
 $rep_contrasinal = addslashes(trim($PFN_vars->post('rep_contrasinal')));
 $email = addslashes(trim($PFN_vars->post('email')));
@@ -42,6 +43,8 @@ $id_grupo = intval($PFN_vars->post('id_grupo'));
 $admin = ($PFN_vars->post('admin') == 1)?1:0;
 $estado = ($PFN_vars->post('estado') == 1)?1:0;
 $cambiar_datos = ($PFN_vars->post('cambiar_datos') == 1)?1:0;
+$login_usuario = ($PFN_vars->post('login_usuario') == 1)?1:0;
+$login_certificado = ($PFN_vars->post('login_certificado') == 1)?1:0;
 $max_descargas = addslashes(trim($PFN_vars->post('max_descargas')));
 $actual_descargas = addslashes(trim($PFN_vars->post('actual_descargas')));
 $max_descargas = empty($max_descargas)?0:$max_descargas;
@@ -54,44 +57,54 @@ $erros = array();
 $ok = 0;
 $ok2 = false;
 
-if (empty($nome) || empty($usuario) || (empty($contrasinal) && empty($id_usuario))) {
+if (empty($nome) || empty($usuario) || (empty($contrasinal) && empty($id))) {
 	$erros[] = 1;
+} elseif (strlen($usuario) < 4) {
+	$erros[] = 58;
+} elseif (!preg_match('/^[a-z0-9_\.\-]+$/i', $usuario)) {
+	$erros[] = 57;
 } elseif ($contrasinal != $rep_contrasinal) {
 	$erros[] = 11;
-} elseif (($id_usuario == $sPFN['usuario']['id']) && ($estado == 0)) {
+} elseif (($id == $sPFN['usuario']['id']) && ($estado == 0)) {
 	$erros[] = 10;
-} elseif (($id_usuario == $sPFN['usuario']['id']) && ($admin == 0)) {
+} elseif (($id == $sPFN['usuario']['id']) && ($admin == 0)) {
 	$erros[] = 12;
-} elseif ($PFN_usuarios->init('existe_usuario', $usuario, $id_usuario)) {
+} elseif ($PFN_usuarios->init('existe_usuario', $usuario, $id)) {
 	$erros[] = 8;
-} elseif (($sPFN['usuario']['id'] == $id_usuario) && !in_array($sPFN['raiz']['id'], $Fraices)) {
+} elseif (($sPFN['usuario']['id'] == $id) && !in_array($sPFN['raiz']['id'], $Fraices)) {
 	$erros[] = 9;
 } elseif (!preg_match('/^[0-9]+$/', $max_descargas) || !preg_match('/^[0-9\.,]+$/', $actual_descargas)) {
 	$erros[] = 35;
 } else {
-	if (empty($id_usuario)) {
+	if (empty($id)) {
 		$query = 'INSERT INTO '.$PFN_usuarios->tabla('usuarios')
 			.' SET nome = "'.$nome.'"'
 			.', usuario = "'.$usuario.'"'
+			.', id_control = "'.$id_control.'"'
 			.', contrasinal = "'.md5($contrasinal).'"'
 			.', email = "'.$email.'"'
 			.', id_grupo = "'.$id_grupo.'"'
 			.', estado = "'.$estado.'"'
 			.', admin = "'.$admin.'"'
 			.', cambiar_datos = "'.$cambiar_datos.'"'
+			.', login_usuario = "'.$login_usuario.'"'
+			.', login_certificado = "'.$login_certificado.'"'
 			.', descargas_maximo = "'.($max_descargas*1024*1024).'";';
 	} else {
 		$query = 'UPDATE '.$PFN_usuarios->tabla('usuarios')
 			.' SET nome = "'.$nome.'"'
 			.', usuario = "'.$usuario.'"'
+			.', id_control = "'.$id_control.'"'
 			.(empty($contrasinal)?'':', contrasinal = "'.md5($contrasinal).'"')
 			.', email = "'.$email.'"'
 			.', id_grupo = "'.$id_grupo.'"'
 			.', estado = "'.$estado.'"'
 			.', admin = "'.$admin.'"'
 			.', cambiar_datos = "'.$cambiar_datos.'"'
+			.', login_usuario = "'.$login_usuario.'"'
+			.', login_certificado = "'.$login_certificado.'"'
 			.', descargas_maximo = "'.($max_descargas*1024*1024).'"'
-			.' WHERE id = "'.$id_usuario.'"'
+			.' WHERE id = "'.$id.'"'
 			.' LIMIT 1;';
 	}
 
@@ -103,7 +116,12 @@ if (empty($nome) || empty($usuario) || (empty($contrasinal) && empty($id_usuario
 if (count($erros)) {
 	session_write_close();
 } else {
-	$id_usuario = empty($id_usuario)?$PFN_usuarios->id_ultimo():$id_usuario;
+	$id = empty($id)?$PFN_usuarios->id_ultimo():$id;
+
+	if ($estado !== 2) {
+		$PFN_usuarios->usuario = $usuario;
+		$PFN_usuarios->garda_rexistro('desbloqueo',1);
+	}
 
 	$query = 'SELECT id_conf FROM '.$PFN_usuarios->tabla('grupos')
 		.' WHERE id = "'.$id_grupo.'" LIMIT 1;';
@@ -124,7 +142,7 @@ if (count($erros)) {
 	}
 	
 	$query = 'DELETE FROM '.$PFN_usuarios->tabla('r_u')
-		.' WHERE id_usuario="'.$id_usuario.'";';
+		.' WHERE id_usuario="'.$id.'";';
 	$PFN_usuarios->actualizar($query);
 
 	$query1 = 'INSERT INTO '.$PFN_usuarios->tabla('r_u')
@@ -134,7 +152,7 @@ if (count($erros)) {
 		.' (id_raiz,id_grupo,id_conf) VALUES '; 
 
 	foreach ($Fraices as $v) {
-		$query1 .= '("'.$v.'","'.$id_usuario.'"),';
+		$query1 .= '("'.$v.'","'.$id.'"),';
 
 		if (empty($rgc[$v][$id_grupo])) {
 			$ok2 = true;
@@ -147,7 +165,8 @@ if (count($erros)) {
 
 	$sPFN['usuario']['descargas_maximo'] = ($max_descargas*1024*1024);
 
-	if ($id_usuario == $sPFN['usuario']['id']) {
+	if ($id == $sPFN['usuario']['id']) {
+		$sPFN['usuario']['nome'] = $nome;
 		$sPFN['usuario']['usuario'] = $usuario;
 		(empty($contrasinal)?'':($sPFN['usuario']['contrasinal'] = md5($contrasinal)));
 	}
@@ -156,12 +175,12 @@ if (count($erros)) {
 
 	$PFN_vars->session('sPFN', $sPFN);
 
-	session_write_close();
+	@session_write_close();
 
 	include_once ($PFN_paths['include'].'class_arquivos.php');
 	$PFN_arquivos = new PFN_Arquivos($PFN_conf);
 
-	$info_usuario = $PFN_niveles->path_correcto($PFN_paths['info'].'usuario'.$id_usuario);
+	$info_usuario = $PFN_paths['info'].'usuario'.$id;
 
 	if (!is_dir($info_usuario)) {
 		@mkdir($info_usuario, 0755);
@@ -186,8 +205,8 @@ include ($PFN_paths['xestion'].'Xopcions.inc.php');
 
 $PFN_tempo->rexistra('precodigo');
 
-include ($PFN_paths['xestion'].'usuarios/index.inc.php');
-include ($PFN_paths['plantillas'].'Xusuarios.inc.php');
+include ($PFN_paths['xestion'].'usuarios/editar.inc.php');
+include ($PFN_paths['plantillas'].'Xusuario.inc.php');
 
 $PFN_tempo->rexistra('postcodigo');
 

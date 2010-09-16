@@ -28,7 +28,8 @@ programa. Si no ha sido así, escriba a la Free Software Foundation, Inc., en
 
 defined('OK') or die();
 ?>
-<h1 id="cab_menu"> <?php echo $PFN_conf->t('PFN'); ?> </h1>
+<h1 id="cab_menu"><span><?php echo $PFN_conf->t('PFN'); ?></span></h1>
+
 <div id="menu_raices">
 	<?php echo $PFN_conf->t('listado_menu'); ?>
 	<ul>

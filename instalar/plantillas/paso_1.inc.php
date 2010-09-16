@@ -83,9 +83,9 @@ defined('OK') or die();
 <label for="aviso_instalacion"><strong><?php echo $PFN_conf->t('i:aviso'); ?></strong></label>
 </div>
 
+<?php if ($erros) { ?>
 <br /><div class="aviso"><?php echo $PFN_conf->t('i:aviso_default'); ?></div>
 
-<?php if ($erros) { ?>
 <script type="text/javascript"><!--
 
 document.getElementById('paso').value = 1;

@@ -35,13 +35,15 @@ $PFN_conf->carga();
 $PFN_niveles = new PFN_Niveles($PFN_conf);
 
 $dir = $PFN_niveles->path_correcto($PFN_vars->get('dir'));
+
 $PFN_vars->get('dir',$dir);
 
 $ver_imaxes = $PFN_vars->get('ver_imaxes');
 $estado_accion = '';
 
-$info_raiz = $PFN_niveles->path_correcto($PFN_paths['info'].'raiz'.$PFN_conf->g('raiz','id'));
-$info_usuario = $PFN_niveles->path_correcto($PFN_paths['info'].'usuario'.$sPFN['usuario']['id']);
+$info_raiz = $PFN_paths['info'].'raiz'.$PFN_conf->g('raiz','id');
+$info_raiz = $PFN_paths['info'].'raiz'.$PFN_conf->g('raiz','id');
+$info_usuario = $PFN_paths['info'].'usuario'.$sPFN['usuario']['id'];
 
 $PFN_conf->p($info_usuario, 'info_usuario');
 $PFN_conf->p($info_raiz, 'info_raiz');

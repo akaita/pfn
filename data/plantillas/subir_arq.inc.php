@@ -55,8 +55,13 @@ defined('OK') && defined('ACCION') or die();
 			<input type="hidden" name="accion" value="subir_arq" />
 			<input type="hidden" name="executa" value="true" />
 			<input type="hidden" name="MAX_FILE_SIZE" value="<?php echo $PFN_conf->g('inc','peso'); ?>" />
-			<?php for ($i=1; $i <= $PFN_conf->g('inc','limite'); $i++) {?>
+
+			<?php for ($i = 1; $i <= $PFN_conf->g('inc','limite'); $i++) {?>
 			<div id="cantos<?php echo $i; ?>">
+				<?php if ($PFN_conf->g('avisos','subida') === 'always') { ?>
+				<input type="hidden" name="aviso_subida[<?php echo $i; ?>]" value="1" />
+				<?php } ?>
+
 				<table class="tabla_info" summary="">
 					<tr>
 						<th><label for="nome_arquivo_<?php echo $i; ?>"><?php echo $PFN_conf->t('arq'); ?>:</label></th>
@@ -88,10 +93,14 @@ defined('OK') && defined('ACCION') or die();
 						<th><label for="sobreescribir_<?php echo $i; ?>"><?php echo $PFN_conf->t('sobreescribir'); ?></label></th>
 						<td><input type="checkbox" id="sobreescribir_<?php echo $i; ?>" name="sobreescribir[<?php echo $i; ?>]" value="1" class="checkbox" /></td>
 					</tr>
-					<?php if ($PFN_conf->g('avisos','subida') == true) { ?>
+					<?php if ($PFN_conf->g('avisos','subida')) { ?>
 					<tr>
 						<th><label for="aviso_subida_<?php echo $i; ?>"><?php echo $PFN_conf->t('avisar_subida'); ?></label></th>
+						<?php if ($PFN_conf->g('avisos','subida') === 'always') { ?>
+						<td><input type="checkbox" id="aviso_subida_<?php echo $i; ?>" class="checkbox" checked="checked" disabled="disabled" /></td>
+						<?php } else { ?>
 						<td><input type="checkbox" id="aviso_subida_<?php echo $i; ?>" name="aviso_subida[<?php echo $i; ?>]" value="1" class="checkbox" /></td>
+						<?php } ?>
 					</tr>
 					<?php } ?>
 				</table><br />

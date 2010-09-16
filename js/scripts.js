@@ -114,30 +114,6 @@ function axuda (sid) {
 	window.open("axuda.php?"+sid,"Axuda",txt);
 }
 
-function Xcambia_opcion (id) {
-	id = (id == 0)?1:id;
-
-	for (xi=1; xi<5; xi++) {
-		if (xi != id) {
-			objenlace = MM_findObj('Xenlace'+xi);
-			objli = MM_findObj('XLIopcion'+xi);
-
-			oculta('XidOpcion'+xi);
-
-			objenlace.className = '';
-			objli.className = '';
-		}
-	}
-
-	objenlace = MM_findObj('Xenlace'+id);
-	objenlace.className = 'Xmarcado';
-
-	objli = MM_findObj('XLIopcion'+id);
-	objli.className = 'active';
-
-	amosa('XidOpcion'+id);
-}
-
 function Xamosa_axuda (num) {
 	obx_tr = MM_findObj('tr_axuda'+num);
 
@@ -187,6 +163,15 @@ function ancho_fiestra () {
 	}
 
 	return (max_ancho - 22)+'px';
+}
+
+function cambia_tab (id) {
+	$('#tabs li a, .tabs li a').removeClass('activo');
+	$('#tab_a'+id).addClass('activo');
+	$('.capa_tab').hide();
+	$('#tab_div'+id).show();
+
+	return false;
 }
 
 function marca_ancho_corpo (directo) {
@@ -240,4 +225,18 @@ function PFN_readCookie (name) {
 	}
 
 	return null;
+}
+
+function Xmarcar_desmarcar (pre) {
+	var checked = $('#'+pre+'marcar_desmarcar').attr('checked');
+
+	$('input[type=checkbox]').each(function () {
+		if ($(this).attr('name') == pre+'amosar[]') {
+			if (checked) {
+				$(this).attr('checked', true);
+			} else {
+				$(this).attr('checked', false);
+			}
+		}
+	});
 }

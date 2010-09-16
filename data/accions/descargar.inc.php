@@ -68,6 +68,8 @@ if ($PFN_vars->get('zlib')
 		header('Content-Length: '.$tamano);
 
 		echo $contido;
+
+		$PFN_accions->log_accion('descargar', $arquivo, str_replace(array(' ','"'),'_',$cal.'.zip'));
 		exit;
 	} elseif ($estado === -1) {
 		$erro = true;
@@ -94,6 +96,9 @@ if ($PFN_vars->get('zlib')
 
 		if ($modo == 'enlace') {
 			header('Location: '.$enlace_abs);
+
+			$PFN_accions->log_accion('descargar', $arquivo, $enlace_abs);
+
 			exit;
 		}
 
@@ -116,6 +121,8 @@ if ($PFN_vars->get('zlib')
 		header('Content-Length: '.$tamano);
 
 		$PFN_arquivos->get_contido($arquivo, true);
+
+		$PFN_accions->log_accion('descargar', $arquivo);
 		exit;
 	} elseif ($estado === -1) {
 		$erro = true;

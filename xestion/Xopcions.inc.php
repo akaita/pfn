@@ -29,19 +29,18 @@ programa. Si no ha sido así, escriba a la Free Software Foundation, Inc., en
 
 defined('OK') && defined('XESTION') or die();
 
-$quita_url = PFN_quita_url(array('id_raiz','id_usuario','id_grupo','id_conf'),false);
+$quita_url = PFN_quita_url('id', false);
 
 $Xopcions = array(
 	'm_comezo' => $relativo.'navega.php?'.PFN_cambia_url('dir','./',false),
-	'm_admin' => $relativo.'xestion/index.php?'.session_name().'='.session_id(),
+	'm_admin' => $relativo.'xestion/?'.$quita_url,
 	'm_actualizar' => PFN_get_url(),
-	'Xm_crear_raiz' => $relativo.'xestion/raices/index.php?'.$quita_url,
-	'Xm_crear_usuario' => $relativo.'xestion/usuarios/index.php?'.$quita_url,
-	'Xm_crear_grupo' => $relativo.'xestion/grupos/index.php?'.$quita_url,
+	'Xm_crear_raiz' => $relativo.'xestion/raices/editar.php?'.$quita_url,
+	'Xm_crear_usuario' => $relativo.'xestion/usuarios/editar.php?'.$quita_url,
+	'Xm_crear_grupo' => $relativo.'xestion/grupos/editar.php?'.$quita_url,
 	'Xm_varios' => $relativo.'xestion/varios/index.php?'.$quita_url,
 	'Xm_informes' => $relativo.'xestion/informes/index.php?'.$quita_url,
 	'Xm_traduccion' => $relativo.'xestion/traduccion/index.php?'.$quita_url,
-	'Xm_doazon' => $relativo.'xestion/doazon.php?'.$quita_url,
 	'm_sair' => $relativo.'sair.php?'.$quita_url,
 );
 

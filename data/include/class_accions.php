@@ -38,9 +38,13 @@ defined('OK') or die();
 class PFN_Accions extends PFN_Niveles {
 	var $vars;
 	var $conf;
+	var $clases;
 	var $arquivos;
-	var $PFN_inc;
+	var $paths;
+	var $indexador;
+	var $ksi;
 	var $estado = array();
+	var $firmados = array();
 	var $rexistro = true;
 
 	/**
@@ -49,10 +53,12 @@ class PFN_Accions extends PFN_Niveles {
 	* recibe el objecto con los parametros de configuración
 	*/
 	function PFN_Accions (&$PFN_conf) {
-		global $PFN_vars;
+		global $PFN_vars, $PFN_clases, $PFN_paths;
 
 		$this->conf = &$PFN_conf;
 		$this->vars = &$PFN_vars;
+		$this->clases = &$PFN_clases;
+		$this->paths = &$PFN_paths;
 	}
 
 	/**
@@ -71,6 +77,15 @@ class PFN_Accions extends PFN_Niveles {
 	*/
 	function indexador (&$PFN_indexador) {
 		$this->indexador = &$PFN_indexador;
+	}
+
+	/**
+	* function ksi (object $PFN_KSI)
+	*
+	* recibe el objecto con las acciones concretas para seguridad
+	*/
+	function ksi (&$PFN_KSI) {
+		$this->ksi = &$PFN_KSI;
 	}
 
 	/**
@@ -174,7 +189,7 @@ class PFN_Accions extends PFN_Niveles {
 		}
 
 		// Anula si el fichero ya existe
-		if(file_exists($destino.'/'.$nome)) {
+		if (file_exists($destino.'/'.$nome)) {
 			$this->estado['subir_arq'] = 3;
 			return 3;
 		}
@@ -588,55 +603,17 @@ class PFN_Accions extends PFN_Niveles {
 	* Registra todas las acciones realizadas con los ficheros y directorios
 	*/
 	function log_accion ($accion, $orixe, $destino='') {
-		if ($this->rexistro && $this->conf->g('logs','accions')) {
-			$orixe = substr($orixe, strlen($this->conf->g('raiz','path')));
-			$destino = substr($destino, strlen($this->conf->g('raiz','path')));
-			$arq = $this->conf->g('info_raiz').'/'.$this->conf->g('logs','accions');
-
-			$sUsuario = $this->vars->session(array('sPFN','usuario'));
-			$txt = '['.date('Y/m/d H:i:s').']'
-				.' ['.$sUsuario['id'].' - '.$sUsuario['usuario'].']'
-				.' ['.$accion.']'
-				.' ['.$orixe.(empty($destino)?'':' -> '.$destino).']';
-
-			if (is_file($arq)) {
-				while (true) {
-					if ($cnt > 10) {
-						return false;
-					}
-
-					if ($fp = @fopen($arq, 'a+')) {
-						if (@flock($fp, LOCK_EX)) {
-							break;
-						}
-					}
-
-					@fclose($fp);
-
-					$cnt++;
-					$k = rand(0, 20);
-					usleep(round($k * 10000));  # k * 10ms
-				}
-
-				if (!$fp) {
-					return false;
-				}
-			} else {
-				if ($fp = @fopen($arq,'w')) {
-					flock($fp, LOCK_EX);
-
-					$ini = '<?php'."\n"
-						.'//$log[] = [fecha/date] [usuario/user]'
-						.' [accion/action] [fichero/file [ -> destino/destination]]';
-				} else {
-					return false;
-				}
-			}
-
-			fwrite($fp, "$ini\n".'$log[] = \''.addslashes($txt).'\';');
-			flock($fp, LOCK_UN);
-			fclose($fp);
+		if (!$this->rexistro || ($this->conf->g('logs','accions') == false)) {
+			return true;
 		}
+
+		global $PFN_conf, $PFN_rexistros;
+
+		if (!is_object($PFN_rexistros)) {
+			include_once ($this->paths['include'].'class_rexistros.php');
+		}
+
+		return $PFN_rexistros->alta($accion, $orixe, $destino);
 	}
 
 	/**
@@ -727,6 +704,141 @@ class PFN_Accions extends PFN_Niveles {
 		}
 
 		return $this->estado['novo_arq']?1:0;
+	}
+
+	/**
+	* function get_firmados (void)
+	*
+	* Devuelve el listado de ficheros firmados
+	*
+	* return array
+	*/
+	function get_firmados () {
+		return $this->firmados;
+	}
+
+	/**
+	* function firmar (string $dir, string $path, array $datos)
+	*
+	* Inicializa el proceso de firma de documentos
+	*
+	* return string
+	*/
+	function firmar ($dir, $path, $datos) {
+		$this->firmados = array();
+
+		$log = $this->firma_recursiva($dir, $path, $datos);
+
+		return $log;
+	}
+	/**
+	* function firma_recursiva (string $dir, string $path, array $datos)
+	*
+	* Realiza la firma de documentos de manera recursiva
+	*
+	* return string
+	*/
+	function firma_recursiva ($dir, $path, $datos) {
+		if (!is_dir($path)) {
+			return 0;
+		} else if (!is_writable($path)) {
+			$log .= '<br />[ERROR] '.$dir.': '.$this->conf->t('estado.firmar_lotes', 6).'<br /><br />';
+
+			return $log;
+		}
+
+		if (!preg_match('#/$#', $path)) {
+			$path .= '/';
+		}
+
+		$contido = &$this->carga_contido($path);
+
+		foreach ($contido['nome'] as $v) {
+			$arquivo = $path.$v;
+
+			if ($this->e_dir($arquivo)) {
+				$log .= $this->firma_recursiva($dir.'/'.$v, $arquivo, $datos);
+			} else if (!$datos['firmar'] || (($datos['repetir'] == false) && preg_match('/\.firm/i', $arquivo))) {
+				$this->firmados[] = $arquivo;
+
+				continue;
+			} else {
+				$erro = 0;
+
+				if (($datos['pdf'] == 1) && preg_match('/\.pdf$/i', $v)) {
+					if (is_writable($arquivo)) {
+						$pdf = true;
+
+						$resultado = $this->ksi->Interfaz_ESecureDLL(array(
+							'accion' => 0,
+							'pdf' => $arquivo,
+							'cer' => $datos['cer'],
+							'cpw' => $datos['cpw'],
+							'aut' => '',
+							'raz' => '',
+							'con' => '',
+							'dir' => '',
+							'ppw' => '',
+							'cif' => 0,
+							'ctf' => 0
+						));
+					} else {
+						$erro = 1;
+					}
+				} else {
+					$pdf = false;
+
+					$resultado = $this->ksi->Interfaz_ESecureDLL(array(
+						'accion' => '7',
+						'inf' => $arquivo,
+						'out' => ($arquivo.'.firm'),
+						'ind' => '',
+						'cer' => $datos['cer'],
+						'cpw' => $datos['cpw'],
+						'sep' => ''
+					));
+				}
+
+				if ($erro === 1) {
+					$log .= '<br />[ERROR] '.$arquivo.': '.$this->conf->t('estado.firmar_lotes', 7).'<br /><br />';
+					continue;
+				}
+
+				if ($resultado === 0) {
+					$log .= '[OK] '.$arquivo.'<br />';
+
+					if ($pdf) {
+						if ($datos['manter']) {
+							$despois = $arquivo;
+						} else {
+							$despois = preg_replace('/\.pdf$/i', '.firm.pdf', $arquivo);
+
+							rename($arquivo, $despois);
+						}
+
+						$this->log_accion('firmar', $arquivo, $despois);
+
+						$this->firmados[] = $despois;
+
+						if (is_object($this->indexador) && !$datos['manter']) {
+							$this->indexador->renomear($dir.'/', $v, preg_replace('/\.pdf$/i', '.firm.pdf', $v));
+						}
+					} else {
+						$this->log_accion('firmar', $arquivo, $arquivo.'.firm');
+
+						$this->firmados[] = $arquivo.'.firm';
+
+						if (is_object($this->indexador)) {
+							$this->indexador->alta_modificacion($dir.'/', $v, $v.'.firm', '');
+						}
+					}
+				} else {
+					$log .= '<br />[ERROR] '.$this->conf->t('estado.firmar_lotes', 5).' [Error: '.$resultado.']<br /><br />';
+				}
+			}
+		}
+
+		return $log;
 	}
 }
 ?>

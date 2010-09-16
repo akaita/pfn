@@ -81,7 +81,7 @@ if ($PFN_conf->g('columnas','multiple')
 	$estado = $PFN_accions->log_ancho_banda($tamano);
 
 	if ($estado === true) {
-		$nome_comprimido = strstr($nome_comprimido, '.zip')?$nome_comprimido:($nome_comprimido.'.zip');
+		$nome_comprimido = str_replace(array(' ','"'),'_', strstr($nome_comprimido, '.zip')?$nome_comprimido:($nome_comprimido.'.zip'));
 
 		header('Pragma: private');
 		header('Expires: 0');
@@ -89,10 +89,16 @@ if ($PFN_conf->g('columnas','multiple')
 		header('Last-Modified: '.gmdate('D, d M Y H:i:s').' GMT');
 		header('Content-Type: application/force-download');
 		header('Content-Transfer-Encoding: binary');
-		header('Content-Disposition: attachment; filename="'.str_replace(array(' ','"'),'_',$nome_comprimido).'"');
+		header('Content-Disposition: attachment; filename="'.$nome_comprimido.'"');
 		header('Content-Length: '.$tamano);
 
 		echo $contido;
+
+		foreach ($EasyZIP->get_filelist() as $v) {
+			$PFN_accions->log_accion('descargar', $v, $nome_comprimido);
+		}
+
+		exit;
 	} elseif ($estado === -1) {
 		$erro = true;
 		$estado_accion = $PFN_conf->t('estado.descargar', 3);

@@ -36,6 +36,7 @@ function basicas ($datos) {
 
 	$licencia['script'] = 'data/conf/basicas.inc.php';
 	$licencia['descricion'] = 'Fichero de configuraciónes básicas';
+
 	$PFN_version = $datos['version'];
 
 	$texto = '<?php'."\n";
@@ -61,9 +62,21 @@ function basicas ($datos) {
 		."\n\t\t".'\'usuario\' => \''.$datos['db:usuario'].'\', // Usuario / User'
 		."\n\t\t".'\'contrasinal\' => \''.$datos['db:contrasinal'].'\', // Contraseña / Password'
 		."\n\t\t".'\'prefixo\' => \''.$datos['db:prefixo'].'\' // Prefijo para las tablas / Table prefix'
+		."\n\t".'),'
+		."\n\t".'\'smtp\' => array('
+		."\n\t\t".'\'host\' => \''.$datos['smtp:host'].'\', // Servidor de correo / Mail Server'
+		."\n\t\t".'\'user\' => \''.$datos['smtp:user'].'\', // La cuenta de usuario con la que se enviara el correo / User account to send mails'
+		."\n\t\t".'\'password\' => \''.$datos['smtp:password'].'\', // Contraseña de esa cuenta de usuario / Password to user account'
+		."\n\t\t".'\'port\' => '.intval($datos['smtp:port']).', // Puerto de SMTP / SMTP port'
+		."\n\t\t".'\'secure\' => \''.$datos['smtp:secure'].'\', // Usar \'\', \'ssl\' o \'tls\' / Use \'\', \'ssl\' or \'tls\''
+		."\n\t\t".'\'auth\' => '.($datos['smtp:auth']?'true':'false').', // Autenticacion SMTP (true|false) // SMTP authentication (true|false)'
+		."\n\t\t".'\'timeout\' => '.intval($datos['smtp:timeout']).', // Tiempo de espera de respuesta del servidor / Server reply time out'
+		."\n\t\t".'\'debug\' => '.($datos['smtp:debug']?'true':'false').' // Imprimir resultado de envios / Print send results'
 		."\n\t".')'
 		."\n);\n?>";
 
 	$PFN_arquivos->abre_escribe($PFN_paths['conf'].'basicas.inc.php', $texto);
+
+	return include ($PFN_paths['conf'].'basicas.inc.php');
 }
 ?>

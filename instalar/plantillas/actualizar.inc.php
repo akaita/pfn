@@ -87,6 +87,14 @@ defined('OK') or die();
 		if (in_array('220-230', $paso_feito)) {
 			include ($PFN_paths['instalar'].'plantillas/actualizar_220-230.inc.php');
 		}
+
+		if (in_array('230-233', $paso_feito)) {
+			include ($PFN_paths['instalar'].'plantillas/actualizar_230-233.inc.php');
+		}
+
+		if (in_array('233-240', $paso_feito)) {
+			include ($PFN_paths['instalar'].'plantillas/actualizar_233-240.inc.php');
+		}
 		?>
 	<?php } ?>
 <?php } ?>

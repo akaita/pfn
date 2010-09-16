@@ -31,13 +31,13 @@ defined('OK') or die();
 $erros = false;
 $comprobar = array();
 
-if (is_writable($PFN_paths['servidor'])) {
+if (is_writable($PFN_paths['servidor']) && file_exists($PFN_paths['servidor'].'.')) {
 	$comprobar[0] = 1;
 } else {
 	$erros = true;
 }
 
-if (is_writable($PFN_paths['conf'])) {
+if (is_writable($PFN_paths['conf']) && file_exists($PFN_paths['conf'].'.')) {
 	$comprobar[1] = 1;
 } else {
 	$erros = true;

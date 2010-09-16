@@ -32,27 +32,27 @@ include ($relativo.'paths.php');
 include_once ($PFN_paths['include'].'basicweb.php');
 include_once ($PFN_paths['include'].'Xusuarios.php');
 
-PFN_quita_url_SERVER('id_usuario');
+PFN_quita_url_SERVER('id');
 
 session_write_close();
 
 $erros = array();
-$id_usuario = intval($PFN_vars->get('id_usuario'));
+$id = intval($PFN_vars->get('id'));
 
-if (empty($id_usuario) || ($id_usuario == $sPFN['usuario']['id'])) {
+if (empty($id) || ($id == $sPFN['usuario']['id'])) {
 	$erros[] = 13;
 } else {
 	$query = 'DELETE FROM '.$PFN_usuarios->tabla('usuarios')
-		.' WHERE id="'.$id_usuario.'";';
+		.' WHERE id="'.$id.'";';
 	
 	if ($PFN_usuarios->actualizar($query) == -1) {
 		$erros[] = 6;
 	} else {
 		$query = 'DELETE FROM '.$PFN_usuarios->tabla('r_u')
-			.' WHERE id_usuario="'.$id_usuario.'";';
+			.' WHERE id_usuario="'.$id.'";';
 		$PFN_usuarios->actualizar($query);
 
-		$info_usuario = $PFN_niveles->path_correcto($PFN_paths['info'].'usuario'.$id_usuario);
+		$info_usuario = $PFN_paths['info'].'usuario'.$id;
 
 		if (is_dir($info_usuario)) {
 			include_once ($PFN_paths['include'].'class_accions.php');
@@ -67,6 +67,6 @@ if (empty($id_usuario) || ($id_usuario == $sPFN['usuario']['id'])) {
 
 $ok = count($erros)?false:2;
 
-Header('Location: ../index.php?'.PFN_cambia_url(array('id_usuario','opc','erros','ok'), array('','2',implode(',', $erros),$ok), false, true));
+Header('Location: index.php?'.PFN_cambia_url(array('id','erros','ok'), array(false, implode(',', $erros), $ok), false, true));
 exit;
 ?>

@@ -33,15 +33,15 @@ include ($relativo.'paths.php');
 include_once ($PFN_paths['include'].'basicweb.php');
 include_once ($PFN_paths['include'].'Xusuarios.php');
 
-PFN_quita_url_SERVER('id_conf');
+PFN_quita_url_SERVER('id');
 
 session_write_close();
 
-$id_conf = $PFN_vars->get('id_conf');
+$id = $PFN_vars->get('id');
 
 $erros = array();
-$existe = $PFN_usuarios->init('configuracion', $id_conf);
-$nome_arq = $PFN_niveles->path_correcto($PFN_paths['conf'].$PFN_usuarios->get('conf').'.inc.php');
+$existe = $PFN_usuarios->init('configuracion', $id);
+$nome_arq = $PFN_paths['conf'].$PFN_niveles->nome_correcto($PFN_usuarios->get('conf').'.inc.php');
 
 if (!$existe || !is_file($nome_arq)) {
 	$erros[] = 18;
@@ -56,7 +56,7 @@ $PFN_tempo->rexistra('precodigo');
 include_once ($PFN_paths['include'].'class_arquivos.php');
 $PFN_arquivos = new PFN_Arquivos($PFN_conf);
 
-include ($PFN_paths['plantillas'].'Xconfiguracions_sintaxis.inc.php');
+include ($PFN_paths['plantillas'].'Xconfiguracion_sintaxis.inc.php');
 
 $PFN_tempo->rexistra('postcodigo');
 

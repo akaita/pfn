@@ -99,7 +99,7 @@ if (count($erros) == 0) {
 	$consultas = explode(';', $consultas);
 
 	foreach ((array)$consultas as $q) {
-		$q = trim($q);
+		$q = preg_replace("/''([0-9-]*)''/", "'\\1'", trim($q)); 
 
 		if (empty($q)) {
 			continue;
@@ -114,7 +114,7 @@ if (count($erros) == 0) {
 	$consultas = include ($PFN_paths['instalar'].'mysql/instalar.php');
 
 	foreach ($consultas as $q) {
-		$q = trim($q);
+		$q = preg_replace("/''([0-9-]*)''/", "'\\1'", trim($q)); 
 
 		if (empty($q)) {
 			continue;
@@ -127,45 +127,45 @@ if (count($erros) == 0) {
 	}
 
 	if (!is_dir($PFN_paths['tmp'])) {
-		if (mkdir($PFN_paths['tmp'])) {
+		if (@mkdir($PFN_paths['tmp'])) {
 			copy($PFN_paths['data'].'index.html', $PFN_paths['tmp'].'index.html');
 		}
 	}
 
-	chmod($PFN_paths['tmp'], 0700);
+	@chmod($PFN_paths['tmp'], 0700);
 
 	if (!is_dir($PFN_paths['logs'])) {
-		if (mkdir($PFN_paths['logs'])) {
+		if (@mkdir($PFN_paths['logs'])) {
 			copy($PFN_paths['data'].'index.html', $PFN_paths['logs'].'index.html');
 		}
 	}
 
-	chmod($PFN_paths['logs'], 0700);
+	@chmod($PFN_paths['logs'], 0700);
 
 	if (!is_dir($PFN_paths['info'])) {
-		if (mkdir($PFN_paths['info'])) {
+		if (@mkdir($PFN_paths['info'])) {
 			copy($PFN_paths['data'].'index.html', $PFN_paths['info'].'index.html');
 		}
 	}
 
-	chmod($PFN_paths['info'], 0700);
+	@chmod($PFN_paths['info'], 0700);
 
 	if (!is_dir($PFN_paths['extra'])) {
-		if (mkdir($PFN_paths['extra'])) {
+		if (@mkdir($PFN_paths['extra'])) {
 			copy($PFN_paths['data'].'index.html', $PFN_paths['extra'].'index.html');
 		}
 	}
 
-	chmod($PFN_paths['extra'], 0700);
+	@chmod($PFN_paths['extra'], 0700);
 
 	if (!is_dir($PFN_paths['info'].'raiz1')) {
-		if (mkdir($PFN_paths['info'].'raiz1')) {
+		if (@mkdir($PFN_paths['info'].'raiz1')) {
 			copy($PFN_paths['data'].'index.html', $PFN_paths['info'].'raiz1/index.html');
 		}
 	}
 
 	if (!is_dir($PFN_paths['info'].'usuario1')) {
-		if (mkdir($PFN_paths['info'].'usuario1')) {
+		if (@mkdir($PFN_paths['info'].'usuario1')) {
 			copy($PFN_paths['data'].'index.html', $PFN_paths['info'].'usuario1/index.html');
 		}
 	}
@@ -176,7 +176,7 @@ if (count($erros) == 0) {
 		include_once ($PFN_paths['include'].'class_arquivos.php');
 		include ($PFN_paths['instalar'].'include/basicas.inc.php');
 
-		basicas(array(
+		$basicas = basicas(array(
 			'version' => $PFN_version,
 			'idioma' => $form['idioma'],
 			'estilo' => 'estilos/pfn/',
@@ -191,6 +191,18 @@ if (count($erros) == 0) {
 			'db:contrasinal' => $form['db_contrasinal'],
 			'db:prefixo' => $form['db_prefixo']
 		));
+
+		if (is_file($PFN_paths['conf'].'licencia.lic')) {
+			rename($PFN_paths['conf'].'licencia.lic', $PFN_paths['conf'].$basicas['clave'].'.lic');
+		}
+
+		if (is_file($PFN_paths['conf'].'conf.ini')) {
+			rename($PFN_paths['conf'].'conf.ini', $PFN_paths['conf'].$basicas['clave'].'.ini');
+		}
+
+		if (is_file($PFN_paths['conf'].'control.conv')) {
+			rename($PFN_paths['conf'].'control.conv', $PFN_paths['conf'].$basicas['clave'].'.conv');
+		}
 	}
 }
 

@@ -34,11 +34,11 @@ include_once ($PFN_paths['include'].'Xusuarios.php');
 
 session_write_close();
 
-$id_conf = $PFN_vars->post('id_conf');
+$id = $PFN_vars->post('id');
 
 $erros = array();
-$existe = $PFN_usuarios->init('configuracion', $id_conf);
-$nome_arq = $PFN_niveles->path_correcto($PFN_paths['conf'].$PFN_usuarios->get('conf').'.inc.php');
+$existe = $PFN_usuarios->init('configuracion', $id);
+$nome_arq = $PFN_paths['conf'].$PFN_niveles->nome_correcto($PFN_usuarios->get('conf').'.inc.php');
 
 if (!$existe || !is_file($nome_arq)) {
 	$erros[] = 18;
@@ -70,7 +70,7 @@ if ((count($erros) == 0) && $PFN_vars->post('executa')) {
 }
 
 if (count($erros) == 0) {
-	Header('Location: index.php?'.PFN_cambia_url(array('id_conf','ok'), array($id_conf,$ok), false, true));
+	Header('Location: resumo.php?'.PFN_cambia_url(array('id', 'ok'), array($id, $ok), false, true));
 	exit;
 }
 
@@ -81,7 +81,7 @@ include ($PFN_paths['xestion'].'Xopcions.inc.php');
 
 $PFN_tempo->rexistra('precodigo');
 
-include ($PFN_paths['plantillas'].'Xconfiguracions_modi.inc.php');
+include ($PFN_paths['plantillas'].'Xconfiguracion_editar.inc.php');
 
 $PFN_tempo->rexistra('postcodigo');
 

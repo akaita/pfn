@@ -31,9 +31,13 @@ defined('OK') or die();
 $erros = false;
 $idiomas_valen = array();
 
-foreach ($PFN_conf->t('lista_idiomas') as $k => $v) {
-	if (is_dir($PFN_paths['idiomas'].$k)) {
-		$idiomas_valen[$k] = $v;
+foreach ($PFN_conf->gettext->translations() as $k => $v) {
+	if (strstr($k, 'lista_idiomas_')) {
+		$idioma = str_replace('lista_idiomas_', '', $k);
+
+		if (is_file($PFN_paths['idiomas'].$idioma.'/web.mo')) {
+			$idiomas_valen[$idioma] = $v;
+		}
 	}
 }
 

@@ -2,11 +2,11 @@
 /****************************************************************************
 * data/plantillas/Xusuarios.inc.php
 *
-* plantilla para la visualización de la pantalla de modificación de un usuario
-* y sus relaciones con las raices
+* plantilla para la visualización de la pantalla inicial de administracion
+* de usuarios
 *
 
-PHPfileNavigator versión 2.3.0
+PHPfileNavigator versión 2.2.0
 
 Copyright (C) 2004-2005 Lito <lito@eordes.com>
 
@@ -29,190 +29,150 @@ programa. Si no ha sido así, escriba a la Free Software Foundation, Inc., en
 
 defined('OK') && defined('XESTION') or die();
 ?>
-<script type="text/javascript"><!--
-
-function eliminar () {
-	<?php if ($id_usuario == $sPFN['usuario']['id']) { ?>
-	alert(HtmlDecode('<?php echo addslashes($PFN_conf->t('Xerros', 13)); ?>'));
-	<?php } else { ?>
-	if (confirm(HtmlDecode('<?php echo addslashes($PFN_conf->t('Xeliminar_usuario')); ?>'))) {
-		enlace('eliminar.php?id_usuario=<?php echo $id_usuario; ?>&amp;<?php echo PFN_get_url(false); ?>');
-	}
-	<?php } ?>
-}
-
-//--></script>
 <div id="ver_info">
-	<div class="bloque_info"><h1><?php echo $PFN_conf->t('xestion').' &raquo; '.$PFN_conf->t('Xmodi_usuario'); ?></h1></div>
+	<div class="bloque_info"><h1><?php echo $PFN_conf->t('xestion').' &raquo; '.$PFN_conf->t('Xadmin_usuarios'); ?></h1></div>
 	<div class="bloque_info">
-		<?php if (count($erros) || $ok > 0) { ?>
-		<div class="aviso">
-			<?php
-			if (count($erros)) {
-				foreach ($erros as $v) {
-					echo $PFN_conf->t('Xerros', intval($v)).'<br />';
+
+		<ul id="tabs">
+			<li id="tab_li1"><a href="../raices/" id="tab_a1"><?php echo $PFN_conf->t('Xraices'); ?></a></li>
+			<li id="tab_li2"><a href="../usuarios/" id="tab_a2" class="activo"><?php echo $PFN_conf->t('Xusuarios'); ?></a></li>
+			<li id="tab_li3"><a href="../grupos/" id="tab_a3"><?php echo $PFN_conf->t('Xgrupos'); ?></a></li>
+			<li id="tab_li4"><a href="../configuracions/" id="tab_a4"><?php echo $PFN_conf->t('Xconfiguracions'); ?></a></li>
+		</ul>
+
+		<div class="capa_tab"> 
+			<?php if ($erros || $ok) { ?>
+			<div class="aviso">
+				<?php
+				if ($erros) {
+					foreach ($erros as $v) {
+						echo $PFN_conf->t('Xerros', intval($v)).'<br />';
+					}
+				} else {
+					echo $PFN_conf->t('Xok', $ok);
 				}
-			} else {
-				echo $PFN_conf->t('Xok', intval($ok)).'<br />';
-			}
-			?>
-		</div>
-		<?php } ?>
-
-		<form action="gdar.php?<?php echo PFN_get_url(false); ?>" method="post" onsubmit="return submitonce();">
-		<fieldset>
-		<input type="hidden" name="id_usuario" value="<?php echo $PFN_usuarios->get('id'); ?>" />
-
-		<table class="tabla_info" summary="">
-			<tr>
-				<th><a href="#" onclick="Xamosa_axuda(1); return false;">(?)</a> <label for="nome"><?php echo $PFN_conf->t('Xnome'); ?>*</label></th>
-				<td><input type="text" id="nome" name="nome" value="<?php echo $PFN_usuarios->get('nome'); ?>" class="text" tabindex="10" /></td>
-			</tr>
-			<tr id="tr_axuda1" style="display: none;">
-				<td colspan="2"><?php echo $PFN_conf->t('Xaxuda','usuario_nome'); ?></td>
-			</tr>
-			<tr>
-				<th><a href="#" onclick="Xamosa_axuda(2); return false;">(?)</a> <label for="usuario"><?php echo $PFN_conf->t('Xusuario'); ?>*</label></th>
-				<td><input type="text" id="usuario" name="usuario" value="<?php echo $PFN_usuarios->get('usuario'); ?>" class="text" tabindex="20" /></td>
-			</tr>
-			<tr id="tr_axuda2" style="display: none;">
-				<td colspan="2"><?php echo $PFN_conf->t('Xaxuda','usuario_usuario'); ?></td>
-			</tr>
-			<tr>
-				<th><a href="#" onclick="Xamosa_axuda(3); return false;">(?)</a> <label for="contrasinal"><?php echo $PFN_conf->t('Xcontrasinal'); ?></label></th>
-				<td><input type="password" id="contrasinal" name="contrasinal" value="" class="text" tabindex="30" /></td>
-			</tr>
-			<tr id="tr_axuda3" style="display: none;">
-				<td colspan="2"><?php echo $PFN_conf->t('Xaxuda','usuario_contrasinal'); ?></td>
-			</tr>
-			<tr>
-				<th><a href="#" onclick="Xamosa_axuda(4); return false;">(?)</a> <label for="rep_contrasinal"><?php echo $PFN_conf->t('Xrep_contrasinal'); ?></label></th>
-				<td><input type="password" id="rep_contrasinal" name="rep_contrasinal" value="" class="text" tabindex="40" /></td>
-			</tr>
-			<tr id="tr_axuda4" style="display: none;">
-				<td colspan="2"><?php echo $PFN_conf->t('Xaxuda','usuario_rep_contrasinal'); ?></td>
-			</tr>
-			<tr>
-				<th><a href="#" onclick="Xamosa_axuda(5); return false;">(?)</a> <label for="email"><?php echo $PFN_conf->t('Xemail'); ?></label></th>
-				<td><input type="text" id="email" name="email" value="<?php echo $PFN_usuarios->get('email'); ?>" class="text" tabindex="50" /></td>
-			</tr>
-			<tr id="tr_axuda5" style="display: none;">
-				<td colspan="2"><?php echo $PFN_conf->t('Xaxuda','usuario_email'); ?></td>
-			</tr>
-			<tr>
-				<th><a href="#" onclick="Xamosa_axuda(6); return false;">(?)</a> <label for="max_descargas"><?php echo $PFN_conf->t('Xmax_descargas_mes'); ?></label></th>
-				<td><input type="text" id="max_descargas" name="max_descargas" value="<?php echo $max_descargas; ?>" class="text" tabindex="60" /> <?php echo $PFN_conf->t('Xen_megas'); ?></td>
-			</tr>
-			<tr id="tr_axuda6" style="display: none;">
-				<td colspan="2"><?php echo $PFN_conf->t('Xaxuda','usuario_max_descargas'); ?></td>
-			</tr>
-			<tr>
-				<th><a href="#" onclick="Xamosa_axuda(7); return false;">(?)</a> <label for="actual_descargas"><?php echo $PFN_conf->t('descargado_mes'); ?></label></th>
-				<td><input type="text" id="actual_descargas" name="actual_descargas" value="<?php echo $actual_descargas; ?>" class="text" tabindex="70" /> <?php echo $PFN_conf->t('Xen_megas'); ?></td>
-			</tr>
-			<tr id="tr_axuda7" style="display: none;">
-				<td colspan="2"><?php echo $PFN_conf->t('Xaxuda','usuario_actual_descargas'); ?></td>
-			</tr>
-			<tr>
-				<th><a href="#" onclick="Xamosa_axuda(11); return false;">(?)</a> <label for="cambiar_datos"><?php echo $PFN_conf->t('Xcambiar_datos'); ?></label></th>
-				<td>
-					<select id="cambiar_datos" name="cambiar_datos" tabindex="75">
-						<option value="1" <?php echo $PFN_usuarios->get('cambiar_datos')==1?'selected="selected"':''; ?>>ON</option>
-						<option value="0" <?php echo $PFN_usuarios->get('cambiar_datos')==0?'selected="selected"':''; ?>>OFF</option>
-					</select>
-				</td>
-			</tr>
-			<tr id="tr_axuda11" style="display: none;">
-				<td colspan="2"><?php echo $PFN_conf->t('Xaxuda','cambiar_datos'); ?></td>
-			</tr>
-			<tr>
-				<th><a href="#" onclick="Xamosa_axuda(8); return false;">(?)</a> <label for="id_grupo"><?php echo $PFN_conf->t('Xgrupo'); ?>*</label></th>
-				<td>
-					<select id="id_grupo" name="id_grupo" tabindex="80">
-						<?php foreach ($Dgrupos as $k => $v) { ?>
-						<option value="<?php echo $k; ?>" <?php echo ($PFN_usuarios->get('id_grupo') == $k)?'selected="selected"':''; ?>><?php echo $v; ?></option>
-						<?php } ?>
-					</select>
-				</td>
-			</tr>
-			<tr id="tr_axuda8" style="display: none;">
-				<td colspan="2"><?php echo $PFN_conf->t('Xaxuda','usuario_grupo'); ?></td>
-			</tr>
-			<tr>
-				<th><a href="#" onclick="Xamosa_axuda(9); return false;">(?)</a> <label for="admin"><?php echo $PFN_conf->t('Xadministrador'); ?></label></th>
-				<td>
-					<select id="admin" name="admin" tabindex="90">
-						<option value="1" <?php echo $PFN_usuarios->get('admin')==1?'selected="selected"':''; ?>>ON</option>
-						<option value="0" <?php echo $PFN_usuarios->get('admin')==0?'selected="selected"':''; ?>>OFF</option>
-					</select>
-				</td>
-			</tr>
-			<tr id="tr_axuda9" style="display: none;">
-				<td colspan="2"><?php echo $PFN_conf->t('Xaxuda','usuario_administrador'); ?></td>
-			</tr>
-			<tr>
-				<th><a href="#" onclick="Xamosa_axuda(10); return false;">(?)</a> <label for="estado"><?php echo $PFN_conf->t('Xestado'); ?></label></th>
-				<td>
-					<select id="estado" name="estado" tabindex="100">
-						<option value="1" <?php echo $PFN_usuarios->get('estado')==1?'selected="selected"':''; ?>>ON</option>
-						<option value="0" <?php echo $PFN_usuarios->get('estado')==0?'selected="selected"':''; ?>>OFF</option>
-					</select>
-				</td>
-			</tr>
-			<tr id="tr_axuda10" style="display: none;">
-				<td colspan="2"><?php echo $PFN_conf->t('Xaxuda','usuario_estado'); ?></td>
-			</tr>
-		</table>
-
-		<br /><br />
-
-		<table class="tabla_info" summary=""><tr><th><strong><?php echo $PFN_conf->t('Xraices_relacionadas'); ?></strong></th></tr></table>
-
-		<table class="tabla_normal" summary="">
-<?php
-if (empty($id_usuario)) {
-	$PFN_usuarios->init('raices');
-} else {
-	$PFN_usuarios->init('raices_usuario', $id_usuario);
-}
-
-for ($cont=3; $PFN_usuarios->mais() || $cont%3 != 0; $PFN_usuarios->seguinte()) {
-	$id = $PFN_usuarios->get('id');
-	$relacion = $PFN_usuarios->get('relacion');
-
-	if ($cont == 3) {
-		echo '<tr>';
-		$cont = 0;
-	}
-
-	echo '<td>';
-
-	if (empty($id)) {
-		echo '&nbsp;';
-	} else {
-		echo '<input type="checkbox" id="Fraices_'.$id.'" name="Fraices[]" value="'.$id.'" '.($relacion?'checked="checked"':'').' class="checkbox" /> '
-			.'<label for="Fraices_'.$id.'">'.$PFN_usuarios->get('nome').'</label>';
-	}
-
-	echo '</td>';
-	$cont++;
-
-	if ($cont == 3) {
-		echo '</tr>';
-	}
-}
-?>
-		</table>
-		<br />
-
-		<div style="width: 100%; text-align: center;">
-			<?php if (!empty($id_usuario)) { ?>
-			<input type="reset" value=" <?php echo $PFN_conf->t('eliminar'); ?> " class="boton" style="margin-right: 40px;" onclick="eliminar();" tabindex="110" />
+				?>
+			</div>
 			<?php } ?>
-			<input type="reset" value=" <?php echo $PFN_conf->t('voltar'); ?> " class="boton" style="margin-right: 40px;" onclick="enlace('../index.php?<?php echo PFN_cambia_url('opc', 2, false); ?>');" tabindex="120" />
-			<input type="submit" value="<?php echo $PFN_conf->t('aceptar'); ?>" class="boton" tabindex="130" /><br />
+
+			<form action="<?php echo PFN_cambia_url(array('buscar','paxina','paxinar'), array($buscar, $paxina, $paxinar)); ?>" method="post" onsubmit="return submitonce();">
+				<fieldset>
+					<input type="hidden" name="accion" value="gardar" />
+
+					<div class="con_borde">
+						<label for="paxinar1"><?php echo $PFN_conf->t('Xamosar'); ?>:</label>
+						<select name="paxinar" id="paxinar1" class="d40" onchange="enlace('?paxinar='+this.value);">
+							<?php
+							for ($i = 50; $i < $total; $i += 50) {
+								echo '<option value="'.$i.'" '.(($i == $paxinar)?'selected="selected"':'').'>'.$i.'</option>';
+							}
+
+							echo '<option value="'.$total.'" '.(($paxinar == $total)?'selected="selected"':'').'>'.$total.'</option>';
+							?>
+						</select>
+
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+						<label for="paxina1"><?php echo $PFN_conf->t('Xpaxina'); ?>:</label>
+						<select name="paxina" id="paxina1" onchange="enlace('?paxinar='+$('#paxinar1').val()+'&amp;paxina='+this.value);">
+							<?php
+							for ($i = 0; $i <= $total; $i += $paxinar) {
+								$selected = ($i == $paxina)?'selected="selected"':'';
+								$fin = (($i + $paxinar) >= $total)?$total:($i + $paxinar);
+							?>
+							<option value="<?php echo $i; ?>" <?php echo $selected; ?>><?php echo ($i + 1).' - '.$fin; ?></option>
+							<?php } ?>
+						</select>
+
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+						<label for="buscar1"><?php echo $PFN_conf->t('Xbuscar'); ?>:</label>
+						<input type="text" name="buscar" id="buscar1" value="<?php echo $buscar; ?>" />
+					</div>
+
+					<table class="Xmenu" summary="">
+						<tr>
+							<th class="centro"><?php echo $PFN_conf->t('id'); ?></th>
+							<th><?php echo $PFN_conf->t('usuario'); ?></th>
+							<th><?php echo $PFN_conf->t('Xnome'); ?></th>
+							<th><?php echo $PFN_conf->t('correo'); ?></th>
+							<th class="centro"><?php echo $PFN_conf->t('Xestado'); ?></th>
+						</tr>
+						<?php
+						for ($i = 0; $PFN_usuarios->mais(); $PFN_usuarios->seguinte(), $i++) {
+							$on = (($i % 2) == 0)?'1':'0';
+							$id = $PFN_usuarios->get('id');
+							$estado = intval($PFN_usuarios->get('estado'));
+						?>
+						<tr class="trarq<?php echo $on; ?>">
+							<td class="centro"><a href="editar.php?<?php echo PFN_cambia_url('id', $id, false); ?>"><?php echo $id; ?></a></td>
+							<td>
+								<input type="hidden" name="antes[<?php echo $id; ?>]" value="<?php echo $PFN_usuarios->get('estado'); ?>" />
+								<a href="editar.php?<?php echo PFN_cambia_url('id', $id, false); ?>"><?php echo $PFN_usuarios->get('usuario'); ?></a>
+							</td>
+							<td><?php echo $PFN_usuarios->get('nome'); ?></td>
+							<td><?php echo $PFN_usuarios->get('email'); ?></td>
+							<td class="centro">
+								<select id="estado_2_<?php echo $id; ?>" name="estado[<?php echo $id; ?>]">
+									<option value="0" <?php echo ($estado === 0)?'selected="selected"':''; ?>>OFF</option>
+									<option value="1" <?php echo ($estado === 1)?'selected="selected"':''; ?>>ON</option>
+									<option value="2" <?php echo ($estado === 2)?'selected="selected"':''; ?>>LOCKED</option>
+								</select>
+							</td>
+						</tr>
+						<?php } ?>
+						<tr>
+							<td colspan="5" class="centro"><br /><input type="submit" value="<?php echo $PFN_conf->t('Xcambiar'); ?>" class="boton" /></td>
+						</tr>
+					</table>
+
+					<div class="con_borde">
+						<label for="paxinar2"><?php echo $PFN_conf->t('Xamosar'); ?>:</label>
+						<select name="paxinar" id="paxinar2" class="d40" onchange="enlace('<?php echo PFN_get_url(); ?>&amp;paxinar='+this.value);">
+							<?php
+							for ($i = 50; $i < $total; $i += 50) {
+								echo '<option value="'.$i.'" '.(($i == $paxinar)?'selected="selected"':'').'>'.$i.'</option>';
+							}
+
+							echo '<option value="'.$total.'" '.(($paxinar == $total)?'selected="selected"':'').'>'.$total.'</option>';
+							?>
+						</select>
+
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+						<label for="paxina2"><?php echo $PFN_conf->t('Xpaxina'); ?>:</label>
+						<select name="paxina" id="paxina2" onchange="enlace('<?php echo PFN_get_url(); ?>&amp;paxinar='+$('#paxinar2').val()+'&amp;paxina='+this.value);">
+							<?php
+							for ($i = 0; $i <= $total; $i += $paxinar) {
+								$selected = ($i == $paxina)?'selected="selected"':'';
+								$fin = (($i + $paxinar) >= $total)?$total:($i + $paxinar);
+							?>
+							<option value="<?php echo $i; ?>" <?php echo $selected; ?>><?php echo ($i + 1).' - '.$fin; ?></option>
+							<?php } ?>
+						</select>
+
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+						<label for="buscar1"><?php echo $PFN_conf->t('Xbuscar'); ?>:</label>
+						<input type="text" name="buscar" id="buscar1" value="<?php echo $buscar; ?>" />
+					</div>
+
+				</fieldset>
+			</form>
 		</div>
-		</fieldset>
-		</form>
 	</div>
 </div>
+
+<script type="text/javascript">
+$('input[name=buscar]').keypress(function (e) {
+	if (e.keyCode == 13) {
+		if ($(this).val() == '') {
+			location.href = '?';
+		} else {
+			location.href = '?buscar='+$(this).val();
+		}
+
+		return false;
+	}
+});
+</script>

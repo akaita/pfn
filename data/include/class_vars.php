@@ -91,7 +91,7 @@ class PFN_Vars {
 		}
 
 		if ($v == '-*-') {
-			if (empty($this->get[$k])) {
+			if (strlen($this->get[$k]) == 0) {
 				return false;
 			} else {
 				return urldecode($this->get[$k]);
@@ -117,7 +117,7 @@ class PFN_Vars {
 		}
 
 		if ($v == '-*-') {
-			if (empty($this->post[$k])) {
+			if (is_string($this->post[$k]) && strlen($this->post[$k]) == 0) {
 				return false;
 			} else {
 				return $this->post[$k];
@@ -141,7 +141,7 @@ class PFN_Vars {
 	* return mixed
 	*/
 	function session ($k, $v='-*-') {
-		if (empty($this->session) || !count($this->session)) {
+		if (empty($this->session) || !is_array($this->session)) {
 			if (is_array($_SESSION)) {
 				$this->session = &$_SESSION;
 			} else {
