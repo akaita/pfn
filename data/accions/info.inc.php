@@ -89,7 +89,7 @@ if ($tipo == 'dir') {
 		$tamano_real .= ' Bytes';
 	} else {
 		$tamano_real = '<a href="accion.php?'.PFN_cambia_url(array('cal','accion','calcula_tamano'),array($cal,'info',true), false)
-			.'">'.$PFN_conf->t('calcular_tamano').'</a>';
+			.'">'.PFN___('calcular_tamano').'</a>';
 		$tamano_disco = '&nbsp;';
 	}
 } else {

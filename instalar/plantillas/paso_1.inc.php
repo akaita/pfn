@@ -46,54 +46,54 @@ defined('OK') or die();
 <input type="hidden" name="ra_web" value="<?php echo $form['ra_web']; ?>" />
 <input type="hidden" name="ra_dominio" value="<?php echo $form['ra_dominio']; ?>" />
 
-<h2><?php echo $PFN_conf->t('i:presentacion'); ?></h2>
+<h2><?php echo PFN___('i_presentacion'); ?></h2>
 
-<br /><?php echo $PFN_conf->t('i:intro_presentacion'); ?>
+<br /><?php echo PFN___('i_intro_presentacion'); ?>
 
-<br /><?php echo $PFN_conf->t('i:intro_escolle_idioma'); ?><br />
+<br /><?php echo PFN___('i_intro_escolle_idioma'); ?><br />
 
 <div class="fondo_gris">
-<label for="form_idioma" class="separa_10d"><strong><?php echo $PFN_conf->t('idioma'); ?>:</strong></label>
+<label for="form_idioma" class="separa_10d"><strong><?php echo PFN___('idioma'); ?>:</strong></label>
 <select name="idioma" id="form_idioma" onchange="return enlace('?paso=1&amp;idioma='+this.value);">
 	<?php
 	foreach ($idiomas_valen as $k => $v) {
-		echo '<option value="'.$k.'"'.(($k == $form['idioma'])?' selected="selected"':'').'>'.$PFN_conf->t('lista_idiomas', $k).'</option>';
+		echo '<option value="'.$k.'"'.(($k == $form['idioma'])?' selected="selected"':'').'>'.PFN___('lista_idiomas_'.$k).'</option>';
 	}
 	?>
 </select>
 </div>
 
-<br /><?php echo $PFN_conf->t('i:intro_tipo_instalacion'); ?><br />
+<br /><?php echo PFN___('i_intro_tipo_instalacion'); ?><br />
 
 <div class="fondo_gris">
-<strong><?php echo $PFN_conf->t('tipo_instalacion'); ?>:</strong><br /><br />
+<strong><?php echo PFN___('tipo_instalacion'); ?>:</strong><br /><br />
 <input type="radio" name="tipo" id="tipo_1" value="instalar" class="separa_10d" <?php echo ($form['tipo'] == 'instalar')?'checked="checked"':''; ?> />
-<label for="tipo_1"><?php echo $PFN_conf->t('instalar_cero'); ?></label><br />
+<label for="tipo_1"><?php echo PFN___('instalar_cero'); ?></label><br />
 
 <?php if (($basicas['version'] > 0) && ($basicas['version'] >= 200) && ($basicas['version'] < $PFN_version)) { ?>
 <input type="radio" name="tipo" id="tipo_2" value="actualizar" class="separa_10d" <?php echo ($form['tipo'] == 'actualizar')?'checked="checked"':''; ?> />
-<label for="tipo_2"><?php echo $PFN_conf->t('i:actualizar'); ?></label><br />
+<label for="tipo_2"><?php echo PFN___('i_actualizar'); ?></label><br />
 <?php } ?>
 </div>
 
-<br /><?php echo $PFN_conf->t('i:axuda','aviso'); ?><br />
+<br /><?php echo PFN___('i_axuda_aviso'); ?><br />
 
 <div class="fondo_gris">
 <input type="checkbox" name="aviso_instalacion" id="aviso_instalacion" value="true" class="checkbox separa_10d" tabindex="15" <?php echo ($form['aviso_instalacion'] == 'true')?'checked="checked"':''; ?> />
-<label for="aviso_instalacion"><strong><?php echo $PFN_conf->t('i:aviso'); ?></strong></label>
+<label for="aviso_instalacion"><strong><?php echo PFN___('i_aviso'); ?></strong></label>
 </div>
 
 <?php if ($erros) { ?>
-<br /><div class="aviso"><?php echo $PFN_conf->t('i:aviso_default'); ?></div>
+<br /><div class="aviso"><?php echo PFN___('i_aviso_default'); ?></div>
 
 <script type="text/javascript"><!--
 
 document.getElementById('paso').value = 1;
 
 //--></script>
-<br /><input type="submit" value="<?php echo $PFN_conf->t('i:recargar'); ?>" class="dereita" />
+<br /><input type="submit" value="<?php echo PFN___('i_recargar'); ?>" class="dereita" />
 <?php } else { ?>
-<br /><input type="submit" value="<?php echo $PFN_conf->t('continuar_paso_2'); ?>" class="dereita" />
+<br /><input type="submit" value="<?php echo PFN___('continuar_paso_2'); ?>" class="dereita" />
 <?php } ?>
 </fieldset>
 </form>

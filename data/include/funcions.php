@@ -529,7 +529,7 @@ function PFN_listado_select ($total, $actual) {
 
 		if ($total > $paxinar) {
 			$select = ($actual == -1)?'selected="selected"':'';
-			$cad .= "\n".'<option value="-1" '.$select.'>'.$PFN_conf->t('TODO').'</option>';
+			$cad .= "\n".'<option value="-1" '.$select.'>'.PFN___('TODO').'</option>';
 		}
 	}
 
@@ -846,6 +846,14 @@ function xml2array ($contents, $get_attributes = 1, $priority = 'tag') {
 	}
 
 	return $xml_array;
+}
+
+function PFN___ ($texto, $t2 = null) {
+	global $PFN_conf;
+
+	$texto = $PFN_conf->gettext->translate($texto);
+
+	return is_null($t2) ? $texto : vsprintf($texto, $t2);
 }
 
 if (!function_exists('sys_get_temp_dir')) {

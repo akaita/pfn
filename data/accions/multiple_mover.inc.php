@@ -122,16 +122,16 @@ if ($PFN_conf->g('columnas','multiple')
 			}
 
 			if ($erro) {
-				$estado_accion .= $PFN_conf->t('estado.multiple_mover',intval($estado)).' '.$cal.'<br />';
+				$estado_accion .= PFN___('estado_multiple_mover_'.intval($estado)).' '.$cal.'<br />';
 				$cnt_erros++;
 			}
 		}
 	}
 
 	if ($cnt_erros == 0) {
-		$estado_accion = $PFN_conf->t('estado.multiple_mover', 1);
+		$estado_accion = PFN___('estado_multiple_mover_1');
 	} elseif ($cnt_erros != count($multiple_escollidos)) {
-		$estado_accion .= $PFN_conf->t('estado.multiple_mover', 7);
+		$estado_accion .= PFN___('estado_multiple_mover_7');
 	}
 
 	include ($PFN_paths['web'].'navega.inc.php');
@@ -141,7 +141,7 @@ if ($PFN_conf->g('columnas','multiple')
 			.'/'.$PFN_accions->nome_correcto($v);
 
 		if (!file_exists($arquivo)) {
-			$adv .= $PFN_conf->t('estado.multiple_mover', 7).' '.$PFN_accions->nome_correcto($v).'<br />';
+			$adv .= PFN___('estado_multiple_mover_7').' '.$PFN_accions->nome_correcto($v).'<br />';
 			unset($multiple_escollidos[$k]);
 		}
 	}
@@ -154,7 +154,7 @@ if ($PFN_conf->g('columnas','multiple')
 		$PFN_arbore->pon_radio('escollido');
 		$PFN_arbore->pon_enlaces(false);
 
-		$adv .= $PFN_conf->t('estado.multiple_mover', 2);
+		$adv .= PFN___('estado_multiple_mover_2');
 
 		$PFN_arbore->carga_arbore($PFN_conf->g('raiz','path'), "./", false);
 

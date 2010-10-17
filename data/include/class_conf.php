@@ -81,7 +81,8 @@ class PFN_Conf {
 	*/
 	function carga () {
 		$this->inicial();
-		$this->textos('web');
+		$this->textos('base');
+		$this->textos('custom');
 	}
 
 	/**
@@ -93,7 +94,7 @@ class PFN_Conf {
 		$arq = $this->paths['idiomas'].$this->g('idioma').'/'.$texto.'.mo';
 
 		if (!is_file($arq)) {
-			die('No existe el fichero de idiomas que intentas cargar: '.$arq);
+			return false;
 		}
 
 		$this->gettext->load($arq);

@@ -29,12 +29,12 @@ programa. Si no ha sido así, escriba a la Free Software Foundation, Inc., en
 defined('OK') or die();
 ?>
 
-		<div class="bloque_info"><h1><?php echo $PFN_conf->t('accion').' &raquo; '.$PFN_conf->t($accion); ?></h1></div>
+		<div class="bloque_info"><h1><?php echo PFN___('accion').' &raquo; '.PFN___('$accion); ?></h1></div>
 
 		<div class="bloque_info">
 			<div class="aviso_info">
 				<?php echo $estado_accion; ?>
-				<br /><br /><a href="#" onclick="history.back(); return false;">&laquo; <?php echo $PFN_conf->t('volver'); ?></a>
+				<br /><br /><a href="#" onclick="history.back(); return false;">&laquo; <?php echo PFN___('volver'); ?></a>
 			</div>
 		</div>
 	</div>

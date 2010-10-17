@@ -29,26 +29,26 @@ programa. Si no ha sido así, escriba a la Free Software Foundation, Inc., en
 defined("OK") or die();
 ?>
 <div id="ver_info">
-	<div class="bloque_info"><h1><?php echo $PFN_conf->t('accion').' &raquo; '.$PFN_conf->t('arbore'); ?></h1></div>
+	<div class="bloque_info"><h1><?php echo PFN___('accion').' &raquo; '.PFN___('arbore'); ?></h1></div>
 	<div class="bloque_info" style="float: right;">
 		<?php if ($PFN_vars->get('completo')) { ?>
-			<a href="<?php echo PFN_quita_url('completo'); ?>"><?php echo $PFN_conf->t('so_directorios'); ?></a>
+			<a href="<?php echo PFN_quita_url('completo'); ?>"><?php echo PFN___('so_directorios'); ?></a>
 			&nbsp;&nbsp;|&nbsp;&nbsp;
-			[<?php echo $PFN_conf->t('arbore_completo'); ?>]
+			[<?php echo PFN___('arbore_completo'); ?>]
 		<?php } else { ?>
-			[<?php echo $PFN_conf->t('so_directorios'); ?>]
+			[<?php echo PFN___('so_directorios'); ?>]
 			&nbsp;&nbsp;|&nbsp;&nbsp;
-			<a href="<?php echo PFN_cambia_url('completo','true'); ?>"><?php echo $PFN_conf->t('arbore_completo'); ?></a>
+			<a href="<?php echo PFN_cambia_url('completo','true'); ?>"><?php echo PFN___('arbore_completo'); ?></a>
 		<?php } ?>
 	</div>
 
 	<div class="bloque_info">
-		<?php echo $PFN_arbore->cnt('dir').' '.$PFN_conf->t('dirs'); ?>
+		<?php echo $PFN_arbore->cnt('dir').' '.PFN___('dirs'); ?>
 		<?php if ($PFN_vars->get('completo')) { ?>
 			&nbsp;&nbsp;|&nbsp;&nbsp;
-			<?php echo $PFN_arbore->cnt('arq').' '.$PFN_conf->t('arqs'); ?>
+			<?php echo $PFN_arbore->cnt('arq').' '.PFN___('arqs'); ?>
 			&nbsp;&nbsp;|&nbsp;&nbsp;
-			<?php echo $PFN_conf->t('peso').' '.PFN_peso($PFN_arbore->cnt('peso')); ?>
+			<?php echo PFN___('peso').' '.PFN_peso($PFN_arbore->cnt('peso')); ?>
 		<?php } ?>
 	</div>
 

@@ -57,7 +57,7 @@ if ($PFN_arquivos->vale_extraer($arquivo)) {
 	}
 
 	if ($erro) {
-		$estado_accion = $PFN_conf->t('estado.extraer', 2);
+		$estado_accion = PFN___('estado_extraer_2');
 	} else {
 		@set_time_limit($PFN_conf->g('tempo_maximo'));
 		@ini_set('memory_limit', $PFN_conf->g('memoria_maxima'));
@@ -91,11 +91,11 @@ if ($PFN_arquivos->vale_extraer($arquivo)) {
 			foreach ($erro as $v) {
 				if (!in_array($v, $visto)) {
 					$visto[] = $v;
-					$estado_accion .= '<br />'.$PFN_conf->t('estado.extraer', $v);
+					$estado_accion .= '<br />'.PFN___('estado_extraer_'.$v);
 				}
 			}
 		} else {
-			$estado_accion = $PFN_conf->t('estado.extraer', 1);
+			$estado_accion = PFN___('estado_extraer_1');
 		}
 	}
 }

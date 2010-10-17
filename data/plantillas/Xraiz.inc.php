@@ -30,14 +30,14 @@ programa. Si no ha sido así, escriba a la Free Software Foundation, Inc., en
 defined('OK') && defined('XESTION') or die();
 ?>
 <div id="ver_info">
-	<div class="bloque_info"><h1><?php echo $PFN_conf->t('xestion').' &raquo; '.$PFN_conf->t('Xmodi_raiz'); ?></h1></div>
+	<div class="bloque_info"><h1><?php echo PFN___('xestion').' &raquo; '.PFN___('Xmodi_raiz'); ?></h1></div>
 	<div class="bloque_info">
 
 		<ul id="tabs">
-			<li id="tab_li1"><a href="../raices/" id="tab_a1" class="activo"><?php echo $PFN_conf->t('Xraices'); ?></a></li>
-			<li id="tab_li2"><a href="../usuarios/" id="tab_a2"><?php echo $PFN_conf->t('Xusuarios'); ?></a></li>
-			<li id="tab_li3"><a href="../grupos/" id="tab_a3"><?php echo $PFN_conf->t('Xgrupos'); ?></a></li>
-			<li id="tab_li4"><a href="../configuracions/" id="tab_a4"><?php echo $PFN_conf->t('Xconfiguracions'); ?></a></li>
+			<li id="tab_li1"><a href="../raices/" id="tab_a1" class="activo"><?php echo PFN___('Xraices'); ?></a></li>
+			<li id="tab_li2"><a href="../usuarios/" id="tab_a2"><?php echo PFN___('Xusuarios'); ?></a></li>
+			<li id="tab_li3"><a href="../grupos/" id="tab_a3"><?php echo PFN___('Xgrupos'); ?></a></li>
+			<li id="tab_li4"><a href="../configuracions/" id="tab_a4"><?php echo PFN___('Xconfiguracions'); ?></a></li>
 		</ul>
 
 		<div class="capa_tab"> 
@@ -46,10 +46,10 @@ defined('OK') && defined('XESTION') or die();
 				<?php
 				if (count($erros)) {
 					foreach ($erros as $v) {
-						echo $PFN_conf->t('Xerros', intval($v)).'<br />';
+						echo PFN___('Xerros_'.intval($v)).'<br />';
 					}
 				} else {
-					echo $PFN_conf->t('Xok', intval($ok)).'<br />';
+					echo PFN___('Xok_'.intval($ok)).'<br />';
 				}
 				?>
 			</div>
@@ -62,40 +62,40 @@ defined('OK') && defined('XESTION') or die();
 					<table class="tabla_info" summary="">
 						<?php if ($PFN_usuarios->get('id') > 0) { ?>
 						<tr>
-							<th><?php echo $PFN_conf->t('id'); ?></th>
+							<th><?php echo PFN___('id'); ?></th>
 							<td><?php echo $PFN_usuarios->get('id'); ?></td>
 						</tr>
 						<?php } ?>
 						<tr>
-							<th><a href="#" onclick="Xamosa_axuda(1); return false;">(?)</a> <label for="nome"><?php echo $PFN_conf->t('Xnome'); ?>*</label></th>
+							<th><a href="#" onclick="Xamosa_axuda(1); return false;">(?)</a> <label for="nome"><?php echo PFN___('Xnome'); ?>*</label></th>
 							<td><input type="text" id="nome" name="nome" value="<?php echo $PFN_usuarios->get('nome'); ?>" class="text" tabindex="10" /></td>
 						</tr>
 						<tr id="tr_axuda1" style="display: none;">
-							<td colspan="2"><?php echo $PFN_conf->t('Xaxuda','raiz_nome'); ?></td>
+							<td colspan="2"><?php echo PFN___('Xaxuda_raiz_nome'); ?></td>
 						</tr>
 						<tr>
-							<th><a href="#" onclick="Xamosa_axuda(2); return false;">(?)</a> <label for="path"><?php echo $PFN_conf->t('Xpath'); ?>*</label></th>
+							<th><a href="#" onclick="Xamosa_axuda(2); return false;">(?)</a> <label for="path"><?php echo PFN___('Xpath'); ?>*</label></th>
 							<td><input type="text" id="path" name="path" value="<?php echo $PFN_usuarios->get('path'); ?>" class="text" tabindex="20" /></td>
 						</tr>
 						<tr id="tr_axuda2" style="display: none;">
-							<td colspan="2"><?php echo $PFN_conf->t('Xaxuda','raiz_path'); ?></td>
+							<td colspan="2"><?php echo PFN___('Xaxuda_raiz_path'); ?></td>
 						</tr>
 						<tr>
-							<th><a href="#" onclick="Xamosa_axuda(3); return false;">(?)</a> <label for="web"><?php echo $PFN_conf->t('Xraiz_web'); ?>*</label></th>
+							<th><a href="#" onclick="Xamosa_axuda(3); return false;">(?)</a> <label for="web"><?php echo PFN___('Xraiz_web'); ?>*</label></th>
 							<td><input type="text" id="web" name="web" value="<?php echo $PFN_usuarios->get('web'); ?>" class="text" tabindex="30" /></td>
 						</tr>
 						<tr id="tr_axuda3" style="display: none;">
-							<td colspan="2"><?php echo $PFN_conf->t('Xaxuda','raiz_web'); ?></td>
+							<td colspan="2"><?php echo PFN___('Xaxuda_raiz_web'); ?></td>
 						</tr>
 						<tr>
-							<th><a href="#" onclick="Xamosa_axuda(4); return false;">(?)</a> <label for="host"><?php echo $PFN_conf->t('Xhost'); ?>*</label></th>
+							<th><a href="#" onclick="Xamosa_axuda(4); return false;">(?)</a> <label for="host"><?php echo PFN___('Xhost'); ?>*</label></th>
 							<td><input type="text" id="host" name="host" value="<?php echo $PFN_usuarios->get('host'); ?>" class="text" tabindex="40" /></td>
 						</tr>
 						<tr id="tr_axuda4" style="display: none;">
-							<td colspan="2"><?php echo $PFN_conf->t('Xaxuda','raiz_host'); ?></td>
+							<td colspan="2"><?php echo PFN___('Xaxuda_raiz_host'); ?></td>
 						</tr>
 						<tr>
-							<th><a href="#" onclick="Xamosa_axuda(5); return false;">(?)</a> <label for="peso_maximo"><?php echo $PFN_conf->t('Xpeso_max'); ?></label></th>
+							<th><a href="#" onclick="Xamosa_axuda(5); return false;">(?)</a> <label for="peso_maximo"><?php echo PFN___('Xpeso_max'); ?></label></th>
 							<td>
 								<input type="text" id="peso_maximo" name="peso_maximo" value="<?php echo $peso_maximo; ?>" class="text" tabindex="50" />
 								<select id="unidades" name="unidades" onchange="return cambia_peso(this.value);" tabindex="60">
@@ -105,26 +105,26 @@ defined('OK') && defined('XESTION') or die();
 							</td>
 						</tr>
 						<tr id="tr_axuda5" style="display: none;">
-							<td colspan="2"><?php echo $PFN_conf->t('Xaxuda','raiz_peso_max'); ?></td>
+							<td colspan="2"><?php echo PFN___('Xaxuda_raiz_peso_max'); ?></td>
 						</tr>
 						<tr>
-							<th><a href="#" onclick="Xamosa_axuda(7); return false;">(?)</a> <?php echo $PFN_conf->t('Xpeso_actual'); ?></th>
-							<td><input type="text" id="peso_actual" value="<?php echo ($peso_maximo > 0)?PFN_peso($peso_actual):$PFN_conf->t('Xpeso_actual_off'); ?>" class="text" readonly="readonly" /></td>
+							<th><a href="#" onclick="Xamosa_axuda(7); return false;">(?)</a> <?php echo PFN___('Xpeso_actual'); ?></th>
+							<td><input type="text" id="peso_actual" value="<?php echo ($peso_maximo > 0)?PFN_peso($peso_actual):PFN___('Xpeso_actual_off'); ?>" class="text" readonly="readonly" /></td>
 						</tr>
 						<tr id="tr_axuda7" style="display: none;">
-							<td colspan="2"><?php echo $PFN_conf->t('Xaxuda','raiz_peso_actual'); ?></td>
+							<td colspan="2"><?php echo PFN___('Xaxuda_raiz_peso_actual'); ?></td>
 						</tr>
 						<?php if (($id > 0) && ($peso_maximo > 0)) { ?>
 						<tr>
-							<th><a href="#" onclick="Xamosa_axuda(10); return false;">(?)</a> <label for="revisar_peso_actual"><?php echo $PFN_conf->t('Xrevisar_peso_actual'); ?></label></th>
+							<th><a href="#" onclick="Xamosa_axuda(10); return false;">(?)</a> <label for="revisar_peso_actual"><?php echo PFN___('Xrevisar_peso_actual'); ?></label></th>
 							<td><input type="checkbox" id="revisar_peso_actual" name="revisar_peso_actual" value="true" tabindex="65" class="checkbox" /></td>
 						</tr>
 						<tr id="tr_axuda10" style="display: none;">
-							<td colspan="2"><?php echo $PFN_conf->t('Xaxuda','revisar_peso_actual'); ?></td>
+							<td colspan="2"><?php echo PFN___('Xaxuda_revisar_peso_actual'); ?></td>
 						</tr>
 						<?php } ?>
 						<tr>
-							<th><a href="#" onclick="Xamosa_axuda(6); return false;">(?)</a> <label for="estado"><?php echo $PFN_conf->t('Xestado'); ?></label></th>
+							<th><a href="#" onclick="Xamosa_axuda(6); return false;">(?)</a> <label for="estado"><?php echo PFN___('Xestado'); ?></label></th>
 							<td>
 								<select id="estado" name="estado" tabindex="70">
 									<option value="1" <?php echo $PFN_usuarios->get('estado')==1?'selected="selected"':''; ?>>ON</option>
@@ -134,18 +134,18 @@ defined('OK') && defined('XESTION') or die();
 						</tr>
 						<?php if ($id > 0) { ?>
 						<tr>
-							<th><a href="#" onclick="Xamosa_axuda(8); return false;">(?)</a> <label for="borrar_inc"><?php echo $PFN_conf->t('Xborrar_inc'); ?></label></th>
+							<th><a href="#" onclick="Xamosa_axuda(8); return false;">(?)</a> <label for="borrar_inc"><?php echo PFN___('Xborrar_inc'); ?></label></th>
 							<td><input type="checkbox" id="borrar_inc" name="borrar_inc" value="true" tabindex="73" class="checkbox" /></td>
 						</tr>
 						<tr id="tr_axuda8" style="display: none;">
-							<td colspan="2"><?php echo $PFN_conf->t('Xaxuda','borrar_inc'); ?></td>
+							<td colspan="2"><?php echo PFN___('Xaxuda_borrar_inc'); ?></td>
 						</tr>
 						<tr>
-							<th><a href="#" onclick="Xamosa_axuda(9); return false;">(?)</a> <label for="borrar_imx"><?php echo $PFN_conf->t('Xborrar_imx'); ?></label></th>
+							<th><a href="#" onclick="Xamosa_axuda(9); return false;">(?)</a> <label for="borrar_imx"><?php echo PFN___('Xborrar_imx'); ?></label></th>
 							<td><input type="checkbox" id="borrar_imx" name="borrar_imx" value="true" tabindex="73" class="checkbox" /></td>
 						</tr>
 						<tr id="tr_axuda9" style="display: none;">
-							<td colspan="2"><?php echo $PFN_conf->t('Xaxuda','borrar_imx'); ?></td>
+							<td colspan="2"><?php echo PFN___('Xaxuda_borrar_imx'); ?></td>
 						</tr>
 						<?php } ?>
 					</table>
@@ -157,9 +157,9 @@ defined('OK') && defined('XESTION') or die();
 						<tr>
 							<th>
 								<input type="hidden" name="Fgrupos[]" value="<?php echo $kg; ?>" />
-								<strong><?php echo $PFN_conf->t('Xgrupo'); ?>:</strong> <?php echo $vg['nome']; ?>
+								<strong><?php echo PFN___('Xgrupo'); ?>:</strong> <?php echo $vg['nome']; ?>
 								&nbsp;&nbsp;|&nbsp;&nbsp;
-								<strong><label for="Fconfs_<?php echo $kg; ?>"><?php echo $PFN_conf->t('Xconfiguracion'); ?>:</label></strong>
+								<strong><label for="Fconfs_<?php echo $kg; ?>"><?php echo PFN___('Xconfiguracion'); ?>:</label></strong>
 								<select id="Fconfs_<?php echo $kg; ?>" name="Fconfs[]">
 									<?php foreach ($Dconfs as $kc => $vc) { ?>
 									<option value="<?php echo $kc; ?>" <?php echo ($kc == $vg['id_conf'])?'selected="selected"':''; ?>><?php echo $vc; ?></option>
@@ -167,7 +167,7 @@ defined('OK') && defined('XESTION') or die();
 								</select>
 								&nbsp;&nbsp;|&nbsp;&nbsp;
 								<input type="checkbox" id="marca_desmarca_<?php echo $kg; ?>" name="marca_desmarca_<?php echo $kg; ?>" onclick="marca_desmarca('<?php echo $kg; ?>');" class="checkbox" />
-								<strong><label for="marca_desmarca_<?php echo $kg; ?>"><?php echo $PFN_conf->t('Xmarca_desmarca'); ?></label></strong>
+								<strong><label for="marca_desmarca_<?php echo $kg; ?>"><?php echo PFN___('Xmarca_desmarca'); ?></label></strong>
 							</th>
 						</tr>
 					</table>
@@ -212,10 +212,10 @@ defined('OK') && defined('XESTION') or die();
 			
 					<div style="width: 100%; text-align: center;">
 						<?php if (!empty($id)) { ?>
-						<input type="reset" value=" <?php echo $PFN_conf->t('eliminar'); ?> " class="boton" style="margin-right: 40px;" onclick="eliminar();" tabindex="80" />
+						<input type="reset" value=" <?php echo PFN___('eliminar'); ?> " class="boton" style="margin-right: 40px;" onclick="eliminar();" tabindex="80" />
 						<?php } ?>
-						<input type="reset" value=" <?php echo $PFN_conf->t('voltar'); ?> " class="boton" style="margin-right: 40px;" onclick="enlace('index.php');" tabindex="90" />
-						<input type="submit" value="<?php echo $PFN_conf->t('aceptar'); ?>" class="boton" tabindex="100" /><br />
+						<input type="reset" value=" <?php echo PFN___('voltar'); ?> " class="boton" style="margin-right: 40px;" onclick="enlace('index.php');" tabindex="90" />
+						<input type="submit" value="<?php echo PFN___('aceptar'); ?>" class="boton" tabindex="100" /><br />
 					</div>
 				</fieldset>
 			</form>
@@ -227,9 +227,9 @@ defined('OK') && defined('XESTION') or die();
 
 function eliminar () {
 	<?php if ($id == $sPFN['raiz']['id']) { ?>
-	alert(HtmlDecode('<?php echo addslashes($PFN_conf->t('Xerros', 5)); ?>'));
+	alert(HtmlDecode('<?php echo addslashes(PFN___('Xerros_5')); ?>'));
 	<?php } else { ?>
-	if (confirm(HtmlDecode('<?php echo addslashes($PFN_conf->t('Xeliminar_raiz')); ?>'))) {
+	if (confirm(HtmlDecode('<?php echo addslashes(PFN___('Xeliminar_raiz')); ?>'))) {
 		enlace('eliminar.php?id=<?php echo $id; ?>&amp;<?php echo PFN_get_url(false); ?>');
 	}
 	<?php } ?>

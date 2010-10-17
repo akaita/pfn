@@ -30,17 +30,17 @@ defined('OK') && defined('ACCION') or die();
 ?>
 <table id="listado" summary="">
 	<tr class="trcab">
-		<th><?php echo $PFN_conf->t('nome'); ?></th>
+		<th><?php echo PFN___('nome'); ?></th>
 		<?php if ($PFN_conf->g('columnas','tamano')) { ?>
-		<th><?php echo $PFN_conf->t('tamano'); ?></th>
+		<th><?php echo PFN___('tamano'); ?></th>
 		<?php } if ($PFN_conf->g('columnas','data')) { ?>
-		<th><?php echo $PFN_conf->t('data'); ?></th>
+		<th><?php echo PFN___('data'); ?></th>
 		<?php } if ($PFN_conf->g('columnas','accions')) { ?>
-		<th><?php echo $PFN_conf->t('accions'); ?></th>
+		<th><?php echo PFN___('accions'); ?></th>
 		<?php } ?>
 	</tr>
 	<tr class="trinfo">
-		<td class="tdnome" colspan="5"><?php echo $PFN_conf->t('rexistros_atopados').": ".count($resultados); ?></td>
+		<td class="tdnome" colspan="5"><?php echo PFN___('rexistros_atopados').": ".count($resultados); ?></td>
 	</tr>
 	<?php
 	foreach ((array)$resultados as $k => $v) {
@@ -58,7 +58,7 @@ defined('OK') && defined('ACCION') or die();
 	<tr class="tr<?php echo $tipo.$on; ?>">
 		<td class="tdnome">
 			<?php if ($tipo == 'dir') { ?>
-			<img src="<?php echo $PFN_imaxes->icono('dir'); ?>" alt="<?php echo $PFN_conf->t('directorio'); ?>" />
+			<img src="<?php echo $PFN_imaxes->icono('dir'); ?>" alt="<?php echo PFN___('directorio'); ?>" />
 			<?php } else { ?>
 				<?php if ($ver_imaxes == true) { ?>
 				<img src="<?php echo $PFN_imaxes->sello($v['directorio'].'/'.$v['arquivo'],true); ?>" alt="<?php echo $cal; ?>" />
@@ -92,7 +92,7 @@ defined('OK') && defined('ACCION') or die();
 			<?php
 			foreach ((array)$PFN_vars->post('campos_buscar') as $v2) {
 				if (in_array($v2, $PFN_conf->g('inc','campos_indexar'))) {
-					echo '<br /><strong>'.$PFN_conf->t($v2).'</strong>: ';
+					echo '<br /><strong>'.PFN___('$v2).'</strong>: ';
 					$dato = $PFN_inc->valor($v2);
 
 					foreach ((array)explode(' ',$PFN_vars->post('palabra_buscar')) as $v3) {
@@ -113,17 +113,17 @@ defined('OK') && defined('ACCION') or die();
 		<td>
 			<ul class="accions">
 				<?php if ($PFN_conf->g('permisos','info')) { ?>
-				<li class="info"><a href="accion.php?<?php echo PFN_cambia_url(array('dir','cal','accion'),array($acum,$cal,'info'),false); ?>" title="<?php echo $PFN_conf->t('info'); ?>"><span class="oculto"><?php echo $PFN_conf->t('info'); ?></span></a></li>
+				<li class="info"><a href="accion.php?<?php echo PFN_cambia_url(array('dir','cal','accion'),array($acum,$cal,'info'),false); ?>" title="<?php echo PFN___('info'); ?>"><span class="oculto"><?php echo PFN___('info'); ?></span></a></li>
 				<?php } if ($PFN_conf->g('permisos','copiar')) { ?>
-				<li class="copiar"><a href="accion.php?<?php echo PFN_cambia_url(array('dir','cal','accion'),array($acum,$cal,'copiar'),false); ?>" title="<?php echo $PFN_conf->t('copiar'); ?>"><span class="oculto"><?php echo $PFN_conf->t('copiar'); ?></span></a></li>
+				<li class="copiar"><a href="accion.php?<?php echo PFN_cambia_url(array('dir','cal','accion'),array($acum,$cal,'copiar'),false); ?>" title="<?php echo PFN___('copiar'); ?>"><span class="oculto"><?php echo PFN___('copiar'); ?></span></a></li>
 				<?php } if ($PFN_conf->g('permisos','mover')) { ?>
-				<li class="mover"><a href="accion.php?<?php echo PFN_cambia_url(array('dir','cal','accion'),array($acum,$cal,'mover'),false); ?>" title="<?php echo $PFN_conf->t('mover'); ?>"><span class="oculto"><?php echo $PFN_conf->t('mover'); ?></span></a></li>
+				<li class="mover"><a href="accion.php?<?php echo PFN_cambia_url(array('dir','cal','accion'),array($acum,$cal,'mover'),false); ?>" title="<?php echo PFN___('mover'); ?>"><span class="oculto"><?php echo PFN___('mover'); ?></span></a></li>
 				<?php } if ($PFN_conf->g('permisos','renomear')) { ?>
-				<li class="renomear"><a href="accion.php?<?php echo PFN_cambia_url(array('dir','cal','accion'),array($acum,$cal,'renomear'),false); ?>" title="<?php echo $PFN_conf->t('renomear'); ?>"><span class="oculto"><?php echo $PFN_conf->t('renomear'); ?></span></a></li>
+				<li class="renomear"><a href="accion.php?<?php echo PFN_cambia_url(array('dir','cal','accion'),array($acum,$cal,'renomear'),false); ?>" title="<?php echo PFN___('renomear'); ?>"><span class="oculto"><?php echo PFN___('renomear'); ?></span></a></li>
 				<?php } if ($PFN_conf->g('permisos','eliminar')) { ?>
-				<li class="eliminar"><a href="accion.php?<?php echo PFN_cambia_url(array('dir','cal','accion'),array($acum,$cal,'eliminar'),false); ?>" title="<?php echo $PFN_conf->t('eliminar'); ?>"><span class="oculto"><?php echo $PFN_conf->t('eliminar'); ?></span></a></li>
+				<li class="eliminar"><a href="accion.php?<?php echo PFN_cambia_url(array('dir','cal','accion'),array($acum,$cal,'eliminar'),false); ?>" title="<?php echo PFN___('eliminar'); ?>"><span class="oculto"><?php echo PFN___('eliminar'); ?></span></a></li>
 				<?php } if ($PFN_conf->g('permisos','permisos')) { ?>
-				<li class="permisos"><a href="accion.php?<?php echo PFN_cambia_url(array('dir','cal','accion'),array($acum,$cal,'permisos'),false); ?>" title="<?php echo $PFN_conf->t('permisos'); ?>"><span class="oculto"><?php echo $PFN_conf->t('permisos'); ?></span></a></li>
+				<li class="permisos"><a href="accion.php?<?php echo PFN_cambia_url(array('dir','cal','accion'),array($acum,$cal,'permisos'),false); ?>" title="<?php echo PFN___('permisos'); ?>"><span class="oculto"><?php echo PFN___('permisos'); ?></span></a></li>
 				<?php } ?>
 			</ul>
 		</td>

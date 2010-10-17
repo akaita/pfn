@@ -38,7 +38,7 @@ $ok = false;
 $datos_orixe = array();
 $datos_destino = array();
 
-$lista_idiomas = $PFN_conf->t('lista_idiomas');
+$lista_idiomas = PFN___('lista_idiomas');
 asort($lista_idiomas);
 
 foreach ($lista_idiomas as $k => $v) {

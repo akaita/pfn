@@ -31,8 +31,6 @@ include_once ($PFN_paths['include'].'basicweb.php');
 
 session_write_close();
 
-$PFN_conf->textos('axuda');
-
 $PFN_tempo->rexistra('precarga');
 
 include ($PFN_paths['plantillas'].'cab.inc.php');

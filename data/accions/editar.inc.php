@@ -41,7 +41,7 @@ if ($PFN_vars->post('executa')) {
 
 	$PFN_accions->editar($arquivo, $PFN_vars->post('texto'));
 	$estado = $PFN_accions->estado_num('editar');
-	$estado_accion = $PFN_conf->t('estado.editar',intval($estado));
+	$estado_accion = PFN___('estado_editar_'.intval($estado));
 
 	include ($PFN_paths['web'].'navega.inc.php');
 } else {
@@ -67,14 +67,14 @@ if ($PFN_vars->post('executa')) {
 			include ($PFN_paths['plantillas'].'info_cab.inc.php');
 			include ($PFN_paths['plantillas'].'editar.inc.php');
 		} elseif ($estado === -1) {
-			$estado_accion = $PFN_conf->t('estado.descargar', 3);
+			$estado_accion = PFN___('estado_descargar_3');
 			include ($PFN_paths['web'].'navega.inc.php');
 		} else {
-			$estado_accion = $PFN_conf->t('estado.descargar', 2);
+			$estado_accion = PFN___('estado_descargar_2');
 			include ($PFN_paths['web'].'navega.inc.php');
 		}
 	} else {
-		$estado_accion = $PFN_conf->t('estado.editar',3);
+		$estado_accion = PFN___('estado_editar_3');
 		include ($PFN_paths['web'].'navega.inc.php');
 	}
 }

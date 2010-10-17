@@ -42,14 +42,14 @@ if ($PFN_vars->post('executa')) {
 			.'/'.$cal;
 
 		if (strstr($destino, $orixinal)) {
-			$estado_accion = $PFN_conf->t('estado.copiar_dir',7);
+			$estado_accion = PFN___('estado_copiar_dir_7');
 			$erro = true;
 		}
 
 		if (!$erro && $tipo == 'dir') {
 			$PFN_accions->enlazar($orixinal, $destino);
 			$estado = $PFN_accions->estado_num('enlazar_dir');
-			$estado_accion = $PFN_conf->t('estado.enlazar_dir',intval($estado));
+			$estado_accion = PFN___('estado_enlazar_dir_'.intval($estado));
 			
 			if ($PFN_accions->estado('enlazar_dir')) {
 				if ($PFN_conf->g('inc','indexar')) {
@@ -63,7 +63,7 @@ if ($PFN_vars->post('executa')) {
 		} elseif (!$erro) {
 			$PFN_accions->enlazar($orixinal,$destino);
 			$estado = $PFN_accions->estado_num('enlazar_arq');
-			$estado_accion = $PFN_conf->t('estado.enlazar_arq',intval($estado));
+			$estado_accion = PFN___('estado_enlazar_arq_'.intval($estado));
 
 			if ($PFN_accions->estado('enlazar_arq')) {
 				if ($PFN_conf->g('inc','estado')) {
@@ -104,12 +104,12 @@ if ($PFN_vars->post('executa')) {
 			$PFN_arbore->pon_copia($arquivo);
 	
 			if (count($contido['dir']['nome']) || count($contido['arq']['nome'])) {
-				$adv = $PFN_conf->t('estado.enlazar_dir',2);
+				$adv = PFN___('estado_enlazar_dir_2');
 			} else {
-				$adv = $PFN_conf->t('estado.enlazar_dir',3);
+				$adv = PFN___('estado_enlazar_dir_3');
 			}
 		} else {
-			$adv = $PFN_conf->t('estado.enlazar_arq',2);
+			$adv = PFN___('estado_enlazar_arq_2');
 		}
 
 		$PFN_arbore->carga_arbore($PFN_conf->g('raiz','path'), './', false);

@@ -40,7 +40,6 @@ include_once ($PFN_paths['include'].'funcions.php');
 include_once ($PFN_paths['include'].'class_conf.php');
 include_once ($PFN_paths['include'].'class_vars.php');
 
-$PFN_conf->textos('web');
 $PFN_tempo->rexistra('precodigo');
 
 $ok = false;
@@ -57,12 +56,12 @@ if (($PFN_vars->post('desbloquear_usuario') != '')
 	$ok = $PFN_usuarios->correo_desbloqueo();
 
 	if ($ok === 1) {
-		$txt_erro = $PFN_conf->t('avisos_desbloquear_usuario', 1);
+		$txt_erro = PFN___('avisos_desbloquear_usuario_1');
 	} else {
-		$txt_erro = $PFN_conf->t('avisos_desbloquear_usuario', $ok);
+		$txt_erro = PFN___('avisos_desbloquear_usuario_'.$ok);
 	}
 } else {
-	$txt_erro = $PFN_conf->t('txt_desbloquear_usuario');
+	$txt_erro = PFN___('txt_desbloquear_usuario');
 }
 
 $PFN_tempo->rexistra('preplantillas');

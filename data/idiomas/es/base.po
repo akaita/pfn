@@ -1,0 +1,2681 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PHPfileNavigator\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Lito <equipo@anavallasuiza.com>\n"
+"Language-Team: Lito <phpfilenavigator@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Spanish\n"
+"X-Poedit-Country: Spain\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: PFN___\n"
+"X-Poedit-Basepath: /home/lito/www/PHPfileNavigator/pfn-tmp/\n"
+"X-Poedit-SearchPath-0: .\n"
+
+msgid "h1_quero_facer"
+msgstr "Qu&eacute; quiero hacer?"
+
+msgid "tit_crear_dir"
+msgstr "Crear un directorio"
+
+msgid "txt_crear_dir"
+msgstr "Para crear un directorio tienes que clicar en primer lugar en la opci&oacute;n de <strong><img src=\"%simx/crear_dir.png\" alt=\"Crear Directorio\" /> Crear Directorio</strong>.<br />Una vez hecho esto, debes cubrir los campos requeridos, a&uacute;nque obligatorio solo es el nombre."
+
+msgid "tit_subir_arq"
+msgstr "Subir un fichero"
+
+msgid "txt_subir_arq"
+msgstr "Para subir un fichero tienes que clicar en primer lugar en la opci&oacute;n supeior de <strong><img src=\"%simx/subir_arq.png\" alt=\"Subir Fichero\" /> Subir Fichero</strong>.<br />Una vez hecho esto, debes cubrir los campos requeridos, a&uacute;nque obligatorio solo es la seleccion del propio fichero a subir.<br /><br />Si lo que estamos a subir es unha imagen, nos da dos opciones para crear una copia en miniatura de la imagen en el campo de <strong>Imagen reducida</strong>, en caso contrario hacemos caso omiso de esta opci&oacute;n."
+
+msgid "tit_subir_url"
+msgstr "Coger un documento de outra web"
+
+msgid "txt_subir_url"
+msgstr "Para subir un documento ya existente en otra web, tienes que clicar en primer lugar en la opci&oacute;n de <strong><img src=\"%simx/subir_url.png\" alt=\"Subir URL\" /> Subir URL</strong>.<br />Una vez hecho esto nos pedir&aacute; que escribamos la <strong>Direcci&oacute;n URL</strong> que deseamos almacenar, ten en cuenta que debe ser una direcci&oacute;n completa, por ejemplo mejor <i>http://phpfilenavigator.litoweb.net/index.php</i> que <i>http://phpfilenavigator.litoweb.net</i>, ya que puede fallar en este &uacute;ltimo caso, despu&eacute;s de la Direcci&oacute;n URL nos pide <strong>Nombre del fichero a crear</strong> en donde debemos poner un nombre que nos permita identificarlo claramente m&aacute;s adelante, como <i>Web del PHPfileNavigator</i>."
+
+msgid "tit_miniaturas"
+msgstr "Ver la im&aacute;genes en peque&ntilde;o en el listado de ficheros"
+
+msgid "txt_miniaturas"
+msgstr "Solo tienes que clicar en la opci&oacute;n superior de <strong><img src=\"%simx/ver_imaxes.png\" alt=\"Ver Im&aacute;genes\" /> Miniaturas</strong> para poder ver las im&aacute;genes en miniatura cuando navegas por los listados de ficheros."
+
+msgid "tit_arbore"
+msgstr "Ver todos los ficheros y directorios en una sola p&aacute;gina"
+
+msgid "txt_arbore"
+msgstr "Para poder ver todo el contenido de una ra&iacute;z de una sola vez, debes clicar en la opci&oacute;n superior de <strong><img src=\"%simx/arbore.png\" alt=\"&Aacute;rbol\" /> &Aacute;rbol de Directorios</strong>, con lo que se ense&ntilde;ar&aacute; todos los directorios de la ra&iacute;z. Si adem&aacute;s deseas ver los ficheros de cada directorio, solo tienes que clicar en la opci&oacute;n de la derecha <strong>[&Aacute;rbol Completo]</strong> con lo que se listar&aacute; el contenido &iacute;ntegro de la ra&iacute;z en la que te encuentras."
+
+msgid "tit_buscar"
+msgstr "Buscar un fichero o un texto en sus metas"
+
+msgid "txt_buscar"
+msgstr "Tienes dos opciones para buscar un fichero, la primera es mediante la opci&oacute;n del men&uacute; superior de <strong>Buscador</strong> y la segunda, m&aacute;s r&aacute;pida, escribiendo parte del nombre en el campo de <strong>Busca:</strong> y clicando despu&eacute;s en la lupa.<br /><br />En esta pantalla del formulario de b&uacute;squeda solo tienes que escribir el texto perteneciente al fichero o directorio que deseas encontrar, escoger en donde lo deseas buscar (en este directorio o en toda la ra&iacute;z), en los campos en donde deseas buscar el texto y pulsar el bot&oacute;n de <strong>Aceptar</strong>. Entonces ver&aacute;s debajo del formulario todos los resultados encontrados."
+
+msgid "tit_accions"
+msgstr "Alguna acci&oacute;n con un solo fichero o directorio como copiar, mover, borrar..."
+
+msgid "txt_accions"
+msgstr "Puedes realizar la acci&oacute;n que desees con un fichero o directorio desde la columna de <strong>Acciones</strong> que se encuentra al final de cada l&iacute;nea listada por fichero o directorio.<br />Esta columna te permite, en caso de estar habilitada, las acciones de <strong>Ver informaci&oacute;n</strong>, <strong>Copiar</strong>, <strong>Mover</strong>, <strong>Renombrar</strong>, <strong>Eliminar</strong>, <strong>Cambiar permisos</strong> o <strong>Descargar</strong>."
+
+msgid "tit_accions_multiple"
+msgstr "Alguna acci&oacute;n con muchos ficheros o directorios a la vez"
+
+msgid "txt_accions_multiple"
+msgstr "Si dispones de los permisos necesarios, podr&aacute;s realizar na serie de acciones con m&uacute;ltiples ficheros y directorios al mismo tiempo. Las acciones que se pueden realizar son <strong>Copiar</strong>, <strong>Mover</strong>, <strong>Eliminar</strong>, <strong>Cambiar permisos</strong> y <strong>Descargar</strong>. Para esto solo necesitas marcar los campos de chequeo \"<input type=\"checkbox\" class=\"checkbox\" />\" de la primera columna y despu&eacute;s escoger una acci&oacute;n de las que aparecen en el pi&eacute; del listado."
+
+msgid "h1_accions"
+msgstr "Qu&eacute; acciones puedo realizar sobre cada fichero o directorio listado?"
+
+msgid "txt_info"
+msgstr "<strong>Ver Informaci&oacute;n: </strong>Esta opci&oacute;n permite conocer datos de detalle como el tama&ntilde;o, fecha de creaci&oacute;n, permisos o datos referentes a informaci&oacute;n adicional como t&iacute;tulo y descripci&oacute;n, adem&aacute;s de un formulario para poder modificar estos datos."
+
+msgid "txt_copiar"
+msgstr "<strong>Copiar: </strong>Permite realizar la copia de un fichero o directorio en el destino escogido, en caso de ser un directorio, copiar&aacute; todo el contenido en el destino."
+
+msgid "txt_mover"
+msgstr "<strong>Mover: </strong>Permite mover una carpeta o directorio para un destino escogido dentro de la ra&iacute;z actual. El fichero o directorio seleccionado se copiar&aacute; primero para el destino y despu&eacute;s se eliminar&aacute; el original."
+
+msgid "txt_renomear"
+msgstr "<strong>Renombrar: </strong>Permite cambiarle el nombre a un fichero o directorio."
+
+msgid "txt_eliminar"
+msgstr "<strong>Eliminar: </strong>Elimina por completo un fichero o un directorio y todo su contenido."
+
+msgid "txt_permisos"
+msgstr "<strong>Permisos: </strong>Permite el cambio de permisos reales de un fichero o directorio."
+
+msgid "txt_descargar"
+msgstr "<strong>Descargar Fichero: </strong>Fuerza la descarga de un fichero para nuestro ordenador. Todas las descargas realizadas son computadas en ancho de banda usado y tambi&eacute;n el cantidad de veces descargado."
+
+msgid "txt_comprimir"
+msgstr "<strong>Comrpimir: </strong>Comprime un fichero o un directorio y todo su contenido para ser descargado como fichero &uacute;nico ahorrando as&iacute; ancho de banda, debido a que el peso ser&aacute; inferior que en una descarga normal."
+
+msgid "txt_redimensionar"
+msgstr "<strong>Copia Reducida de Imagen: </strong>Permite crear una imagen en peque&ntilde;o a partir de otra. La copia reducida resultante podr&aacute; ser, sen se decida, una copia exacta proporcional pero en peque&ntilde;o de la imagen original o bin se podr&aacute; seleccionar una parte de la imagen original para crear la copia reducida."
+
+msgid "txt_extraer"
+msgstr "<strong>Descomprimir: </strong>Permite descomprir un fichero empaquetado con TAR/GZ/TGZ/GZIP. Extrae todo el contenido reconocido creando una estructura exacta a la original de ficheros y directorios. Puede ser que alg&uacute;n de los ficheros no sea extra&iacute;do por que su nombre no es v&aacute;lido, pero continuar&aacute; con el resto de la lista."
+
+msgid "txt_ver_contido"
+msgstr "<strong>Ver Contenido: </strong>Permite ver el contenido de un fichero de texto editable. En caso de ser un formato de fichero usado para web (como PHP o HTML) colorear&aacute; el c&oacute;digo."
+
+msgid "txt_editar"
+msgstr "<strong>Editar: </strong>Permite modificar el contenido de un fichero de texto."
+
+msgid "h1_accions_multiple"
+msgstr "Que acciones puedo realizar sobre muchos ficheros o directorios a la vez?"
+
+msgid "txt_multiple_copiar"
+msgstr "<strong>Copiar: </strong>Permite la copia de m&uacute;ltiples ficheros y directorios de una sola vez. Continuar&aacute; la copia aunque se produzca un error copiando alguno de ellos y despu&eacute;s informar&aacute; del resultado."
+
+msgid "txt_multiple_mover"
+msgstr "<strong>Mover: </strong>Permite mover m&uacute;ltiples ficheros y directorios de una sola vez. Mover&aacute; los seleccionados aunque se produzca un error moviendo alguno de ellos y despu&eacute;s informar&aacute; del resultado."
+
+msgid "txt_multiple_eliminar"
+msgstr "<strong>Eliminar: </strong>Permite borrar m&uacute;ltiples ficheros y directorios de una sola vez. Continuar&aacute; el proceso aunque se produzca un error borrando alguno de ellos y despu&eacute;s informar&aacute; del resultado."
+
+msgid "txt_multiple_permisos"
+msgstr "<strong>Cambio de Permisos: </strong>Permite cambiar los permisos a m&uacute;ltiples ficheros y directorios de una sola vez. Continuar&aacute; el proceso aunque se produzca un error cambiando alguno de ellos y despu&eacute;s informar&aacute; del resultado."
+
+msgid "txt_multiple_comprimir"
+msgstr "<strong>Descargar empaquetado: </strong>Permite la descarga de todos los ficheros y directorios seleccionados en un solo paquete comprimido para ahorrar ancho de banda. El fichero creado ser&aacute; en formato ZIP."
+
+msgid "h1_problemas"
+msgstr "C&oacute;mo soluciono este problema?"
+
+msgid "tit_problema_subir_arq"
+msgstr "No puedo subir un fichero o una URL"
+
+msgid "txt_problema_subir_arq"
+msgstr "Si no puedes subir un fichero ni una URL debes revusar en primer lugar que dispones de suficiente espacio en disco para guardarlo. Para comprobar esto, en el pi&eacute; de la p&aacute;gina debe aperecer algo como <strong>Espacio libre: XX MB</strong> que indica el l&iacute;mite de peso para guardar en esta ra&iacute;z. En caso de no aparecer este indicador, omite este aviso.<br /><br />Otra posible causa es que ese directorio no tenga permisos de escritura para el usuario servidor web, en este caso debes ponerte en contacto con el administrador web para indic&aacute;rselo. En cualquier caso, cuando ocurre un error subiendo un fichero o URL, se visualizar&aacute; un aviso con la posible causa."
+
+msgid "tit_problema_crear_dir"
+msgstr "No puedo crear un directorio"
+
+msgid "txt_problema_crear_dir"
+msgstr "La causa m&aacute;s frecuente para no permitir crear un directorio es que el sitio en donde lo queremos crear no tiene permisos de escritura. Cuando esto ocurre ense&ntilde;ar&aacute; una advertencia con el posible problema. Si este problema no puede ser solventado por el usuario, por favor contacta con el Administrador."
+
+msgid "tit_problema_buscador"
+msgstr "El buscador no me encuentra lo que busco"
+
+msgid "txt_problema_buscador"
+msgstr "Si el buscador no encuentra el fichero que buscas y que sabes que s&iacute; existe en la ra&iacute;z en la que te encuentras, p&iacute;dele al Administrador que reindexe el contenido de t&uacute; ra&iacute;z para actualizar los datos de relaciones almacenados."
+
+msgid "tit_problema_miniaturas"
+msgstr "No veo las im&aacute;genes en miniatura"
+
+msgid "txt_problema_miniaturas"
+msgstr "Si cuando pulsas en <strong><img src=\"%simx/ver_imaxes.png\" alt=\"Ver Im&aacute;genes\" /> Miniaturas</strong> en el listado no aparecen las im&aacute;genes en miniatura de otras grandes, esto significa que a&uacute;n no las has creado. Para esto debes clicar en el bot&oacute;n de <strong>Ver Informaci&oacute;n</strong> de la imagen seleccionada y despu&eacute;s pulsamos en <strong>Copia Reducida de la Imagen</strong> en donde podemos crear una copia personalizada o una proporcional reducida."
+
+msgid "tit_problema_paxinar"
+msgstr "No veo todo el contenido de un directorio"
+
+msgid "txt_problema_paxinar"
+msgstr "Cuando un directorio es muy extenso (m&aacute;s de %s ficheros o directorios) el resultado es paginado. Para poder navegar en las p&aacute;ginas siguientes o anteriores, en el pie del listado tenemos una lista desplegable para poder escoger la p&aacute;gina en la que deseamos situarnos."
+
+msgid "tit_problema_sesion"
+msgstr "Cuando llevo un cierto tiempo sin realizar ning&uacute;n movimiento en la p&aacute;gina, acaba expuls&aacute;ndome"
+
+msgid "txt_problema_sesion"
+msgstr "Eso es debido a que la duraci&oacute;n de la sesi&oacute;n tiene una caducidad para evitar accesos de otras personas mucho despu&eacute;s de que hayas abandonado tu puesto. Lo normal es que la sesi&oacute;n dure sobre media hora desde la &uacute;ltima p&aacute;gina cargada."
+
+msgid "estado_crear_dir_0"
+msgstr "Ha ocurrido un error creando el directorio."
+
+msgid "estado_crear_dir_1"
+msgstr "El directorio se ha creado correctamente."
+
+msgid "estado_crear_dir_2"
+msgstr "Ya existe un directorio con ese nombre."
+
+msgid "estado_crear_dir_3"
+msgstr "El directorio no tiene permisos de escritura."
+
+msgid "estado_crear_dir_4"
+msgstr "El nombre tiene caracteres no permitidos, escoja otro nombre para el directorio."
+
+msgid "estado_crear_dir_5"
+msgstr "Ya est&aacute; superado el l&iacute;mite m&aacute;ximo de tama&ntilde;o para esta ra&iacute;z."
+
+msgid "estado_subir_arq_0"
+msgstr "Ha ocurrido un error subiendo alguno de los ficheros."
+
+msgid "estado_subir_arq_1"
+msgstr "El fichero ha sido subido correctamente."
+
+msgid "estado_subir_arq_2"
+msgstr "El nombre tiene caracteres no permitidos, c&aacute;mbiele el nombre a ese fichero."
+
+msgid "estado_subir_arq_3"
+msgstr "Ya existe un fichero con ese nombre."
+
+msgid "estado_subir_arq_4"
+msgstr "El directorio destino no tiene permisos de escritura."
+
+msgid "estado_subir_arq_5"
+msgstr "El fichero excede el peso m&aacute;ximo permitido para esta configuraci&oacute;n."
+
+msgid "estado_subir_arq_6"
+msgstr "Con este fichero se supera el l&iacute;mite m&aacute;ximo de tama&ntilde;o para esta ra&iacute;z."
+
+msgid "estado_subir_arq_7"
+msgstr "Con este fichero se supera el l&iacute;mite de ancho de banda permitido para este mes."
+
+msgid "estado_subir_arq_8"
+msgstr "Se est&aacute;n subiendo los ficheros seleccionados.<br /><br />Si estos ficheros son de gran tama&ntilde;o la espera puede ser prolongada.<br /><br />Por favor, espere..."
+
+msgid "estado_eliminar_dir_0"
+msgstr "No se pudo eliminar el directorio completo o parte de su contenido,<br />compruebe con el administrador los permisos sobre el mismo."
+
+msgid "estado_eliminar_dir_1"
+msgstr "Directorio eliminado correctamente."
+
+msgid "estado_eliminar_dir_2"
+msgstr "Est&aacute; seguro de borrar este directorio vac&iacute;o?"
+
+msgid "estado_eliminar_dir_3"
+msgstr "Este directorio no est&aacute; vac&iacute;o,<br />Est&aacute; seguro de borrar este directorio y todo su contenido?"
+
+msgid "estado_eliminar_dir_4"
+msgstr "No existe el directorio que se intenta eliminar."
+
+msgid "estado_eliminar_arq_0"
+msgstr "No se pudo borrar el fichero, compruebe los permisos sobre el mismo."
+
+msgid "estado_eliminar_arq_1"
+msgstr "Fichero eliminado correctamente."
+
+msgid "estado_eliminar_arq_2"
+msgstr "Est&aacute; seguro de borrar este fichero?"
+
+msgid "estado_eliminar_arq_4"
+msgstr "No existe el fichero que se intenta eliminar."
+
+msgid "estado_renomear_0"
+msgstr "No se pudo cambiarle el nombre, compruebe los permisos sobre el mismo."
+
+msgid "estado_renomear_1"
+msgstr "Cambio de nombre realizado correctamente."
+
+msgid "estado_renomear_2"
+msgstr "Ya existe un directorio con ese nombre."
+
+msgid "estado_renomear_3"
+msgstr "Ya existe un fichero con ese nombre."
+
+msgid "estado_renomear_4"
+msgstr "El nuevo nombre contiene alg&uacute;n texto no permitido."
+
+msgid "estado_mover_dir_0"
+msgstr "No se pudo mover el directorio o parte de su contenido, compruebe los permisos sobre el origen y sobre el destino."
+
+msgid "estado_mover_dir_1"
+msgstr "Directorio movido correctamente."
+
+msgid "estado_mover_dir_2"
+msgstr "Este directorio no est&aacute; vac&iacute;o,<br />Selecciona el destino para mover este directorio y todo su contenido"
+
+msgid "estado_mover_dir_3"
+msgstr "Selecciona el destino para este mover directorio vac&iacute;o"
+
+msgid "estado_mover_dir_4"
+msgstr "No existe el directorio de destino."
+
+msgid "estado_mover_dir_5"
+msgstr "El directorio destino no tiene permisos de escritura."
+
+msgid "estado_mover_dir_6"
+msgstr "Ya existe un directorio con ese nombre en el destino."
+
+msgid "estado_mover_dir_7"
+msgstr "No se puede copiar un directorio sobre s&iacute; mismo."
+
+msgid "estado_mover_arq_0"
+msgstr "No se pudo mover el fichero, compruebe los permisos sobre el origen y sobre el destino."
+
+msgid "estado_mover_arq_1"
+msgstr "Fichero movido correctamente"
+
+msgid "estado_mover_arq_2"
+msgstr "Escoge el destino para este fichero."
+
+msgid "estado_mover_arq_3"
+msgstr "Ya existe un fichero con el mismo nombre en el directorio de destino."
+
+msgid "estado_mover_arq_4"
+msgstr "No existe el directorio de destino."
+
+msgid "estado_mover_arq_5"
+msgstr "El directorio destino no tiene permisos de escritura."
+
+msgid "estado_mover_arq_6"
+msgstr "Se ha podido crear una copia en el destino, pero el original no ha podido ser eliminado."
+
+msgid "estado_copiar_dir_0"
+msgstr "No se pudo copiar el directorio o parte de su contenido, compruebe los permisos sobre el origen y sobre el destino."
+
+msgid "estado_copiar_dir_1"
+msgstr "Directorio copiado correctamente."
+
+msgid "estado_copiar_dir_2"
+msgstr "Este directorio no est&aacute; vac&iacute;o,<br />Selecciona el destino para copiar este directorio y todo su contenido"
+
+msgid "estado_copiar_dir_3"
+msgstr "Selecciona el destino para este copiar directorio vac&iacute;o"
+
+msgid "estado_copiar_dir_4"
+msgstr "No existe el directorio de destino."
+
+msgid "estado_copiar_dir_5"
+msgstr "El directorio destino no tiene permisos de escritura."
+
+msgid "estado_copiar_dir_6"
+msgstr "Ya existe un directorio con ese nombre en el destino."
+
+msgid "estado_copiar_dir_7"
+msgstr "No se puede copiar un directorio dentro de s&iacute; mismo."
+
+msgid "estado_copiar_dir_8"
+msgstr "No se puede copiar este directorio por que se supera el l&iacute;mite para esta ra&iacute;z."
+
+msgid "estado_copiar_arq_0"
+msgstr "No se pudo copiar el fichero, compruebe los permisos sobre el origen y sobre el destino."
+
+msgid "estado_copiar_arq_1"
+msgstr "Fichero copiado correctamente"
+
+msgid "estado_copiar_arq_2"
+msgstr "Selecciona el destino para este fichero."
+
+msgid "estado_copiar_arq_3"
+msgstr "Ya existe un fichero con el mismo nombre en el directorio de destino."
+
+msgid "estado_copiar_arq_4"
+msgstr "No existe el directorio de destino."
+
+msgid "estado_copiar_arq_5"
+msgstr "El directorio destino no tiene permisos de escritura."
+
+msgid "estado_copiar_arq_6"
+msgstr "No se puede copiar este fichero por que supera el l&iacute;mite para esta ra&iacute;z."
+
+msgid "estado_enlazar_dir_0"
+msgstr "No se pudo enlazar el directorio o parte de su contenido, compruebe los permisos sobre el origen y sobre el destino."
+
+msgid "estado_enlazar_dir_1"
+msgstr "Directorio enlazado correctamente."
+
+msgid "estado_enlazar_dir_2"
+msgstr "No existe el directorio de destino."
+
+msgid "estado_enlazar_dir_3"
+msgstr "El directorio destino no tiene permisos de escritura."
+
+msgid "estado_enlazar_dir_4"
+msgstr "Ya existe un directorio con ese nombre en el destino."
+
+msgid "estado_enlazar_arq_0"
+msgstr "No se pudo enlazar el fichero, compruebe los permisos sobre el origen y sobre el destino."
+
+msgid "estado_enlazar_arq_1"
+msgstr "Fichero enlazado correctamente"
+
+msgid "estado_enlazar_arq_2"
+msgstr "Selecciona el destino para este fichero."
+
+msgid "estado_enlazar_arq_3"
+msgstr "Ya existe un fichero con el mismo nombre en el directorio de destino."
+
+msgid "estado_enlazar_arq_4"
+msgstr "No existe el directorio de destino."
+
+msgid "estado_enlazar_arq_5"
+msgstr "El directorio destino no tiene permisos de escritura."
+
+msgid "estado_editar_0"
+msgstr "Ha ocurrido un error editando el fichero."
+
+msgid "estado_editar_1"
+msgstr "El fichero ha sido editado correctamente."
+
+msgid "estado_editar_2"
+msgstr "El fichero no tiene permisos de escritura."
+
+msgid "estado_editar_3"
+msgstr "No existe el fichero a editar."
+
+msgid "estado_editar_4"
+msgstr "No est&aacute; permitido editar este fichero."
+
+msgid "estado_subir_url_0"
+msgstr "Ha ocurrido un error esa URL."
+
+msgid "estado_subir_url_1"
+msgstr "La URL pedida ha sido guardada correctamente."
+
+msgid "estado_subir_url_2"
+msgstr "Ya existe un fichero con ese nombre."
+
+msgid "estado_subir_url_3"
+msgstr "El directorio de destino no tiene permisos de escritura."
+
+msgid "estado_subir_url_4"
+msgstr "Tenga en cuenta que el tiempo de espera puede ser muy largo si escoge ficheros de mucho peso.<br />Se recomienda escoger s&oacute;lo documentos de tipo texto como p&aacute;ginas web."
+
+msgid "estado_subir_url_5"
+msgstr "Espere mientras se descarga la URL pedida.<br /><br />Tenga en cuenta que se el documento pedido es muy pesado, la espera puede ser muy prolongada."
+
+msgid "estado_subir_url_6"
+msgstr "Se ha anulado correctamente la descarga de esa URL."
+
+msgid "estado_subir_url_7"
+msgstr "No se puede descargar esta direcci&oacute;n porque supera el l&iacute;mite para esta ra&iacute;z."
+
+msgid "estado_subir_url_8"
+msgstr "El nombre escogido para el fichero contiene texto no permitido."
+
+msgid "estado_subir_url_9"
+msgstr "Con este fichero se supera el l&iacute;mite de ancho de banda permitido para este mes."
+
+msgid "estado_extraer_0"
+msgstr "No fue posible extraer ning&uacute;n fichero, puede ser que el fichero comprimido no tenga el formato correcto o que est&eacute; da&ntilde;ado."
+
+msgid "estado_extraer_1"
+msgstr "Todos los ficheros fueron extra&iacute;dos correctamente."
+
+msgid "estado_extraer_2"
+msgstr "El fichero no tiene una extensi&oacute;n v&aacute;lida (tar, gz, gzip, tgz)."
+
+msgid "estado_extraer_3"
+msgstr "Esta aplicaci&oacute;n no soporta extraer ese tipo de fichero."
+
+msgid "estado_extraer_4"
+msgstr "No puede ser extra&iacute;do, est&aacute; corrupto."
+
+msgid "estado_extraer_5"
+msgstr "Algunos ficheros no fueron extra&iacute;dos, ya existen."
+
+msgid "estado_extraer_6"
+msgstr "Algunos ficheros non han podido ser abiertos para escritura."
+
+msgid "estado_extraer_7"
+msgstr "No se pudo rematar con la extracci&oacute;n por que el contenido supera el peso m&aacute;ximo permitido para esta ra&iacute;z."
+
+msgid "estado_extraer_8"
+msgstr "Algunos ficheros contienen nombres no permitidos o estaban vac&iacute;os y no fueron extra&iacute;dos."
+
+msgid "estado_extraer_9"
+msgstr "No se pudo crear algunos de los directorios necesarios para la extracci&oacute;n del contenido."
+
+msgid "estado_multiple_copiar_0"
+msgstr "No se ha podido copiar el directorio/fichero, compruebe los permisos sobre el origen y sobre el destino:"
+
+msgid "estado_multiple_copiar_1"
+msgstr "Todos los directorios o ficheros fueron copiados correctamente."
+
+msgid "estado_multiple_copiar_2"
+msgstr "Escoge el destino para los directorios o ficheros a copiar."
+
+msgid "estado_multiple_copiar_3"
+msgstr "Ya existe un fichero o directorio con el mismo nombre en el destino:"
+
+msgid "estado_multiple_copiar_4"
+msgstr "No existe el directorio destino para:"
+
+msgid "estado_multiple_copiar_5"
+msgstr "El directorio destino no tiene permisos de escritura para:"
+
+msgid "estado_multiple_copiar_6"
+msgstr "No se puede copiar este directorio/fichero por que se supera el l&iacute;mite para esta ra&iacute;z:"
+
+msgid "estado_multiple_copiar_7"
+msgstr "Alguno de los directorios o ficheros seleccionados no existen o no son legibles:"
+
+msgid "estado_multiple_copiar_8"
+msgstr "El resto de los directorios y ficheros fueron copiados correctamente."
+
+msgid "estado_multiple_copiar_9"
+msgstr "No se puede copiar el directorio dentro de s&iacute; mismo."
+
+msgid "estado_multiple_eliminar_0"
+msgstr "No se pudo eliminar el fichero o directorio, compruebe los permisos sobre el mismo:"
+
+msgid "estado_multiple_eliminar_1"
+msgstr "Todos los ficheros o directorios fueron eliminados correctamente."
+
+msgid "estado_multiple_eliminar_2"
+msgstr "Est&aacute; seguro de eliminar todos estos ficheros o directorios?"
+
+msgid "estado_multiple_eliminar_3"
+msgstr "El resto de los ficheros o directorios fueron eliminados correctamente."
+
+msgid "estado_multiple_eliminar_4"
+msgstr "No existe el fichero o directorio que intenta eliminar:"
+
+msgid "estado_multiple_mover_0"
+msgstr "No se ha podido mover el directorio/fichero, compruebe los permisos sobre el origen y sobre el destino:"
+
+msgid "estado_multiple_mover_1"
+msgstr "Todos los directorios o ficheros fueron movidos correctamente."
+
+msgid "estado_multiple_mover_2"
+msgstr "Escoge el destino para los directorios o ficheros a mover."
+
+msgid "estado_multiple_mover_3"
+msgstr "Ya existe un fichero o directorio con el mismo nombre en el destino:"
+
+msgid "estado_multiple_mover_4"
+msgstr "No existe el directorio destino para:"
+
+msgid "estado_multiple_mover_5"
+msgstr "El directorio destino no tiene permisos de escritura para:"
+
+msgid "estado_multiple_mover_6"
+msgstr "Se ha podido crear una copia en el destino, pero el original no se ha podido eliminar:"
+
+msgid "estado_multiple_mover_7"
+msgstr "El resto de los directorios y ficheros fueron movidos correctamente."
+
+msgid "estado_multiple_mover_8"
+msgstr "No se puede mover un directorio dentro de s&iacute; mismo:"
+
+msgid "estado_multiple_mover_9"
+msgstr "Alguno de los directorios o ficheros seleccionados no existen o no son legibles:"
+
+msgid "estado_multiple_permisos_0"
+msgstr "No se ha podido cambiar los permisos a este directorio/fichero:"
+
+msgid "estado_multiple_permisos_1"
+msgstr "El cambio de permisos fue realizado correctamente."
+
+msgid "estado_multiple_permisos_2"
+msgstr "No existe el fichero o no se dispone de permisos sobre &eacute;l:"
+
+msgid "estado_multiple_permisos_3"
+msgstr "El resto de ficheros o directorios fueron cambiados correctamente."
+
+msgid "estado_permisos_0"
+msgstr "No se ha podido cambiar los permisos a este directorio/fichero."
+
+msgid "estado_permisos_1"
+msgstr "El cambio de permisos fue realizado correctamente."
+
+msgid "estado_permisos_2"
+msgstr "No existe el fichero o no se dispone de permisos sobre &eacute;l."
+
+msgid "estado_descargar_0"
+msgstr "No existe el fichero seleccionado o no es legible:"
+
+msgid "estado_descargar_2"
+msgstr "No se puede descargar el fichero actual ya que se superar&iacute;a el ancho de banda disponible para este mes."
+
+msgid "estado_descargar_3"
+msgstr "No se ha podido abrir el fichero de registro para guardar los datos de la descarga. Por favor revisa el directorio %s"
+
+msgid "estado_redimensionar_0"
+msgstr "La copia reducida fue cancelada."
+
+msgid "estado_redimensionar_1"
+msgstr "La copia reducida fue creada correctamente."
+
+msgid "estado_redimensionar_2"
+msgstr "La copia reducida fue eliminada correctamente."
+
+msgid "estado_ver_comprimido_1"
+msgstr "El fichero seleccionado no es un fichero comprimido v&aacute;lido."
+
+msgid "estado_novo_arq_0"
+msgstr "Ha ocurrido un error creando el fichero, compruebe los permisos de escritura sobre el directorio."
+
+msgid "estado_novo_arq_1"
+msgstr "El fichero ha sido creado correctamente."
+
+msgid "estado_novo_arq_2"
+msgstr "Ya existe un fichero con ese nombre."
+
+msgid "estado_novo_arq_3"
+msgstr "No est&aacute; permitido ese nombre para el nuevo fichero."
+
+msgid "estado_novo_arq_4"
+msgstr "El directorio en el que desea guardar el fichero no tiene permisos de escritura."
+
+msgid "estado_novo_arq_5"
+msgstr "No ha escrito un nombre para el nuevo fichero."
+
+msgid "estado_novo_arq_6"
+msgstr "Con este fichero se supera el l&iacute;mite m&aacute;ximo de tama&ntilde;o para esta ra&iacute;z."
+
+msgid "estado_novo_arq_7"
+msgstr "Con este fichero se supera el l&iacute;mite de ancho de banda permitido para este mes."
+
+msgid "estado_preferencias_0"
+msgstr "Ha ocurrido un error cambiando las preferencias del usuario. Por favor vuelva a intentarlo y en caso de error avise al administrador."
+
+msgid "estado_preferencias_1"
+msgstr "Las preferencias fueron cambiadas correctamente."
+
+msgid "estado_preferencias_2"
+msgstr "Debe rellenar el campo de \"Nombre\"."
+
+msgid "estado_preferencias_3"
+msgstr "La longitud de la contrase&ntilde;a debe ser de al menos 8 d&iacute;gitos. Se permiten n&uacute;meros y letras."
+
+msgid "estado_preferencias_4"
+msgstr "Las contrase&ntilde;as no coinciden."
+
+msgid "estado_preferencias_5"
+msgstr "No se pueden ejecutar las aplicaciones de firma y extracci&oacute;n de certificados por problemas de permisos. Por favor contacte con el administrador para solventar estos problemas."
+
+msgid "estado_preferencias_6"
+msgstr "El certificado no cuenta con una extensi&oacute;n v&aacute;lida o su contenido no es correcto. Recuerda que su extensi&oacute;n debe ser <strong>PFX</strong>."
+
+msgid "estado_preferencias_7"
+msgstr "Aunque se ha comprobado que el certificado y la contrase&ntilde;a son correctos, no se ha podido extraer la clave p&uacute;blica del certificado. Por favor p&oacute;ngase en contacto con el administrador para advertir de este problema."
+
+msgid "estado_preferencias_8"
+msgstr "No se ha podido obtener la clave p&uacute;blica a partir del certificado y contrase&ntilde;a que ha remitido. Vuelva a intentarlo con otros datos."
+
+msgid "estado_preferencias_9"
+msgstr "El certificado enviado no tiene un formato soportado."
+
+msgid "estado_preferencias_10"
+msgstr "Ha ocurrido un error procesando el certificado, por favor contacte con el administrador para solucionar este problema."
+
+msgid "estado_redimensionar_dir_0"
+msgstr "El directorio no contiene ninguna imagen v&aacute;lida para ser redimensionada."
+
+msgid "estado_redimensionar_dir_1"
+msgstr "Se ha creado correctamente la previsualizaci&oacute;n para:"
+
+msgid "estado_redimensionar_dir_2"
+msgstr "Esta imagen no es v&aacute;lida:"
+
+msgid "estado_redimensionar_dir_3"
+msgstr "No se han recibido todos los par&aacute;metros necesarios para esta acci&oacute;n"
+
+msgid "estado_redimensionar_dir_4"
+msgstr "Esta imagen ya dispone de previsualizaci&oacute;n:"
+
+msgid "estado_correo_0"
+msgstr "El correo no se ha podido enviar. El problema puede ser la configuraci&oacute;n para env&iacute;o de correos desde PHP."
+
+msgid "estado_correo_1"
+msgstr "El correo ha sido enviado con &eacute;xito."
+
+msgid "estado_correo_2"
+msgstr "El campo \"T&iacute;tulo\" no puede estar en blanco."
+
+msgid "estado_correo_3"
+msgstr "El campo \"Mensaje\" no puede estar en blanco."
+
+msgid "estado_correo_4"
+msgstr "El campo \"Para\" no puede estar en blanco."
+
+msgid "estado_correo_5"
+msgstr "Alguna de las direcciones de correo en el campo \"Para\" no son correctas:"
+
+msgid "estado_correo_6"
+msgstr "Todas las direcciones de correo conten&iacute;n alg&uacute;n error."
+
+msgid "estado_correo_7"
+msgstr "No se ha podido adjuntar el fichero seleccionado. Compruebe que existe y que tiene permisos de lectura."
+
+msgid "estado_correo_8"
+msgstr "Ha ocurrido alg&uacute;n problema creando el mensaje. Puede ser que no se pueda enviar este fichero como adjunto."
+
+msgid "estado_correo_9"
+msgstr "No se permite enviar este fichero como adjunto ya que superar&iacute;a el ancho de banda disponible para este mes."
+
+msgid "estado_correo_10"
+msgstr "No se permite enviar este fichero ya que supera el l&iacute;mite de %s para un adjunto."
+
+msgid "lista_idiomas_ae"
+msgstr "&Aacute;rabe"
+
+msgid "lista_idiomas_af"
+msgstr "Africano"
+
+msgid "lista_idiomas_al"
+msgstr "Alban&eacute;s"
+
+msgid "lista_idiomas_am"
+msgstr "Armenio"
+
+msgid "lista_idiomas_ba"
+msgstr "Bosnio"
+
+msgid "lista_idiomas_bg"
+msgstr "B&uacute;lgaro"
+
+msgid "lista_idiomas_br"
+msgstr "Portugu&eacute;s do Brasil"
+
+msgid "lista_idiomas_bv"
+msgstr "Bieloruso"
+
+msgid "lista_idiomas_ca"
+msgstr "Canadiense"
+
+msgid "lista_idiomas_ch"
+msgstr "Chino"
+
+msgid "lista_idiomas_ct"
+msgstr "Catal&aacute;n"
+
+msgid "lista_idiomas_cz"
+msgstr "Checo"
+
+msgid "lista_idiomas_de"
+msgstr "Alem&aacute;n"
+
+msgid "lista_idiomas_dk"
+msgstr "Dan&eacute;s"
+
+msgid "lista_idiomas_ee"
+msgstr "Estonio"
+
+msgid "lista_idiomas_en"
+msgstr "Ingl&eacute;s"
+
+msgid "lista_idiomas_es"
+msgstr "Castellano"
+
+msgid "lista_idiomas_fr"
+msgstr "Franc&eacute;s"
+
+msgid "lista_idiomas_fi"
+msgstr "Finland&eacute;s"
+
+msgid "lista_idiomas_gl"
+msgstr "Gallego"
+
+msgid "lista_idiomas_gn"
+msgstr "Guaran&iacute;"
+
+msgid "lista_idiomas_gr"
+msgstr "Griego"
+
+msgid "lista_idiomas_hr"
+msgstr "Croata"
+
+msgid "lista_idiomas_hu"
+msgstr "H&uacute;ngaro"
+
+msgid "lista_idiomas_id"
+msgstr "Indonesio"
+
+msgid "lista_idiomas_ie"
+msgstr "Irland&eacute;s"
+
+msgid "lista_idiomas_il"
+msgstr "Hebreo"
+
+msgid "lista_idiomas_in"
+msgstr "Ind&uacute;"
+
+msgid "lista_idiomas_is"
+msgstr "Island&eacute;s"
+
+msgid "lista_idiomas_it"
+msgstr "Italiano"
+
+msgid "lista_idiomas_jp"
+msgstr "Japon&eacute;s"
+
+msgid "lista_idiomas_kr"
+msgstr "Coreano"
+
+msgid "lista_idiomas_ku"
+msgstr "Kurdo"
+
+msgid "lista_idiomas_ls"
+msgstr "Let&oacute;n"
+
+msgid "lista_idiomas_lt"
+msgstr "Lituano"
+
+msgid "lista_idiomas_mk"
+msgstr "Macedonio"
+
+msgid "lista_idiomas_mn"
+msgstr "Mongol"
+
+msgid "lista_idiomas_mt"
+msgstr "Malt&eacute;s"
+
+msgid "lista_idiomas_my"
+msgstr "Malayo"
+
+msgid "lista_idiomas_nl"
+msgstr "Holand&eacute;s"
+
+msgid "lista_idiomas_no"
+msgstr "Noruego"
+
+msgid "lista_idiomas_np"
+msgstr "Nepal&iacute;"
+
+msgid "lista_idiomas_pl"
+msgstr "Polaco"
+
+msgid "lista_idiomas_pr"
+msgstr "Persa"
+
+msgid "lista_idiomas_pt"
+msgstr "Portugu&eacute;s"
+
+msgid "lista_idiomas_ro"
+msgstr "Rumano"
+
+msgid "lista_idiomas_ru"
+msgstr "Ruso"
+
+msgid "lista_idiomas_sd"
+msgstr "Sudan&eacute;s"
+
+msgid "lista_idiomas_se"
+msgstr "Sueco"
+
+msgid "lista_idiomas_sh"
+msgstr "Serbo-Croata"
+
+msgid "lista_idiomas_si"
+msgstr "Esloveno"
+
+msgid "lista_idiomas_sk"
+msgstr "Eslovaco"
+
+msgid "lista_idiomas_so"
+msgstr "Somal&iacute;"
+
+msgid "lista_idiomas_sr"
+msgstr "Serbio"
+
+msgid "lista_idiomas_sv"
+msgstr "Sueco"
+
+msgid "lista_idiomas_sw"
+msgstr "Suajili"
+
+msgid "lista_idiomas_th"
+msgstr "Tailand&eacute;s"
+
+msgid "lista_idiomas_tr"
+msgstr "Turco"
+
+msgid "lista_idiomas_tt"
+msgstr "T&aacute;rtaro"
+
+msgid "lista_idiomas_ua"
+msgstr "Ucraniano"
+
+msgid "lista_idiomas_uz"
+msgstr "Uzbeco"
+
+msgid "lista_idiomas_vc"
+msgstr "Vasco"
+
+msgid "lista_idiomas_vn"
+msgstr "Vietnamita"
+
+msgid "lista_idiomas_zu"
+msgstr "Zul&uacute;"
+
+msgid "i_presentacion"
+msgstr "Presentaci&oacute;n"
+
+msgid "i_directorios"
+msgstr "Permisos de directorios"
+
+msgid "i_comprobacion"
+msgstr "Comprobaci&oacute;n del sistema"
+
+msgid "i_datos"
+msgstr "Datos de configuraci&oacute;n"
+
+msgid "i_instalar"
+msgstr "Instalar"
+
+msgid "i_remate"
+msgstr "Completado"
+
+msgid "i_intro_presentacion"
+msgstr "<p>Bienvenido al PHPfileNavigator.</p><br /><p>Este instalador te guiar&aacute; a trav&eacute;s de los pasos necesarios para llevar a cabo una instalaci&oacute;n correcta de la aplicaci&oacute;n.</p>"
+
+msgid "i_intro_escolle_idioma"
+msgstr "<p>Primero debes seleccionar el <strong>idioma</strong> en el que deseas realizar la instalaci&oacute;n. En caso de que el idioma que necesitas no se encuentra en este listado, puedes acceder a la secci&oacute;n de descargas en la web oficial para comprobar si existe una traducci&oacute;n. La traducci&oacute;n que te descargues puedes instalarla cuando quieras, no tiene por que ser ahora.</p>"
+
+msgid "idioma"
+msgstr "Idioma"
+
+msgid "i_intro_tipo_instalacion"
+msgstr "<p>Ahora esoge el tipo de instalaci&oacute;n que deseas realizar. Si el PHPfileNavigator no ha sido instalada con anterioridad selecciona la opci&oacute;n de <strong>instalar</strong>, en caso contrario selecciona la opci&oacute;n de <strong>actualizar</strong>.</p><br /><p>Ten en cuenta que si seleccionas instalar desde cero y ya existe una instalaci&oacute;n previa, eliminar&aacute; todo el contenido de las tablas MySQL de la instalaci&oacute;n anterior.</p>"
+
+msgid "tipo_instalacion"
+msgstr "Tipo de instalaci&oacute;n"
+
+msgid "instalar_cero"
+msgstr "Instalaci&oacute;n desde cero o reinstalaci&oacute;n de esta versi&oacute;n"
+
+msgid "i_actualizar"
+msgstr "Actualizar deste una versi&oacute;n anterior"
+
+msgid "i_intro_actualizar"
+msgstr "Se va a proceder con la actualizaci&oacute;n de su instalaci&oacute;n actual."
+
+msgid "continuar_paso_2"
+msgstr "Continuar al paso 2 &raquo;"
+
+msgid "continuar_paso_3"
+msgstr "Continuar al paso 3 &raquo;"
+
+msgid "continuar_paso_4"
+msgstr "Continuar al paso 4 &raquo;"
+
+msgid "continuar_paso_5"
+msgstr "Instalar &raquo;"
+
+msgid "continuar_paso_6"
+msgstr "Finalizar &raquo;"
+
+msgid "voltar_paso_1"
+msgstr "&laquo; Regresar al paso 1"
+
+msgid "voltar_paso_2"
+msgstr "&laquo; Regresar al paso 2"
+
+msgid "voltar_paso_3"
+msgstr "&laquo; Regresar al paso 3"
+
+msgid "i_intro_directorios"
+msgstr "<p>En este paso se realizar&aacute;n una serie de comprobaciones para verificar que los directorios tienen los permisos correctos.</p><br /><p>Lo ideal para los permisos de los directorios ser&iacute;a que solo el servidor web tenga permisos de lectura, escritura y ejecuci&oacute;n (700 apache:nobody), aunque esto no ser&aacute; posible en un alojamiento compartido por lo que tendr&aacute;s que usar 777."
+
+msgid "i_path_ok"
+msgstr "El directorio tiene los permisos correctos."
+
+msgid "i_path_erro"
+msgstr "El directorio no tiene los permisos correctos. El usuario del servidor web debe tener permisos de escritura."
+
+msgid "i_arq_ok"
+msgstr "El fichero tiene los permisos correctos."
+
+msgid "i_arq_erro"
+msgstr "El fichero no tiene los permisos correctos. El usuario del servidor web debe tener permisos de escritura."
+
+msgid "i_intro_comprobacion"
+msgstr "<p>En este paso se verifica que el servidor cumple con todos los requisitos necesarios para la instalaci&oacute;n.</p><br /><p>En las comprobaciones se revisa la versi&oacute;n de PHP (> 4.0.6), MySQL (>= 4.0.0), GD, l&iacute;mite de memoria y capacidad para subida de ficheros.</p>"
+
+msgid "i_instalado_ok"
+msgstr "La versi&oacute;n instalada es correcta:"
+
+msgid "i_instalado_erro"
+msgstr "La versi&oacute;n instalada es inferior a la necesaria para un correcto uso de la aplicaci&oacute;n, por lo que no se puede continuar con la instalaci&oacute;n:"
+
+msgid "i_instalado_aviso"
+msgstr "La versi&oacute;n instalada es inferior a la necesaria para un perfecto uso de la aplicaci&oacute;n, pero no impide su correcto funcionamiento:"
+
+msgid "i_mysql_erro"
+msgstr "Esta instalaci&oacute;n de PHP no incluye soporte para MySQL. Debes instalar los m&oacute;dulos necesarios o recompilar el PHP para a&ntilde;adirle el soporte."
+
+msgid "i_gd_erro"
+msgstr "Esta instalaci&oacute;n de PHP no incluye soporte para las librer&iacute;as gr&aacute;ficas GD. Debes instalar los m&oacute;dulos necesarios o recompilar el PHP para a&ntilde;adirle el soporte."
+
+msgid "i_safe_mode_erro"
+msgstr "Este servidor est&aacute; configurado como safe_mode = On con lo que tendr&aacute;s problemas a la hora de realizar acciones con ficheros o directorios ya que los permisos no ser&aacute;n los adecuados. Consulta a tu proveedor de hosting para solictar el cambio a safe_mode = Off."
+
+msgid "i_safe_mode_ok"
+msgstr "La configuraci&oacute;n del servidor es correcta para safe_mode = Off."
+
+msgid "i_upload_ok"
+msgstr "La configuraci&oacute;n del servidor permite una buena capacidad de subida (m&aacute;s de 10 Megas por fichero):"
+
+msgid "i_upload_erro"
+msgstr "La configuraci&oacute;n del servidor no permite una una buena capacidad de subida (menos de 10 Megas por fichero):"
+
+msgid "i_memory_ok"
+msgstr "La configuraci&oacute;n del servidor permite hacer uso de gran cantidad de memoria lo que acelerar&aacute; procesos como la copia reducida de im&aacute;genes o la compresi&oacute;n de ficheros y directorios:"
+
+msgid "i_memory_erro"
+msgstr "La configuraci&oacute;n del servidor no permite hacer uso de gran cantidad de memoria lo que relentizar&aacute; procesos como la copia reducida de im&aacute;genes o la compresi&oacute;n de ficheros y directorios:"
+
+msgid "i_zlib_erro"
+msgstr "Esta versi&oacute;n de PHP no dispone de soporte para Zlib por lo que dar&aacute; errores a la hora de extraer, ver contenido o comprimir ficheros. Para evitar estos errores desactiva la extracci&oacute;n, compresi&oacute;n y visualizaci&oacute;n de ficheros comprimidos."
+
+msgid "i_intro_datos"
+msgstr "<p>Esta es la &uacute;ltima pantalla antes de realizar la instalaci&oacute;n.</p><br /><p><strong>Todos los campos son obligatorios.</strong></p><br /><p>Si tienes dudas sobre como debes cubrir alg&uacute;n campo, pulsa el <a href=\"#\">(?)</a> que se encuentra a su izquierda.</p><br /><p>Recomendamos el uso de UTF-8 para la base de datos del PHPfileNavigator. Para crear la base de datos desde consola, puede usar el siguiente comando:</p><br /><p><strong>CREATE DATABASE pfn DEFAULT CHARACTER  SET utf8 COLLATE utf8_unicode_ci;</strong></p>"
+
+msgid "i_axuda_charset"
+msgstr "Normalmente cada idioma tiene su propio juego de caracteres para visualizar correctamente todos los s&iacute;mbolos y letras en pantalla. Lo correcto es que coincida con el servidor web y con el sistema."
+
+msgid "i_axuda_db_servidor"
+msgstr "El servidor en el que est&aacute; instalado el MySQL. Casi siempre <strong>localhost</strong>"
+
+msgid "i_axuda_db_nome"
+msgstr "El nombre de la base de datos en donde ser&aacute; instalado. <strong>Debe existir en el momento de la instalaci&oacute;n.</strong>"
+
+msgid "i_axuda_db_usuario"
+msgstr "El usuario mediante el cual se acceder&aacute; a la base de datos. Debe tener permisos de creaci&oacute;n, modificaci&oacute;n y borrado de tablas en la base de datos escogida."
+
+msgid "i_axuda_db_contrasinal"
+msgstr "Contrase&ntilde;a de acceso del usuario a la base de datos escogida."
+
+msgid "i_axuda_db_rep_contrasinal"
+msgstr "Repetir la contrase&ntilde;a anterior."
+
+msgid "i_axuda_db_prefixo"
+msgstr "Prefijo para las tablas. As&iacute; evitar&aacute;s que se pueda sobreescribir otras ya existentes con el mismo nombre."
+
+msgid "i_axuda_ad_nome"
+msgstr "Nombre com&uacute;n del usuario administrador. <strong>No ser&aacute; el usuario de acceso</strong>."
+
+msgid "i_axuda_ad_usuario"
+msgstr "Usuario con el que acceder&aacute; a la aplicaci&oacute;n."
+
+msgid "i_axuda_ad_contrasinal"
+msgstr "Contrase&ntilde;a de acceso del usuario administrador del PHPfileNavigator."
+
+msgid "i_axuda_ad_rep_contrasinal"
+msgstr "Repetir la contrase&ntilde;a anterior."
+
+msgid "i_axuda_ad_correo"
+msgstr "Correo electr&oacute;nico del administrador. A este correo llegar&aacute;n las alertas de seguridad por intentos de instrusi&oacute;n o problemas de acceso."
+
+msgid "i_axuda_ra_nome"
+msgstr "Nombre gen&eacute;rico para esta ra&iacute;z. Sirve para identificarla en listado de ra&iacute;ces y en caso de que tengas acceso a m&aacute;s de una. <strong>p.e.: Ra&iacute;z Principal</strong> o <strong>Directorio de documentos</strong>"
+
+msgid "i_axuda_ra_path"
+msgstr "La ruta del directorio que se va a gestionar. Debe ser la absoluta desde la ra&iacute;z del servidor. Despu&eacute;s podr&aacute;s crear m&aacute;s raices de acceso.<br /><br />Recuerda que debes usar / en vez de la barra invertida tanto en sistemas Linux/Unix como en Windows que esta ruta debe acabar con una /.<br /><br />No se recomienda poner como ruta el propio directorio de instalaci&oacute;n del PHPfileNavigator ni nig&uacute;n subdirectorio suyo. <strong>p.e.: /var/www/html/docs/</strong> o <strong>c:/phpdev/www/docs/</strong>"
+
+msgid "i_axuda_ra_web"
+msgstr "La ruta de acceso por web desde la ra&iacute;z del dominio al directorio que se va a administrar.<br /><br />Por ejemplo, si voy a administrar un directorio llamado docs y en ese directorio existe un documento como logo.png. Si yo quiero acceder a ese documento por web, escribir&iacute;a http://www.midominio.com/docs/logo.png, entonces la ra&iacute;z web ser&iacute;a <strong>/docs/</strong>."
+
+msgid "i_axuda_ra_dominio"
+msgstr "Nombre del dominio que se va a gestionar. Sin http. <strong>p.e.: www.midominio.com</strong>"
+
+msgid "i_axuda_raices_atopadas"
+msgstr "Se encontraron las siguientes ra&iacute;ces que ser&aacute;n configuradas."
+
+msgid "i_axuda_aviso"
+msgstr "<p>Esta aplicaci&oacute;n est&aacute; en continuo desarrollo. Si habilitas la casilla de <strong>Aviso de instalaci&oacute;n</strong> se enviar&aacute; a los desarrolladores del PHPfileNavigator un correo de aviso de nueva instalaci&oacute;n o actualizaci&oacute;n en el que se remitir&aacute; &uacute;nicamente el correo electr&oacute;nico del administrador y el host en el que fue instalado.</p><br /><p><strong>No se enviar&aacute; ning&uacute;n tipo de informaci&oacute;n personal</strong> como rutas, datos de usuario o contrase&ntilde;as. Esto te permitir&aacute; estar informado de las nuevas versiones o avisos de seguridad.</p><br /><p>No se enviar&aacute; en ning&uacute;n caso correo no deseado ni informaci&oacute;n que no sea importante.</p><br /><p>Puedes revisar el c&oacute;digo de env&iacute;o del correo en el fichero instalar/include/paso_5.inc.php entre las l&iacute;neas 45 y 63.</p>"
+
+msgid "i_aviso"
+msgstr "Aviso de instalaci&oacute;n"
+
+msgid "i_charset"
+msgstr "Juego de caracteres"
+
+msgid "i_base_datos"
+msgstr "Base de datos"
+
+msgid "i_db_servidor"
+msgstr "Servidor"
+
+msgid "i_db_nome"
+msgstr "Base de datos"
+
+msgid "i_db_usuario"
+msgstr "Usuario"
+
+msgid "i_db_contrasinal"
+msgstr "Contrase&ntilde;a"
+
+msgid "i_db_prefixo"
+msgstr "Prefijo"
+
+msgid "i_administrador"
+msgstr "Usuario administrador"
+
+msgid "i_ad_nome"
+msgstr "Nombre Com&uacute;n"
+
+msgid "i_ad_usuario"
+msgstr "Usuario"
+
+msgid "i_ad_contrasinal"
+msgstr "Contrase&ntilde;a"
+
+msgid "i_ad_rep_contrasinal"
+msgstr "Repetir contrase&ntilde;a"
+
+msgid "i_ad_correo"
+msgstr "Email"
+
+msgid "i_raiz"
+msgstr "Ra&iacute;z principal"
+
+msgid "i_ra_nome"
+msgstr "Nombre"
+
+msgid "i_ra_path"
+msgstr "Ruta absoluta"
+
+msgid "i_ra_web"
+msgstr "Ruta web"
+
+msgid "i_ra_dominio"
+msgstr "Dominio"
+
+msgid "i_erros_1"
+msgstr "Debes seleccionar un Juego de caract&eacute;res correcto."
+
+msgid "i_erros_2"
+msgstr "Debes cubrir el campo de Servidor para la Base de datos."
+
+msgid "i_erros_3"
+msgstr "Debes cubrir el Nombre de la Base de datos a usar."
+
+msgid "i_erros_4"
+msgstr "Debes cubrir el campo de Usuario de acceso a la Base de datos."
+
+msgid "i_erros_5"
+msgstr "Debes cubrir el campo de Nombre Com&uacute;n para el Usuario administrador."
+
+msgid "i_erros_6"
+msgstr "Debes cubrir el campo de Usuario para Usuario administrador."
+
+msgid "i_erros_7"
+msgstr "Debes asignarle una contrase&ntilde;a al Usuario administrador."
+
+msgid "i_erros_8"
+msgstr "Los campos de Contrase&ntilde;a y Repetir contrase&ntilde;a deben ser iguales."
+
+msgid "i_erros_9"
+msgstr "El Usuario administrador debe disponer de un correo electr&oacute;nico."
+
+msgid "i_erros_10"
+msgstr "La Ra&iacute;z principal debe de disponer de nombre."
+
+msgid "i_erros_11"
+msgstr "La Ra&iacute;z principar debe de disponer de una Ruta absoluta."
+
+msgid "i_erros_12"
+msgstr "La Ra&iacute;z principar debe de disponer de una Ruta web."
+
+msgid "i_erros_13"
+msgstr "La Ra&iacute;z principar debe de disponer de un dominio de localizaci&oacute;n."
+
+msgid "i_erros_14"
+msgstr "El directorio de Ruta absoluta en Ra&iacute;z principal no existe."
+
+msgid "i_erros_15"
+msgstr "El usuario indicado para Base de datos no tiene permiso de acceso."
+
+msgid "i_erros_16"
+msgstr "No se ha podido usar la base de datos seleccionada."
+
+msgid "i_erros_17"
+msgstr "La siguiente consulta ha dado un error:"
+
+msgid "i_erros_18"
+msgstr "No existe el fichero de configuraci&oacute;n que indica que existe una versi&oacute;n ya instalada.<br />Pruebe con una instalaci&oacute;n completa en vez de una actualizaci&oacute;n."
+
+msgid "i_intro_instalar"
+msgstr "En esta pantalla ver&aacute;s reflejadas las acciones que se realizaron para la instalaci&oacute;n del PHPfileNavigator."
+
+msgid "i_conexion_mysql"
+msgstr "Conexi&oacute;n a MySQL"
+
+msgid "i_mysql_ok"
+msgstr "La conexi&oacute;n al servidor MySQL y la selecci&oacute;n de la base de datos ha sido correcta."
+
+msgid "i_consultas_mysql"
+msgstr "Instalaci&oacute;n de tablas"
+
+msgid "i_consultas_ok"
+msgstr "Todas las tablas han sido creadas con &eacute;xito y los datos inicializados correctamente."
+
+msgid "i_consultas_erro"
+msgstr "Ha ocurrido un error cuando se ejecutaba la actualizaci&oacute;n de la base de datos. Revisa la lista de errores y por favor contacta con los desarrolladores del PHPfileNavigator para comunicarlo."
+
+msgid "i_creacion_directorios"
+msgstr "Creaci&oacute;n de directorios"
+
+msgid "i_crear_directorios_ok"
+msgstr "Todos los directorios necesarios fueron creados correctamente.<br /><br />Si esta es una actualizaci&oacute;n desde una versi&oacute;n anterior, puede ser que necesite eliminar ciertas carpetas. Las carpetas que debes eliminar son <strong>tmp/, <strong>data/logs/</strong> y <strong>data/info/</strong> pero solo si est&aacute;n fuera de la carpeta <strong>data/servidor/</strong>."
+
+msgid "i_arq_configuracion"
+msgstr "Fichero de configuraci&oacute;n"
+
+msgid "i_arq_configuracion_ok"
+msgstr "El fichero de configuraci&oacute;n ha sido generado correctamente. Puede ver su contenido en data/conf/basicas.inc.php"
+
+msgid "i_arq_inc"
+msgstr "Ficheros de informaci&oacute;n adicional"
+
+msgid "i_arq_inc_ok"
+msgstr "Los ficheros usados para almacenar los datos de informaci&oacute;n adicional como el t&iacute;tulo y descrici&oacute;n has sido movidos para un directorio propio del PHPfileNavigator con lo que se limpian y mantienen intactas las ra&iacute;ces existentes sin alterar su contenido con ficheros adicionales. Tambi&eacute;n se han movido las im&aacute;genes en miniatura."
+
+msgid "i_intro_remate"
+msgstr "<p>Enhorabuena, el PHPfileNavigator ha sido instalada con &eacute;xito.</p><br /><p>Para comenzar a usar la aplicaci&oacute;n <strong>debes eliminar o renombrar el directorio \"instalar\"</strong> o volver&aacute;s a ver la pantalla de instalaci&oacute;n. Despu&eacute;s de eso vuelve a escribir la URL inicial de t&uacute; instalaci&oacute;n.</p>"
+
+msgid "i_doar"
+msgstr ""
+
+msgid "i_doar_paypal"
+msgstr ""
+
+msgid "i_doar_tarxeta"
+msgstr ""
+
+msgid "i_recargar"
+msgstr "Recargar"
+
+msgid "i_tit_bloqueo_instalacion"
+msgstr "Instalaci&oacute;n bloqueada"
+
+msgid "i_txt_bloqueo_instalacion"
+msgstr "<p>Esta instalaci&oacute;n ha sido bloqueada para evitar que dos personas al mismo tiempo puedan ejecutar el instalador.</p><br /><p>Si t&uacute; eres el administrador y por lo tanto la persona que realmente realizar&aacute; la instalaci&oacute;n, debes borrar el fichero de bloqueo que se encuentra en <strong>tmp/instalar.lock</strong> para las versiones anteriores a 2.3.0 del PHPfileNavigator y en <strong>data/servidor/tmp/instalar.lock</strong> para las versiones iguales o posteriores.</p><br /><p>Una vez que hayas borrado ese fichero debes ser r&aacute;pido en actualizar la p&aacute;gina y volver a acceder al instalador, para as&iacute; obtener los permisos necesarios para continuar.</p>"
+
+msgid "i_actualizar_200-201"
+msgstr "Actualizar a versi&oacute;n 2.0.1"
+
+msgid "i_actualizar_201-220"
+msgstr "Actualizar a versi&oacute;n 2.2.0"
+
+msgid "i_actualizar_220-230"
+msgstr "Actualizar a versi&oacute;n 2.3.0"
+
+msgid "i_consulta"
+msgstr "Consulta"
+
+msgid "i_erro"
+msgstr "Error"
+
+msgid "i_reintentar"
+msgstr "Volver a intentarlo"
+
+msgid "i_omitir"
+msgstr "Mi configuraci&oacute;n es correcta, quiero omitir esta comprobaci&oacute;n.<br />La PHPfileNavigator no funionar&aacute; correctamente si no se cumplen estos requisitos."
+
+msgid "admins"
+msgstr "Administradores"
+
+msgid "i_aviso_default"
+msgstr "<strong>AVISO:</strong> En el directorio data/conf/ existe un fichero llamado default-example.inc.php que debe ser renombrado a default.inc.php antes de continuar con la instalaci&oacute;n.<br /><br />Si ya existe una instalaci&oacute;n previa, comprueba las diferencias entre los dos ficheros y a&ntilde;ade aquellas l&iacute;neas que no existan en la instalaci&oacute;n anterior."
+
+msgid "PFN"
+msgstr "PHPfileNavigator"
+
+msgid "tempo_execucion"
+msgstr "Tiempo de ejecuci&oacute;n"
+
+msgid "segundos"
+msgstr "segundos"
+
+msgid "benvido"
+msgstr "Bienvenido al PHPfileNavigator"
+
+msgid "usuario"
+msgstr "Usuario"
+
+msgid "contrasinal"
+msgstr "Contrase&ntilde;a"
+
+msgid "alertas_login_1"
+msgstr "&Aacute;rea de acceso restringido.<br />El administrador ha sido alertado."
+
+msgid "alertas_login_2"
+msgstr "Se ha superado el l&iacute;mite de intentos.<br />La cuenta ha sido bloqueada."
+
+msgid "alertas_login_3"
+msgstr "La IP desde la que est&aacute; conectado tiene el acceso bloqueado.<br />Por favor contacte con el administrador para su desbloqueo."
+
+msgid "alertas_login_4"
+msgstr "El usuario que est&aacute; usando tiene el acceso bloqueado.<br />Puede desbloquearlo en el men&uacute; de \"M&aacute;s opciones\""
+
+msgid "alertas_login_5"
+msgstr "El usuario que est&aacute; usando est&aacute; desactivado.<br />Por favor contacte con el administrador para su activaci&oacute;n."
+
+msgid "acceso_certificado_1"
+msgstr "Usuario con IP bloqueada"
+
+msgid "acceso_certificado_2"
+msgstr "Usuario con acceso bloqueado"
+
+msgid "acceso_certificado_3"
+msgstr "Usuario con l&iacute;mite de intentos de acceso superado"
+
+msgid "acceso_certificado_4"
+msgstr "Usuario inexistente o inhabilitado"
+
+msgid "acceso_certificado_5"
+msgstr "Usuario con DNIe no operativo"
+
+msgid "acceso_certificado_6"
+msgstr "Usuario sin acceso permitido"
+
+msgid "acceso_certificado_7"
+msgstr "Solo se puede usar este sistema de acceso bajo Internet Explorer en Windows."
+
+msgid "acceso_certificado_8"
+msgstr "No se ha podido verificar el proceso de acceso. Por favor vuelva a intentarlo."
+
+msgid "acceso_certificado_9"
+msgstr "Ha superado el tiempo l&iacute;mite establecido para acceder a la plataforma. Por favor vuelva a intentarlo."
+
+msgid "acceso_certificado_10"
+msgstr "Usuario usando una firma sin validez"
+
+msgid "alertas_sesion_1"
+msgstr "Intento de manipular datos de usuario"
+
+msgid "alertas_sesion_2"
+msgstr "No existen los datos de usuario"
+
+msgid "alertas_sesion_3"
+msgstr "Datos de usuario incorrectos"
+
+msgid "alertas_sesion_4"
+msgstr "Intento de acceso en la administraci&oacute;n de usuario no v&aacute;lido"
+
+msgid "msx_axuda_usuario_subir_certificado"
+msgstr "Este campo te permite subir tus certificados personales para que despu&eacute;s podan ser usados en la opciones de seguridad de la <strong>PHPfileNavigator</strong> como firma, cifrado, etc."
+
+msgid "msx_axuda_usuario_contrasinal_certificado"
+msgstr "Debes indicar la contrase&ntilde;a del certificado seleccionado."
+
+msgid "listado_menu"
+msgstr "Listado de directorios accesibles"
+
+msgid "menu"
+msgstr "Men&uacute;"
+
+msgid "axuda"
+msgstr "Ayuda"
+
+msgid "ver_imaxes"
+msgstr "Miniaturas"
+
+msgid "voltar_web"
+msgstr "Volver a la Web"
+
+msgid "comezo"
+msgstr "Inicio"
+
+msgid "actualizar"
+msgstr "Actualizar"
+
+msgid "crear_dir"
+msgstr "Crear un Directorio"
+
+msgid "subir_arq"
+msgstr "Subir un Fichero"
+
+msgid "arbore"
+msgstr "&Aacute;rbol de Directorios"
+
+msgid "sair"
+msgstr "Salir"
+
+msgid "dir"
+msgstr "Directorio"
+
+msgid "dirs"
+msgstr "Directorios"
+
+msgid "arq"
+msgstr "Fichero"
+
+msgid "arqs"
+msgstr "Ficheros"
+
+msgid "icono"
+msgstr "Icono"
+
+msgid "id"
+msgstr "ID"
+
+msgid "nome"
+msgstr "Nombre"
+
+msgid "tamano"
+msgstr "Tama&ntilde;o"
+
+msgid "data"
+msgstr "Fecha"
+
+msgid "permisos"
+msgstr "Permisos"
+
+msgid "accions"
+msgstr "Acciones"
+
+msgid "estasen"
+msgstr "Est&aacute;s en:"
+
+msgid "accion"
+msgstr "Acci&oacute;n"
+
+msgid "enviar"
+msgstr "Enviar"
+
+msgid "aceptar"
+msgstr "Aceptar"
+
+msgid "cancelar"
+msgstr "Cancelar"
+
+msgid "renomear"
+msgstr "Renombrar"
+
+msgid "eliminar"
+msgstr "Eliminar"
+
+msgid "descargar"
+msgstr "Descargar"
+
+msgid "copiar"
+msgstr "Copiar"
+
+msgid "mover"
+msgstr "Mover"
+
+msgid "enlazar"
+msgstr "Enlazar"
+
+msgid "titulo"
+msgstr "T&iacute;tulo"
+
+msgid "descricion"
+msgstr "Descripci&oacute;n"
+
+msgid "form_info_adicional"
+msgstr "Formulario para Datos de Informaci&oacute;n Adicional"
+
+msgid "enlaces"
+msgstr "Enlaces"
+
+msgid "absoluto"
+msgstr "Absoluto"
+
+msgid "relativo"
+msgstr "Relativo"
+
+msgid "ahref"
+msgstr "HTML"
+
+msgid "phpwiki"
+msgstr "PHP-Wiki"
+
+msgid "mediawiki"
+msgstr "MediaWiki"
+
+msgid "total"
+msgstr "Total"
+
+msgid "ver_contido"
+msgstr "Visualizar contenido"
+
+msgid "voltar"
+msgstr "Volver"
+
+msgid "imaxe_reducida"
+msgstr "Imagen reducida"
+
+msgid "non_crear"
+msgstr "No crear"
+
+msgid "reducir"
+msgstr "Reducida completa"
+
+msgid "recortar"
+msgstr "Reducida recorte"
+
+msgid "redimensionar"
+msgstr "Redimensionar"
+
+msgid "numero_arquivos"
+msgstr "N&uacute;mero de Ficheros"
+
+msgid "pechar"
+msgstr "Cerrar"
+
+msgid "arbore_completo"
+msgstr "&Aacute;rbol Completo"
+
+msgid "so_directorios"
+msgstr "S&oacute;lo Directorios"
+
+msgid "orixinal"
+msgstr "Original"
+
+msgid "novo"
+msgstr "Nuevo"
+
+msgid "eliminar_arq"
+msgstr "Eliminar Fichero"
+
+msgid "eliminar_dir"
+msgstr "Eliminar Directorio"
+
+msgid "mover_arq"
+msgstr "Mover Fichero"
+
+msgid "mover_dir"
+msgstr "Mover Directorio"
+
+msgid "copiar_arq"
+msgstr "Copiar Fichero"
+
+msgid "copiar_dir"
+msgstr "Copiar Directorio"
+
+msgid "enlazar_arq"
+msgstr "Enlazar Fichero"
+
+msgid "enlazar_dir"
+msgstr "Enlazar Directorio"
+
+msgid "zona_admin"
+msgstr "&Aacute;rea de Administrador"
+
+msgid "peso"
+msgstr "Peso"
+
+msgid "escoller_raiz"
+msgstr "Seleccionar otra Ra&iacute;z"
+
+msgid "editar"
+msgstr "Editar"
+
+msgid "comprimir"
+msgstr "Comprimir"
+
+msgid "subir_url"
+msgstr "Subir URL"
+
+msgid "direccion_url"
+msgstr "Direcci&oacute;n URL"
+
+msgid "nome_arquivo"
+msgstr "Nombre del fichero a crear"
+
+msgid "anulando"
+msgstr "Anulando... Espere"
+
+msgid "buscador"
+msgstr "Buscador"
+
+msgid "buscar"
+msgstr "Buscar"
+
+msgid "donde"
+msgstr "Donde"
+
+msgid "este_directorio"
+msgstr "Este directorio"
+
+msgid "toda_raiz"
+msgstr "Toda la Ra&iacute;z"
+
+msgid "campos"
+msgstr "En Campos"
+
+msgid "rexistros_atopados"
+msgstr "Total de documentos encontrados"
+
+msgid "calcular_tamano"
+msgstr "Calcular Peso"
+
+msgid "peso_restante"
+msgstr "Espacio libre"
+
+msgid "protexer"
+msgstr "Proteger"
+
+msgid "directorio_protexido"
+msgstr "Este directorio ya est&aacute; protegido con usuario y contrase&ntilde;a. Para anular esta protecci&oacute;n, env&iacute;a el formulario en blanco."
+
+msgid "msx_htpasswd"
+msgstr "Directorio protegido."
+
+msgid "como_recortar"
+msgstr "Puedes mover la capa roja para el &aacute;rea deseada y ampliarla o reducirla manteniendo pulsada la tecla SHIFT y moviendo el rat&oacute;n sobre la capa."
+
+msgid "escoller_reducida"
+msgstr "Para escoger la copia proporcional reducida, pulsa en la im&aacute;gen peque&ntilde;a."
+
+msgid "eliminar_reducida"
+msgstr "Si deseas eliminar la copia reducida existente, pulsa el boton de \"Eliminar\""
+
+msgid "sobreescribir"
+msgstr "Sobreescibir si existe?"
+
+msgid "extraer"
+msgstr "Descomprimir"
+
+msgid "opcions"
+msgstr "Opciones"
+
+msgid "operacions_seguridade"
+msgstr "Operaciones de seguridad"
+
+msgid "procesos_lotes"
+msgstr "Procesos por lotes"
+
+msgid "distribucion_facturas"
+msgstr "Distribuci&oacute;n de facturas"
+
+msgid "raiz_base"
+msgstr "Ra&iacute;z base"
+
+msgid "non_distribuir"
+msgstr "No distribuir"
+
+msgid "avisar_mail"
+msgstr "Avisar por email a cada usuario relacionado"
+
+msgid "seleccion"
+msgstr "Selecci&oacute;n"
+
+msgid "opcions_seguridade"
+msgstr "Opciones de seguridad"
+
+msgid "multiple_copiar"
+msgstr "Copia M&uacute;ltiple"
+
+msgid "multiple_mover"
+msgstr "Mover M&uacute;ltiple"
+
+msgid "multiple_eliminar"
+msgstr "Eliminar M&uacute;ltiple"
+
+msgid "multiple_permisos"
+msgstr "Permisos M&uacute;ltiple"
+
+msgid "multiple_comprimir"
+msgstr "Comprimir M&uacute;ltiple"
+
+msgid "multiple_correo"
+msgstr "Enviar m&uacute;ltiples ficheros por email"
+
+msgid "arquivo_inexistente"
+msgstr "No existe o no se dispone de permisos sobre el fichero seleccionado."
+
+msgid "tipo"
+msgstr "Tipo"
+
+msgid "busca"
+msgstr "Busca"
+
+msgid "informacion_xeral"
+msgstr "Informaci&oacute;n General"
+
+msgid "tamano_real"
+msgstr "Peso Real"
+
+msgid "tamano_disco"
+msgstr "Peso en Disco"
+
+msgid "propietario"
+msgstr "Propietario"
+
+msgid "grupo"
+msgstr "Grupo"
+
+msgid "ultima_modificacion"
+msgstr "&Uacute;ltima Modificaci&oacute;n"
+
+msgid "ultimo_acceso"
+msgstr "&Uacute;ltimo Acceso"
+
+msgid "informacion_adicional"
+msgstr "Informaci&oacute;n Adicional"
+
+msgid "info"
+msgstr "Informaci&oacute;n"
+
+msgid "todos"
+msgstr "Todos"
+
+msgid "escritura"
+msgstr "Escritura"
+
+msgid "execucion"
+msgstr "Ejecuci&oacute;n"
+
+msgid "lectura"
+msgstr "Lectura"
+
+msgid "descargado_mes"
+msgstr "Descargado este mes"
+
+msgid "descargas_restante"
+msgstr "L&iacute;mite de ancho de banda"
+
+msgid "ver"
+msgstr "Ver"
+
+msgid "descargado"
+msgstr "Veces Descargado"
+
+msgid "meses_01"
+msgstr "Enero"
+
+msgid "meses_02"
+msgstr "Febrero"
+
+msgid "meses_03"
+msgstr "Marzo"
+
+msgid "meses_04"
+msgstr "Abril"
+
+msgid "meses_05"
+msgstr "Mayo"
+
+msgid "meses_06"
+msgstr "Junio"
+
+msgid "meses_07"
+msgstr "Julio"
+
+msgid "meses_08"
+msgstr "Agosto"
+
+msgid "meses_09"
+msgstr "Septiemebre"
+
+msgid "meses_10"
+msgstr "Octubre"
+
+msgid "meses_11"
+msgstr "Noviembre"
+
+msgid "meses_12"
+msgstr "Diciembre"
+
+msgid "sen_datos"
+msgstr "Sin Datos"
+
+msgid "sen_limite"
+msgstr "Sin L&iacute;mite"
+
+msgid "idiomas"
+msgstr "Idiomas"
+
+msgid "orixe"
+msgstr "Origen"
+
+msgid "destino"
+msgstr "Destino"
+
+msgid "ver_comprimido"
+msgstr "Ver contenido de fichero comprimido"
+
+msgid "charset"
+msgstr "Juego de caracteres"
+
+msgid "ancho_imaxe"
+msgstr "Ancho de la imagen"
+
+msgid "alto_imaxe"
+msgstr "Alto de la imagen"
+
+msgid "maximizar_corpo"
+msgstr "Maximizar cuerpo"
+
+msgid "nome_comprimido"
+msgstr "Nombre para el fichero comprimido:"
+
+msgid "contrasinal_olvidada"
+msgstr "Olvidaste la contrase&ntilde;a?"
+
+msgid "mais_opcions"
+msgstr "M&aacute;s opciones"
+
+msgid "desbloquear_usuario"
+msgstr "Desbloquear usuario"
+
+msgid "txt_desbloquear_usuario"
+msgstr "Rellene el formulario y recibir&aacute; en su correo un mail con el enlace para desbloquear su cuenta."
+
+msgid "avisos_desbloquear_usuario_1"
+msgstr "Se ha enviado un correo con el que podr&aacute; desbloquear su cuenta, s&oacute;lo tiene que comprobar su bandeja de entrada y pulsar en el enlace para poder acceder de nuevo a la aplicaci&oacute;n."
+
+msgid "avisos_desbloquear_usuario_2"
+msgstr "No existe ning&uacute;n usuario con esos datos, por favor comprueba que el usuario y el correo son correctos."
+
+msgid "avisos_desbloquear_usuario_3"
+msgstr "Ese usuario no dispone de correo electr&oacute;nico por lo que no puede recibir el correo para desbloquear su cuenta, por favor contacta con el administrador."
+
+msgid "avisos_desbloquear_usuario_4"
+msgstr "Ese usuario no est&aacute; bloqueado por lo que no puede ser desbloqueado."
+
+msgid "avisos_desbloquear_usuario_5"
+msgstr "El correo que indic&oacute; en el formulario no es el mismo que el que est&aacute; guardado en su perfil de usuario."
+
+msgid "avisos_desbloquear_usuario_6"
+msgstr "No existe el c&oacute;digo de usuario que intenta activar."
+
+msgid "avisos_desbloquear_usuario_7"
+msgstr "El c&oacute;digo de desbloqueo tiene m&aacute;s de 24 horas.<br />Debe solicitar de nuevo el desbloqueo de la cuenta."
+
+msgid "avisos_desbloquear_usuario_8"
+msgstr "El usuario ha sido desbloqueado. Ahora puede acceder de nuevo desde el <a href=\"index.php\">panel de acceso</a>."
+
+msgid "desbloquear_usuario_correo_asunto"
+msgstr "Desbloqueo de usuario en el PHPfileNavigator"
+
+msgid "desbloquear_usuario_correo_texto"
+msgstr "Hola, has recibido este correo por que alguien ha solicitado el desbloqueo de la cuenta de usuario en el PHPfileNavigator.<br /><br />Si t&uacute; no has solicitado esta acci&oacute;n, ignora este correo y nada cambiar&aacute;. En caso de que sea un cambio voluntario pulsa en enlace al final del correo."
+
+msgid "correo"
+msgstr "Correo Electr&oacute;nico"
+
+msgid "novo_contrasinal"
+msgstr "Nueva Contrase&ntilde;a"
+
+msgid "txt_novo_contrasinal"
+msgstr "Desde aqu&iacute; podr&aacute;s obtener una nueva contrase&ntilde;a.<br /><br />Rellena los siguientes campos y recibir&aacute;s un correo de activaci&oacute;n con la nueva contrase&ntilde;a."
+
+msgid "avisos_novo_contrasinal_1"
+msgstr "Se le ha enviado un correo con la nueva contrase&ntilde;a junto con un enlace para confirmarla, s&oacute;lo tiene que comprobar su correo y pulsar sobre el enlace para poder acceder de nuevo a la aplicaci&oacute;n."
+
+msgid "avisos_novo_contrasinal_2"
+msgstr "No existe ning&uacute;n usuario con esos datos, por favor comprueba que el usuario y el correo son correctos."
+
+msgid "avisos_novo_contrasinal_3"
+msgstr "Ese usuario no dispone de correo electr&oacute;nico por lo que no puede obtener una nueva contrase&ntilde;a, por favor contacta con el administrador."
+
+msgid "avisos_novo_contrasinal_4"
+msgstr "Ese usuario est&aacute; desactivo por lo que no puede obtener una nueva contrase&ntilde;a."
+
+msgid "avisos_novo_contrasinal_5"
+msgstr "Este usuario no tiene permisos para cambiar su contrase&ntilde;a, por favor contacta con el administrador."
+
+msgid "novo_contrasinal_correo_asunto"
+msgstr "Recuperaci&oacute;n de contrase&ntilde;a para el PHPfileNavigator"
+
+msgid "novo_contrasinal_correo_texto"
+msgstr "Hola, has recibido este correo por que alguien ha solicitado una nueva contrase&ntilde;a para el acceso al PHPfileNavigator.<br /><br />Si t&uacute; no has solicitado el cambio, ignora este correo y nada cambiar&aacute;. En caso de que sea un cambio voluntario pulsa en enlace al final del correo en donde deber&aacute;s rellenar tu usuario y la nueva contrase&ntilde;a para ser activada.<br /><br />Nueva contrase&ntilde;a:"
+
+msgid "activar_contrasinal_erro"
+msgstr "Ha ocurrido un problema comprobando los datos recibidos. Puede ser que la contrase&ntilde;a nueva ya haya sido activada o alguno de los datos no sea correcto o que el usuario no est&aacute; activo o que no disponga de correo registrado.<br /><br />Por favor, contacte con el administrador para solventarlo."
+
+msgid "activar_contrasinal_ok"
+msgstr "La contrase&ntilde;a ha sido cambiada correctamente.<br /><br />Ahora puede acceder al PHPfileNavigator con la nueva contrase&ntilde;a y cambiarla en su pantalla de preferencias."
+
+msgid "activar_contrasinal_intro"
+msgstr "Introduce aqu&iacute; tu usuario y la nueva contase&ntilde;a que has recibido en el correo."
+
+msgid "novo_arq"
+msgstr "Crear Fichero"
+
+msgid "enlace"
+msgstr "Enlace"
+
+msgid "TODO"
+msgstr "TODO"
+
+msgid "preferencias_usuario"
+msgstr "Preferencias de Usuario"
+
+msgid "sen_permiso"
+msgstr "Este usuario no dispone de permisos para realizar esta acci&oacute;n."
+
+msgid "contrasinal_rep"
+msgstr "Repetir Contrase&ntilde;a"
+
+msgid "contrasinais_distintas"
+msgstr "Las contrase&ntilde;as que has escrito son distintas."
+
+msgid "redimensionar_dir_txt"
+msgstr "Se va a proceder a crear una copia reducida de todas las im&aacute;genes de este directorio. Este proceso puede ser muy largo si dispone de una gran cantidad de im&aacute;genes almacenadas. Para cada imagen procesada se recargar&aacute; la p&aacute;gina para evitar problemas de l&iacute;mite de memoria o exceso en el tiempo de ejecuci&oacute;n.<br /><br />Desea continuar con el proceso?"
+
+msgid "sobreescribir_reducidas"
+msgstr "Sobreescribir las copias reducidas ya existentes?"
+
+msgid "enviar_correo"
+msgstr "Enviar fichero por correo electr&oacute;nico."
+
+msgid "mensaxe"
+msgstr "Mensaje"
+
+msgid "para"
+msgstr "Para"
+
+msgid "VACIO"
+msgstr "VAC&Iacute;O"
+
+msgid "CONTIDO"
+msgstr "CONTENIDO"
+
+msgid "CARPETA"
+msgstr "CARPETA"
+
+msgid "cambiar"
+msgstr "Cambiar"
+
+msgid "nome_arq"
+msgstr "Nombre del fichero a crear"
+
+msgid "este_dir_subdir"
+msgstr "Este directorio y subdirectorios"
+
+msgid "amosar_previsualizacions"
+msgstr "Mostrar la previsualizaci&oacute;n para las im&aacute;genes creadas."
+
+msgid "avisar_subida"
+msgstr "Notificaci&oacute;n de subida a los usuarios de esta ra&iacute;z?"
+
+msgid "tit_aviso_subida"
+msgstr "Nuevo documento a&ntilde;adido en el PHPfileNavigator"
+
+msgid "txt_aviso_subida"
+msgstr "El documento \"{ARQUIVO}\" ha sido a&ntilde;adido en el PHPfileNavigator.<br /><br />Si deseas consultar este fichero, debes acceder desde la direcci&oacute;n web abajo especificada."
+
+msgid "so_lista"
+msgstr "S&oacute;lo listado"
+
+msgid "so_lista_txt"
+msgstr "No env&iacute;a los ficheros, s&oacute;lo un listado de los mismos."
+
+msgid "volver"
+msgstr "Volver"
+
+msgid "xestion"
+msgstr "Administraci&oacute;n"
+
+msgid "Xmenu_principal"
+msgstr "Men&uacute; Principal"
+
+msgid "Xcrear_usuario"
+msgstr "Crear Usuario"
+
+msgid "Xcrear_raiz"
+msgstr "Crear Ra&iacute;z"
+
+msgid "Xraices"
+msgstr "Raices"
+
+msgid "Xusuarios"
+msgstr "Usuarios"
+
+msgid "Xmodificar"
+msgstr "Modificar"
+
+msgid "Xnome"
+msgstr "Nombre"
+
+msgid "Xestado"
+msgstr "Estado"
+
+msgid "Xcambiar"
+msgstr "Cambiar"
+
+msgid "Xadmin_raices"
+msgstr "Administraci&oacute;n de raices"
+
+msgid "Xmodi_raiz"
+msgstr "Modificaci&oacute;n de Ra&iacute;z"
+
+msgid "Xusuarios_relacionados"
+msgstr "Usuarios Relacionados"
+
+msgid "Xpath"
+msgstr "Path"
+
+msgid "Xraiz_web"
+msgstr "Ra&iacute;z Web"
+
+msgid "Xhost"
+msgstr "Servidor"
+
+msgid "Xconf"
+msgstr "Configuraci&oacute;n"
+
+msgid "Xdatos_principales"
+msgstr "Datos Principales"
+
+msgid "Xadmin_usuarios"
+msgstr "Administraci&oacute;n de usuarios"
+
+msgid "Xmodi_usuario"
+msgstr "Modificaci&oacute;n de Usuario"
+
+msgid "Xusuario"
+msgstr "Usuario"
+
+msgid "Xcontrasinal"
+msgstr "Contrase&ntilde;a"
+
+msgid "Xrep_contrasinal"
+msgstr "Repite la Contrase&ntilde;a"
+
+msgid "Xcodigo_acceso"
+msgstr "Identificador de Acceso"
+
+msgid "Xadministrador"
+msgstr "Administrador"
+
+msgid "Xactivo"
+msgstr "Activo"
+
+msgid "Xmodo_acceso"
+msgstr "Modo de acceso"
+
+msgid "Xcon_usuario_contrasinal"
+msgstr "Con usuario/contrase&ntilde;a"
+
+msgid "Xcon_certificado"
+msgstr "Con certificado"
+
+msgid "Xraices_relacionadas"
+msgstr "Raices Relacionadas"
+
+msgid "Xeliminar_usuario"
+msgstr "Confirma la eliminaci&oacute;n de este usuario???"
+
+msgid "Xeliminar_raiz"
+msgstr "Confirma la eliminaci&oacute;n de esta ra&iacute;z? Recuerde que no se eliminar&aacute; el directorio f&iacute;sico, s&oacute;lo de la lista del PHPfileNavigator"
+
+msgid "Xreindexar"
+msgstr "Reindexar"
+
+msgid "Xreindexar_info"
+msgstr "Este proceso permite reindexar todos los datos de los ficheros de informaci&oacute;n adicional as&iacute; como las b&uacute;squedas por nombre. Conviene reindexar los datos cada cierto tiempo para que las b&uacute;squedas no contengan errores en los resultados."
+
+msgid "Xconfirmar_reindexar"
+msgstr "Desea realmente reindexar todo el contenido de esta ra&iacute;z?<br />(Este proceso puede llevar alg&uacute;n tiempo, por favor espere)"
+
+msgid "Xagarde_reindexar"
+msgstr "Este proceso puede llevar alg&uacute;n tiempo, por favor espere"
+
+msgid "Xok_reindexar"
+msgstr "Actualizaci&oacute;n realizada con &eacute;xito. Se ha reindexado un total de:"
+
+msgid "Xpeso_max"
+msgstr "Peso M&aacute;ximo"
+
+msgid "Xpeso_actual"
+msgstr "Peso Actual"
+
+msgid "Xerros_1"
+msgstr "Los campos marcados con <b>*</b> son obligatorios."
+
+msgid "Xerros_2"
+msgstr "Ha ocurrido un error guardando el registro, por favor compruebe el informe de errores de MySQL."
+
+msgid "Xerros_3"
+msgstr "No se puede desactivar la ra&iacute;z con la que accedi&oacute; al PHPfileNavigator."
+
+msgid "Xerros_4"
+msgstr "El directorio data/info/ no tiene permisos de escritura. No se guardar&aacute; el l&iacute;mite de tama&ntilde;o."
+
+msgid "Xerros_5"
+msgstr "No se puede eliminar la ra&iacute;z con la que accedi&oacute; al PHPfileNavigator."
+
+msgid "Xerros_6"
+msgstr "Ha ocurrido un error eliminando el registro, por favor compruebe el informe de errores de MySQL."
+
+msgid "Xerros_7"
+msgstr "No se puede quitar la relaci&oacute;n con el usuario actual, ya que se accedi&oacute; al PHPfileNavigator a trav&eacute;s de esta ra&iacute;z."
+
+msgid "Xerros_8"
+msgstr "Ya existe ese Usuario."
+
+msgid "Xerros_9"
+msgstr "No se puede quitar la relaci&oacute;n con la ra&iacute;z desde la que accedi&oacute; al PHPfileNavigator."
+
+msgid "Xerros_10"
+msgstr "No se puede desactivar el usuario con el que accedi&oacute; al PHPfileNavigator."
+
+msgid "Xerros_11"
+msgstr "El campo Contrase&ntilde;a no coincide con el de Repite Contrase&ntilde;a."
+
+msgid "Xerros_12"
+msgstr "No se puede quitar la opci&oacute;n de administrador al usuario con el que accedi&oacute; al PHPfileNavigator."
+
+msgid "Xerros_13"
+msgstr "No se puede eliminar el usuario con el que accedi&oacute; al PHPfileNavigator"
+
+msgid "Xerros_14"
+msgstr "No se puede desactivar el grupo del usuario con el que accedi&oacute; al PHPfileNavigator"
+
+msgid "Xerros_15"
+msgstr "Ya existe un Grupo con ese nombre"
+
+msgid "Xerros_16"
+msgstr "No se puede eliminar el grupo del usuario con el que se accedi&oacute; al PHPfileNavigator"
+
+msgid "Xerros_17"
+msgstr "No se puede eliminar este grupo porque tiene relaci&oacute;n con alg&uacute;n usuario."
+
+msgid "Xerros_18"
+msgstr "El fichero de configuraci&oacute;n seleccionado no existe."
+
+msgid "Xerros_19"
+msgstr "El fichero de configuraci&oacute;n seleccionado no tiene permisos de escritura."
+
+msgid "Xerros_20"
+msgstr "Debes definir un nombre para el nuevo fichero de configuraci&oacute;n."
+
+msgid "Xerros_21"
+msgstr "Ya existe un fichero de configuraci&oacute;n con ese nombre."
+
+msgid "Xerros_22"
+msgstr "Ya existe una configuraci&oacute;n con ese nombre."
+
+msgid "Xerros_23"
+msgstr "Ocurri&oacute; un error duplicando esta configuraci&oacute;n, por favor revisa el registro de errores de MySQL."
+
+msgid "Xerros_24"
+msgstr "Ocurri&oacute; un error duplicando esta configuraci&oacute;n, por favor revisa los permisos del directorio data/conf/"
+
+msgid "Xerros_25"
+msgstr "El fichero actual no tiene permisos para ser eliminado."
+
+msgid "Xerros_26"
+msgstr "No se puede eliminar esta configuraci&oacute;n ya que tiene relaci&oacute;n con alguna ra&iacute;z o grupo, por favor primero elimina estas relaciones."
+
+msgid "Xerros_27"
+msgstr "No se puede eliminar este fichero de configuraci&oacute;n ya que es la configuraci&oacute;n por defecto de alg&uacute;n grupo, por favor primero elimine esta relaci&oacute;n."
+
+msgid "Xerros_28"
+msgstr "Ha ocurrido un error durante la edici&oacute;n de esta configuraci&oacute;n."
+
+msgid "Xerros_29"
+msgstr "No existe o est&aacute; vac&iacute;o el fichero de logs de MySQL."
+
+msgid "Xerros_30"
+msgstr "No existe o est&aacute; vac&iacute;o el fichero de logs de Acciones."
+
+msgid "Xerros_31"
+msgstr "El directorio \"PATH\" no existe."
+
+msgid "Xerros_32"
+msgstr "El idioma de origen que est&aacute; a seleccionar no existe en esta instalaci&oacute;n."
+
+msgid "Xerros_33"
+msgstr "El directorio data/idiomas, el directorio para el idioma de destino o el fichero a traducir seleccionado no tienen permisos de escritura. Por favor comprueba los permisos y establece permiso de escritura para el usuario asignado al servidor web."
+
+msgid "Xerros_34"
+msgstr "No fue posible escribir la traducci&oacute;n en el fichero seleccionado. Por favor comprueba los permisos y establece permiso de escritura para el usuario del servidor web."
+
+msgid "Xerros_35"
+msgstr "El valor para l&iacute;mite de tama&ntilde;o no es un n&uacute;mero v&aacute;lido."
+
+msgid "Xerros_36"
+msgstr "No existe la ra&iacute;z escogida para reindexar."
+
+msgid "Xok_1"
+msgstr "El registro fue guardado correctamente."
+
+msgid "Xok_2"
+msgstr "El registro fue eliminado correctamente."
+
+msgid "Xok_3"
+msgstr "La configuraci&oacute;n fue duplicada correctamente."
+
+msgid "Xok_4"
+msgstr "La configuraci&oacute;n fue eliminada correctamente."
+
+msgid "Xok_5"
+msgstr "La configuraci&oacute;n fue editada correctamente."
+
+msgid "Xok_6"
+msgstr "La traducci&oacute;n fue guardada correctamente."
+
+msgid "Xok_7"
+msgstr "Los ficheros de logs seleccionados fueron eliminados correctamente."
+
+msgid "Xaxuda_raiz_nome"
+msgstr "Nombre gen&eacute;rico de la ra&iacute;z, para reconocerla en los listados. <strong>p.j.: Ra&iacute;z Inicial</strong>"
+
+msgid "Xaxuda_raiz_path"
+msgstr "Ruta absoluta del directorio desde la ra&iacute;z del servidor. <strong>p.j.: /var/www/html/web/docs/</strong>"
+
+msgid "Xaxuda_raiz_web"
+msgstr "Ruta para acceso por web desde la ra&iacute;z del dominio. <strong>p.j.: /docs/</strong>"
+
+msgid "Xaxuda_raiz_host"
+msgstr "Nombre del dominio que se va a gestionar. <strong>p.j.: www.dominio.com</strong>"
+
+msgid "Xaxuda_raiz_peso_max"
+msgstr "Peso m&aacute;ximo permitido de ocupaci&oacute;n. <strong>p.j.: 50 Megas</strong>"
+
+msgid "Xaxuda_raiz_peso_actual"
+msgstr "Peso actual de la ra&iacute;z. S&oacute;lo existe si la ra&iacute;z tiene un peso m&aacute;ximo."
+
+msgid "Xaxuda_raiz_estado"
+msgstr "Activar o desactivar el acceso a esta ra&iacute;z para todos los usuarios."
+
+msgid "Xaxuda_usuario_nome"
+msgstr "Nombre gen&eacute;rico del usuario. <strong>p.j.: Usuario Invitado</strong>"
+
+msgid "Xaxuda_usuario_usuario"
+msgstr "Datos de usuario para realizar el acceso. <strong>p.j.: invitado</strong>"
+
+msgid "Xaxuda_usuario_contrasinal"
+msgstr "Contrase&ntilde;a de acceso al PHPfileNavigator. <strong>p.j.: n8DMe4whR6</strong>"
+
+msgid "Xaxuda_usuario_rep_contrasinal"
+msgstr "Repita la misma contrase&ntilde;a del campo anterior. <strong>p.j.: n8DMe4whR6</strong>"
+
+msgid "Xaxuda_usuario_codigo_acceso"
+msgstr "Indica el identificador mediante el cual un usuario se podr&aacute; autenticar con tarjeta criptogr&aacute;fica. p.j. el valor del NIF: <strong>12345678A</strong>"
+
+msgid "Xaxuda_usuario_email"
+msgstr "Correo electr&oacute;nico del usuario para futuros envios de informaci&oacute;n o posibilidad de solicitar otra contrase&ntilde;a."
+
+msgid "Xaxuda_usuario_max_descargas"
+msgstr "M&aacute;ximo uso de ancho de banda permitido en megas durante un mes para descargas desde el PHPfileNavigator. <strong>p.j.: 500</strong>"
+
+msgid "Xaxuda_usuario_actual_descargas"
+msgstr "Ancho de banda usado durante este mes."
+
+msgid "Xaxuda_usuario_grupo"
+msgstr "Grupo al que pertenece este usuario. <strong>p.j.: Invitados</strong>"
+
+msgid "Xaxuda_usuario_administrador"
+msgstr "Si este usuario puede gestionar el PHPfileNavigator en su totalidad. No se recomienda activar esta opci&oacute;n para m&aacute;s de un usuario, ya que otorga control total sobre toda la aplicaci&oacute;n."
+
+msgid "Xaxuda_usuario_estado"
+msgstr "Activar o desactivar el acceso de este usuario al PHPfileNavigator."
+
+msgid "Xaxuda_usuario_modo_acceso"
+msgstr "Define como puede un usuario acceder al sistema."
+
+msgid "Xaxuda_grupo_nome"
+msgstr "Nombre gen&eacute;rico del grupo. <strong>p.j.: Invitados</strong>"
+
+msgid "Xaxuda_grupo_conf"
+msgstr "Configuraci&oacute;n por defecto para este grupo. Para cada ra&iacute;z existente ser&aacute; posible asignarle otra configuraci&oacute;n para cada grupo existente. <strong>p.j.: invitados</strong>"
+
+msgid "Xaxuda_grupo_estado"
+msgstr "Activar o desactivar el acceso de todos los usuarios de este grupo al PHPfileNavigator."
+
+msgid "Xaxuda_borrar_inc"
+msgstr "Elimina todos los ficheros de informaci&oacute;n adicional de esta ra&iacute;z. No elimina ning&uacute;n fichero personal subido por los usuarios."
+
+msgid "Xaxuda_borrar_imx"
+msgstr "Elimina todas las im&aacute;genes reducidas para la previsualizaci&oacute;n. No elimina ninguna im&aacute;gen personal subida por los usuarios."
+
+msgid "Xaxuda_revisar_peso_actual"
+msgstr "Permite revisar y actualizar el peso de la ra&iacute;z actual."
+
+msgid "Xaxuda_cambiar_datos"
+msgstr "Permitir al usuario recuperar su contrase&ntilde;a en caso de olvido o cambiar datos como el nombre o su contrase&ntilde;a."
+
+msgid "Xaxuda_revisar_relacions_raices"
+msgstr "Si cambia la configuraci&oacute;n por defecto de este grupo marque esta opci&oacute;n para revisar todas las relaciones de ra&iacute;ces-grupos-configuraciones y reasignarle esta configuraci&oacute;n a este grupo en todas las ra&iacute;ces."
+
+msgid "Xinformes"
+msgstr "Informes"
+
+msgid "Xtit_mysql"
+msgstr "MySQL"
+
+msgid "Xdesc_mysql"
+msgstr "Errores en las consultas de MySQL"
+
+msgid "Xtit_accions"
+msgstr "Acciones"
+
+msgid "Xdesc_accions"
+msgstr "Registro de acciones sobre los ficheros y directorios"
+
+msgid "Xtit_accesos"
+msgstr "Accesos"
+
+msgid "Xdesc_accesos"
+msgstr "Registro de entradas, salidas e intentos en la aplicaci&oacute;n"
+
+msgid "Xtit_uso_disco"
+msgstr "Uso de disco"
+
+msgid "Xdesc_uso_disco"
+msgstr "Permite crear informes de uso de disco para todos los usuarios que tengan limitado el espacio."
+
+msgid "Xtit_ancho_banda"
+msgstr "Ancho de banda"
+
+msgid "Xdesc_ancho_banda"
+msgstr "Permite visualizar el ancho de banda consumido por los usuarios."
+
+msgid "Xescolle_informe"
+msgstr "Escoge un informe"
+
+msgid "Xamosar_lineas"
+msgstr "N&uacute;mero de lineas a ense&ntilde;ar"
+
+msgid "Xbuscar_texto"
+msgstr "Buscar texto"
+
+msgid "Xamosar_entradas"
+msgstr "Accesos correctos"
+
+msgid "Xamosar_certificado"
+msgstr "Accesos con certificado"
+
+msgid "Xamosar_saidas"
+msgstr "Salidas"
+
+msgid "Xamosar_erros"
+msgstr "Intentos errados"
+
+msgid "Xamosar_bloqueados"
+msgstr "Bloqueados"
+
+msgid "Xamosar_sen_datos"
+msgstr "Sesi&oacute;n caducada (sin datos)"
+
+msgid "Xbuscar_usuario"
+msgstr "Buscar usuario"
+
+msgid "Xamosar_copiar_dir"
+msgstr "Copiar directorio"
+
+msgid "Xamosar_copiar_arq"
+msgstr "Copiar fichero"
+
+msgid "Xamosar_mover_dir"
+msgstr "Mover directorio"
+
+msgid "Xamosar_mover_arq"
+msgstr "Mover fichero"
+
+msgid "Xamosar_eliminar_arq"
+msgstr "Borrar fichero"
+
+msgid "Xamosar_eliminar_dir"
+msgstr "Borrar directorio"
+
+msgid "Xamosar_crear_dir"
+msgstr "Crear directorio"
+
+msgid "Xamosar_subir_arq"
+msgstr "Subir fichero"
+
+msgid "Xamosar_renomear"
+msgstr "Renombrar"
+
+msgid "Xamosar_enlazar_arq"
+msgstr "Enlazar fichero"
+
+msgid "Xamosar_editar"
+msgstr "Editar"
+
+msgid "Xamosar_subir_url"
+msgstr "Subir URL"
+
+msgid "Xamosar_extraer"
+msgstr "Descomprimir fichero"
+
+msgid "Xamosar_enviar_correo"
+msgstr "Enviar correo"
+
+msgid "Xamosar_descargar"
+msgstr "Descargar"
+
+msgid "Xcol_data"
+msgstr "Fecha"
+
+msgid "Xcol_destino"
+msgstr "Destino"
+
+msgid "Xcol_arquivo"
+msgstr "Fichero"
+
+msgid "Xcol_linha"
+msgstr "L&iacute;nea"
+
+msgid "Xcol_erro"
+msgstr "Error"
+
+msgid "Xcol_raiz"
+msgstr "Ra&iacute;z"
+
+msgid "Xcol_usuario"
+msgstr "Usuario"
+
+msgid "Xcol_accion"
+msgstr "Acci&oacute;n"
+
+msgid "Xcol_login"
+msgstr "Usuario"
+
+msgid "Xcol_ip"
+msgstr "IP"
+
+msgid "Xcol_estado"
+msgstr "Estado"
+
+msgid "Xcol_donde"
+msgstr "D&oacute;nde"
+
+msgid "Xcol_sesion"
+msgstr "ID sesi&oacute;n"
+
+msgid "Xcol_id"
+msgstr "ID"
+
+msgid "Xcol_nome"
+msgstr "Nombre"
+
+msgid "Xcol_orixe"
+msgstr "Origen"
+
+msgid "Xcol_peso_actual"
+msgstr "Peso Actual"
+
+msgid "Xcol_peso_limite"
+msgstr "Peso M&aacute;ximo"
+
+msgid "Xcol_porcent_libre"
+msgstr "% de Libre"
+
+msgid "Xcol_ancho_banda_actual"
+msgstr "Ancho de Banda Actual"
+
+msgid "Xcol_ancho_banda_limite"
+msgstr "Ancho de Banda M&aacute;ximo"
+
+msgid "Xarqs_conf"
+msgstr "Ficheros de Configuraci&oacute;n"
+
+msgid "Xarq_conf"
+msgstr "Fichero de Configuraci&oacute;n"
+
+msgid "Xdetalle"
+msgstr "Detalle"
+
+msgid "Xconf_ver"
+msgstr "Detalle de configuraci&oacute;n"
+
+msgid "Xpeso_exacto"
+msgstr "Peso Exacto"
+
+msgid "Xmodificado"
+msgstr "Modificado"
+
+msgid "Xuid"
+msgstr "ID Usuario"
+
+msgid "Xgid"
+msgstr "ID Grupo"
+
+msgid "Xeliminar_conf"
+msgstr "Est&aacute; seguro de que desea eliminar este fichero de configuraci&oacute;n?"
+
+msgid "Xadmin_configuracions"
+msgstr "Administraci&oacute;n de configuraciones"
+
+msgid "Xconf_editar"
+msgstr "Edici&oacute;n de Configuraci&oacute;n"
+
+msgid "Xconf_editar_erro"
+msgstr "La edici&oacute;n contiene alg&uacute;n error"
+
+msgid "Xcomprobar_sintaxis"
+msgstr "Comprobar Sintaxis"
+
+msgid "Xintro_sintaxis"
+msgstr "Proceso de comprobaci&oacute;n de sintaxis de un fichero de configuraci&oacute;n.<br />Si en alg&uacute;n momento da un error, debe revisar y corregir el problema."
+
+msgid "Xsintaxis_ok"
+msgstr "El fichero de configuraci&oacute;n tiene la sintaxis correcta."
+
+msgid "Xeliminar_ok"
+msgstr "El fichero de configuraci&oacute;n fue correctamente eliminado."
+
+msgid "Xconf_eliminar"
+msgstr "Eliminar Configuraci&oacute;n"
+
+msgid "Xintro_eliminar"
+msgstr "La eliminaci&oacute;n del fichero de configuraci&oacute;n devolvi&oacute; el siguiente resultado:"
+
+msgid "Xduplicar"
+msgstr "Nuevo a partir de &eacute;ste"
+
+msgid "Xnovo_nome"
+msgstr "Nombre del nuevo fichero de configuraci&oacute;n:"
+
+msgid "Xgrupos_relacionados"
+msgstr "Grupos Relacionados"
+
+msgid "Xconfiguracions"
+msgstr "Configuraciones"
+
+msgid "Xconfiguracion"
+msgstr "Configuraci&oacute;n"
+
+msgid "Xgrupos"
+msgstr "Grupos"
+
+msgid "Xgrupo"
+msgstr "Grupo"
+
+msgid "Xmarca_desmarca"
+msgstr "Marcar/Desmarcar todos"
+
+msgid "Xconf_defecto"
+msgstr "Configuraci&oacute;n por defecto"
+
+msgid "Xcrear_grupo"
+msgstr "Crear Grupo"
+
+msgid "Xemail"
+msgstr "Email"
+
+msgid "Xadmin_grupos"
+msgstr "Administraci&oacute;n de grupos"
+
+msgid "Xmodi_grupo"
+msgstr "Modificaci&oacute;n de Grupo"
+
+msgid "Xeliminar_grupo"
+msgstr "Realmente desea eliminar este Grupo?"
+
+msgid "Xescolle_raiz"
+msgstr "Seleccionar una ra&iacute;z"
+
+msgid "Xescolle_usuario"
+msgstr "Seleccionar un usuario"
+
+msgid "Xm_crear_raiz"
+msgstr "A&ntilde;adir Ra&iacute;z"
+
+msgid "Xm_crear_usuario"
+msgstr "A&ntilde;adir Usuario"
+
+msgid "Xm_crear_grupo"
+msgstr "A&ntilde;adir Grupo"
+
+msgid "Xm_indexador"
+msgstr "Indexar Datos"
+
+msgid "Xm_informes"
+msgstr "Informes"
+
+msgid "Xm_traduccion"
+msgstr "Traducci&oacute;n"
+
+msgid "Xen_megas"
+msgstr "en Megas"
+
+msgid "Xmax_descargas_mes"
+msgstr "M&aacute;ximo de descargas mensual"
+
+msgid "Xpeso_actual_off"
+msgstr "El peso m&aacute;ximo est&aacute; desactivado."
+
+msgid "Xtraduccion"
+msgstr "Traducci&oacute;n"
+
+msgid "Xtraduccion_intro"
+msgstr "Desde aqu&iacute; puedes traducir o cambiar los textos de traducci&oacute;n que necesites. S&oacute;lo tienes que escoger un idioma de origen y uno de destino e ir traduciendo los campos que van apareciendo.<br /><br />Los pasos a seguir son los siguientes:<br /><br /><strong>1) Escoge el juego de caracteres.</strong><br /><strong>2) Escoge si listar todo o s&oacute;lo lo que est&aacute; sin traducir.</strong><br /><strong>3) Escoge el fichero a traducir.</strong><br /><strong>4) Escoge el idioma de origen.</strong><br /><strong>5) Escoge el idioma de destino.</strong><br /><br />Cuando te encuentres con algo como <strong>%s</strong>, mantenlo igual.<br /><br /><strong>IMPORTANTE: </strong>Dado que la sesi&oacute;n tiene una duraci&oacute;n limitada debes guardar cada cierto tiempo para que no te caduque la sesi&oacute;n y te expulse fuera perdiendo todo lo traducido!!!!."
+
+msgid "Xarquivo"
+msgstr "Fichero"
+
+msgid "Xclave"
+msgstr "Clave"
+
+msgid "Xsub_clave"
+msgstr "Subclave"
+
+msgid "Xreiniciar_campos"
+msgstr "Volver a la versi&oacute;n Original"
+
+msgid "Xgardar_idioma"
+msgstr "Guardar este idioma"
+
+msgid "Xlistar"
+msgstr "Listar"
+
+msgid "Xtodas"
+msgstr "Todas"
+
+msgid "Xtodos"
+msgstr "Todos"
+
+msgid "Xsen_traducir"
+msgstr "Sin traducir"
+
+msgid "Xcomprobar_traduccions"
+msgstr "Comprobar el estado de las traducciones"
+
+msgid "Xescolle_idioma"
+msgstr "- Escoge idioma -"
+
+msgid "Xtraduccion_estado"
+msgstr "Ten en cuenta que el proceso puede ser largo ya que se necesita comprobar todos los directorios disponibles de idiomas y todos los ficheros incluidos.<br /><br />El c&oacute;digo de colores para el listado es el siguiente:<br /><br /><table summary=\"\"><tr><td style=\"background: #6c6; padding: 5px;\">El color verde indica que el fichero coincidente en esa celda con el idioma listado tiene el mismo n&uacute;mero de valores que el escogido como origen, con lo cual la traducci&oacute;n es completa.</td></tr><tr><td style=\"background: #69E; padding: 5px;\">El color azul indica que el idioma listado tiene m&aacute;s claves traducidas que el seleccionado como origen.</td></tr><tr><td style=\"background: #E66; padding: 5px;\">El color rojo indica que en el fichero del idioma listado faltan algunas claves por traducir.</td></tr><tr><td style=\"background: #000; color: #FFF; padding: 5px;\">El color negro indica que no existe a&uacute;n ese fichero para el idioma listado.</td></tr></table><br /><br />Selecciona el idioma a partir del cual se comparar&aacute; el estado con los otros idiomas."
+
+msgid "Xvaciar_inc"
+msgstr "Desea eliminar todos los ficheros de informaci&oacute;n adicional y las copias de reducidas de las im&aacute;genes generadas por el PHPfileNavigator? Esta acci&oacute;n no eliminar&aacute; ning&uacute;n fichero personal."
+
+msgid "Xm_varios"
+msgstr "Varios"
+
+msgid "Xvarios"
+msgstr "Configuraciones diversas"
+
+msgid "Xver_detalle"
+msgstr "Ver Detalle Completo"
+
+msgid "Xarquivos_logs"
+msgstr "Ficheros de LOG"
+
+msgid "Xlogs_info"
+msgstr "Aqu&iacute; te permitir&aacute; eliminar los ficheros de registro con errores de MySQL o de las acciones sobre ficheros y directorios de cada ra&iacute;z."
+
+msgid "Xlogs_arq_accions"
+msgstr "Registro de acciones de la ra&iacute;z"
+
+msgid "Xlogs_arq_mysql"
+msgstr "Registro de errores de MySQL"
+
+msgid "Xborrar_inc"
+msgstr "Borrar ficheros de<br />informaci&oacute;n adicional"
+
+msgid "Xborrar_imx"
+msgstr "Borrar previsualizaci&oacute;n<br />de im&aacute;genes"
+
+msgid "Xrevisar_peso_actual"
+msgstr "Revisar Peso Actual"
+
+msgid "Xcambiar_datos"
+msgstr "Cambiar Datos"
+
+msgid "Xm_doazon"
+msgstr "Realizar una muy agradecida donaci&oacute;n"
+
+msgid "Xm_doazon_texto"
+msgstr "Este proyecto ha sido desarrollado durante un sinf&iacute;n de horas libres.<br /><br />Desde Septiembre de 2004 ha estado en continua evoluci&oacute;n pasando por diversas formas, pero siempre encaminadas a facilitar en lo m&aacute;ximo posible su uso y disfrute, con mejoras que los propios usuarios han propuesto.<br /><br />Su desarrollo no ha cesado en ning&uacute;n momento y espero que tampoco cese en el futuro.<br /><br />Para continuar con su desarrollo y permitirme dedicarle el tiempo necesario para implementar nuevas funcionalidades, realizar las pruebas necesarias y corregir los problemas encontrados, necesito tu ayuda.<br /><br />Haz una donaci&oacute;n:"
+
+msgid "Xdoar"
+msgstr "Donar"
+
+msgid "Xdoar_paypal"
+msgstr "Donar con PayPal"
+
+msgid "Xdoar_tarxeta"
+msgstr "Donar con tarjeta de cr&eacute;dito/d&eacute;bito"
+
+msgid "Xrevisar_relacions_raices"
+msgstr "Reasignar relaciones"
+
+msgid "Xedicion_directa"
+msgstr "Edici&oacute;n directa de ficheros de configuraci&oacute;n"
+
+msgid "Xactualizar"
+msgstr "Actualizar"
+
+msgid "Xamosar"
+msgstr "Mostrar"
+
+msgid "Xpaxina"
+msgstr "P&aacute;gina"
+
+msgid "Xbuscar"
+msgstr "Buscar"
+
+msgid "Xinfo_raices"
+msgstr "Informaci&oacute;n de las raices del sistema"
+
+msgid "Xinfo_raices_txt"
+msgstr "En este momento existen en el sistema <a href=\"raices/\">%s</a> raices.</a>"
+
+msgid "Xinfo_usuarios"
+msgstr "Informaci&oacute;n de los usuarios del sistema"
+
+msgid "Xinfo_usuarios_txt"
+msgstr "En este momento existen en el sistema <a href=\"usuarios/\">%s</a> usuarios.</a>"
+
+msgid "Xinfo_grupos"
+msgstr "Informaci&oacute;n de los grupos del sistema"
+
+msgid "Xinfo_grupos_txt"
+msgstr "En este momento existen en el sistema <a href=\"grupos/\">%s</a> grupos.</a>"
+
+msgid "Xdata_inicio"
+msgstr "Fecha de inicio"
+
+msgid "Xdata_fin"
+msgstr "Fecha de fin"
+

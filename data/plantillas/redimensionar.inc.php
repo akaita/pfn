@@ -31,12 +31,12 @@ defined('OK') && defined('ACCION') or die();
 	<div style="text-align: center;">
 		<form action="navega.php?<?php echo PFN_get_url(false); ?>" method="post" onsubmit="return submitonce();">
 		<fieldset>
-		<input type="submit" name="cancelar" value=" <?php echo $PFN_conf->t('cancelar'); ?> " class="boton" />
+		<input type="submit" name="cancelar" value=" <?php echo PFN___('cancelar'); ?> " class="boton" />
 
 		<br /><br />
 
-		<div class="bloque_info" style="text-align: left;"><h1><?php echo $PFN_conf->t('accion').' &raquo; '.$PFN_conf->t('recortar'); ?></h1></div>
-		<div class="aviso_info"><?php echo $PFN_conf->t('como_recortar'); ?></div>
+		<div class="bloque_info" style="text-align: left;"><h1><?php echo PFN___('accion').' &raquo; '.PFN___('recortar'); ?></h1></div>
+		<div class="aviso_info"><?php echo PFN___('como_recortar'); ?></div>
 
 		<script type="text/javascript"><!--
 
@@ -52,27 +52,27 @@ defined('OK') && defined('ACCION') or die();
 		<img src="crea_imaxe.php?cal=<?php echo $ucal; ?>&amp;dir=<?php echo $dir; ?>&amp;<?php echo session_name().'='.session_id(); ?>" width="<?php echo $datos[0]; ?>" height="<?php echo $datos[1]; ?>" alt="<?php echo $cal; ?>" id="theImage" />
 
 		<br /><br />
-		<input type="submit" value="<?php echo $PFN_conf->t('aceptar'); ?>" class="boton" id="submit" onclick="return my_Submit('recortar');" />
+		<input type="submit" value="<?php echo PFN___('aceptar'); ?>" class="boton" id="submit" onclick="return my_Submit('recortar');" />
 		<br /><br />
 
-		<div class="aviso_info"><?php echo $PFN_conf->t('escoller_reducida'); ?></div>
+		<div class="aviso_info"><?php echo PFN___('escoller_reducida'); ?></div>
 		<br />
 		<a href="#"><img src="crea_imaxe.php?cal=<?php echo $ucal; ?>&amp;dir=<?php echo $dir; ?>&amp;ancho=<?php echo $PFN_conf->g('imaxes','ancho'); ?>&amp;alto=<?php echo $PFN_conf->g('imaxes','alto'); ?>&amp;<?php echo session_name().'='.session_id(); ?>" alt="<?php echo $PFN_vars->get('cal'); ?>" onclick="my_Submit('reducir');" /></a>
 
 		<br /><br />
 
-		<input type="submit" name="cancelar2" value=" <?php echo $PFN_conf->t('cancelar'); ?> " class="boton" />
+		<input type="submit" name="cancelar2" value=" <?php echo PFN___('cancelar'); ?> " class="boton" />
 		</fieldset>
 		</form>
 		<?php if ($hai_pequena) { ?>
 		<br />
 
-		<div class="aviso_info"><?php echo $PFN_conf->t('eliminar_reducida'); ?></div>
+		<div class="aviso_info"><?php echo PFN___('eliminar_reducida'); ?></div>
 		<br />
 
 		<form action="accion.php?<?php echo PFN_cambia_url(array('cal','accion'),array($cal,'redimensionar'),false); ?>" method="post" onsubmit="return submitonce();">
 			<input type="hidden" name="eliminar_peq" value="true" />
-			<input type="submit" value="<?php echo $PFN_conf->t('eliminar'); ?>" class="boton" />
+			<input type="submit" value="<?php echo PFN___('eliminar'); ?>" class="boton" />
 		</form>
 		<?php } ?>
 		<br /><br />

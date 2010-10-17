@@ -28,6 +28,6 @@ programa. Si no ha sido así, escriba a la Free Software Foundation, Inc., en
 
 defined('OK') or die();
 ?>
-<h2><?php echo $PFN_conf->t('i:remate'); ?></h2>
+<h2><?php echo PFN___('i_remate'); ?></h2>
 
-<br /><?php echo $PFN_conf->t('i:intro_remate'); ?>
+<br /><?php echo PFN___('i_intro_remate'); ?>

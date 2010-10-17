@@ -43,9 +43,9 @@ include ($PFN_paths['xestion'].'Xopcions.inc.php');
 
 $PFN_tempo->rexistra('precodigo');
 
-$doar = $PFN_conf->t('Xdoar');
-$doar_paypal = $PFN_conf->t('Xdoar_paypal');
-$doar_tarxeta = $PFN_conf->t('Xdoar_tarxeta');
+$doar = PFN___('Xdoar');
+$doar_paypal = PFN___('Xdoar_paypal');
+$doar_tarxeta = PFN___('Xdoar_tarxeta');
 
 include ($PFN_paths['plantillas'].'Xdoazon.inc.php');
 

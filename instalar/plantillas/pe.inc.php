@@ -39,7 +39,7 @@ Tempos de execucion:
 
 //-->
 <div id="pe_i">
-	<div id="pe_texto"><a href="http://pfn.sourceforge.net/" onclick="window.open(this.href, '_blank'); return false"><?php echo $PFN_conf->t('PFN').'</a> - '.$PFN_conf->t('tempo_execucion').': '.$PFN_tempo->total().' '.$PFN_conf->t('segundos'); ?></div>
+	<div id="pe_texto"><a href="http://pfn.sourceforge.net/" onclick="window.open(this.href, '_blank'); return false"><?php echo PFN___('PFN').'</a> - '.PFN___('tempo_execucion').': '.$PFN_tempo->total().' '.PFN___('segundos'); ?></div>
 </div>
 </body>
 </html>

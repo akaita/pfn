@@ -71,7 +71,7 @@ if ($PFN_arquivos->vale_extraer($arquivo, true)) {
 	}
 
 	if ($erro) {
-		$estado_accion = $PFN_conf->t('estado.ver_comprimido', 1);
+		$estado_accion = PFN___('estado_ver_comprimido_1');
 	} else {
 		@set_time_limit($PFN_conf->g('tempo_maximo'));
 		@ini_set('memory_limit', $PFN_conf->g('memoria_maxima'));
@@ -120,7 +120,7 @@ if ($PFN_arquivos->vale_extraer($arquivo, true)) {
 	}
 } else {
 	$erro = 1;
-	$estado_accion = $PFN_conf->t('estado.ver_comprimido', 1);
+	$estado_accion = PFN___('estado_ver_comprimido_1');
 }
 
 if ($erro) {

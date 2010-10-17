@@ -30,20 +30,20 @@ programa. Si no ha sido así, escriba a la Free Software Foundation, Inc., en
 defined('OK') && defined('XESTION') or die();
 ?>
 		<div id="capa_indexador">
-			<h2><?php echo $PFN_conf->t('Xreindexar'); ?></h2>
+			<h2><?php echo PFN___('Xreindexar'); ?></h2>
 
 			<?php if ($executa == 'indexador') { ?>
 			<div class="aviso">
 				<?php
 				if (count($erros)) {
 					foreach ($erros as $v) {
-						echo $PFN_conf->t('Xerros',$v).'<br />';
+						echo PFN___('Xerros_'.$v).'<br />';
 					}
 				} else {
-					echo $PFN_conf->t('Xok_reindexar').' '.$PFN_indexador->cnt('dir').' '.$PFN_conf->t('dirs')
-						.' | '.$PFN_indexador->cnt('arq').' '.$PFN_conf->t('arqs').'<br /><br />'
+					echo PFN___('Xok_reindexar').' '.$PFN_indexador->cnt('dir').' '.PFN___('dirs')
+						.' | '.$PFN_indexador->cnt('arq').' '.PFN___('arqs').'<br /><br />'
 						.'<a href="#" onclick="amosa_axuda(\'detalle_indexador\');">'
-						.$PFN_conf->t('Xver_detalle').'</a>'
+						.PFN___('Xver_detalle').'</a>'
 						.'<div id="detalle_indexador" style="display: none;"><pre>'.$txt.'</pre></div>';
 				}
 				?>
@@ -55,11 +55,11 @@ defined('OK') && defined('XESTION') or die();
 			<input type="hidden" name="executa" value="indexador" />
 
 			<table class="tabla_info" summary="">
-				<caption><?php echo $PFN_conf->t('Xreindexar_info'); ?></caption>
+				<caption><?php echo PFN___('Xreindexar_info'); ?></caption>
 				<tr>
-					<th><strong><?php echo $PFN_conf->t('Xconfirmar_reindexar'); ?></strong></th>
+					<th><strong><?php echo PFN___('Xconfirmar_reindexar'); ?></strong></th>
 					<td>
-						<strong><label for="indexador_id_raiz"><?php echo $PFN_conf->t('Xescolle_raiz'); ?>:</label></strong>
+						<strong><label for="indexador_id_raiz"><?php echo PFN___('Xescolle_raiz'); ?>:</label></strong>
 
 						<select id="indexador_id_raiz" name="indexador_id_raiz">
 							<?php
@@ -69,7 +69,7 @@ defined('OK') && defined('XESTION') or die();
 							?>
 						</select>
 					</td>
-					<th><input type="submit" value=" <?php echo $PFN_conf->t('enviar'); ?> " /></th>
+					<th><input type="submit" value=" <?php echo PFN___('enviar'); ?> " /></th>
 				</tr>
 			</table>
 

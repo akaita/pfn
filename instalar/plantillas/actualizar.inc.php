@@ -28,9 +28,9 @@ programa. Si no ha sido así, escriba a la Free Software Foundation, Inc., en
 
 defined('OK') or die();
 ?>
-<h2><?php echo $PFN_conf->t('i:actualizar'); ?></h2>
+<h2><?php echo PFN___('i_actualizar'); ?></h2>
 
-<br /><?php echo $PFN_conf->t('i:intro_actualizar'); ?><br /><br />
+<br /><?php echo PFN___('i_intro_actualizar'); ?><br /><br />
 
 <form action="index.php" method="post">
 <fieldset>
@@ -60,19 +60,19 @@ defined('OK') or die();
 
 <?php if (in_array(18, $erros)) { ?>
 <div class="capa_erro">
-	<strong><?php echo $PFN_conf->t('i:arq_configuracion'); ?></strong><br />
-	<?php echo $PFN_conf->t('i:erros', '18'); ?>
+	<strong><?php echo PFN___('i_arq_configuracion'); ?></strong><br />
+	<?php echo PFN___('i_erros_18'); ?>
 </div>
 <?php } else { ?>
 	<?php if (in_array(15, $erros) || in_array(16, $erros)) { ?>
 		<div class="capa_erro">
-  		<strong><?php echo $PFN_conf->t('i:conexion_mysql'); ?></strong><br />
-	  	<?php echo $PFN_conf->t('i:mysql_erro'); ?>
+  		<strong><?php echo PFN___('i_conexion_mysql'); ?></strong><br />
+	  	<?php echo PFN___('i_mysql_erro'); ?>
 		</div>
 	<?php } else { ?>
 		<div class="capa_ok">
-  		<strong><?php echo $PFN_conf->t('i:conexion_mysql'); ?></strong><br />
-		  <?php echo $PFN_conf->t('i:mysql_ok'); ?>
+  		<strong><?php echo PFN___('i_conexion_mysql'); ?></strong><br />
+		  <?php echo PFN___('i_mysql_ok'); ?>
 		</div>
 
 		<?php
@@ -101,13 +101,13 @@ defined('OK') or die();
 
 <?php if (in_array('conf', $feito)) { ?>
 <div class="capa_ok">
-	<strong><?php echo $PFN_conf->t('i:arq_configuracion'); ?></strong><br />
-	<?php echo $PFN_conf->t('i:arq_configuracion_ok'); ?>
+	<strong><?php echo PFN___('i_arq_configuracion'); ?></strong><br />
+	<?php echo PFN___('i_arq_configuracion_ok'); ?>
 </div>
 <?php } ?>
 
 <br />
 
-<input type="submit" value="<?php echo $PFN_conf->t(count($erros)?'i:reintentar':'continuar_paso_6'); ?>" class="dereita" />
+<input type="submit" value="<?php echo PFN___(count($erros)?'i_reintentar':'continuar_paso_6'); ?>" class="dereita" />
 </fieldset>
 </form>

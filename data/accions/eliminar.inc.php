@@ -54,7 +54,7 @@ if ($PFN_vars->post('executa') || !$PFN_conf->g('confirmar_eliminar')) {
 
 			$PFN_accions->eliminar($arquivo);
 			$estado = $PFN_accions->estado_num('eliminar_dir');
-			$estado_accion = $PFN_conf->t('estado.eliminar_dir',intval($estado));
+			$estado_accion = PFN___('estado_eliminar_dir_'.intval($estado));
 
 			if ($PFN_accions->estado('eliminar_dir')) {
 				if (is_dir(PFN_get_path_extra($arquivo))) {
@@ -87,7 +87,7 @@ if ($PFN_vars->post('executa') || !$PFN_conf->g('confirmar_eliminar')) {
 
 			$PFN_accions->eliminar($arquivo);
 			$estado = $PFN_accions->estado_num('eliminar_arq');
-			$estado_accion = $PFN_conf->t('estado.eliminar_arq',intval($estado));
+			$estado_accion = PFN___('estado_eliminar_arq_'.intval($estado));
 
 			if ($PFN_accions->estado('eliminar_arq')) {
 				if (is_file($PFN_inc->nome_inc($arquivo))) {
@@ -132,9 +132,9 @@ if ($PFN_vars->post('executa') || !$PFN_conf->g('confirmar_eliminar')) {
 				$PFN_arbore->imaxes($PFN_imaxes);
 				$PFN_arbore->carga_arbore("$arquivo/", "$dir/$cal/", true);
 
-				$adv = $PFN_conf->t('estado.eliminar_dir',3);
+				$adv = PFN___('estado_eliminar_dir_3');
 			} else {
-				$adv = $PFN_conf->t('estado.eliminar_dir',2);
+				$adv = PFN___('estado_eliminar_dir_2');
 			}
 	
 			include ($PFN_paths['plantillas'].'posicion.inc.php');

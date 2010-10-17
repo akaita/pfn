@@ -165,16 +165,16 @@ if ($PFN_conf->g('columnas','multiple')
 			}
 
 			if ($erro) {
-				$estado_accion .= $PFN_conf->t('estado.multiple_copiar',intval($estado)).' '.$cal.'<br />';
+				$estado_accion .= PFN___('estado_multiple_copiar_'.intval($estado)).' '.$cal.'<br />';
 				$cnt_erros++;
 			}
 		}
 	}
 
 	if ($cnt_erros == 0) {
-		$estado_accion = $PFN_conf->t('estado.multiple_copiar', 1);
+		$estado_accion = PFN___('estado_multiple_copiar_1');
 	} elseif ($cnt_erros != count($multiple_escollidos)) {
-		$estado_accion .= $PFN_conf->t('estado.multiple_copiar', 8);
+		$estado_accion .= PFN___('estado_multiple_copiar_8');
 	}
 
 	include ($PFN_paths['web'].'navega.inc.php');
@@ -184,7 +184,7 @@ if ($PFN_conf->g('columnas','multiple')
 			.'/'.$PFN_accions->nome_correcto($v);
 
 		if (!file_exists($arquivo)) {
-			$adv .= $PFN_conf->t('estado.multiple_copiar', 7).' '.$PFN_accions->nome_correcto($v).'<br />';
+			$adv .= PFN___('estado_multiple_copiar_7').' '.$PFN_accions->nome_correcto($v).'<br />';
 			unset($multiple_escollidos[$k]);
 		}
 	}
@@ -197,7 +197,7 @@ if ($PFN_conf->g('columnas','multiple')
 		$PFN_arbore->pon_radio('escollido');
 		$PFN_arbore->pon_enlaces(false);
 
-		$adv .= $PFN_conf->t('estado.multiple_copiar', 2);
+		$adv .= PFN___('estado_multiple_copiar_2');
 
 		$PFN_arbore->carga_arbore($PFN_conf->g('raiz','path'), "./", false);
 

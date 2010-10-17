@@ -67,7 +67,7 @@ if ($PFN_vars->post('executa')) {
 	foreach ((array)$files['name'] as $k => $v) {
 		if ((!empty($v) && ($files['size'][$k] == 0 || empty($files['tmp_name'][$k])))
 		|| $files['size'][$k] > $PFN_conf->g('inc','peso')) {
-			$estado_accion .= $v.': '.$PFN_conf->t('estado.subir_arq', 5).'<br />';
+			$estado_accion .= $v.': '.PFN___('estado_subir_arq_5').'<br />';
 			continue;
 		} elseif (empty($v)) {
 			continue;
@@ -76,7 +76,7 @@ if ($PFN_vars->post('executa')) {
 				$peso_este = $files['size'][$k];
 
 				if ($peso_este + $PFN_conf->g('raiz', 'peso_actual') > $PFN_conf->g('raiz','peso_maximo')) {
-					$estado_accion .= $v.': '.$PFN_conf->t('estado.subir_arq', 6).'<br />';
+					$estado_accion .= $v.': '.PFN___('estado_subir_arq_6').'<br />';
 					continue;
 				}
 			}
@@ -84,7 +84,7 @@ if ($PFN_vars->post('executa')) {
 			$ancho_banda = $PFN_accions->log_ancho_banda($files['size'][$k]);
 
 			if (!$ancho_banda) {
-				$estado_accion .= $v.': '.$PFN_conf->t('estado.subir_arq', 7).'<br />';
+				$estado_accion .= $v.': '.PFN___('estado_subir_arq_7').'<br />';
 				continue;
 			}
 
@@ -151,8 +151,8 @@ if ($PFN_vars->post('executa')) {
 
 					$mail->From = 'no-reply@'.getenv('SERVER_NAME');
 					$mail->FromName = 'System Administrator';
-					$mail->Subject = PFN_quitaHtmlentities(strlen($titulos[$k])?$titulos[$k]:$PFN_conf->t('tit_aviso_subida'));
-					$mail->Body = str_replace('{ARQUIVO}', $dir.'/'.$v, $PFN_conf->t('txt_aviso_subida'));
+					$mail->Subject = PFN_quitaHtmlentities(strlen($titulos[$k])?$titulos[$k]:PFN___('tit_aviso_subida'));
+					$mail->Body = str_replace('{ARQUIVO}', $dir.'/'.$v, PFN___('txt_aviso_subida'));
 					$mail->Body = PFN_quitaHtmlentities($descricions[$k]."\n\n".$mail->Body)
 						."\n\n".$PFN_conf->g('protocolo')
 						.$PFN_vars->server('SERVER_NAME')
@@ -174,7 +174,7 @@ if ($PFN_vars->post('executa')) {
 				}
 			}
 
-			$estado_accion .= $v.': '.$PFN_conf->t('estado.subir_arq', intval($estado)).'<br />';
+			$estado_accion .= $v.': '.PFN___('estado_subir_arq_'.intval($estado)).'<br />';
 		}
 
 		if ($i++ && ($i > $PFN_conf->g('inc','limite'))) {

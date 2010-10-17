@@ -81,7 +81,7 @@ if ($PFN_vars->post('executa')) {
 			unlink($donde.'/'.$cal);
 		}
 
-		$estado_accion = $PFN_conf->t('estado.subir_url',6);
+		$estado_accion = PFN___('estado_subir_url_6');
 	} elseif (($nome_url != '') && ($PFN_vars->post('nome_arquivo') != '')) {
 		$PFN_accions->arquivos($PFN_arquivos);
 
@@ -95,7 +95,7 @@ if ($PFN_vars->post('executa')) {
 
 		$PFN_accions->subir_url($nome_url, $donde, $cal);
 		$estado = $PFN_accions->estado_num('subir_url');
-		$estado_accion = $PFN_conf->t('estado.subir_url',intval($estado));
+		$estado_accion = PFN___('estado_subir_url_'.intval($estado));
 
 		if ($PFN_accions->estado('subir_url')) {
 			if ($PFN_conf->g('raiz','peso_maximo') > 0) {
@@ -103,7 +103,7 @@ if ($PFN_vars->post('executa')) {
 
 				if (($peso_este + $PFN_conf->g('raiz', 'peso_actual')) > $PFN_conf->g('raiz','peso_maximo')) {
 					@unlink($donde.'/'.$cal);
-					$estado_accion = $PFN_conf->t('estado.subir_url', 7).'<br />';
+					$estado_accion = PFN___('estado_subir_url_7').'<br />';
 					$erro = true;
 				}
 			}
@@ -112,7 +112,7 @@ if ($PFN_vars->post('executa')) {
 
 			if (!$ancho_banda) {
 				@unlink($donde.'/'.$cal);
-				$estado_accion = $PFN_conf->t('estado.subir_url', 9).'<br />';
+				$estado_accion = PFN___('estado_subir_url_9').'<br />';
 				$erro = true;
 			}
 
@@ -144,7 +144,7 @@ if ($PFN_vars->post('executa')) {
 
 	include ($PFN_paths['web'].'navega.inc.php');
 } else {
-	$msx_adv = $PFN_conf->t('estado.subir_url',4);
+	$msx_adv = PFN___('estado_subir_url_4');
 
 	include ($PFN_paths['plantillas'].'posicion.inc.php');
 	include ($PFN_paths['plantillas'].'subir_url.inc.php');

@@ -51,8 +51,6 @@ if (!empty($accion) && $PFN_conf->g('permisos',$accion)
 && is_file($PFN_paths['accions'].$accion.'.inc.php')) {
 	define('ACCION', true);
 
-	$PFN_conf->textos('estado');
-
 	include_once ($PFN_paths['include'].'class_accions.php');
 	$PFN_accions = new PFN_Accions($PFN_conf);
 

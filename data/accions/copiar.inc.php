@@ -52,14 +52,14 @@ if ($PFN_vars->post('executa')) {
 			.'/'.$cal;
 
 		if (strstr($destino, $orixinal)) {
-			$estado_accion = $PFN_conf->t('estado.copiar_dir',7);
+			$estado_accion = PFN___('estado_copiar_dir_7');
 			$erro = true;
 		}
 
 		if (!$erro && $tipo == 'dir') {
 			if ($PFN_conf->g('raiz','peso_maximo') > 0) {
 				if ($PFN_conf->g('raiz','peso_actual') >= $PFN_conf->g('raiz','peso_maximo')) {
-					$estado_accion .= $PFN_conf->t('estado.copiar_dir', 8).'<br />';
+					$estado_accion .= PFN___('estado_copiar_dir_8').'<br />';
 					$erro = true;
 				} else {
 					$peso_este = $PFN_accions->get_tamano("$orixinal/", true);
@@ -69,7 +69,7 @@ if ($PFN_vars->post('executa')) {
 					}
 
 					if (($peso_este + $PFN_conf->g('raiz', 'peso_actual')) > $PFN_conf->g('raiz','peso_maximo')) {
-						$estado_accion .= $PFN_conf->t('estado.copiar_dir', 8).'<br />';
+						$estado_accion .= PFN___('estado_copiar_dir_8').'<br />';
 						$erro = true;
 					}
 				}
@@ -78,7 +78,7 @@ if ($PFN_vars->post('executa')) {
 			if (!$erro) {
 				$PFN_accions->copiar($orixinal, $destino);
 				$estado = $PFN_accions->estado_num('copiar_dir');
-				$estado_accion = $PFN_conf->t('estado.copiar_dir',intval($estado));
+				$estado_accion = PFN___('estado_copiar_dir_'.intval($estado));
 			}
 
 			if (!$erro && $PFN_accions->estado('copiar_dir')) {
@@ -109,7 +109,7 @@ if ($PFN_vars->post('executa')) {
 				}
 
 				if (($peso_este + $PFN_conf->g('raiz', 'peso_actual')) > $PFN_conf->g('raiz','peso_maximo')) {
-					$estado_accion .= $PFN_conf->t('estado.copiar_arq', 6).'<br />';
+					$estado_accion .= PFN___('estado_copiar_arq_6').'<br />';
 					$erro = true;
 				}
 			}
@@ -117,7 +117,7 @@ if ($PFN_vars->post('executa')) {
 			if (!$erro) {
 				$PFN_accions->copiar($orixinal, $destino);
 				$estado = $PFN_accions->estado_num('copiar_arq');
-				$estado_accion = $PFN_conf->t('estado.copiar_arq',intval($estado));
+				$estado_accion = PFN___('estado_copiar_arq_'.intval($estado));
 			}
 
 			if ($PFN_accions->estado('copiar_arq')) {
@@ -157,12 +157,12 @@ if ($PFN_vars->post('executa')) {
 			$PFN_arbore->pon_copia($arquivo);
 	
 			if (count($contido['dir']['nome']) || count($contido['arq']['nome'])) {
-				$adv = $PFN_conf->t('estado.copiar_dir',2);
+				$adv = PFN___('estado_copiar_dir_2');
 			} else {
-				$adv = $PFN_conf->t('estado.copiar_dir',3);
+				$adv = PFN___('estado_copiar_dir_3');
 			}
 		} else {
-			$adv = $PFN_conf->t('estado.copiar_arq',2);
+			$adv = PFN___('estado_copiar_arq_2');
 		}
 
 		$PFN_arbore->carga_arbore($PFN_conf->g('raiz','path'), "./", false);

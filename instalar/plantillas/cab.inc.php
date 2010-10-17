@@ -31,9 +31,9 @@ defined('OK') or die();
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $PFN_conf->g('idioma'); ?>">
 <head>
-<title><?php echo $PFN_conf->t('PFN'); ?></title>
+<title><?php echo PFN___('PFN'); ?></title>
 <meta http-equiv="Content-Type" content="text/html; charset=<?php echo $basicas['charset']; ?>" />
-<meta name="keywords" content="<?php echo $PFN_conf->t('PFN'); ?>" />
+<meta name="keywords" content="<?php echo PFN___('PFN'); ?>" />
 <meta name="description" content="PHPfileNavigator: Administrador de ficheros y directorios via web." />
 <meta name="author" content="Lito, phpfilenavigator@litoweb.net" />
 <meta name="version" content="<?php echo $PFN_version; ?>" />
@@ -48,16 +48,16 @@ defined('OK') or die();
 
 	<div id="menu_esquerda">
 		<ul>
-			<li<?php echo ($paso > 0)?' class="menu_marcado"':''; ?>>1. <span><?php echo $PFN_conf->t('i:presentacion'); ?></span></li>
-			<li<?php echo ($paso > 1)?' class="menu_marcado"':''; ?>>2. <span><?php echo $PFN_conf->t('i:directorios'); ?></span></li>
-			<li<?php echo ($paso > 2)?' class="menu_marcado"':''; ?>>3. <span><?php echo $PFN_conf->t('i:comprobacion'); ?></span></li>
+			<li<?php echo ($paso > 0)?' class="menu_marcado"':''; ?>>1. <span><?php echo PFN___('i_presentacion'); ?></span></li>
+			<li<?php echo ($paso > 1)?' class="menu_marcado"':''; ?>>2. <span><?php echo PFN___('i_directorios'); ?></span></li>
+			<li<?php echo ($paso > 2)?' class="menu_marcado"':''; ?>>3. <span><?php echo PFN___('i_comprobacion'); ?></span></li>
 			<?php if (empty($form['tipo']) || ($form['tipo'] == 'instalar')) { ?>
-			<li<?php echo ($paso > 3)?' class="menu_marcado"':''; ?>>4. <span><?php echo $PFN_conf->t('i:datos'); ?></span></li>
+			<li<?php echo ($paso > 3)?' class="menu_marcado"':''; ?>>4. <span><?php echo PFN___('i_datos'); ?></span></li>
 			<?php } else { ?>
-			<li class="tachado">4. <span><?php echo $PFN_conf->t('i:datos'); ?></span></li>
+			<li class="tachado">4. <span><?php echo PFN___('i_datos'); ?></span></li>
 			<?php } ?>
-			<li<?php echo ($paso > 4)?' class="menu_marcado"':''; ?>>5. <span><?php echo $PFN_conf->t('i:instalar'); ?></span></li>
-			<li<?php echo ($paso > 5)?' class="menu_marcado"':''; ?>>6. <span><?php echo $PFN_conf->t('i:remate'); ?></span></li>
+			<li<?php echo ($paso > 4)?' class="menu_marcado"':''; ?>>5. <span><?php echo PFN___('i_instalar'); ?></span></li>
+			<li<?php echo ($paso > 5)?' class="menu_marcado"':''; ?>>6. <span><?php echo PFN___('i_remate'); ?></span></li>
 		</ul>
 	</div>
 

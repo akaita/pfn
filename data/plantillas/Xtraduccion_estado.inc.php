@@ -30,20 +30,20 @@ programa. Si no ha sido así, escriba a la Free Software Foundation, Inc., en
 defined('OK') && defined('XESTION') or die();
 ?>
 <div id="ver_info">
-	<div class="bloque_info"><h1><?php echo $PFN_conf->t('xestion').' &raquo; '.$PFN_conf->t('Xtraduccion'); ?></h1></div>
+	<div class="bloque_info"><h1><?php echo PFN___('xestion').' &raquo; '.PFN___('Xtraduccion'); ?></h1></div>
 	<div class="bloque_info">
 		<div id="Xinformes_cab">
-			<div style="background: #EEE; text-align: center;"><a href="index.php?<?php echo PFN_get_url(false); ?>"><?php echo $PFN_conf->t('Xtraduccion'); ?></a></div>
+			<div style="background: #EEE; text-align: center;"><a href="index.php?<?php echo PFN_get_url(false); ?>"><?php echo PFN___('Xtraduccion'); ?></a></div>
 
-			<br /><?php echo $PFN_conf->t('Xtraduccion_estado'); ?><br />
+			<br /><?php echo PFN___('Xtraduccion_estado'); ?><br />
 			<form action="estado.php?<?php echo PFN_get_url(false); ?>" method="post" onsubmit="return submitonce();">
 			<fieldset>
 			<input type="hidden" name="executa" value="comprobar" />
 
 			<br /><div style="text-align: center;">
-				<strong><?php echo $PFN_conf->t('orixe'); ?>:</strong>
+				<strong><?php echo PFN___('orixe'); ?>:</strong>
 				<select name="tr_idioma_base">
-					<option value=""><?php echo $PFN_conf->t('Xescolle_idioma'); ?></option>
+					<option value=""><?php echo PFN___('Xescolle_idioma'); ?></option>
 					<?php
 					foreach ($idiomas_valen as $k => $v) {
 					?>
@@ -52,8 +52,8 @@ defined('OK') && defined('XESTION') or die();
 				</select>
 
 				<br /><br />
-				<input type="reset" value=" <?php echo $PFN_conf->t('voltar'); ?> " class="boton" onclick="enlace('../index.php?<?php echo PFN_get_url(false); ?>');" />
-				<input type="submit" value=" <?php echo $PFN_conf->t('aceptar'); ?> " style="margin-left: 40px;" class="boton" /><br />
+				<input type="reset" value=" <?php echo PFN___('voltar'); ?> " class="boton" onclick="enlace('../index.php?<?php echo PFN_get_url(false); ?>');" />
+				<input type="submit" value=" <?php echo PFN___('aceptar'); ?> " style="margin-left: 40px;" class="boton" /><br />
 			</div><br />
 			</fieldset>
 			</form>
@@ -66,10 +66,10 @@ defined('OK') && defined('XESTION') or die();
 
 				if (count($erros)) {
 					foreach ($erros as $v) {
-						echo $PFN_conf->t('Xerros',$v).'<br />';
+						echo PFN___('Xerros_'.$v).'<br />';
 					}
 				} else {
-					echo $PFN_conf->t('Xok',6);
+					echo PFN___('Xok_6');
 				}
 
 				echo '</div><br />';

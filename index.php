@@ -37,14 +37,12 @@ if (is_dir($PFN_paths['web'].'instalar/')) {
 	exit;
 }
 
-$PFN_conf->textos('web');
-
 $PFN_tempo->rexistra('preplantillas');
 
 $erro = intval(base64_decode(urldecode($PFN_vars->get('erro'))));
 
 if ($erro > 0) {
-	$txt_erro = $PFN_conf->t('alertas_login', $erro);
+	$txt_erro = PFN___('alertas_login_'.$erro);
 } else {
 	$txt_erro = '';
 }

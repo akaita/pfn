@@ -49,24 +49,24 @@ defined('OK') or die();
 <input type="hidden" name="ra_web" value="<?php echo $form['ra_web']; ?>" />
 <input type="hidden" name="ra_dominio" value="<?php echo $form['ra_dominio']; ?>" />
 
-<h2><?php echo $PFN_conf->t('i:directorios'); ?></h2>
+<h2><?php echo PFN___('i_directorios'); ?></h2>
 
-<br /><?php echo $PFN_conf->t('i:intro_directorios'); ?><br /><br />
+<br /><?php echo PFN___('i_intro_directorios'); ?><br /><br />
 
 <div class="capa_<?php echo ($comprobar[0] == 1)?'ok':'erro'; ?>">
 	<strong>data/servidor/</strong><br />
-	<?php echo $PFN_conf->t(($comprobar[0] == 1)?'i:path_ok':'i:path_erro'); ?>
+	<?php echo PFN___(($comprobar[0] == 1)?'i_path_ok':'i_path_erro'); ?>
 </div>
 
 <div class="capa_<?php echo ($comprobar[1] == 1)?'ok':'erro'; ?>">
 	<strong>data/conf/</strong><br />
-	<?php echo $PFN_conf->t(($comprobar[1] == 1)?'i:path_ok':'i:path_erro'); ?>
+	<?php echo PFN___(($comprobar[1] == 1)?'i_path_ok':'i_path_erro'); ?>
 </div>
 
 <?php if ($basicas['version'] > 0) { ?>
 <div class="capa_<?php echo ($comprobar[2] == 1)?'ok':'erro'; ?>">
 	<strong>data/conf/basicas.inc.php</strong><br />
-	<?php echo $PFN_conf->t(($comprobar[2] == 1)?'i:arq_ok':'i:arq_erro'); ?>
+	<?php echo PFN___(($comprobar[2] == 1)?'i_arq_ok':'i_arq_erro'); ?>
 </div>
 <?php } ?>
 
@@ -78,9 +78,9 @@ defined('OK') or die();
 document.getElementById('paso').value = 2;
 
 //--></script>
-<input type="submit" value="<?php echo $PFN_conf->t('i:recargar'); ?>" class="dereita" />
+<input type="submit" value="<?php echo PFN___('i_recargar'); ?>" class="dereita" />
 <?php } else { ?>
-<input type="submit" value="<?php echo $PFN_conf->t('continuar_paso_3'); ?>" class="dereita" />
+<input type="submit" value="<?php echo PFN___('continuar_paso_3'); ?>" class="dereita" />
 <?php } ?>
 </fieldset>
 </form>
@@ -105,6 +105,6 @@ document.getElementById('paso').value = 2;
 <input type="hidden" name="ra_path" value="<?php echo $form['ra_path']; ?>" />
 <input type="hidden" name="ra_web" value="<?php echo $form['ra_web']; ?>" />
 <input type="hidden" name="ra_dominio" value="<?php echo $form['ra_dominio']; ?>" />
-<input type="submit" value="<?php echo $PFN_conf->t('voltar_paso_1'); ?>" class="esquerda" />
+<input type="submit" value="<?php echo PFN___('voltar_paso_1'); ?>" class="esquerda" />
 </fieldset>
 </form>

@@ -29,16 +29,16 @@ programa. Si no ha sido así, escriba a la Free Software Foundation, Inc., en
 defined('OK') && defined('ACCION') or die();
 ?>
 
-		<div class="bloque_info"><h1><?php echo $PFN_conf->t('accion').' &raquo; '.$PFN_conf->t('eliminar_arq'); ?></h1></div>
+		<div class="bloque_info"><h1><?php echo PFN___('accion').' &raquo; '.PFN___('eliminar_arq'); ?></h1></div>
 		<form action="accion.php?<?php echo PFN_cambia_url('accion','eliminar',false); ?>" method="post" onsubmit="return submitonce();">
 		<fieldset>
 		<input type="hidden" name="executa" value="true" />
 		<input type="hidden" name="cal" value="<?php echo $cal; ?>" />
-		<div class="aviso_info"><?php echo $PFN_conf->t('estado.eliminar_arq',2); ?></div>
+		<div class="aviso_info"><?php echo PFN___('estado_eliminar_arq_2'); ?></div>
 
 		<div style="text-align: center; margin-top: 10px;">
-			<input type="reset" value=" <?php echo $PFN_conf->t('cancelar'); ?> " class="boton" onclick="enlace('navega.php?<?php echo PFN_get_url(false); ?>');" />
-			<input type="submit" value=" <?php echo $PFN_conf->t('aceptar'); ?> " class="boton" style="margin-left: 40px;" />
+			<input type="reset" value=" <?php echo PFN___('cancelar'); ?> " class="boton" onclick="enlace('navega.php?<?php echo PFN_get_url(false); ?>');" />
+			<input type="submit" value=" <?php echo PFN___('aceptar'); ?> " class="boton" style="margin-left: 40px;" />
 		</div>
 		</fieldset>
 		</form>

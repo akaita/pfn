@@ -41,7 +41,7 @@ if ($PFN_vars->post('executa') && $PFN_vars->post('nome_directorio') != '') {
 	
 	$PFN_accions->crear_dir($donde, $cal);
 	$estado = $PFN_accions->estado_num('crear_dir');
-	$estado_accion = $PFN_conf->t('estado.crear_dir',intval($estado));
+	$estado_accion = PFN___('estado_crear_dir_'.intval($estado));
 	
 	if ($PFN_accions->estado('crear_dir')) {
 		if ($PFN_conf->g('inc','estado')) {

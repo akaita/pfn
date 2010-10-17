@@ -29,41 +29,41 @@ programa. Si no ha sido así, escriba a la Free Software Foundation, Inc., en
 defined('OK') or die();
 ?>
 
-<br /><h3><?php echo $PFN_conf->t('i:actualizar_220-230'); ?></h3>
+<br /><h3><?php echo PFN___('i_actualizar_220-230'); ?></h3>
 
 <?php if (in_array('mysql_220-230', $feito)) {?>
 	<?php if ($erros['mysql_220-230']) { ?>
 		<div class="capa_erro">
-			<strong><?php echo $PFN_conf->t('i:consultas_mysql'); ?></strong><br />
-			<?php echo $PFN_conf->t('i:consultas_erro'); ?>
+			<strong><?php echo PFN___('i_consultas_mysql'); ?></strong><br />
+			<?php echo PFN___('i_consultas_erro'); ?>
 			<br />
 			<?php foreach ($erros_q['mysql_220-230'] as $v) { ?>
 				<div class="aviso">
-					<?php echo $PFN_conf->t('i:consulta'); ?>:
+					<?php echo PFN___('i_consulta'); ?>:
 					<br /><?php echo $v['consulta']; ?>
-					<br /><br /><?php echo $PFN_conf->t('i:erro'); ?>:
+					<br /><br /><?php echo PFN___('i_erro'); ?>:
 					<br /><?php echo $v['erro']; ?>
 				</div>
 			<?php } ?>
 		</div>
 	<?php } else { ?>
 	<div class="capa_ok">
-		<strong><?php echo $PFN_conf->t('i:consultas_mysql'); ?></strong><br />
-		<?php echo $PFN_conf->t('i:consultas_ok'); ?>
+		<strong><?php echo PFN___('i_consultas_mysql'); ?></strong><br />
+		<?php echo PFN___('i_consultas_ok'); ?>
 	</div>
 	<?php } ?>
 <?php } ?>
 
 <?php if (in_array('dirs_220-230', $feito)) {?>
 <div class="capa_ok">
-	<strong><?php echo $PFN_conf->t('i:creacion_directorios'); ?></strong><br />
-	<?php echo $PFN_conf->t('i:crear_directorios_ok'); ?>
+	<strong><?php echo PFN___('i_creacion_directorios'); ?></strong><br />
+	<?php echo PFN___('i_crear_directorios_ok'); ?>
 </div>
 <?php } ?>
 
 <?php if (in_array('inc_220-230', $feito)) {?>
 <div class="capa_ok">
-	<strong><?php echo $PFN_conf->t('i:arq_inc'); ?></strong><br />
-	<?php echo $PFN_conf->t('i:arq_inc_ok'); ?>
+	<strong><?php echo PFN___('i_arq_inc'); ?></strong><br />
+	<?php echo PFN___('i_arq_inc_ok'); ?>
 </div>
 <?php } ?>

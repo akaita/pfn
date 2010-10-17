@@ -81,12 +81,12 @@ $w .= ' ORDER BY data DESC';
 $w .= ' LIMIT 0,'.intval($ae_lineas).';';
 
 $txt = '<table class="tabla_informes" summary="">'
-	.'<tr><th>'.$PFN_conf->t('Xcol_data').'</th>'
-	.'<th>'.$PFN_conf->t('Xcol_login').'</th>'
-	.'<th>'.$PFN_conf->t('Xcol_ip').'</th>'
-	.'<th>'.$PFN_conf->t('Xcol_estado').'</th>'
-	.'<th>'.$PFN_conf->t('Xcol_donde').'</th>'
-	.'<th>'.$PFN_conf->t('Xcol_sesion').'</th></tr>';
+	.'<tr><th>'.PFN___('Xcol_data').'</th>'
+	.'<th>'.PFN___('Xcol_login').'</th>'
+	.'<th>'.PFN___('Xcol_ip').'</th>'
+	.'<th>'.PFN___('Xcol_estado').'</th>'
+	.'<th>'.PFN___('Xcol_donde').'</th>'
+	.'<th>'.PFN___('Xcol_sesion').'</th></tr>';
 
 for ($PFN_usuarios->informe($w); $PFN_usuarios->mais(); $PFN_usuarios->seguinte()) {
 	if ($PFN_usuarios->get('estado') == '1') {

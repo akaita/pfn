@@ -73,10 +73,10 @@ if ($PFN_vars->get('zlib')
 		exit;
 	} elseif ($estado === -1) {
 		$erro = true;
-		$estado_accion = $PFN_conf->t(array('estado.descargar', 3), $PFN_paths['info']);
+		$estado_accion = PFN___('estado_descargar_3', $PFN_paths['info']);
 	} else {
 		$erro = true;
-		$estado_accion = $PFN_conf->t('estado.descargar', 2);
+		$estado_accion = PFN___('estado_descargar_2');
 	}
 
 	unset($contido);
@@ -126,10 +126,10 @@ if ($PFN_vars->get('zlib')
 		exit;
 	} elseif ($estado === -1) {
 		$erro = true;
-		$estado_accion = $PFN_conf->t('estado.descargar', 3);
+		$estado_accion = PFN___('estado_descargar_3');
 	} else {
 		$erro = true;
-		$estado_accion = $PFN_conf->t('estado.descargar', 2);
+		$estado_accion = PFN___('estado_descargar_2');
 	}
 } else {
 	$erro = true;

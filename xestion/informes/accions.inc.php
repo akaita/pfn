@@ -86,12 +86,12 @@ if ($PFN_conf->g('logs','accions')) {
 	));
 
 	$txt = '<table class="tabla_informes" summary="">'
-		.'<tr><th>'.$PFN_conf->t('Xcol_data').'</th>'
-		.(($ai_raiz == 0)?'<th>'.$PFN_conf->t('Xcol_raiz').'</th>':'')
-		.(($ai_usuario == 0)?'<th>'.$PFN_conf->t('Xcol_usuario').'</th>':'')
-		.'<th>'.$PFN_conf->t('Xcol_accion').'</th>'
-		.'<th>'.$PFN_conf->t('Xcol_orixe').'</th>'
-		.'<th>'.$PFN_conf->t('Xcol_destino').'</th></tr>';
+		.'<tr><th>'.PFN___('Xcol_data').'</th>'
+		.(($ai_raiz == 0)?'<th>'.PFN___('Xcol_raiz').'</th>':'')
+		.(($ai_usuario == 0)?'<th>'.PFN___('Xcol_usuario').'</th>':'')
+		.'<th>'.PFN___('Xcol_accion').'</th>'
+		.'<th>'.PFN___('Xcol_orixe').'</th>'
+		.'<th>'.PFN___('Xcol_destino').'</th></tr>';
 
 	if ($PFN_rexistros->filas() > 0) {
 		for ($i = 0; $PFN_rexistros->mais(); $i++, $PFN_rexistros->seguinte()) {
@@ -104,7 +104,7 @@ if ($PFN_conf->g('logs','accions')) {
 					('<td><a href="../usuarios/editar.php?'
 					.PFN_cambia_url('id', $PFN_rexistros->get('id_usuario'), false)
 					.'">'.$PFN_rexistros->get('usuario').'</a></td>'):'')
-				.'<td>'.$PFN_conf->t('Xamosar_'.$PFN_rexistros->get('accion')).'</td>';
+				.'<td>'.PFN___('Xamosar_'.$PFN_rexistros->get('accion')).'</td>';
 
 			if ($PFN_rexistros->get('orixe')) {
 				$txt .= '<td><a href="../../navega.php?'

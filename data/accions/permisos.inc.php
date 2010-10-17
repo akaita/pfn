@@ -44,7 +44,7 @@ if ($PFN_vars->post('executa')) {
 
 		$PFN_accions->permisos($arquivo, $permisos);
 		$estado = $PFN_accions->estado_num('permisos');
-		$estado_accion = $PFN_conf->t('estado.permisos',intval($estado));
+		$estado_accion = PFN___('estado_permisos_'.intval($estado));
 	}
 
 	include ($PFN_paths['web'].'navega.inc.php');

@@ -28,9 +28,9 @@ programa. Si no ha sido así, escriba a la Free Software Foundation, Inc., en
 
 defined('OK') or die();
 
-$doar = $PFN_conf->t('i:doar');
-$doar_paypal = $PFN_conf->t('i:doar_paypal');
-$doar_tarxeta = $PFN_conf->t('i:doar_tarxeta');
+$doar = PFN___('i_doar');
+$doar_paypal = PFN___('i_doar_paypal');
+$doar_tarxeta = PFN___('i_doar_tarxeta');
 
 if (is_file($PFN_paths['tmp'].'instalar.lock')) {
 	@unlink($PFN_paths['tmp'].'instalar.lock');

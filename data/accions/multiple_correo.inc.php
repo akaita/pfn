@@ -51,13 +51,13 @@ if ($PFN_conf->g('columnas','multiple')
 
 	if (empty($para)) {
 		$estado = 4;
-		$estado_accion = $PFN_conf->t('estado.correo', $estado).'<br />';
+		$estado_accion = PFN___('estado_correo_'.$estado).'<br />';
 	} if (empty($titulo)) {
 		$estado = 2;
-		$estado_accion .= $PFN_conf->t('estado.correo', $estado).'<br />';
+		$estado_accion .= PFN___('estado_correo_'.$estado).'<br />';
 	} if (empty($mensaxe)) {
 		$estado = 3;
-		$estado_accion .= $PFN_conf->t('estado.correo', $estado).'<br />';
+		$estado_accion .= PFN___('estado_correo_'.$estado).'<br />';
 	}
 
 	if (preg_match('/[,;]/', $para)) {
@@ -74,7 +74,7 @@ if ($PFN_conf->g('columnas','multiple')
 				$cada_correo[$k] = $v;
 			} else {
 				$estado = 5;
-				$estado_accion .= $PFN_conf->t('estado.correo', $estado).$v.'<br />';
+				$estado_accion .= PFN___('estado_correo_'.$estado).$v.'<br />';
 
 				unset($cada_correo[$k]);
 			}
@@ -82,13 +82,13 @@ if ($PFN_conf->g('columnas','multiple')
 
 		if (count($cada_correo) == 0) {
 			$estado = 6;
-			$estado_accion .= $PFN_conf->t('estado.correo', $estado).'<br />';
+			$estado_accion .= PFN___('estado_correo_'.$estado).'<br />';
 		}
 	} elseif (PFN_check_correo($para)) {
 		$cada_correo = array($para);
 	} else {
 		$estado = 5;
-		$estado_accion .= $PFN_conf->t('estado.correo', $estado).$para.'<br />';
+		$estado_accion .= PFN___('estado_correo_'.$estado).$para.'<br />';
 	}
 
 	if ($estado === 1) {
@@ -125,10 +125,10 @@ if ($PFN_conf->g('columnas','multiple')
 
 				if ($estado !== true) {
 					$estado = 9;
-					$estado_accion .= $PFN_conf->t('estado.correo', $estado);
+					$estado_accion .= PFN___('estado_correo_'.$estado);
 				} elseif ($tamano > $PFN_conf->g('limite_correo')) {
 					$estado = 10;
-					$estado_accion .= $PFN_conf->t(array('estado.correo', $estado), PFN_peso($PFN_conf->g('limite_correo')));
+					$estado_accion .= PFN___('estado_correo_'.$estado, PFN_peso($PFN_conf->g('limite_correo')));
 				}
 
 				if ($estado != 1) {
@@ -143,7 +143,7 @@ if ($PFN_conf->g('columnas','multiple')
 
 					if (!$mail->AddAttachment($arquivo, str_replace(' ', '_', $v))) {
 						$estado = 7;
-						$estado_accion .= $PFN_conf->t('estado.correo', $estado);
+						$estado_accion .= PFN___('estado_correo_'.$estado);
 					}
 				}
 			}
@@ -152,7 +152,7 @@ if ($PFN_conf->g('columnas','multiple')
 		if ($estado == 1) {
 			$mail->Send();
 
-			$estado_accion .= $PFN_conf->t('estado.correo', $estado);
+			$estado_accion .= PFN___('estado_correo_'.$estado);
 		}
 
 		if ($estado == 1) {
@@ -174,11 +174,11 @@ if ($PFN_conf->g('columnas','multiple')
 		$arquivo = $PFN_conf->g('raiz','path').$PFN_accions->path_correcto($dir.'/').'/'.$v;
 
 		if (empty($v) || ($v == '.') || ($v == './') || !file_exists($arquivo)) {
-			$estado_accion .= $PFN_conf->t('estado.correo', 2).' '.$v.'<br />';
+			$estado_accion .= PFN___('estado_correo_2').' '.$v.'<br />';
 
 			unset($multiple_escollidos[$k]);
 		} elseif (is_dir($arquivo)) {
-			$estado_accion .= $PFN_conf->t('estado.correo', 11).' '.$v.'<br />';
+			$estado_accion .= PFN___('estado_correo_11').' '.$v.'<br />';
 
 			unset($multiple_escollidos[$k]);
 		} else {

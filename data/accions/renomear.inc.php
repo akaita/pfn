@@ -54,7 +54,7 @@ if ($PFN_vars->post('executa')) {
 
 		$PFN_accions->renomear($antes, $agora);
 		$estado = $PFN_accions->estado_num('renomear');
-		$estado_accion = $PFN_conf->t('estado.renomear',intval($estado));
+		$estado_accion = PFN___('estado_renomear_'.intval($estado));
 
 		if ($PFN_accions->estado('renomear')) {
 			if ($tipo == 'dir') {

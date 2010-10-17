@@ -49,7 +49,7 @@ if ($PFN_vars->post('executa')) {
 
 	$PFN_accions->novo_arq($cal, $destino, $PFN_vars->post('texto'), $PFN_vars->post('sobreescribir'));
 	$estado = $PFN_accions->estado_num('novo_arq');
-	$estado_accion = $PFN_conf->t('estado.novo_arq',intval($estado));
+	$estado_accion = PFN___('estado_novo_arq_'.intval($estado));
 
 	if ($PFN_accions->estado('novo_arq')) {
 		$erro = false;
@@ -59,7 +59,7 @@ if ($PFN_vars->post('executa')) {
 
 			if (($peso_este + $PFN_conf->g('raiz', 'peso_actual')) > $PFN_conf->g('raiz','peso_maximo')) {
 				@unlink($destino.'/'.$cal);
-				$estado_accion = $PFN_conf->t('estado.novo_arq', 6);
+				$estado_accion = PFN___('estado_novo_arq_6');
 				$erro = true;
 			}
 		}
@@ -68,7 +68,7 @@ if ($PFN_vars->post('executa')) {
 
 		if (!$ancho_banda) {
 			@unlink($destino.'/'.$cal);
-			$estado_accion = $PFN_conf->t('estado.novo_arq', 7);
+			$estado_accion = PFN___('estado_novo_arq_7');
 			$erro = true;
 		}
 

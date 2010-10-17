@@ -65,19 +65,19 @@ $b = 1;
 $txt = '<table class="tabla_informes" summary="">'
 	.'<tr><th style="text-align: left;">'
 		.'<a href="'.PFN_cambia_url(array('ud_ordenar','ud_modo','executa'), array('id',($ud_modo == 'ASC'?'DESC':'ASC'),'uso_disco'))
-		.'">'.$PFN_conf->t('Xcol_id').'</a></th>'
+		.'">'.PFN___('Xcol_id').'</a></th>'
 	.'<th style="text-align: left;">'
 		.'<a href="'.PFN_cambia_url(array('ud_ordenar','ud_modo','executa'), array('nome',($ud_modo == 'ASC'?'DESC':'ASC'),'uso_disco'))
-		.'">'.$PFN_conf->t('Xcol_nome').'</a></th>'
+		.'">'.PFN___('Xcol_nome').'</a></th>'
 	.'<th style="text-align: left;">'
 		.'<a href="'.PFN_cambia_url(array('ud_ordenar','ud_modo','executa'), array('limite',($ud_modo == 'ASC'?'DESC':'ASC'),'uso_disco'))
-		.'">'.$PFN_conf->t('Xcol_peso_limite').'</a></th>'
+		.'">'.PFN___('Xcol_peso_limite').'</a></th>'
 	.'<th style="text-align: left;">'
 		.'<a href="'.PFN_cambia_url(array('ud_ordenar','ud_modo','executa'), array('actual',($ud_modo == 'ASC'?'DESC':'ASC'),'uso_disco'))
-		.'">'.$PFN_conf->t('Xcol_peso_actual').'</a></th>'
+		.'">'.PFN___('Xcol_peso_actual').'</a></th>'
 	.'<th style="text-align: left;">'
 		.'<a href="'.PFN_cambia_url(array('ud_ordenar','ud_modo','executa'), array('libre',($ud_modo == 'ASC'?'DESC':'ASC'),'uso_disco'))
-		.'">'.$PFN_conf->t('Xcol_porcent_libre').'</a></th></tr>';
+		.'">'.PFN___('Xcol_porcent_libre').'</a></th></tr>';
 
 foreach ((array)$listado[$ud_ordenar] as $k => $v) {
 	$b++;
@@ -93,7 +93,7 @@ foreach ((array)$listado[$ud_ordenar] as $k => $v) {
 			.'<td>'.PFN_peso($listado['actual'][$k]).'</td>'
 			.'<td style="border: 1px solid #000;"><span style="display: block; border: 1px solid #CCC; width: '.$libre.'%; height: 15px; background-color: #'.$cor_libre.'; font-weight: bold;">'.$libre.'%</span></td></tr>';
 	} else {
-		$txt .= '<td colspan="3">'.$PFN_conf->t('sen_limite').'</td></tr>';
+		$txt .= '<td colspan="3">'.PFN___('sen_limite').'</td></tr>';
 	}
 }
 

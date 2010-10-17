@@ -29,18 +29,18 @@ programa. Si no ha sido así, escriba a la Free Software Foundation, Inc., en
 defined('OK') && defined('XESTION') or die();
 ?>
 <div id="ver_info">
-	<div class="bloque_info"><h1><?php echo $PFN_conf->t('xestion').' &raquo; '.$PFN_conf->t('Xtraduccion'); ?></h1></div>
+	<div class="bloque_info"><h1><?php echo PFN___('xestion').' &raquo; '.PFN___('Xtraduccion'); ?></h1></div>
 	<div class="bloque_info">
 		<div id="Xinformes_cab">
-			<div style="background: #EEE; text-align: center;"><a href="estado.php?<?php echo PFN_get_url(false); ?>"><?php echo $PFN_conf->t('Xcomprobar_traduccions'); ?></a></div>
+			<div style="background: #EEE; text-align: center;"><a href="estado.php?<?php echo PFN_get_url(false); ?>"><?php echo PFN___('Xcomprobar_traduccions'); ?></a></div>
 
-			<br /><?php echo $PFN_conf->t('Xtraduccion_intro'); ?><br />
+			<br /><?php echo PFN___('Xtraduccion_intro'); ?><br />
 			<form action="index.php?<?php echo PFN_get_url(false); ?>" method="post" onsubmit="return submitonce();">
 			<fieldset>
 			<input type="hidden" name="executa" value="escoller" />
 
 			<br /><div style="text-align: center;">
-				<strong><?php echo $PFN_conf->t('charset'); ?>:</strong>
+				<strong><?php echo PFN___('charset'); ?>:</strong>
 				<select name="tr_charset" tabindex="5">
 					<option value="US-ASCII"<?php echo ($tr_charset == 'US-ASCII')?' selected="selected"':''; ?>>US-ASCII United States</option>
 					<option value="ISO-8859-1"<?php echo ($tr_charset == 'ISO-8859-1')?' selected="selected"':''; ?>>ISO-8859-1 Westerm European</option>
@@ -74,24 +74,24 @@ defined('OK') && defined('XESTION') or die();
 					<option value="KO18-U"<?php echo ($tr_charset == 'KO18-U')?' selected="selected"':''; ?>>KO18-U Cyrillic</option>
 				</select>&nbsp;&nbsp;&nbsp;
 
-				<strong><?php echo $PFN_conf->t('Xlistar'); ?>:</strong>
+				<strong><?php echo PFN___('Xlistar'); ?>:</strong>
 				<select name="tr_listar">
-					<option value="todas"<?php echo ($tr_listar == 'todas')?' selected="selected"':''; ?>> <?php echo $PFN_conf->t('Xtodas'); ?></option>
-					<option value="vacias"<?php echo ($tr_listar == 'vacias')?' selected="selected"':''; ?>> <?php echo $PFN_conf->t('Xsen_traducir'); ?></option>
+					<option value="todas"<?php echo ($tr_listar == 'todas')?' selected="selected"':''; ?>> <?php echo PFN___('Xtodas'); ?></option>
+					<option value="vacias"<?php echo ($tr_listar == 'vacias')?' selected="selected"':''; ?>> <?php echo PFN___('Xsen_traducir'); ?></option>
 				</select>
 
 				<br />
 
-				<strong><?php echo $PFN_conf->t('Xarquivo'); ?>:</strong>
+				<strong><?php echo PFN___('Xarquivo'); ?>:</strong>
 				<select name="tr_arquivo">
 					<?php foreach (array('axuda','estado','idiomas','instalar','web','xestion') as $v) { ?>
 					<option value="<?php echo $v; ?>"<?php echo ($v == $tr_arquivo)?' selected="selected"':''; ?>> <?php echo ucfirst($v); ?> </option>
 					<?php } ?>
 				</select>&nbsp;&nbsp;&nbsp;
 
-				<strong><?php echo $PFN_conf->t('orixe'); ?>:</strong>
+				<strong><?php echo PFN___('orixe'); ?>:</strong>
 				<select name="tr_orixe">
-					<option value=""><?php echo $PFN_conf->t('Xescolle_idioma'); ?></option>
+					<option value=""><?php echo PFN___('Xescolle_idioma'); ?></option>
 					<?php
 					foreach ($idiomas_valen as $k => $v) {
 					?>
@@ -99,17 +99,17 @@ defined('OK') && defined('XESTION') or die();
 					<?php } ?>
 				</select>&nbsp;&nbsp;&nbsp;
 
-				<strong><?php echo $PFN_conf->t('destino'); ?>:</strong>
+				<strong><?php echo PFN___('destino'); ?>:</strong>
 				<select name="tr_destino">
-					<option value=""><?php echo $PFN_conf->t('Xescolle_idioma'); ?></option>
+					<option value=""><?php echo PFN___('Xescolle_idioma'); ?></option>
 					<?php foreach ($lista_idiomas as $k => $v) { ?>
 					<option value="<?php echo $k; ?>"<?php echo ($k == $tr_destino)?' selected="selected"':''; ?>> <?php echo $v; ?> </option>
 					<?php } ?>
 				</select>&nbsp;&nbsp;&nbsp;
 
 				<br /><br />
-				<input type="reset" value=" <?php echo $PFN_conf->t('voltar'); ?> " class="boton" onclick="enlace('../index.php?<?php echo PFN_get_url(false); ?>');" />
-				<input type="submit" value=" <?php echo $PFN_conf->t('aceptar'); ?> " style="margin-left: 40px;" class="boton" /><br />
+				<input type="reset" value=" <?php echo PFN___('voltar'); ?> " class="boton" onclick="enlace('../index.php?<?php echo PFN_get_url(false); ?>');" />
+				<input type="submit" value=" <?php echo PFN___('aceptar'); ?> " style="margin-left: 40px;" class="boton" /><br />
 			</div><br />
 			</fieldset>
 			</form>
@@ -122,10 +122,10 @@ defined('OK') && defined('XESTION') or die();
 
 				if (count($erros)) {
 					foreach ($erros as $v) {
-						echo $PFN_conf->t('Xerros',$v).'<br />';
+						echo PFN___('Xerros_'.$v).'<br />';
 					}
 				} else {
-					echo $PFN_conf->t('Xok',6);
+					echo PFN___('Xok_6');
 				}
 
 				echo '</div><br />';
@@ -145,7 +145,7 @@ defined('OK') && defined('XESTION') or die();
 				if (is_array($v)) {
 					foreach ($v as $k2 => $v2) {
 						if (empty($datos_destino[$k][$k2]) || $tr_listar == 'todas') {
-							echo "\n".'<h1>'.$PFN_conf->t('Xclave').': '.$k.'</h1><br />';
+							echo "\n".'<h1>'.PFN___('Xclave').': '.$k.'</h1><br />';
 							break;
 						}
 					}
@@ -160,7 +160,7 @@ defined('OK') && defined('XESTION') or die();
 							$v2 = preg_replace('/\<((\/|\w).*)\>/sU','&lt;\\1&gt;', $v2);
 							$v2 = PFN_cambia_intros($v2);
 
-							echo"\n". '<br /><h2>'.$PFN_conf->t('Xsub_clave').': '.$k2.'</h2><br />'
+							echo"\n". '<br /><h2>'.PFN___('Xsub_clave').': '.$k2.'</h2><br />'
 								.'<div class="fondo_gris">'.$v2.'<br />'
 								.'<textarea name="idioma_i['.$k.']['.$k2.']" style="width: 680px;" rows="'.$alto.'">'
 								.$txt_destino.'</textarea></div><br />';
@@ -172,7 +172,7 @@ defined('OK') && defined('XESTION') or die();
 					$txt_destino = preg_replace('/(<br>|<br \/>)/i', "\n", $datos_destino[$k]);
 
 					if (empty($txt_destino) || $tr_listar == 'todas') {
-						echo "\n".'<h1>'.$PFN_conf->t('Xclave').': '.$k.'</h1><br />';
+						echo "\n".'<h1>'.PFN___('Xclave').': '.$k.'</h1><br />';
 						$alto = intval(strlen($v)/85);
 						$alto = (($alto == 0)?1:$alto)+1;
 						$v = preg_replace('/(<br>|<br \/>)/i',"\n", $v);
@@ -194,8 +194,8 @@ defined('OK') && defined('XESTION') or die();
 
 			<?php if (!empty($executa)) { ?>
 			<div style="text-align: center;">
-				<input type="reset" value=" <?php echo $PFN_conf->t('Xreiniciar_campos'); ?> " class="boton" />
-				<input type="submit" value=" <?php echo $PFN_conf->t('Xgardar_idioma'); ?> " style="margin-left: 40px;" class="boton" />
+				<input type="reset" value=" <?php echo PFN___('Xreiniciar_campos'); ?> " class="boton" />
+				<input type="submit" value=" <?php echo PFN___('Xgardar_idioma'); ?> " style="margin-left: 40px;" class="boton" />
 			</div>
 			<?php } ?>
 			<br /><br />

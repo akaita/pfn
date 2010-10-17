@@ -59,10 +59,8 @@ if ((count($erros) == 0) && $PFN_vars->post('executa')) {
 	$alertas = $PFN_arquivos->comprobar_sintaxis($texto);
 
 	if (empty($alertas)) {
-		$PFN_conf->textos('estado');
-
 		$estado = $PFN_arquivos->abre_escribe($nome_arq, $texto);
-		$estado_accion = $PFN_conf->t('estado.editar', intval($estado));
+		$estado_accion = PFN___('estado_editar_'.intval($estado));
 		$ok = 5;
 	} else {
 		$erros[] = 28;

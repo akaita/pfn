@@ -40,7 +40,6 @@ include_once ($PFN_paths['include'].'funcions.php');
 include_once ($PFN_paths['include'].'class_conf.php');
 include_once ($PFN_paths['include'].'class_vars.php');
 
-$PFN_conf->textos('web');
 $PFN_tempo->rexistra('precodigo');
 
 $ok = false;
@@ -56,12 +55,12 @@ if (($PFN_vars->post('recuperar_usuario') != '')
 	$ok = $PFN_usuarios->nova_contrasinal();
 
 	if ($ok === 1) {
-		$txt_erro = $PFN_conf->t('avisos_novo_contrasinal', 1);
+		$txt_erro = PFN___('avisos_novo_contrasinal_1');
 	} else {
-		$txt_erro = $PFN_conf->t('avisos_novo_contrasinal', $ok);
+		$txt_erro = PFN___('avisos_novo_contrasinal_'.$ok);
 	}
 } else {
-	$txt_erro = $PFN_conf->t('txt_novo_contrasinal');
+	$txt_erro = PFN___('txt_novo_contrasinal');
 }
 
 $PFN_tempo->rexistra('preplantillas');

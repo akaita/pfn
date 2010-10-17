@@ -30,7 +30,7 @@ programa. Si no ha sido así, escriba a la Free Software Foundation, Inc., en
 defined('OK') or die();
 ?>
 
-<h1 id="benvido"><span><?php echo $PFN_conf->t('desbloquear_usuario'); ?><span></h1>
+<h1 id="benvido"><span><?php echo PFN___('desbloquear_usuario'); ?><span></h1>
 
 <div class="aviso" style="width: 230px; text-align: center; margin-left: 250px;"><?php echo $txt_erro; ?></div>
 
@@ -41,16 +41,16 @@ defined('OK') or die();
 			<input type="hidden" name="executa" value="true" />
 
 			<p>
-				<label for="desbloquear_usuario"><?php echo $PFN_conf->t('usuario'); ?>:</label>
+				<label for="desbloquear_usuario"><?php echo PFN___('usuario'); ?>:</label>
 				<br /><input type="text" id="desbloquear_usuario" name="desbloquear_usuario" class="formulario" />
 			</p>
 
 			<p>
-				<label for="desbloquear_email"><?php echo $PFN_conf->t('correo'); ?>:</label>
+				<label for="desbloquear_email"><?php echo PFN___('correo'); ?>:</label>
 				<br /><input type="text" id="desbloquear_email" name="desbloquear_email" class="formulario" />
 			</p>
 
-			<p><input type="submit" name="Submit" value=" <?php echo $PFN_conf->t('enviar'); ?> " class="boton" /></p>
+			<p><input type="submit" name="Submit" value=" <?php echo PFN___('enviar'); ?> " class="boton" /></p>
 		</fieldset>
 	</form>
 
@@ -63,5 +63,5 @@ defined('OK') or die();
 <?php } ?>
 
 <div id="login_mais_opcions">
-	<a href="index.php"><?php echo $PFN_conf->t('voltar'); ?></a>
+	<a href="index.php"><?php echo PFN___('voltar'); ?></a>
 </div>

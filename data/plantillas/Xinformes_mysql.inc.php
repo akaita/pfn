@@ -28,8 +28,8 @@ programa. Si no ha sido así, escriba a la Free Software Foundation, Inc., en
 
 defined('OK') && defined('XESTION') or die();
 ?>
-				<strong><?php echo $PFN_conf->t('Xdesc_mysql'); ?></strong><br /><br />
-				<label for="my_lineas"><?php echo $PFN_conf->t('Xamosar_lineas'); ?>:</label>
+				<strong><?php echo PFN___('Xdesc_mysql'); ?></strong><br /><br />
+				<label for="my_lineas"><?php echo PFN___('Xamosar_lineas'); ?>:</label>
 				<input type="text" name="my_lineas" id="my_lineas" value="<?php echo $my_lineas; ?>" size="5" /><br /><br />
-				<label for="my_buscar"><?php echo $PFN_conf->t('Xbuscar_texto'); ?>:</label>
+				<label for="my_buscar"><?php echo PFN___('Xbuscar_texto'); ?>:</label>
 				<input type="text" name="my_buscar" id="my_buscar" value="<?php echo $PFN_vars->post('my_buscar'); ?>" size="20" />

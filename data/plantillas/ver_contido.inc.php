@@ -28,7 +28,7 @@ programa. Si no ha sido así, escriba a la Free Software Foundation, Inc., en
 
 defined('OK') && defined('ACCION') or die();
 ?>
-		<div class="bloque_info"><h1><?php echo $PFN_conf->t('accion').' &raquo; '.$PFN_conf->t('ver_contido'); ?></h1></div>
+		<div class="bloque_info"><h1><?php echo PFN___('accion').' &raquo; '.PFN___('ver_contido'); ?></h1></div>
 		<div class="bloque_info">
 			<pre><?php echo PFN_textoArquivo2pantalla($PFN_arquivos->get_contido($arquivo), $e_php, true); ?></pre>
 		</div>

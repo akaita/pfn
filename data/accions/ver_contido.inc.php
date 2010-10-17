@@ -48,10 +48,10 @@ if ($PFN_niveles->filtrar($cal) && is_file($arquivo)) {
 		include ($PFN_paths['plantillas'].'info_cab.inc.php');
 		include ($PFN_paths['plantillas'].'ver_contido.inc.php');
 	} elseif ($estado === -1) {
-		$estado_accion = $PFN_conf->t('estado.descargar', 3);
+		$estado_accion = PFN___('estado_descargar_3');
 		include ($PFN_paths['web'].'navega.inc.php');
 	} else {
-		$estado_accion = $PFN_conf->t('estado.descargar', 2);
+		$estado_accion = PFN___('estado_descargar_2');
 		include ($PFN_paths['web'].'navega.inc.php');
 	}
 } else {

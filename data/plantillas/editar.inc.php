@@ -28,7 +28,7 @@ programa. Si no ha sido así, escriba a la Free Software Foundation, Inc., en
 
 defined('OK') && defined('ACCION') or die();
 ?>
-		<div class="bloque_info"><h1><?php echo $PFN_conf->t('accion').' &raquo; '.$PFN_conf->t('editar'); ?></h1></div>
+		<div class="bloque_info"><h1><?php echo PFN___('accion').' &raquo; '.PFN___('editar'); ?></h1></div>
 		<div style="width: 100%; text-align: center;">
 			<script type="text/javascript"><!--
 
@@ -41,12 +41,12 @@ defined('OK') && defined('ACCION') or die();
 
 			<form id="form_tamano" action="accion.php?<?php echo PFN_cambia_url(array('accion','cal'),array('editar',$cal),false); ?>" method="post" onsubmit="return cubre_texto2();">
 			<fieldset>
-			<label for="ancho"><?php echo $PFN_conf->t('tamano'); ?>:</label>
+			<label for="ancho"><?php echo PFN___('tamano'); ?>:</label>
 			<input type="text" id="ancho" name="ancho" value="<?php echo $editar_ancho; ?>" style="width: 50px;" />
 			&nbsp;x&nbsp;
 			<input type="text" id="alto" name="alto" value="<?php echo $editar_alto; ?>" style="width: 50px;" />
 			&nbsp;&nbsp;
-			<input type="submit" name="cambiar_tamano" value="<?php echo $PFN_conf->t('enviar'); ?>" />
+			<input type="submit" name="cambiar_tamano" value="<?php echo PFN___('enviar'); ?>" />
 			<input type="hidden" name="texto2" id="texto2" value="" />
 			</fieldset>
 			</form>
@@ -57,8 +57,8 @@ defined('OK') && defined('ACCION') or die();
 			<br />
 			<textarea id="texto" name="texto" style="width: <?php echo $editar_ancho; ?>px; height: <?php echo $editar_alto; ?>px"><?php echo $texto; ?></textarea>
 			<p><br />
-			<input type="reset" value=" <?php echo $PFN_conf->t('cancelar'); ?> " class="boton" onclick="enlace('navega.php?<?php echo PFN_get_url(false); ?>');" />
-			<input type="submit" value=" <?php echo $PFN_conf->t('aceptar'); ?> " class="boton" style="margin-left: 40px;" />
+			<input type="reset" value=" <?php echo PFN___('cancelar'); ?> " class="boton" onclick="enlace('navega.php?<?php echo PFN_get_url(false); ?>');" />
+			<input type="submit" value=" <?php echo PFN___('aceptar'); ?> " class="boton" style="margin-left: 40px;" />
 			</p>
 			</fieldset>
 			</form>

@@ -29,7 +29,7 @@ programa. Si no ha sido así, escriba a la Free Software Foundation, Inc., en
 
 defined('OK') && defined('ACCION') or die();
 ?>
-		<div class="bloque_info"><h1><?php echo $PFN_conf->t('accion').' &raquo; '.$PFN_conf->t('enviar_correo'); ?></h1></div>
+		<div class="bloque_info"><h1><?php echo PFN___('accion').' &raquo; '.PFN___('enviar_correo'); ?></h1></div>
 		<?php if (strlen($estado_accion)) { ?>
 		<div class="aviso"><?php echo $estado_accion; ?></div>
 		<?php } if ($estado === true) { ?>
@@ -40,22 +40,22 @@ defined('OK') && defined('ACCION') or die();
 
 		<table class="tabla_info" summary="">
 			<tr>
-				<th><label for="para"><?php echo $PFN_conf->t('para'); ?>:</label></th>
+				<th><label for="para"><?php echo PFN___('para'); ?>:</label></th>
 				<td><input type="text" id="para" name="para" value="<?php echo htmlentities($para, ENT_NOQUOTES, $PFN_conf->g('charset')); ?>" class="text" /></td>
 			</tr>
 			<tr>
-				<th><label for="titulo"><?php echo $PFN_conf->t('titulo'); ?>:</label></th>
+				<th><label for="titulo"><?php echo PFN___('titulo'); ?>:</label></th>
 				<td><input type="text" id="titulo" name="titulo" value="<?php echo htmlentities($titulo, ENT_NOQUOTES, $PFN_conf->g('charset')); ?>" class="text" /></td>
 			</tr>
 			<tr>
-				<th><label for="mensaxe"><?php echo $PFN_conf->t('mensaxe'); ?>:</label></th>
+				<th><label for="mensaxe"><?php echo PFN___('mensaxe'); ?>:</label></th>
 				<td><textarea id="mensaxe" name="mensaxe" style="height: 200px;"><?php echo htmlentities($mensaxe, ENT_NOQUOTES, $PFN_conf->g('charset')); ?></textarea></td>
 			</tr>
 			<tr>
 				<th>&nbsp;</th>
 				<td>
-					<input type="reset" value=" <?php echo $PFN_conf->t('cancelar'); ?> " class="boton" onclick="enlace('navega.php?<?php echo PFN_get_url(false); ?>');" />
-					<input type="submit" value=" <?php echo $PFN_conf->t('aceptar'); ?> " class="boton" style="margin-left: 40px;" />
+					<input type="reset" value=" <?php echo PFN___('cancelar'); ?> " class="boton" onclick="enlace('navega.php?<?php echo PFN_get_url(false); ?>');" />
+					<input type="submit" value=" <?php echo PFN___('aceptar'); ?> " class="boton" style="margin-left: 40px;" />
 				</td>
 			</tr>
 		</table>

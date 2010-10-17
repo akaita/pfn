@@ -32,13 +32,11 @@ function envia_erro ($erro) {
 	global $PFN_vars, $PFN_conf, $PFN_paths, $relativo;
 
 	if ($PFN_conf->g('envio_alertas')) {
-		$PFN_conf->textos('web');
-
 		$m = 'Alerta por intento de acceso al servidor '.$PFN_vars->server('SERVER_NAME')
 			."\nEn la URL ".$PFN_vars->server('PHP_SELF')
 			."\nA las ".date('Y-m-d H:i')
 			."\nDesde la IP ".$PFN_vars->ip()
-			."\n\n".$PFN_conf->t('alertas_sesion', $erro);
+			."\n\n".PFN___('alertas_sesion_'.$erro);
 
 		ob_start();
 		echo "\n\nDatos de GET:\n";

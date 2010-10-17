@@ -31,10 +31,10 @@ defined('OK') or die();
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $PFN_conf->g('idioma'); ?>">
 	<head>
-		<title><?php echo $PFN_conf->t('PFN'); ?></title>
+		<title><?php echo PFN___('PFN'); ?></title>
 
 		<meta http-equiv="Content-Type" content="text/html; charset=<?php echo $PFN_conf->g('charset'); ?>" />
-		<meta name="keywords" content="<?php echo $PFN_conf->t('PFN'); ?>" />
+		<meta name="keywords" content="<?php echo PFN___('PFN'); ?>" />
 		<meta name="description" content="PHPfileNavigator: Administrador de ficheros y directorios via web." />
 		<meta name="author" content="Lito, phpfilenavigator@litoweb.net" />
 		<meta name="version" content="<?php echo $PFN_version; ?>" />

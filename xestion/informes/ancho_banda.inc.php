@@ -82,19 +82,19 @@ $b = 1;
 $txt = '<table class="tabla_informes" summary="">'
 	.'<tr><th style="text-align: left;">'
 		.'<a href="'.PFN_cambia_url(array('ab_ordenar','ab_modo','ab_mes','ab_ano','executa'), array('id',($ab_modo == 'ASC'?'DESC':'ASC'),$ab_mes,$ab_ano,'ancho_banda'))
-		.'">'.$PFN_conf->t('Xcol_id').'</a></th>'
+		.'">'.PFN___('Xcol_id').'</a></th>'
 	.'<th style="text-align: left;">'
 		.'<a href="'.PFN_cambia_url(array('ab_ordenar','ab_modo','ab_mes','ab_ano','executa'), array('nome',($ab_modo == 'ASC'?'DESC':'ASC'),$ab_mes,$ab_ano,'ancho_banda'))
-		.'">'.$PFN_conf->t('Xcol_nome').'</a></th>'
+		.'">'.PFN___('Xcol_nome').'</a></th>'
 	.'<th style="text-align: left;">'
 		.'<a href="'.PFN_cambia_url(array('ab_ordenar','ab_modo','ab_mes','ab_ano','executa'), array('limite',($ab_modo == 'ASC'?'DESC':'ASC'),$ab_mes,$ab_ano,'ancho_banda'))
-		.'">'.$PFN_conf->t('Xcol_ancho_banda_limite').'</a></th>'
+		.'">'.PFN___('Xcol_ancho_banda_limite').'</a></th>'
 	.'<th style="text-align: left;">'
 		.'<a href="'.PFN_cambia_url(array('ab_ordenar','ab_modo','ab_mes','ab_ano','executa'), array('actual',($ab_modo == 'ASC'?'DESC':'ASC'),$ab_mes,$ab_ano,'ancho_banda'))
-		.'">'.$PFN_conf->t('Xcol_ancho_banda_actual').'</a></th>'
+		.'">'.PFN___('Xcol_ancho_banda_actual').'</a></th>'
 	.'<th style="text-align: left;">'
 		.'<a href="'.PFN_cambia_url(array('ab_ordenar','ab_modo','ab_mes','ab_ano','executa'), array('libre',($ab_modo == 'ASC'?'DESC':'ASC'),$ab_mes,$ab_ano,'ancho_banda'))
-		.'">'.$PFN_conf->t('Xcol_porcent_libre').'</a></th></tr>';
+		.'">'.PFN___('Xcol_porcent_libre').'</a></th></tr>';
 
 foreach ((array)$listado[$ab_ordenar] as $k => $v) {
 	$b++;
@@ -106,11 +106,11 @@ foreach ((array)$listado[$ab_ordenar] as $k => $v) {
 	if ($listado['limite'][$k]) {
 		$libre = $listado['libre'][$k];
 		$cor_libre = ($libre > 50)?'0C0':(($libre > 25)?'FC6':(($libre > 10)?'F60':'F00'));
-		$txt .= '<td>'.(($listado['limite'][$k] === -1)?$PFN_conf->t('sen_limite'):PFN_peso($listado['limite'][$k])).'</td>'
+		$txt .= '<td>'.(($listado['limite'][$k] === -1)?PFN___('sen_limite'):PFN_peso($listado['limite'][$k])).'</td>'
 			.'<td>'.PFN_peso($listado['actual'][$k]).'</td>'
 			.'<td style="border: 1px solid #000;"><span style="display: block; border: 1px solid #CCC; width: '.$libre.'%; height: 15px; background-color: #'.$cor_libre.'; font-weight: bold;">'.$libre.'%</span></td></tr>';
 	} else {
-		$txt .= '<td colspan="3">'.$PFN_conf->t('sen_datos').'</td></tr>';
+		$txt .= '<td colspan="3">'.PFN___('sen_datos').'</td></tr>';
 	}
 }
 

@@ -29,7 +29,7 @@ programa. Si no ha sido así, escriba a la Free Software Foundation, Inc., en
 
 defined('OK') && defined('ACCION') or die();
 ?>
-		<div class="bloque_info"><h1><?php echo $PFN_conf->t('accion').' &raquo; '.$PFN_conf->t('redimensionar'); ?></h1></div>
+		<div class="bloque_info"><h1><?php echo PFN___('accion').' &raquo; '.PFN___('redimensionar'); ?></h1></div>
 		<div class="aviso">
 			<?php if ($vale) { ?>
 
@@ -66,24 +66,24 @@ defined('OK') && defined('ACCION') or die();
 
 			//--></script>
 
-			<p><?php echo $PFN_conf->t('redimensionar_dir_txt'); ?></p>
+			<p><?php echo PFN___('redimensionar_dir_txt'); ?></p>
 			<form id="formulario" action="accion.php?<?php echo PFN_cambia_url('accion','redimensionar_dir',false); ?>" method="post" onsubmit="return procesa_imaxes();">
 			<fieldset>
 
 			<br /><input type="checkbox" name="sobreescribir" id="sobreescribir" value="si" />
-			&nbsp;&nbsp;<label for="sobreescribir"><?php echo $PFN_conf->t('sobreescribir_reducidas'); ?></label>
+			&nbsp;&nbsp;<label for="sobreescribir"><?php echo PFN___('sobreescribir_reducidas'); ?></label>
 
 			<br /><input type="checkbox" name="previsualizar" id="previsualizar" value="si" />
-			&nbsp;&nbsp;<label for="previsualizar"><?php echo $PFN_conf->t('amosar_previsualizacions'); ?></label>
+			&nbsp;&nbsp;<label for="previsualizar"><?php echo PFN___('amosar_previsualizacions'); ?></label>
 
 			<br /><br />
 
-			<input type="reset" value=" <?php echo $PFN_conf->t('cancelar'); ?> " class="boton" id="btn_reset" onclick="enlace('navega.php?<?php echo PFN_get_url(false); ?>');" />
-			<input type="submit" value=" <?php echo $PFN_conf->t('aceptar'); ?> " class="boton" id="btn_submit" style="margin-left: 40px;" />
+			<input type="reset" value=" <?php echo PFN___('cancelar'); ?> " class="boton" id="btn_reset" onclick="enlace('navega.php?<?php echo PFN_get_url(false); ?>');" />
+			<input type="submit" value=" <?php echo PFN___('aceptar'); ?> " class="boton" id="btn_submit" style="margin-left: 40px;" />
 			</fieldset>
 			</form>
 			<?php } else { ?>
-			<?php echo $PFN_conf->t('estado.redimensionar_dir',0); ?>
+			<?php echo PFN___('estado_redimensionar_dir_0'); ?>
 			<?php } ?>
 		</div>
 

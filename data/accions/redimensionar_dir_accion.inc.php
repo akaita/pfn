@@ -60,7 +60,7 @@ if ($PFN_vars->get('executa') && !empty($cal) && ($pos > -1)) {
 	$url_imaxe = $dir.'/'.$cal.'/'.$valen[$pos];
 
 	if (empty($imaxe)) {
-		$txt .= $PFN_conf->t('estado.redimensionar_dir',2).' <strong>'.$url_imaxe.'</strong><br />';
+		$txt .= PFN___('estado_redimensionar_dir_2').' <strong>'.$url_imaxe.'</strong><br />';
 	}
 
 	$txt .= $previsualizar?'<span class="mini">':('('.($pos+1).'/'.count($valen).') ');
@@ -71,13 +71,13 @@ if ($PFN_vars->get('executa') && !empty($cal) && ($pos > -1)) {
 		if ($previsualizar) {
 			$txt .= '<img src="'.$PFN_imaxes->sello($url_imaxe,false).'" />';
 		} else {
-			$txt .= $PFN_conf->t('estado.redimensionar_dir',1).'<strong>'.$url_imaxe.'</strong><br />';
+			$txt .= PFN___('estado_redimensionar_dir_1').'<strong>'.$url_imaxe.'</strong><br />';
 		}
 	} else {
 		if ($previsualizar) {
 			$txt .= '<img src="'.$PFN_imaxes->sello($url_imaxe,false).'" />';
 		} else {
-			$txt .= $PFN_conf->t('estado.redimensionar_dir',4).'<strong>'.$url_imaxe.'</strong><br />';
+			$txt .= PFN___('estado_redimensionar_dir_4').'<strong>'.$url_imaxe.'</strong><br />';
 		}
 	}
 
@@ -87,7 +87,7 @@ if ($PFN_vars->get('executa') && !empty($cal) && ($pos > -1)) {
 		$mais = $pos+1;
 	}
 } else {
-	$txt .= $PFN_conf->t('estado.redimensionar_dir',3).'<br />';
+	$txt .= PFN___('estado_redimensionar_dir_3').'<br />';
 }
 
 if ($previsualizar && ($pos % 4) == 0) {

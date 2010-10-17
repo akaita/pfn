@@ -35,15 +35,15 @@ imaxe.src = '<?php echo $PFN_conf->g('estilo'); ?>imx/subir_url.gif';
 
 //--></script>
 <div id="ver_info">
-	<div class="bloque_info"><h1><?php echo $PFN_conf->t('accion').' &raquo; '.$PFN_conf->t('subir_url'); ?></h1></div>
+	<div class="bloque_info"><h1><?php echo PFN___('accion').' &raquo; '.PFN___('subir_url'); ?></h1></div>
 	<div class="bloque_info">
 		<form id="form_accion" action="accion.php?<?php echo PFN_get_url(false); ?>" method="post" onsubmit="return submitonce();">
 		<fieldset>
 
 		<div id="subida_espera" style="display: none;">
-			<div class="aviso"><?php echo $PFN_conf->t('estado.subir_url',5); ?></div><br /><br />
+			<div class="aviso"><?php echo PFN___('estado_subir_url_5'); ?></div><br /><br />
 			<input type="hidden" id="cancelar" name="cancelar" value="" />
-			<input type="button" id="btn_cancelar" value=" <?php echo $PFN_conf->t('cancelar'); ?> " class="boton" onclick="anula_envio();" />
+			<input type="button" id="btn_cancelar" value=" <?php echo PFN___('cancelar'); ?> " class="boton" onclick="anula_envio();" />
 		</div>
 
 		<div id="capa_formulario" style="display: '';">
@@ -52,11 +52,11 @@ imaxe.src = '<?php echo $PFN_conf->g('estilo'); ?>imx/subir_url.gif';
 			<input type="hidden" name="executa" value="true" />
 			<table class="tabla_info" summary="">
 				<tr>
-					<th><label for="nome_url"><?php echo $PFN_conf->t('direccion_url'); ?>:</label></th>
+					<th><label for="nome_url"><?php echo PFN___('direccion_url'); ?>:</label></th>
 					<td><input type="text" id="nome_url" name="nome_url" class="text" /></td>
 				</tr>
 				<tr>
-					<th><label for="nome_arquivo"><?php echo $PFN_conf->t('nome_arquivo'); ?>:</label></th>
+					<th><label for="nome_arquivo"><?php echo PFN___('nome_arquivo'); ?>:</label></th>
 					<td><input type="text" id="nome_arquivo" name="nome_arquivo" class="text" /></td>
 				</tr>
 				<?php foreach ($PFN_inc->crea_formulario('url') as $v) { ?>
@@ -66,14 +66,14 @@ imaxe.src = '<?php echo $PFN_conf->g('estilo'); ?>imx/subir_url.gif';
 				</tr>
 				<?php } ?>
 				<tr>
-					<th><label for="sobreescribir"><?php echo $PFN_conf->t("sobreescribir"); ?></label></th>
+					<th><label for="sobreescribir"><?php echo PFN___('sobreescribir'); ?></label></th>
 					<td><input type="checkbox" id="sobreescribir" name="sobreescribir" value="1" class="checkbox" /></td>
 				</tr>
 				<tr>
 					<th>&nbsp;</th>
 					<td>
-						<input type="reset" value=" <?php echo $PFN_conf->t('cancelar'); ?> " class="boton" onclick="enlace('navega.php?<?php echo PFN_get_url(false); ?>');" />
-						<input type="submit" name="btn_aceptar" value=" <?php echo $PFN_conf->t('aceptar'); ?> " class="boton" onclick="amosa_espera();" style="margin-left: 40px;" />
+						<input type="reset" value=" <?php echo PFN___('cancelar'); ?> " class="boton" onclick="enlace('navega.php?<?php echo PFN_get_url(false); ?>');" />
+						<input type="submit" name="btn_aceptar" value=" <?php echo PFN___('aceptar'); ?> " class="boton" onclick="amosa_espera();" style="margin-left: 40px;" />
 					</td>
 				</tr>
 			</table>
@@ -91,7 +91,7 @@ function anula_envio (boton) {
 	var obx_btn_cancelar = document.getElementById('btn_cancelar');
 
 	obx_cancelar.value = 'cancelar';
-	obx_btn_cancelar.value = '<?php echo addslashes(PFN_quitaHtmlentities($PFN_conf->t('anulando'))); ?>';
+	obx_btn_cancelar.value = '<?php echo addslashes(PFN_quitaHtmlentities(PFN___('anulando'))); ?>';
 	obx_btn_cancelar.disabled = true;
 
 	obx_form.submit();

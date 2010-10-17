@@ -34,7 +34,7 @@ $idiomas_valen = array();
 $txt_informe = '';
 $idiomas_arquivos = array('axuda','estado','idiomas','instalar','web','xestion');
 
-$lista_idiomas = $PFN_conf->t('lista_idiomas');
+$lista_idiomas = PFN___('lista_idiomas');
 asort($lista_idiomas);
 
 foreach ($lista_idiomas as $k => $v) {
@@ -50,7 +50,7 @@ if ($executa == 'comprobar'
 	$path_base = $PFN_paths['idiomas'].$PFN_niveles->path_correcto($tr_idioma_base);
 
 	$txt_informe = '<table class="tabla_informes" summary="">'
-		."\n".'<tr><th>'.$PFN_conf->t('idioma').'</th>';
+		."\n".'<tr><th>'.PFN___('idioma').'</th>';
 
 	foreach ($idiomas_arquivos as $v) {
 		$txt_informe .= '<th>'.ucfirst($v).'</th>';
@@ -73,9 +73,9 @@ if ($executa == 'comprobar'
 		}
 	}
 
-	$txt_informe .= '<th>'.$PFN_conf->t('descargar').'</th>'
+	$txt_informe .= '<th>'.PFN___('descargar').'</th>'
 		.'</tr>'."\n".'<tr style="text-align: right;"><td>'
-		.$PFN_conf->t('lista_idiomas',$tr_idioma_base).'</td>';
+		.PFN___('lista_idiomas_'.$tr_idioma_base).'</td>';
 
 	foreach ($idiomas_arquivos as $v) {
 		$txt_informe .= '<td style="background: #'
@@ -83,8 +83,8 @@ if ($executa == 'comprobar'
 	}
 
 	$txt_informe .= '<td><ul class="accions"><li class="descargar"><a href="descargar.php?'
-		.PFN_cambia_url('idioma',$tr_idioma_base,false).'" title="'.$PFN_conf->t('descargar')
-		.'"><span class="oculto">'.$PFN_conf->t('descargar').'</span></a></li></ul></td></tr>';
+		.PFN_cambia_url('idioma',$tr_idioma_base,false).'" title="'.PFN___('descargar')
+		.'"><span class="oculto">'.PFN___('descargar').'</span></a></li></ul></td></tr>';
 
 	foreach ($idiomas_valen as $k => $v) {
 		if ($k == $tr_idioma_base) {
@@ -92,7 +92,7 @@ if ($executa == 'comprobar'
 		}
 
 		$txt_informe .= "\n".'<tr style="text-align: right;"><td>'
-			.$PFN_conf->t('lista_idiomas',$k).'</td>';
+			.PFN___('lista_idiomas_'.$k).'</td>';
 
 		foreach ($idiomas_arquivos as $v2) {
 			$cnt_este = 0;
@@ -119,8 +119,8 @@ if ($executa == 'comprobar'
 		}
 
 		$txt_informe .= '<td><ul class="accions"><li class="descargar"><a href="descargar.php?'
-			.PFN_cambia_url('idioma',$k,false).'" title="'.$PFN_conf->t('descargar')
-			.'"><span class="oculto">'.$PFN_conf->t('descargar').'</span></a></li></ul></td></tr>';
+			.PFN_cambia_url('idioma',$k,false).'" title="'.PFN___('descargar')
+			.'"><span class="oculto">'.PFN___('descargar').'</span></a></li></ul></td></tr>';
 	}
 
 	$txt_informe .= '</table>';

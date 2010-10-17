@@ -43,10 +43,10 @@ $estado = $PFN_accions->log_ancho_banda($tamano, true);
 
 if ($estado !== true) {
 	$estado = 9;
-	$estado_accion = $PFN_conf->t('estado.correo', $estado);
+	$estado_accion = PFN___('estado_correo_'.$estado);
 } elseif ($tamano > $PFN_conf->g('limite_correo')) {
 	$estado = 10;
-	$estado_accion = $PFN_conf->t(array('estado.correo', $estado), PFN_peso($PFN_conf->g('limite_correo')));
+	$estado_accion = PFN___('estado_correo_'.$estado, PFN_peso($PFN_conf->g('limite_correo')));
 }
 
 if (($estado === true) && $PFN_vars->post('executa')) {
@@ -58,13 +58,13 @@ if (($estado === true) && $PFN_vars->post('executa')) {
 
 	if (empty($para)) {
 		$estado = 4;
-		$estado_accion = $PFN_conf->t('estado.correo', $estado).'<br />';
+		$estado_accion = PFN___('estado_correo_'.$estado).'<br />';
 	} if (empty($titulo)) {
 		$estado = 2;
-		$estado_accion .= $PFN_conf->t('estado.correo', $estado).'<br />';
+		$estado_accion .= PFN___('estado_correo_'.$estado).'<br />';
 	} if (empty($mensaxe)) {
 		$estado = 3;
-		$estado_accion .= $PFN_conf->t('estado.correo', $estado).'<br />';
+		$estado_accion .= PFN___('estado_correo_'.$estado).'<br />';
 	}
 
 	if (preg_match('/[,;]/', $para)) {
@@ -81,7 +81,7 @@ if (($estado === true) && $PFN_vars->post('executa')) {
 				$cada_correo[$k] = $v;
 			} else {
 				$estado = 5;
-				$estado_accion .= $PFN_conf->t('estado.correo', $estado).$v.'<br />';
+				$estado_accion .= PFN___('estado_correo_'.$estado).$v.'<br />';
 
 				unset($cada_correo[$k]);
 			}
@@ -89,13 +89,13 @@ if (($estado === true) && $PFN_vars->post('executa')) {
 
 		if (count($cada_correo) == 0) {
 			$estado = 6;
-			$estado_accion .= $PFN_conf->t('estado.correo', $estado).'<br />';
+			$estado_accion .= PFN___('estado_correo_'.$estado).'<br />';
 		}
 	} elseif (PFN_check_correo($para)) {
 		$cada_correo = array($para);
 	} else {
 		$estado = 5;
-		$estado_accion .= $PFN_conf->t('estado.correo', $estado).$para.'<br />';
+		$estado_accion .= PFN___('estado_correo_'.$estado).$para.'<br />';
 	}
 
 	if ($estado === 1) {
@@ -116,12 +116,12 @@ if (($estado === true) && $PFN_vars->post('executa')) {
 
 		if (!$mail->AddAttachment($arquivo, str_replace(' ', '_', $cal))) {
 			$estado = 7;
-			$estado_accion .= $PFN_conf->t('estado.correo', $estado);
+			$estado_accion .= PFN___('estado_correo_'.$estado);
 		}
 
 		if ($estado === 1) {
 			$estado = $mail->Send();
-			$estado_accion .= $PFN_conf->t('estado.correo', $estado);
+			$estado_accion .= PFN___('estado_correo_'.$estado);
 		}
 
 		if ($estado === 1) {

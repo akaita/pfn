@@ -28,10 +28,10 @@ programa. Si no ha sido así, escriba a la Free Software Foundation, Inc., en
 
 defined('OK') or die();
 ?>
-<h1 id="cab_menu"><span><?php echo $PFN_conf->t('PFN'); ?></span></h1>
+<h1 id="cab_menu"><span><?php echo PFN___('PFN'); ?></span></h1>
 
 <div id="menu_raices">
-	<?php echo $PFN_conf->t('listado_menu'); ?>
+	<?php echo PFN___('listado_menu'); ?>
 	<ul>
 	<?php
 	for (; $PFN_usuarios->mais(); $PFN_usuarios->seguinte()) {
@@ -41,4 +41,4 @@ defined('OK') or die();
 	?>
 	</ul>
 </div>
-<div id="pe_menu"><a href="sair.php?id=<?php echo $ultima; ?>&amp;<?php echo PFN_get_url(false); ?>"><?php echo $PFN_conf->t('sair'); ?></a></div>
+<div id="pe_menu"><a href="sair.php?id=<?php echo $ultima; ?>&amp;<?php echo PFN_get_url(false); ?>"><?php echo PFN___('sair'); ?></a></div>

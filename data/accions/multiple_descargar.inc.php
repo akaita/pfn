@@ -101,10 +101,10 @@ if ($PFN_conf->g('columnas','multiple')
 		exit;
 	} elseif ($estado === -1) {
 		$erro = true;
-		$estado_accion = $PFN_conf->t('estado.descargar', 3);
+		$estado_accion = PFN___('estado_descargar_3');
 	} else {
 		$erro = true;
-		$estado_accion = $PFN_conf->t('estado.descargar', 2);
+		$estado_accion = PFN___('estado_descargar_2');
 	}
 
 	unset($contido);

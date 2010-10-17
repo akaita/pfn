@@ -10,8 +10,6 @@ include_once ($PFN_paths['include'].'funcions.php');
 include_once ($PFN_paths['include'].'class_conf.php');
 include_once ($PFN_paths['include'].'class_ssl.php');
 
-$PFN_conf->textos('web');
-
 if ($_SERVER['SSL_CLIENT_VERIFY'] == 'SUCCESS') {
 	list ($dnie, $dni) = $PFN_SSL->getDNIe($_SERVER['SSL_CLIENT_S_DN']);
 
@@ -19,7 +17,7 @@ if ($_SERVER['SSL_CLIENT_VERIFY'] == 'SUCCESS') {
 		// Usuario con DNIe no operativo o valor de DNI no encontrado
 		echo '<script type="text/javascript" src="../js/html_decoder.js"></script>';
 		echo '<script type="text/javascript">';
-		echo 'alert(HtmlDecode("'.$PFN_conf->t('acceso_certificado', '5').'"));';
+		echo 'alert(HtmlDecode("'.PFN___('acceso_certificado_5').'"));';
 		echo 'location.href = "../";';
 		echo '</script>';
 
@@ -39,7 +37,7 @@ if ($_SERVER['SSL_CLIENT_VERIFY'] == 'SUCCESS') {
 	if ($PFN_vars->ip() == $PFN_usuarios->get('ip')) {
 		echo '<script type="text/javascript" src="../js/html_decoder.js"></script>';
 		echo '<script type="text/javascript">';
-		echo 'alert(HtmlDecode("'.$PFN_conf->t('acceso_certificado', '1').'"));';
+		echo 'alert(HtmlDecode("'.PFN___('acceso_certificado_1').'"));';
 		echo 'location.href = "../";';
 		echo '</script>';
 
@@ -52,7 +50,7 @@ if ($_SERVER['SSL_CLIENT_VERIFY'] == 'SUCCESS') {
 
 			echo '<script type="text/javascript" src="../js/html_decoder.js"></script>';
 			echo '<script type="text/javascript">';
-			echo 'alert(HtmlDecode("'.$PFN_conf->t('acceso_certificado', '2').'"));';
+			echo 'alert(HtmlDecode("'.PFN___('acceso_certificado_2').'"));';
 			echo 'location.href = "../";';
 			echo '</script>';
 
@@ -73,7 +71,7 @@ if ($_SERVER['SSL_CLIENT_VERIFY'] == 'SUCCESS') {
 
 				echo '<script type="text/javascript" src="../js/html_decoder.js"></script>';
 				echo '<script type="text/javascript">';
-				echo 'alert(HtmlDecode("'.$PFN_conf->t('acceso_certificado', '3').'"));';
+				echo 'alert(HtmlDecode("'.PFN___('acceso_certificado_3').'"));';
 				echo 'location.href = "../";';
 				echo '</script>';
 
@@ -121,7 +119,7 @@ if ($_SERVER['SSL_CLIENT_VERIFY'] == 'SUCCESS') {
 
 		echo '<script type="text/javascript" src="../js/html_decoder.js"></script>';
 		echo '<script type="text/javascript">';
-		echo 'alert(HtmlDecode("'.$PFN_conf->t('acceso_certificado', '4').'"));';
+		echo 'alert(HtmlDecode("'.PFN___('acceso_certificado_4').'"));';
 		echo 'location.href = "../";';
 		echo '</script>';
 
@@ -130,7 +128,7 @@ if ($_SERVER['SSL_CLIENT_VERIFY'] == 'SUCCESS') {
 } else {
 	echo '<script type="text/javascript" src="../js/html_decoder.js"></script>';
 	echo '<script type="text/javascript">';
-	echo 'alert(HtmlDecode("'.$PFN_conf->t('acceso_certificado', '6').'"));';
+	echo 'alert(HtmlDecode("'.PFN___('acceso_certificado_6').'"));';
 	echo 'location.href = "../";';
 	echo '</script>';
 

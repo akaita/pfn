@@ -30,14 +30,14 @@ programa. Si no ha sido así, escriba a la Free Software Foundation, Inc., en
 defined('OK') && defined('XESTION') or die();
 ?>
 <div id="ver_info">
-	<div class="bloque_info"><h1><?php echo $PFN_conf->t('xestion').' &raquo; '.$PFN_conf->t('Xadmin_grupos'); ?></h1></div>
+	<div class="bloque_info"><h1><?php echo PFN___('xestion').' &raquo; '.PFN___('Xadmin_grupos'); ?></h1></div>
 	<div class="bloque_info">
 
 		<ul id="tabs">
-			<li id="tab_li1"><a href="../raices/" id="tab_a1"><?php echo $PFN_conf->t('Xraices'); ?></a></li>
-			<li id="tab_li2"><a href="../usuarios/" id="tab_a2"><?php echo $PFN_conf->t('Xusuarios'); ?></a></li>
-			<li id="tab_li3"><a href="../grupos/" id="tab_a3" class="activo"><?php echo $PFN_conf->t('Xgrupos'); ?></a></li>
-			<li id="tab_li4"><a href="../configuracions/" id="tab_a4"><?php echo $PFN_conf->t('Xconfiguracions'); ?></a></li>
+			<li id="tab_li1"><a href="../raices/" id="tab_a1"><?php echo PFN___('Xraices'); ?></a></li>
+			<li id="tab_li2"><a href="../usuarios/" id="tab_a2"><?php echo PFN___('Xusuarios'); ?></a></li>
+			<li id="tab_li3"><a href="../grupos/" id="tab_a3" class="activo"><?php echo PFN___('Xgrupos'); ?></a></li>
+			<li id="tab_li4"><a href="../configuracions/" id="tab_a4"><?php echo PFN___('Xconfiguracions'); ?></a></li>
 		</ul>
 
 		<div class="capa_tab"> 
@@ -46,10 +46,10 @@ defined('OK') && defined('XESTION') or die();
 				<?php
 				if ($erros) {
 					foreach ($erros as $v) {
-						echo $PFN_conf->t('Xerros', intval($v)).'<br />';
+						echo PFN___('Xerros_'.intval($v)).'<br />';
 					}
 				} else {
-					echo $PFN_conf->t('Xok', $ok);
+					echo PFN___('Xok_'.$ok);
 				}
 				?>
 			</div>
@@ -60,7 +60,7 @@ defined('OK') && defined('XESTION') or die();
 					<input type="hidden" name="accion" value="gardar" />
 
 					<div class="con_borde">
-						<label for="paxinar1"><?php echo $PFN_conf->t('Xamosar'); ?>:</label>
+						<label for="paxinar1"><?php echo PFN___('Xamosar'); ?>:</label>
 						<select name="paxinar" id="paxinar1" class="d40" onchange="enlace('?paxinar='+this.value);">
 							<?php
 							for ($i = 50; $i < $total; $i += 50) {
@@ -73,7 +73,7 @@ defined('OK') && defined('XESTION') or die();
 
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-						<label for="paxina1"><?php echo $PFN_conf->t('Xpaxina'); ?>:</label>
+						<label for="paxina1"><?php echo PFN___('Xpaxina'); ?>:</label>
 						<select name="paxina" id="paxina1" onchange="enlace('?paxinar='+$('#paxinar1').val()+'&amp;paxina='+this.value);">
 							<?php
 							for ($i = 0; $i <= $total; $i += $paxinar) {
@@ -86,15 +86,15 @@ defined('OK') && defined('XESTION') or die();
 
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-						<label for="buscar1"><?php echo $PFN_conf->t('Xbuscar'); ?>:</label>
+						<label for="buscar1"><?php echo PFN___('Xbuscar'); ?>:</label>
 						<input type="text" name="buscar" id="buscar1" value="<?php echo $buscar; ?>" />
 					</div>
 
 					<table class="Xmenu" summary="">
 						<tr>
-							<th class="centro"><?php echo $PFN_conf->t('id'); ?></th>
-							<th><?php echo $PFN_conf->t('Xnome'); ?></th>
-							<th class="centro"><?php echo $PFN_conf->t('Xestado'); ?></th>
+							<th class="centro"><?php echo PFN___('id'); ?></th>
+							<th><?php echo PFN___('Xnome'); ?></th>
+							<th class="centro"><?php echo PFN___('Xestado'); ?></th>
 						</tr>
 						<?php
 						for ($i = 0; $PFN_usuarios->mais(); $PFN_usuarios->seguinte(), $i++) {
@@ -116,12 +116,12 @@ defined('OK') && defined('XESTION') or die();
 						</tr>
 						<?php } ?>
 						<tr>
-							<td colspan="4" class="centro"><br /><input type="submit" value="<?php echo $PFN_conf->t('Xcambiar'); ?>" class="boton" /></td>
+							<td colspan="4" class="centro"><br /><input type="submit" value="<?php echo PFN___('Xcambiar'); ?>" class="boton" /></td>
 						</tr>
 					</table>
 
 					<div class="con_borde">
-						<label for="paxinar2"><?php echo $PFN_conf->t('Xamosar'); ?>:</label>
+						<label for="paxinar2"><?php echo PFN___('Xamosar'); ?>:</label>
 						<select name="paxinar" id="paxinar2" class="d40" onchange="enlace('<?php echo PFN_get_url(); ?>&amp;paxinar='+this.value);">
 							<?php
 							for ($i = 50; $i < $total; $i += 50) {
@@ -134,7 +134,7 @@ defined('OK') && defined('XESTION') or die();
 
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-						<label for="paxina2"><?php echo $PFN_conf->t('Xpaxina'); ?>:</label>
+						<label for="paxina2"><?php echo PFN___('Xpaxina'); ?>:</label>
 						<select name="paxina" id="paxina2" onchange="enlace('<?php echo PFN_get_url(); ?>&amp;paxinar='+$('#paxinar2').val()+'&amp;paxina='+this.value);">
 							<?php
 							for ($i = 0; $i <= $total; $i += $paxinar) {
@@ -147,7 +147,7 @@ defined('OK') && defined('XESTION') or die();
 
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-						<label for="buscar1"><?php echo $PFN_conf->t('Xbuscar'); ?>:</label>
+						<label for="buscar1"><?php echo PFN___('Xbuscar'); ?>:</label>
 						<input type="text" name="buscar" id="buscar1" value="<?php echo $buscar; ?>" />
 					</div>
 

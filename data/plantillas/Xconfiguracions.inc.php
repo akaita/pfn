@@ -30,14 +30,14 @@ programa. Si no ha sido así, escriba a la Free Software Foundation, Inc., en
 defined('OK') && defined('XESTION') or die();
 ?>
 <div id="ver_info">
-	<div class="bloque_info"><h1><?php echo $PFN_conf->t('xestion').' &raquo; '.$PFN_conf->t('Xadmin_configuracions'); ?></h1></div>
+	<div class="bloque_info"><h1><?php echo PFN___('xestion').' &raquo; '.PFN___('Xadmin_configuracions'); ?></h1></div>
 	<div class="bloque_info">
 
 		<ul id="tabs">
-			<li id="tab_li1"><a href="../raices/" id="tab_a1"><?php echo $PFN_conf->t('Xraices'); ?></a></li>
-			<li id="tab_li2"><a href="../usuarios/" id="tab_a2"><?php echo $PFN_conf->t('Xusuarios'); ?></a></li>
-			<li id="tab_li3"><a href="../grupos/" id="tab_a3"><?php echo $PFN_conf->t('Xgrupos'); ?></a></li>
-			<li id="tab_li4"><a href="../configuracions/" id="tab_a4" class="activo"><?php echo $PFN_conf->t('Xconfiguracions'); ?></a></li>
+			<li id="tab_li1"><a href="../raices/" id="tab_a1"><?php echo PFN___('Xraices'); ?></a></li>
+			<li id="tab_li2"><a href="../usuarios/" id="tab_a2"><?php echo PFN___('Xusuarios'); ?></a></li>
+			<li id="tab_li3"><a href="../grupos/" id="tab_a3"><?php echo PFN___('Xgrupos'); ?></a></li>
+			<li id="tab_li4"><a href="../configuracions/" id="tab_a4" class="activo"><?php echo PFN___('Xconfiguracions'); ?></a></li>
 		</ul>
 
 		<div class="capa_tab"> 
@@ -46,10 +46,10 @@ defined('OK') && defined('XESTION') or die();
 				<?php
 				if ($erros) {
 					foreach ($erros as $v) {
-						echo $PFN_conf->t('Xerros', intval($v)).'<br />';
+						echo PFN___('Xerros_'.intval($v)).'<br />';
 					}
 				} else {
-					echo $PFN_conf->t('Xok', $ok);
+					echo PFN___('Xok_'.$ok);
 				}
 				?>
 			</div>
@@ -57,10 +57,10 @@ defined('OK') && defined('XESTION') or die();
 
 			<table class="Xmenu" summary="">
 				<tr>
-					<th class="centro"><?php echo $PFN_conf->t('id'); ?></th>
-					<th><?php echo $PFN_conf->t('Xconf'); ?></th>
-					<th class="centro"><?php echo $PFN_conf->t('Xdetalle'); ?></th>
-					<th class="centro"><?php echo $PFN_conf->t('editar'); ?></th>
+					<th class="centro"><?php echo PFN___('id'); ?></th>
+					<th><?php echo PFN___('Xconf'); ?></th>
+					<th class="centro"><?php echo PFN___('Xdetalle'); ?></th>
+					<th class="centro"><?php echo PFN___('editar'); ?></th>
 				</tr>
 				<?php
 				for ($configuracions = array(), $i = 0; $PFN_usuarios->mais(); $PFN_usuarios->seguinte(), $i++) {
@@ -74,11 +74,11 @@ defined('OK') && defined('XESTION') or die();
 						<a href="resumo.php?<?php echo PFN_cambia_url('id', $id, false); ?>"><?php echo $PFN_usuarios->get('conf'); ?></a>
 					</td>
 					<td class="centro">
-						<a href="ver.php?<?php echo PFN_cambia_url('id', $id, false); ?>"><?php echo $PFN_conf->t('Xdetalle'); ?></a>
+						<a href="ver.php?<?php echo PFN_cambia_url('id', $id, false); ?>"><?php echo PFN___('Xdetalle'); ?></a>
 					</td>
 					<td class="centro">
 						<?php if (is_writable($PFN_paths['conf'].$PFN_usuarios->get('conf').'.inc.php')) { ?>
-						<a href="editar.php?<?php echo PFN_cambia_url('id', $id, false); ?>"><?php echo $PFN_conf->t('editar'); ?></a>
+						<a href="editar.php?<?php echo PFN_cambia_url('id', $id, false); ?>"><?php echo PFN___('editar'); ?></a>
 						<?php } else { ?>
 						&nbsp;
 						<?php } ?>
@@ -87,7 +87,7 @@ defined('OK') && defined('XESTION') or die();
 				<?php } ?>
 			</table>
 
-			<br /><h2><?php echo $PFN_conf->t('Xedicion_directa'); ?></h2><br />
+			<br /><h2><?php echo PFN___('Xedicion_directa'); ?></h2><br />
 
 			<table class="Xmenu" summary="">
 				<?php
@@ -102,10 +102,10 @@ defined('OK') && defined('XESTION') or die();
 				<tr class="trarq<?php echo (($i % 2) == 0)?'1':'0'; ?>">
 					<td>&nbsp;</td>
 					<td><a href="seguridade/index.php?id=<?php echo urlencode(base64_encode($v)); ?>"><?php echo $v; ?></a></td>
-					<td class="centro"><a href="seguridade/index.php?id=<?php echo urlencode(base64_encode($v)); ?>"><?php echo $PFN_conf->t('Xdetalle'); ?></a></td>
+					<td class="centro"><a href="seguridade/index.php?id=<?php echo urlencode(base64_encode($v)); ?>"><?php echo PFN___('Xdetalle'); ?></a></td>
 					<td class="centro">
 						<?php if (is_writable($PFN_paths['conf'].$v)) { ?>
-						<a href="seguridade/editar.php?id=<?php echo urlencode(base64_encode($v)); ?>"><?php echo $PFN_conf->t('editar'); ?></a>
+						<a href="seguridade/editar.php?id=<?php echo urlencode(base64_encode($v)); ?>"><?php echo PFN___('editar'); ?></a>
 						<?php } else { ?>
 						&nbsp;
 						<?php } ?>

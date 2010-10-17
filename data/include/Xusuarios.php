@@ -34,6 +34,4 @@ if (!$PFN_conf->g('usuario','admin')) {
 	$PFN_usuarios->garda_rexistro('xestion',0);
 	envia_erro(4);
 }
-
-$PFN_conf->textos('xestion');
 ?>

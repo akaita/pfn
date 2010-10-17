@@ -31,14 +31,14 @@ defined('OK') && defined('XESTION') or die();
 ?>
 
 <div id="ver_info">
-	<div class="bloque_info"><h1><?php echo $PFN_conf->t('xestion').' &raquo; '.$PFN_conf->t('Xmodi_grupo'); ?></h1></div>
+	<div class="bloque_info"><h1><?php echo PFN___('xestion').' &raquo; '.PFN___('Xmodi_grupo'); ?></h1></div>
 	<div class="bloque_info">
 
 		<ul id="tabs">
-			<li id="tab_li1"><a href="../raices/" id="tab_a1"><?php echo $PFN_conf->t('Xraices'); ?></a></li>
-			<li id="tab_li2"><a href="../usuarios/" id="tab_a2"><?php echo $PFN_conf->t('Xusuarios'); ?></a></li>
-			<li id="tab_li3"><a href="../grupos/" id="tab_a3" class="activo"><?php echo $PFN_conf->t('Xgrupos'); ?></a></li>
-			<li id="tab_li4"><a href="../configuracions/" id="tab_a4"><?php echo $PFN_conf->t('Xconfiguracions'); ?></a></li>
+			<li id="tab_li1"><a href="../raices/" id="tab_a1"><?php echo PFN___('Xraices'); ?></a></li>
+			<li id="tab_li2"><a href="../usuarios/" id="tab_a2"><?php echo PFN___('Xusuarios'); ?></a></li>
+			<li id="tab_li3"><a href="../grupos/" id="tab_a3" class="activo"><?php echo PFN___('Xgrupos'); ?></a></li>
+			<li id="tab_li4"><a href="../configuracions/" id="tab_a4"><?php echo PFN___('Xconfiguracions'); ?></a></li>
 		</ul>
 
 		<div class="capa_tab"> 
@@ -47,10 +47,10 @@ defined('OK') && defined('XESTION') or die();
 				<?php
 				if (count($erros)) {
 					foreach ($erros as $v) {
-						echo $PFN_conf->t('Xerros', intval($v)).'<br />';
+						echo PFN___('Xerros_'.intval($v)).'<br />';
 					}
 				} else {
-					echo $PFN_conf->t('Xok', intval($ok)).'<br />';
+					echo PFN___('Xok_'.intval($ok)).'<br />';
 				}
 				?>
 			</div>
@@ -63,19 +63,19 @@ defined('OK') && defined('XESTION') or die();
 					<table class="tabla_info" summary="">
 						<?php if ($PFN_usuarios->get('id') > 0) { ?>
 						<tr>
-							<th><?php echo $PFN_conf->t('id'); ?></th>
+							<th><?php echo PFN___('id'); ?></th>
 							<td><?php echo $PFN_usuarios->get('id'); ?></td>
 						</tr>
 						<?php } ?>
 						<tr>
-							<th><a href="#" onclick="Xamosa_axuda(1); return false;">(?)</a> <?php echo $PFN_conf->t('Xnome'); ?>*</th>
+							<th><a href="#" onclick="Xamosa_axuda(1); return false;">(?)</a> <?php echo PFN___('Xnome'); ?>*</th>
 							<td><input type="text" name="nome" value="<?php echo $PFN_usuarios->get('nome'); ?>" class="text" tabindex="10" /></td>
 						</tr>
 						<tr id="tr_axuda1" style="display: none;">
-							<th colspan="2"><?php echo $PFN_conf->t('Xaxuda','grupo_nome'); ?></th>
+							<th colspan="2"><?php echo PFN___('Xaxuda_grupo_nome'); ?></th>
 						</tr>
 						<tr>
-							<th><a href="#" onclick="Xamosa_axuda(2); return false;">(?)</a> <?php echo $PFN_conf->t('Xconf_defecto'); ?>*</th>
+							<th><a href="#" onclick="Xamosa_axuda(2); return false;">(?)</a> <?php echo PFN___('Xconf_defecto'); ?>*</th>
 							<td>
 								<select name="id_conf" tabindex="20">
 									<?php foreach ($Fconfs as $k => $v) { ?>
@@ -85,10 +85,10 @@ defined('OK') && defined('XESTION') or die();
 							</td>
 						</tr>
 						<tr id="tr_axuda2" style="display: none;">
-							<th colspan="2"><?php echo $PFN_conf->t('Xaxuda','grupo_conf'); ?></th>
+							<th colspan="2"><?php echo PFN___('Xaxuda_grupo_conf'); ?></th>
 						</tr>
 						<tr>
-							<th><a href="#" onclick="Xamosa_axuda(3); return false;">(?)</a> <?php echo $PFN_conf->t('Xestado'); ?></th>
+							<th><a href="#" onclick="Xamosa_axuda(3); return false;">(?)</a> <?php echo PFN___('Xestado'); ?></th>
 							<td>
 								<select name="estado" tabindex="30">
 									<option value="1" <?php echo $PFN_usuarios->get('estado')==1?'selected="selected"':''; ?>>ON</option>
@@ -97,20 +97,20 @@ defined('OK') && defined('XESTION') or die();
 							</td>
 						</tr>
 						<tr id="tr_axuda3" style="display: none;">
-							<th colspan="2"><?php echo $PFN_conf->t('Xaxuda','grupo_estado'); ?></th>
+							<th colspan="2"><?php echo PFN___('Xaxuda_grupo_estado'); ?></th>
 						</tr>
 						<tr>
-							<th><a href="#" onclick="Xamosa_axuda(4); return false;">(?)</a> <label for="revisar_relacions_raices"><?php echo $PFN_conf->t('Xrevisar_relacions_raices'); ?></label></th>
+							<th><a href="#" onclick="Xamosa_axuda(4); return false;">(?)</a> <label for="revisar_relacions_raices"><?php echo PFN___('Xrevisar_relacions_raices'); ?></label></th>
 							<td><input type="checkbox" id="revisar_relacions_raices" name="revisar_relacions_raices" value="true" tabindex="70" class="checkbox" /></td>
 						</tr>
 						<tr id="tr_axuda4" style="display: none;">
-							<td colspan="2"><?php echo $PFN_conf->t('Xaxuda','revisar_relacions_raices'); ?></td>
+							<td colspan="2"><?php echo PFN___('Xaxuda_revisar_relacions_raices'); ?></td>
 						</tr>
 					</table>
 			
 					<br />
 					<?php if (!empty($id)) { ?>
-					<table class="tabla_info" summary=""><tr><th><strong><?php echo $PFN_conf->t('Xusuarios_relacionados'); ?></strong></th></tr></table>
+					<table class="tabla_info" summary=""><tr><th><strong><?php echo PFN___('Xusuarios_relacionados'); ?></strong></th></tr></table>
 			
 					<table class="tabla_normal" summary="">
 					<?php
@@ -144,10 +144,10 @@ defined('OK') && defined('XESTION') or die();
 			
 					<div style="width: 100%; text-align: center;">
 						<?php if (!empty($id)) { ?>
-						<input type="reset" value=" <?php echo $PFN_conf->t('eliminar'); ?> " class="boton" style="margin-right: 40px;" onclick="eliminar(<?php echo $cnt_usuarios; ?>);" tabindex="40" />
+						<input type="reset" value=" <?php echo PFN___('eliminar'); ?> " class="boton" style="margin-right: 40px;" onclick="eliminar(<?php echo $cnt_usuarios; ?>);" tabindex="40" />
 						<?php } ?>
-						<input type="reset" value=" <?php echo $PFN_conf->t('voltar'); ?> " class="boton" style="margin-right: 40px;" onclick="enlace('index.php');" tabindex="50" />
-						<input type="submit" value="<?php echo $PFN_conf->t('Xcambiar'); ?>" class="boton" tabindex="60" />
+						<input type="reset" value=" <?php echo PFN___('voltar'); ?> " class="boton" style="margin-right: 40px;" onclick="enlace('index.php');" tabindex="50" />
+						<input type="submit" value="<?php echo PFN___('Xcambiar'); ?>" class="boton" tabindex="60" />
 					</div>
 				</fieldset>
 			</form>
@@ -159,12 +159,12 @@ defined('OK') && defined('XESTION') or die();
 
 function eliminar (cantos) {
 	<?php if ($id == $sPFN['usuario']['id_grupo']) { ?>
-	alert(HtmlDecode('<?php echo addslashes($PFN_conf->t('Xerros', 16)); ?>'));
+	alert(HtmlDecode('<?php echo addslashes(PFN___('Xerros_16')); ?>'));
 	<?php } else { ?>
 	if (cantos > 0) {
-		alert(HtmlDecode('<?php echo addslashes($PFN_conf->t('Xerros', 17)); ?>'));
+		alert(HtmlDecode('<?php echo addslashes(PFN___('Xerros_17')); ?>'));
 	} else {
-		if (confirm(HtmlDecode('<?php echo addslashes($PFN_conf->t('Xeliminar_grupo')); ?>'))) {
+		if (confirm(HtmlDecode('<?php echo addslashes(PFN___('Xeliminar_grupo')); ?>'))) {
 			enlace('eliminar.php?id=<?php echo $id; ?>&amp;<?php echo PFN_get_url(false); ?>');
 		}
 	}

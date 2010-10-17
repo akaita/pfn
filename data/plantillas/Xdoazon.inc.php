@@ -29,10 +29,10 @@ programa. Si no ha sido así, escriba a la Free Software Foundation, Inc., en
 defined('OK') && defined('XESTION') or die();
 ?>
 <div id="ver_info">
-	<div class="bloque_info"><h1><?php echo $PFN_conf->t('xestion').' &raquo; '.$PFN_conf->t('Xm_doazon'); ?></h1></div>
+	<div class="bloque_info"><h1><?php echo PFN___('xestion').' &raquo; '.PFN___('Xm_doazon'); ?></h1></div>
 	<div class="bloque_info">
 		<div id="resumo_dir">
-			<?php echo $PFN_conf->t('Xm_doazon_texto'); ?>
+			<?php echo PFN___('Xm_doazon_texto'); ?>
 			<br /><br />
 
 			<a href="https://sourceforge.net/donate/index.php?group_id=142312&amp;amt=10&amp;type=0" onclick="window.open(this.href); return false" class="subcontido" style="text-align: center"><img src="<?php echo $relativo.$PFN_conf->g('estilo'); ?>imx/paypal.png" alt="[<?php echo $doar_paypal; ?> $10]" /><br /><?php echo $doar; ?> $10</a>

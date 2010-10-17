@@ -36,43 +36,43 @@ function comproba_datos (obx_form) {
 	var campo = '';
 
 	if (obx_form.charset.value == '') {
-		erro = '<?php echo addslashes($PFN_conf->t('i:erros',1)); ?>';
+		erro = '<?php echo addslashes(PFN___('i_erros_1')); ?>';
 		campo = 'charset';
 	} else if (obx_form.db_servidor.value == '') {
-		erro = '<?php echo addslashes($PFN_conf->t('i:erros',2)); ?>';
+		erro = '<?php echo addslashes(PFN___('i_erros_2')); ?>';
 		campo = 'db_servidor';
 	} else if (obx_form.db_nome.value == '') {
-		erro = '<?php echo addslashes($PFN_conf->t('i:erros',3)); ?>';
+		erro = '<?php echo addslashes(PFN___('i_erros_3')); ?>';
 		campo = 'db_nome';
 	} else if (obx_form.db_usuario.value == '') {
-		erro = '<?php echo addslashes($PFN_conf->t('i:erros',4)); ?>';
+		erro = '<?php echo addslashes(PFN___('i_erros_4')); ?>';
 		campo = 'db_usuario';
 	} else if (obx_form.ad_nome.value == '') {
-		erro = '<?php echo addslashes($PFN_conf->t('i:erros',5)); ?>';
+		erro = '<?php echo addslashes(PFN___('i_erros_5')); ?>';
 		campo = 'ad_nome';
 	} else if (obx_form.ad_usuario.value == '') {
-		erro = '<?php echo addslashes($PFN_conf->t('i:erros',6)); ?>';
+		erro = '<?php echo addslashes(PFN___('i_erros_6')); ?>';
 		campo = 'ad_usuario';
 	} else if (obx_form.ad_contrasinal.value == '') {
-		erro = '<?php echo addslashes($PFN_conf->t('i:erros',7)); ?>';
+		erro = '<?php echo addslashes(PFN___('i_erros_7')); ?>';
 		campo = 'ad_contrasinal';
 	} else if (obx_form.ad_contrasinal.value != obx_form.ad_rep_contrasinal.value) {
-		erro = '<?php echo addslashes($PFN_conf->t('i:erros',8)); ?>';
+		erro = '<?php echo addslashes(PFN___('i_erros_8')); ?>';
 		campo = 'ad_rep_contrasinal';
 	} else if (obx_form.ad_correo.value == '') {
-		erro = '<?php echo addslashes($PFN_conf->t('i:erros',9)); ?>';
+		erro = '<?php echo addslashes(PFN___('i_erros_9')); ?>';
 		campo = 'ad_correo';
 	} else if (obx_form.ra_nome.value == '') {
-		erro = '<?php echo addslashes($PFN_conf->t('i:erros',10)); ?>';
+		erro = '<?php echo addslashes(PFN___('i_erros_10')); ?>';
 		campo = 'ra_nome';
 	} else if (obx_form.ra_path.value == '') {
-		erro = '<?php echo addslashes($PFN_conf->t('i:erros',11)); ?>';
+		erro = '<?php echo addslashes(PFN___('i_erros_11')); ?>';
 		campo = 'ra_path';
 	} else if (obx_form.ra_web.value == '') {
-		erro = '<?php echo addslashes($PFN_conf->t('i:erros',12)); ?>';
+		erro = '<?php echo addslashes(PFN___('i_erros_12')); ?>';
 		campo = 'ra_web';
 	} else if (obx_form.ra_dominio.value == '') {
-		erro = '<?php echo addslashes($PFN_conf->t('i:erros',13)); ?>';
+		erro = '<?php echo addslashes(PFN___('i_erros_13')); ?>';
 		campo = 'ra_dominio';
 	}
 
@@ -96,14 +96,14 @@ function comproba_datos (obx_form) {
 <input type="hidden" name="tipo" value="<?php echo $form['tipo']; ?>" />
 <input type="hidden" name="gd2" value="<?php echo $form['gd2']; ?>" />
 <input type="hidden" name="zlib" value="<?php echo $form['zlib']; ?>" />
-<h2><?php echo $PFN_conf->t('i:datos'); ?></h2>
+<h2><?php echo PFN___('i_datos'); ?></h2>
 
-<br /><?php echo $PFN_conf->t('i:intro_datos'); ?><br />
+<br /><?php echo PFN___('i_intro_datos'); ?><br />
 
 <?php if (count($erros) > 0) { ?>
 <ul class="aviso">
 	<?php foreach ($erros as $v) { ?>
-	<li>- <?php echo $PFN_conf->t('i:erros',$v); ?></li>
+	<li>- <?php echo PFN___('i_erros_'.$v); ?></li>
 	<?php } ?>
 </ul>
 <?php } ?>
@@ -112,7 +112,7 @@ function comproba_datos (obx_form) {
 
 <table class="tabla_info" summary="">
 	<tr>
-		<th><a href="#" onclick="Xamosa_axuda(1); return false;">(?)</a> <label for="form_charset"><?php echo $PFN_conf->t('i:charset'); ?></label>:</th>
+		<th><a href="#" onclick="Xamosa_axuda(1); return false;">(?)</a> <label for="form_charset"><?php echo PFN___('i_charset'); ?></label>:</th>
 		<td>
 			<select name="charset" id="form_charset" size="1" tabindex="50">
 				<option value="UTF-8" <?php echo ($form['charset'] == 'UTF-8')?'selected="selected"':''; ?>>UTF-8 Unicode</option>
@@ -149,120 +149,120 @@ function comproba_datos (obx_form) {
 		</td>
 	</tr>
 	<tr id="tr_axuda1" style="display: none;">
-		<td colspan="2"><?php echo $PFN_conf->t('i:axuda','charset'); ?></td>
+		<td colspan="2"><?php echo PFN___('i_axuda_charset'); ?></td>
 	</tr>
 	<tr>
-		<td colspan="2"><br /><h1><?php echo $PFN_conf->t('i:base_datos'); ?></h1></td>
+		<td colspan="2"><br /><h1><?php echo PFN___('i_base_datos'); ?></h1></td>
 	</tr>
 	<tr>
-		<th><a href="#" onclick="Xamosa_axuda(2); return false;">(?)</a> <label for="form_db_servidor"><?php echo $PFN_conf->t('i:db_servidor'); ?></label>:</th>
+		<th><a href="#" onclick="Xamosa_axuda(2); return false;">(?)</a> <label for="form_db_servidor"><?php echo PFN___('i_db_servidor'); ?></label>:</th>
 		<td><input type="text" name="db_servidor" id="form_db_servidor" value="<?php echo $form['db_servidor']; ?>" size="40" class="formulario" tabindex="60" /></td>
 	</tr>
 	<tr id="tr_axuda2" style="display: none;">
-		<td colspan="2"><?php echo $PFN_conf->t('i:axuda','db_servidor'); ?></td>
+		<td colspan="2"><?php echo PFN___('i_axuda_db_servidor'); ?></td>
 	</tr>
 	<tr>
-		<th><a href="#" onclick="Xamosa_axuda(3); return false;">(?)</a> <label for="form_db_nome"><?php echo $PFN_conf->t('i:db_nome'); ?></label>:</th>
+		<th><a href="#" onclick="Xamosa_axuda(3); return false;">(?)</a> <label for="form_db_nome"><?php echo PFN___('i_db_nome'); ?></label>:</th>
 		<td><input type="text" name="db_nome" id="form_db_nome" value="<?php echo $form['db_nome']; ?>" size="40" class="formulario" tabindex="70" /></td>
 	</tr>
 	<tr id="tr_axuda3" style="display: none;">
-		<td colspan="2"><?php echo $PFN_conf->t('i:axuda','db_nome'); ?></td>
+		<td colspan="2"><?php echo PFN___('i_axuda_db_nome'); ?></td>
 	</tr>
 	<tr>
-		<th><a href="#" onclick="Xamosa_axuda(4); return false;">(?)</a> <label for="form_db_usuario"><?php echo $PFN_conf->t('i:db_usuario'); ?></label>:</th>
+		<th><a href="#" onclick="Xamosa_axuda(4); return false;">(?)</a> <label for="form_db_usuario"><?php echo PFN___('i_db_usuario'); ?></label>:</th>
 		<td><input type="text" name="db_usuario" id="form_db_usuario" value="<?php echo $form['db_usuario']; ?>" size="40" class="formulario" tabindex="80" /></td>
 	</tr>
 	<tr id="tr_axuda4" style="display: none;">
-		<td colspan="2"><?php echo $PFN_conf->t('i:axuda','db_usuario'); ?></td>
+		<td colspan="2"><?php echo PFN___('i_axuda_db_usuario'); ?></td>
 	</tr>
 	<tr>
-		<th><a href="#" onclick="Xamosa_axuda(5); return false;">(?)</a> <label for="form_db_contrasinal"><?php echo $PFN_conf->t('i:db_contrasinal'); ?></label>:</th>
+		<th><a href="#" onclick="Xamosa_axuda(5); return false;">(?)</a> <label for="form_db_contrasinal"><?php echo PFN___('i_db_contrasinal'); ?></label>:</th>
 		<td><input type="password" name="db_contrasinal" id="form_db_contrasinal" value="" size="40" class="formulario" tabindex="90" /></td>
 	</tr>
 	<tr id="tr_axuda5" style="display: none;">
-		<td colspan="2"><?php echo $PFN_conf->t('i:axuda','db_contrasinal'); ?></td>
+		<td colspan="2"><?php echo PFN___('i_axuda_db_contrasinal'); ?></td>
 	</tr>
 	<tr>
-		<th><a href="#" onclick="Xamosa_axuda(6); return false;">(?)</a> <label for="form_db_prefixo"><?php echo $PFN_conf->t('i:db_prefixo'); ?></label>:</th>
+		<th><a href="#" onclick="Xamosa_axuda(6); return false;">(?)</a> <label for="form_db_prefixo"><?php echo PFN___('i_db_prefixo'); ?></label>:</th>
 		<td><input type="text" name="db_prefixo" id="form_db_prefixo" value="<?php echo $form['db_prefixo']; ?>" size="40" class="formulario" tabindex="100" /></td>
 	</tr>
 	<tr id="tr_axuda6" style="display: none;">
-		<td colspan="2"><?php echo $PFN_conf->t('i:axuda','db_prefixo'); ?></td>
+		<td colspan="2"><?php echo PFN___('i_axuda_db_prefixo'); ?></td>
 	</tr>
 	<tr>
-		<td colspan="2"><br /><h1><?php echo $PFN_conf->t('i:administrador'); ?></h1></td>
+		<td colspan="2"><br /><h1><?php echo PFN___('i_administrador'); ?></h1></td>
 	</tr>
 	<tr>
-		<th><a href="#" onclick="Xamosa_axuda(7); return false;">(?)</a> <label for="form_ad_nome"><?php echo $PFN_conf->t('i:ad_nome'); ?></label>:</th>
+		<th><a href="#" onclick="Xamosa_axuda(7); return false;">(?)</a> <label for="form_ad_nome"><?php echo PFN___('i_ad_nome'); ?></label>:</th>
 		<td><input type="text" name="ad_nome" id="form_ad_nome" value="<?php echo $form['ad_nome']; ?>" size="40" class="formulario" tabindex="110" /></td>
 	</tr>
 	<tr id="tr_axuda7" style="display: none;">
-		<td colspan="2"><?php echo $PFN_conf->t('i:axuda','ad_nome'); ?></td>
+		<td colspan="2"><?php echo PFN___('i_axuda_ad_nome'); ?></td>
 	</tr>
 	<tr>
-		<th><a href="#" onclick="Xamosa_axuda(8); return false;">(?)</a> <label for="form_ad_usuario"><?php echo $PFN_conf->t('i:ad_usuario'); ?></label>:</th>
+		<th><a href="#" onclick="Xamosa_axuda(8); return false;">(?)</a> <label for="form_ad_usuario"><?php echo PFN___('i_ad_usuario'); ?></label>:</th>
 		<td><input type="text" name="ad_usuario" id="form_ad_usuario" value="<?php echo $form['ad_usuario']; ?>" size="40" class="formulario" tabindex="120" /></td>
 	</tr>
 	<tr id="tr_axuda8" style="display: none;">
-		<td colspan="2"><?php echo $PFN_conf->t('i:axuda','ad_usuario'); ?></td>
+		<td colspan="2"><?php echo PFN___('i_axuda_ad_usuario'); ?></td>
 	</tr>
 	<tr>
-		<th><a href="#" onclick="Xamosa_axuda(9); return false;">(?)</a> <label for="form_ad_contrasinal"><?php echo $PFN_conf->t('i:ad_contrasinal'); ?></label>:</th>
+		<th><a href="#" onclick="Xamosa_axuda(9); return false;">(?)</a> <label for="form_ad_contrasinal"><?php echo PFN___('i_ad_contrasinal'); ?></label>:</th>
 		<td><input type="password" name="ad_contrasinal" id="form_ad_contrasinal" size="40" value="" class="formulario" tabindex="130" /></td>
 	</tr>
 	<tr id="tr_axuda9" style="display: none;">
-		<td colspan="2"><?php echo $PFN_conf->t('i:axuda','ad_contrasinal'); ?></td>
+		<td colspan="2"><?php echo PFN___('i_axuda_ad_contrasinal'); ?></td>
 	</tr>
 	<tr>
-		<th><a href="#" onclick="Xamosa_axuda(10); return false;">(?)</a> <label for="form_ad_rep_contrasinal"><?php echo $PFN_conf->t('i:ad_rep_contrasinal'); ?></label>:</th>
+		<th><a href="#" onclick="Xamosa_axuda(10); return false;">(?)</a> <label for="form_ad_rep_contrasinal"><?php echo PFN___('i_ad_rep_contrasinal'); ?></label>:</th>
 		<td><input type="password" name="ad_rep_contrasinal" id="form_ad_rep_contrasinal" value="" size="40" class="formulario" tabindex="140" /></td>
 	</tr>
 	<tr id="tr_axuda10" style="display: none;">
-		<td colspan="2"><?php echo $PFN_conf->t('i:axuda','ad_rep_contrasinal'); ?></td>
+		<td colspan="2"><?php echo PFN___('i_axuda_ad_rep_contrasinal'); ?></td>
 	</tr>
 	<tr>
-		<th><a href="#" onclick="Xamosa_axuda(11); return false;">(?)</a> <label for="form_ad_correo"><?php echo $PFN_conf->t('i:ad_correo'); ?></label>:</th>
+		<th><a href="#" onclick="Xamosa_axuda(11); return false;">(?)</a> <label for="form_ad_correo"><?php echo PFN___('i_ad_correo'); ?></label>:</th>
 		<td><input type="text" name="ad_correo" id="form_ad_correo" value="<?php echo $form['ad_correo']; ?>" size="40" class="formulario" tabindex="150" /></td>
 	</tr>
 	<tr id="tr_axuda11" style="display: none;">
-		<td colspan="2"><?php echo $PFN_conf->t('i:axuda','ad_correo'); ?></td>
+		<td colspan="2"><?php echo PFN___('i_axuda_ad_correo'); ?></td>
 	</tr>
 	<tr>
-		<td colspan="2"><br /><h1><?php echo $PFN_conf->t('i:raiz'); ?></h1></td>
+		<td colspan="2"><br /><h1><?php echo PFN___('i_raiz'); ?></h1></td>
 	</tr>
 	<tr>
-		<th><a href="#" onclick="Xamosa_axuda(12); return false;">(?)</a> <label for="form_ra_nome"><?php echo $PFN_conf->t('i:ra_nome'); ?></label>:</th>
+		<th><a href="#" onclick="Xamosa_axuda(12); return false;">(?)</a> <label for="form_ra_nome"><?php echo PFN___('i_ra_nome'); ?></label>:</th>
 		<td><input type="text" name="ra_nome" id="form_ra_nome" value="<?php echo $form['ra_nome']; ?>" size="40" class="formulario" tabindex="160" /></td>
 	</tr>
 	<tr id="tr_axuda12" style="display: none;">
-		<td colspan="2"><?php echo $PFN_conf->t('i:axuda','ra_nome'); ?></td>
+		<td colspan="2"><?php echo PFN___('i_axuda_ra_nome'); ?></td>
 	</tr>
 	<tr>
-		<th><a href="#" onclick="Xamosa_axuda(13); return false;">(?)</a> <label for="form_ra_path"><?php echo $PFN_conf->t('i:ra_path'); ?></label>:</th>
+		<th><a href="#" onclick="Xamosa_axuda(13); return false;">(?)</a> <label for="form_ra_path"><?php echo PFN___('i_ra_path'); ?></label>:</th>
 		<td><input type="text" name="ra_path" id="form_ra_path" value="<?php echo $form['ra_path']; ?>" size="40" class="formulario" tabindex="170" /></td>
 	</tr>
 	<tr id="tr_axuda13" style="display: none;">
-		<td colspan="2"><?php echo $PFN_conf->t('i:axuda','ra_path'); ?></td>
+		<td colspan="2"><?php echo PFN___('i_axuda_ra_path'); ?></td>
 	</tr>
 	<tr>
-		<th><a href="#" onclick="Xamosa_axuda(14); return false;">(?)</a> <label for="form_ra_web"><?php echo $PFN_conf->t('i:ra_web'); ?></label>:</th>
+		<th><a href="#" onclick="Xamosa_axuda(14); return false;">(?)</a> <label for="form_ra_web"><?php echo PFN___('i_ra_web'); ?></label>:</th>
 		<td><input type="text" name="ra_web" id="form_ra_web" value="<?php echo $form['ra_web']; ?>" size="40" class="formulario" tabindex="180" /></td>
 	</tr>
 	<tr id="tr_axuda14" style="display: none;">
-		<td colspan="2"><?php echo $PFN_conf->t('i:axuda','ra_web'); ?></td>
+		<td colspan="2"><?php echo PFN___('i_axuda_ra_web'); ?></td>
 	</tr>
 	<tr>
-		<th><a href="#" onclick="Xamosa_axuda(15); return false;">(?)</a> <label for="form_ra_dominio"><?php echo $PFN_conf->t('i:ra_dominio'); ?></label>:</th>
+		<th><a href="#" onclick="Xamosa_axuda(15); return false;">(?)</a> <label for="form_ra_dominio"><?php echo PFN___('i_ra_dominio'); ?></label>:</th>
 		<td><input type="text" name="ra_dominio" id="form_ra_dominio" value="<?php echo $form['ra_dominio']; ?>" size="40" class="formulario" tabindex="190" /></td>
 	</tr>
 	<tr id="tr_axuda15" style="display: none;">
-		<td colspan="2"><?php echo $PFN_conf->t('i:axuda','ra_dominio'); ?></td>
+		<td colspan="2"><?php echo PFN___('i_axuda_ra_dominio'); ?></td>
 	</tr>
 </table>
 
 <br />
 
-<input type="submit" value="<?php echo $PFN_conf->t('continuar_paso_5'); ?>" class="dereita" />
+<input type="submit" value="<?php echo PFN___('continuar_paso_5'); ?>" class="dereita" />
 </fieldset>
 </form>
 
@@ -286,7 +286,7 @@ function comproba_datos (obx_form) {
 <input type="hidden" name="ra_path" value="<?php echo $form['ra_path']; ?>" />
 <input type="hidden" name="ra_web" value="<?php echo $form['ra_web']; ?>" />
 <input type="hidden" name="ra_dominio" value="<?php echo $form['ra_dominio']; ?>" />
-<input type="submit" value="<?php echo $PFN_conf->t('voltar_paso_3'); ?>" class="esquerda" />
+<input type="submit" value="<?php echo PFN___('voltar_paso_3'); ?>" class="esquerda" />
 </fieldset>
 </form>
 

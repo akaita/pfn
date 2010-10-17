@@ -29,7 +29,7 @@ programa. Si no ha sido así, escriba a la Free Software Foundation, Inc., en
 defined('OK') && defined('XESTION') or die();
 ?>
 <div id="ver_info">
-	<div class="bloque_info"><h1><?php echo $PFN_conf->t('xestion').' &raquo; '.$PFN_conf->t('Xvarios'); ?></h1></div>
+	<div class="bloque_info"><h1><?php echo PFN___('xestion').' &raquo; '.PFN___('Xvarios'); ?></h1></div>
 	<div class="bloque_info">
 		<?php include ($PFN_paths['plantillas'].'Xvarios_indexador.inc.php'); ?>
 

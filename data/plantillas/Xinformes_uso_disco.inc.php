@@ -29,4 +29,4 @@ programa. Si no ha sido así, escriba a la Free Software Foundation, Inc., en
 
 defined('OK') && defined('XESTION') or die();
 ?>
-				<strong><?php echo $PFN_conf->t('Xdesc_uso_disco'); ?></strong><br /><br />
+				<strong><?php echo PFN___('Xdesc_uso_disco'); ?></strong><br /><br />

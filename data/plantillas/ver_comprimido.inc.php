@@ -28,17 +28,17 @@ programa. Si no ha sido así, escriba a la Free Software Foundation, Inc., en
 
 defined('OK') && defined('ACCION') or die();
 ?>
-		<div class="bloque_info"><h1><?php echo $PFN_conf->t('accion').' &raquo; '.$PFN_conf->t('ver_comprimido'); ?></h1></div>
+		<div class="bloque_info"><h1><?php echo PFN___('accion').' &raquo; '.PFN___('ver_comprimido'); ?></h1></div>
 		<div class="bloque_info">
 			<table summary="" class="tabla_informes">
 				<thead>
 				<tr>
-					<th><a href="accion.php?<?php echo PFN_cambia_url(array('accion','orde_comprimido','pos_comprimido','cal'),array($accion,'nome',(($orde == 'nome')?$pos:'ASC'),$cal),false); ?>"><?php echo $PFN_conf->t('nome'); ?></a></th>
-					<th><a href="accion.php?<?php echo PFN_cambia_url(array('accion','orde_comprimido','pos_comprimido','cal'),array($accion,'tamano',(($orde == 'tamano')?$pos:'ASC'),$cal),false); ?>"><?php echo $PFN_conf->t('tamano'); ?></a></th>
-					<th><a href="accion.php?<?php echo PFN_cambia_url(array('accion','orde_comprimido','pos_comprimido','cal'),array($accion,'data',(($orde == 'data')?$pos:'ASC'),$cal),false); ?>"><?php echo $PFN_conf->t('data'); ?></a></th>
-					<th><a href="accion.php?<?php echo PFN_cambia_url(array('accion','orde_comprimido','pos_comprimido','cal'),array($accion,'propietario',(($orde == 'propietario')?$pos:'ASC'),$cal),false); ?>"><?php echo $PFN_conf->t('propietario'); ?></a></th>
-					<th><a href="accion.php?<?php echo PFN_cambia_url(array('accion','orde_comprimido','pos_comprimido','cal'),array($accion,'grupo',(($orde == 'grupo')?$pos:'ASC'),$cal),false); ?>"><?php echo $PFN_conf->t('grupo'); ?></a></th>
-					<th><a href="accion.php?<?php echo PFN_cambia_url(array('accion','orde_comprimido','pos_comprimido','cal'),array($accion,'permisos',(($orde == 'permisos')?$pos:'ASC'),$cal),false); ?>"><?php echo $PFN_conf->t('permisos'); ?></a></th>
+					<th><a href="accion.php?<?php echo PFN_cambia_url(array('accion','orde_comprimido','pos_comprimido','cal'),array($accion,'nome',(($orde == 'nome')?$pos:'ASC'),$cal),false); ?>"><?php echo PFN___('nome'); ?></a></th>
+					<th><a href="accion.php?<?php echo PFN_cambia_url(array('accion','orde_comprimido','pos_comprimido','cal'),array($accion,'tamano',(($orde == 'tamano')?$pos:'ASC'),$cal),false); ?>"><?php echo PFN___('tamano'); ?></a></th>
+					<th><a href="accion.php?<?php echo PFN_cambia_url(array('accion','orde_comprimido','pos_comprimido','cal'),array($accion,'data',(($orde == 'data')?$pos:'ASC'),$cal),false); ?>"><?php echo PFN___('data'); ?></a></th>
+					<th><a href="accion.php?<?php echo PFN_cambia_url(array('accion','orde_comprimido','pos_comprimido','cal'),array($accion,'propietario',(($orde == 'propietario')?$pos:'ASC'),$cal),false); ?>"><?php echo PFN___('propietario'); ?></a></th>
+					<th><a href="accion.php?<?php echo PFN_cambia_url(array('accion','orde_comprimido','pos_comprimido','cal'),array($accion,'grupo',(($orde == 'grupo')?$pos:'ASC'),$cal),false); ?>"><?php echo PFN___('grupo'); ?></a></th>
+					<th><a href="accion.php?<?php echo PFN_cambia_url(array('accion','orde_comprimido','pos_comprimido','cal'),array($accion,'permisos',(($orde == 'permisos')?$pos:'ASC'),$cal),false); ?>"><?php echo PFN___('permisos'); ?></a></th>
 				</tr>
 				</thead>
 				<tfoot>
@@ -46,10 +46,10 @@ defined('OK') && defined('ACCION') or die();
 					<td>
 						<?php
 						echo (($cnt_cantos['dir'] > 0)?
-							($cnt_cantos['dir'].' '.$PFN_conf->t(($cnt_cantos['dir'] == 1)?'dir':'dirs')):'')
+							($cnt_cantos['dir'].' '.PFN___(($cnt_cantos['dir'] == 1)?'dir':'dirs')):'')
 							.(($cnt_cantos['arq'] > 0)?
 							((($cnt_cantos['dir'] > 0)?
-							' - ':'').$cnt_cantos['arq'].' '.$PFN_conf->t(($cnt_cantos['arq'] == 1)?
+							' - ':'').$cnt_cantos['arq'].' '.PFN___(($cnt_cantos['arq'] == 1)?
 							'arq':'arqs')):'');
 						?>
 					</td>

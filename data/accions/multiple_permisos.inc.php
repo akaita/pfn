@@ -65,16 +65,16 @@ if ($PFN_conf->g('columnas','multiple')
 			}
 
 			if ($erro || !$PFN_accions->estado('multiple_permisos')) {
-				$estado_accion .= $PFN_conf->t('estado.multiple_permisos',intval($estado)).' '.$cal.'<br />';
+				$estado_accion .= PFN___('estado_multiple_permisos_'.intval($estado)).' '.$cal.'<br />';
 				$cnt_erros++;
 			}
 		}
 	}
 
 	if ($cnt_erros == 0) {
-		$estado_accion = $PFN_conf->t('estado.multiple_permisos', 1);
+		$estado_accion = PFN___('estado_multiple_permisos_1');
 	} elseif ($cnt_erros != count($multiple_escollidos)) {
-		$estado_accion .= $PFN_conf->t('estado.multiple_permisos', 3);
+		$estado_accion .= PFN___('estado_multiple_permisos_3');
 	}
 
 	include ($PFN_paths['web'].'navega.inc.php');
@@ -84,7 +84,7 @@ if ($PFN_conf->g('columnas','multiple')
 		$arquivo = $PFN_conf->g('raiz','path').$PFN_accions->path_correcto($dir.'/').'/'.$v;
 
 		if (empty($v) || ($v == '.') || ($v == './') || !file_exists($arquivo)) {
-			$adv = $PFN_conf->t('estado.multiple_permisos', 2).' '.$v.'<br />';
+			$adv = PFN___('estado_multiple_permisos_2').' '.$v.'<br />';
 			unset($multiple_escollidos[$k]);
 		} else {
 			$multiple_escollidos[$k] = $v;

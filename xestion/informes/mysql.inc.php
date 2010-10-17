@@ -59,15 +59,15 @@ if ($PFN_conf->g('logs','mysql') && is_file($PFN_paths['logs'].$PFN_conf->g('log
 			preg_match_all("/^\[([^\]]+)\] \[([^\]]+)\] \[([^\]]+)\] \[([^\]]+)\] \[([^\]]+)\]$/", $v, $partes);
 
 			$txt .= '<table class="tabla_informes" summary="">'
-				.'<tr><th style="text-align: right;">'.$PFN_conf->t('Xcol_data').':&nbsp;</th>'
+				.'<tr><th style="text-align: right;">'.PFN___('Xcol_data').':&nbsp;</th>'
 					.'<td>'.$partes[1][0].'</td></tr>'
-				.'<tr><th style="text-align: right;">'.$PFN_conf->t('Xcol_arquivo').':&nbsp;</th>'
+				.'<tr><th style="text-align: right;">'.PFN___('Xcol_arquivo').':&nbsp;</th>'
 					.'<td>'.(substr($partes[2][0], strlen($PFN_paths['web']))).'</td></tr>'
-				.'<tr><th style="text-align: right;">'.$PFN_conf->t('Xcol_linha').':&nbsp;</th>'
+				.'<tr><th style="text-align: right;">'.PFN___('Xcol_linha').':&nbsp;</th>'
 					.'<td>'.$partes[3][0].'</td></tr>'
-				.'<tr><th style="text-align: right;">'.$PFN_conf->t('Xcol_consulta').':&nbsp;</th>'
+				.'<tr><th style="text-align: right;">'.PFN___('Xcol_consulta').':&nbsp;</th>'
 					.'<td>'.stripslashes($partes[4][0]).'</td></tr>'
-				.'<tr><th style="text-align: right;">'.$PFN_conf->t('Xcol_erro').':&nbsp;</th>'
+				.'<tr><th style="text-align: right;">'.PFN___('Xcol_erro').':&nbsp;</th>'
 					.'<td>'.stripslashes($partes[5][0]).'</td></tr>'
 				.'</table><br />';
 

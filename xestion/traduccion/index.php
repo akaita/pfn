@@ -34,8 +34,6 @@ include_once ($PFN_paths['include'].'Xusuarios.php');
 
 session_write_close();
 
-$PFN_conf->textos('idiomas');
-
 $PFN_tempo->rexistra('precarga');
 
 $tr_charset = $PFN_vars->post('tr_charset');

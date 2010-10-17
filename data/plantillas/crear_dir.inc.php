@@ -30,7 +30,7 @@ defined('OK') && defined('ACCION') or die();
 ?>
 
 <div id="ver_info">
-	<div class="bloque_info"><h1><?php echo $PFN_conf->t('accion').' &raquo; '.$PFN_conf->t('crear_dir'); ?></h1></div>
+	<div class="bloque_info"><h1><?php echo PFN___('accion').' &raquo; '.PFN___('crear_dir'); ?></h1></div>
 	<div class="bloque_info">
 		<form action="accion.php?<?php echo PFN_get_url(false); ?>" method="post" id="formulario" onsubmit="return submitonce();">
 		<fieldset>
@@ -39,7 +39,7 @@ defined('OK') && defined('ACCION') or die();
 
 		<table class="tabla_info" summary="">
 			<tr>
-				<th><label for="nome_directorio"><?php echo $PFN_conf->t('nome'); ?>:</label></th>
+				<th><label for="nome_directorio"><?php echo PFN___('nome'); ?>:</label></th>
 				<td><input type="text" name="nome_directorio" id="nome_directorio" class="text" /></td>
 			</tr>
 			<?php foreach ($PFN_inc->crea_formulario('dir') as $v) { ?>
@@ -51,8 +51,8 @@ defined('OK') && defined('ACCION') or die();
 			<tr>
 				<th>&nbsp;</th>
 				<td>
-					<input type="reset" value=" <?php echo $PFN_conf->t('cancelar'); ?> " class="boton" onclick="enlace('navega.php?<?php echo PFN_get_url(false); ?>');" />
-					<input type="submit" value=" <?php echo $PFN_conf->t('aceptar'); ?> " class="boton" style="margin-left: 40px;" />
+					<input type="reset" value=" <?php echo PFN___('cancelar'); ?> " class="boton" onclick="enlace('navega.php?<?php echo PFN_get_url(false); ?>');" />
+					<input type="submit" value=" <?php echo PFN___('aceptar'); ?> " class="boton" style="margin-left: 40px;" />
 				</td>
 			</tr>
 		</table>

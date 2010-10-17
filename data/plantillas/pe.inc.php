@@ -40,7 +40,7 @@ if (is_object($PFN_clases)) {
 		<tr>
 			<?php if ($PFN_conf->g('raiz','peso_maximo') > 0) { ?>
 			<td>
-				&nbsp;<?php echo $PFN_conf->t('peso_restante').': <strong>'.PFN_peso($PFN_conf->g('raiz','peso_maximo') - $PFN_conf->g('raiz','peso_actual')); ?></strong>
+				&nbsp;<?php echo PFN___('peso_restante').': <strong>'.PFN_peso($PFN_conf->g('raiz','peso_maximo') - $PFN_conf->g('raiz','peso_actual')); ?></strong>
 				<?php
 				$libre = intval((($PFN_conf->g('raiz','peso_maximo') - $PFN_conf->g('raiz','peso_actual')) / $PFN_conf->g('raiz','peso_maximo')) * 100);
 				$cor_libre = ($libre > 50)?'0C0':(($libre > 25)?'FC6':(($libre > 10)?'F60':'F00'));
@@ -49,7 +49,7 @@ if (is_object($PFN_clases)) {
 			</td>
 			<?php } if ($PFN_conf->g('usuario','descargas_maximo') > 0) { ?>
 			<td>
-				&nbsp;<?php echo $PFN_conf->t('descargas_restante').': <strong>'.PFN_peso($PFN_conf->g('usuario','descargas_maximo') - $PFN_conf->g('usuario','descargas_actual')); ?></strong>
+				&nbsp;<?php echo PFN___('descargas_restante').': <strong>'.PFN_peso($PFN_conf->g('usuario','descargas_maximo') - $PFN_conf->g('usuario','descargas_actual')); ?></strong>
 				<?php
 				$libre = intval((($PFN_conf->g('usuario','descargas_maximo') - $PFN_conf->g('usuario','descargas_actual')) / $PFN_conf->g('usuario','descargas_maximo')) * 100);
 				$cor_libre = ($libre > 50)?'0C0':(($libre > 25)?'FC6':(($libre > 10)?'F60':'F00'));
@@ -62,7 +62,7 @@ if (is_object($PFN_clases)) {
 	<?php } else { ?>
 	<table id="pe_utiles" summary=""><tr><td style="border: 0;">&nbsp;</td></tr></table>
 	<?php } ?>
-	<div id="pe_texto"><a href="http://www.phpfilenavigator.com/" onclick="window.open(this.href, '_blank'); return false"><?php echo $PFN_conf->t('PFN').'</a> - '.$PFN_conf->t('tempo_execucion').': '.$PFN_tempo->total().' '.$PFN_conf->t('segundos'); ?></div>
+	<div id="pe_texto"><a href="http://www.phpfilenavigator.com/" onclick="window.open(this.href, '_blank'); return false"><?php echo PFN___('PFN').'</a> - '.PFN___('tempo_execucion').': '.$PFN_tempo->total().' '.PFN___('segundos'); ?></div>
 </div>
 <!--
 

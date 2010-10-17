@@ -40,7 +40,6 @@ include_once ($PFN_paths['include'].'class_vars.php');
 
 $ok = 1;
 
-$PFN_conf->textos('web');
 $PFN_tempo->rexistra('precodigo');
 
 $clave = trim(urldecode(getenv('QUERY_STRING')));
@@ -48,7 +47,7 @@ $clave = trim(urldecode(getenv('QUERY_STRING')));
 include ($PFN_paths['plantillas'].'cab.inc.php');
 
 if (empty($clave)) {
-	$txt_erro = $PFN_conf->t('avisos_desbloquear_usuario', 6);
+	$txt_erro = PFN___('avisos_desbloquear_usuario_6');
 
 	include ($PFN_paths['plantillas'].'desbloquear.inc.php');
 } else {
@@ -62,11 +61,11 @@ if (empty($clave)) {
 	$id = intval($id);
 
 	if (($time == 0) || ($id == 0)) {
-		$txt_erro = $PFN_conf->t('avisos_desbloquear_usuario', 6);
+		$txt_erro = PFN___('avisos_desbloquear_usuario_6');
 
 		include ($PFN_paths['plantillas'].'desbloquear.inc.php');
 	} else if (strtotime('-24 hours') > $time) {
-		$txt_erro = $PFN_conf->t('avisos_desbloquear_usuario', 7);
+		$txt_erro = PFN___('avisos_desbloquear_usuario_7');
 
 		include ($PFN_paths['plantillas'].'desbloquear.inc.php');
 	} else {
@@ -77,11 +76,11 @@ if (empty($clave)) {
 		$PFN_usuarios->init('usuario', $id);
 
 		if ($PFN_usuarios->filas() == 0) {
-			$txt_erro = $PFN_conf->t('avisos_desbloquear_usuario', 6);
+			$txt_erro = PFN___('avisos_desbloquear_usuario_6');
 
 			include ($PFN_paths['plantillas'].'desbloquear.inc.php');
 		} else if (intval($PFN_usuarios->get('estado')) !== 2) {
-			$txt_erro = $PFN_conf->t('avisos_desbloquear_usuario', 4);
+			$txt_erro = PFN___('avisos_desbloquear_usuario_4');
 
 			include ($PFN_paths['plantillas'].'desbloquear.inc.php');
 		} else {
@@ -91,7 +90,7 @@ if (empty($clave)) {
 
 			$PFN_usuarios->garda_rexistro('desbloqueo',1);
 
-			$txt_erro = $PFN_conf->t('avisos_desbloquear_usuario', 8);
+			$txt_erro = PFN___('avisos_desbloquear_usuario_8');
 
 			include ($PFN_paths['plantillas'].'desbloquear.inc.php');
 		}

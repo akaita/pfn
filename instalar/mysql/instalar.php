@@ -5,7 +5,7 @@ return array(
 		.' (1,"'.$form['ra_nome'].'","'.$form['ra_path'].'","'.$form['ra_web'].'","'.$form['ra_dominio'].'",1);',
 	20 => 'INSERT INTO '.$form['db_prefixo'].'grupos'
 		.' (id,nome,id_conf,estado) VALUES'
-		.' (1,"'.$PFN_conf->t('admins').'",3,1);',
+		.' (1,"'.PFN___('admins').'",3,1);',
 	30 => 'INSERT INTO '.$form['db_prefixo'].'usuarios'
 		.' (id,nome,usuario,contrasinal,email,estado,admin,id_grupo,cambiar_datos) VALUES'
 		.' (1,"'.$form['ad_nome'].'","'.$form['ad_usuario'].'","'.md5($form['ad_contrasinal']).'","'.$form['ad_correo'].'",1,1,1,1);',

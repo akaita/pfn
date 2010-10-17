@@ -34,8 +34,6 @@ include_once ($PFN_paths['include'].'Xusuarios.php');
 
 session_write_close();
 
-$PFN_conf->textos('idiomas');
-
 $tr_charset = $PFN_vars->post('tr_charset');
 $tr_orixe = $PFN_vars->post('tr_orixe');
 $tr_destino = $PFN_vars->post('tr_destino');
@@ -45,7 +43,7 @@ $executa = $PFN_vars->post('executa');
 $erros = array();
 $ok = false;
 
-$lista_idiomas = $PFN_conf->t('lista_idiomas');
+$lista_idiomas = PFN___('lista_idiomas');
 asort($lista_idiomas);
 
 foreach ($lista_idiomas as $k => $v) {
@@ -103,7 +101,7 @@ if ($executa == 'gardar') {
 			}
 
 			$licencia['script'] = 'data/idiomas/'.$tr_destino.'/'.$tr_arquivo.'.inc.php';
-			$licencia['descricion'] = 'Textos para el idioma '.$PFN_conf->t('lista_idiomas',$tr_destino);
+			$licencia['descricion'] = 'Textos para el idioma '.PFN___('lista_idiomas_'.$tr_destino);
 
 			$txt_licencia = include ($PFN_paths['include'].'licencia.php');
 			$txt = '<?php'

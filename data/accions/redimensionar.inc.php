@@ -70,7 +70,7 @@ if ($PFN_vars->get('executa')) {
 
 if ($PFN_vars->post('eliminar_peq')) {
 	@unlink($PFN_imaxes->nome_pequena($imx_path));
-	$estado_accion = $PFN_conf->t('estado.redimensionar', 2);
+	$estado_accion = PFN___('estado_redimensionar_2');
 	$fin = true;
 }
 
@@ -92,11 +92,11 @@ if (!$fin && $PFN_conf->g('imaxes','pequena') && ($datos = $PFN_imaxes->e_imaxe(
 if ($fin) {
 	if (!$estado_accion) {
 		if ($estado === true) {
-			$estado_accion = $PFN_conf->t('estado.redimensionar', 1);
+			$estado_accion = PFN___('estado_redimensionar_1');
 		} elseif ($estado === -1) {
-			$estado_accion = $PFN_conf->t('estado.descargar', 3);
+			$estado_accion = PFN___('estado_descargar_3');
 		} else {
-			$estado_accion = $PFN_conf->t('estado.descargar', 2);
+			$estado_accion = PFN___('estado_descargar_2');
 		}
 	}
 

@@ -29,6 +29,6 @@ programa. Si no ha sido así, escriba a la Free Software Foundation, Inc., en
 
 defined('OK') or die();
 ?>
-<h2><?php echo $PFN_conf->t('i:tit_bloqueo_instalacion'); ?></h2>
+<h2><?php echo PFN___('i_tit_bloqueo_instalacion'); ?></h2>
 
-<br /><?php echo $PFN_conf->t('i:txt_bloqueo_instalacion'); ?>
+<br /><?php echo PFN___('i_txt_bloqueo_instalacion'); ?>

@@ -30,7 +30,7 @@ programa. Si no ha sido así, escriba a la Free Software Foundation, Inc., en
 defined('OK') && defined('ACCION') or die();
 ?>
 <div id="ver_info">
-	<div class="bloque_info"><h1><?php echo $PFN_conf->t('accion').' &raquo; '.$PFN_conf->t('subir_arq'); ?></h1></div>
+	<div class="bloque_info"><h1><?php echo PFN___('accion').' &raquo; '.PFN___('subir_arq'); ?></h1></div>
 	<div class="bloque_info">
 		<div id="capa_ajax" style="display: none"></div>
 
@@ -40,7 +40,7 @@ defined('OK') && defined('ACCION') or die();
 
 			<div id="capa_formulario" style="overflow: visible; display: block;">
 				<div style="text-align: center;">
-					<?php echo $PFN_conf->t('numero_arquivos'); ?>:&nbsp;&nbsp;&nbsp;
+					<?php echo PFN___('numero_arquivos'); ?>:&nbsp;&nbsp;&nbsp;
 					<select id="cantos" name="cantos" onchange="cambia_cantos(this.value);">
 						<?php
 						for ($i=1; $i <= $PFN_conf->g('inc','limite'); $i++) {
@@ -57,7 +57,7 @@ defined('OK') && defined('ACCION') or die();
 				<div id="cantos<?php echo $i; ?>">
 					<table class="tabla_info" summary="">
 						<tr>
-							<th><label for="nome_arquivo_<?php echo $i; ?>"><?php echo $PFN_conf->t('arq'); ?>:</label></th>
+							<th><label for="nome_arquivo_<?php echo $i; ?>"><?php echo PFN___('arq'); ?>:</label></th>
 							<td><input type="file" id="nome_arquivo_<?php echo $i; ?>" name="nome_arquivo[<?php echo $i; ?>]" class="file" /></td>
 						</tr>
 						<?php
@@ -72,22 +72,22 @@ defined('OK') && defined('ACCION') or die();
 						<?php } ?>
 						<?php if ($PFN_conf->g('imaxes','pequena')) { ?>
 						<tr>
-							<th><label for="imaxe_<?php echo $i; ?>"><?php echo $PFN_conf->t('imaxe_reducida'); ?></label></th>
+							<th><label for="imaxe_<?php echo $i; ?>"><?php echo PFN___('imaxe_reducida'); ?></label></th>
 							<td>
 								<select id="imaxe_<?php echo $i; ?>" name="imaxe[<?php echo $i; ?>]">
-									<option value="" <?php echo ($PFN_conf->g('imaxes','defecto')=='false' || !$PFN_conf->g('imaxes','defecto'))?'selected="selected"':''; ?>><?php echo $PFN_conf->t('non_crear'); ?></option>
-									<option value="reducir" <?php echo $PFN_conf->g('imaxes','defecto')=='reducir'?'selected="selected"':''; ?>><?php echo $PFN_conf->t('reducir'); ?></option>
+									<option value="" <?php echo ($PFN_conf->g('imaxes','defecto')=='false' || !$PFN_conf->g('imaxes','defecto'))?'selected="selected"':''; ?>><?php echo PFN___('non_crear'); ?></option>
+									<option value="reducir" <?php echo $PFN_conf->g('imaxes','defecto')=='reducir'?'selected="selected"':''; ?>><?php echo PFN___('reducir'); ?></option>
 								</select>
 							</td>
 						</tr>
 						<?php } ?>
 						<tr>
-							<th><label for="sobreescribir_<?php echo $i; ?>"><?php echo $PFN_conf->t('sobreescribir'); ?></label></th>
+							<th><label for="sobreescribir_<?php echo $i; ?>"><?php echo PFN___('sobreescribir'); ?></label></th>
 							<td><input type="checkbox" id="sobreescribir_<?php echo $i; ?>" name="sobreescribir[<?php echo $i; ?>]" value="1" class="checkbox" /></td>
 						</tr>
 						<?php if ($PFN_conf->g('avisos','subida') == true) { ?>
 						<tr>
-							<th><label for="aviso_subida_<?php echo $i; ?>"><?php echo $PFN_conf->t('avisar_subida'); ?></label></th>
+							<th><label for="aviso_subida_<?php echo $i; ?>"><?php echo PFN___('avisar_subida'); ?></label></th>
 							<td><input type="checkbox" id="aviso_subida_<?php echo $i; ?>" name="aviso_subida[<?php echo $i; ?>]" value="1" class="checkbox" /></td>
 						</tr>
 						<?php } ?>
@@ -95,8 +95,8 @@ defined('OK') && defined('ACCION') or die();
 				</div>
 				<?php } ?>
 				<div class="centro">
-					<input type="reset" value=" <?php echo $PFN_conf->t('cancelar'); ?> " class="boton" onclick="location.href='navega.php?<?php echo PFN_get_url(false); ?>'" />
-					<input type="submit" name="btn_aceptar" value=" <?php echo $PFN_conf->t('aceptar'); ?> " class="boton" onclick="envia_form();" style="margin-left: 40px;" />
+					<input type="reset" value=" <?php echo PFN___('cancelar'); ?> " class="boton" onclick="location.href='navega.php?<?php echo PFN_get_url(false); ?>'" />
+					<input type="submit" name="btn_aceptar" value=" <?php echo PFN___('aceptar'); ?> " class="boton" onclick="envia_form();" style="margin-left: 40px;" />
 				</div>
 			</div>
 

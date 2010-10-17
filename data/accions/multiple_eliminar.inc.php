@@ -102,7 +102,7 @@ if ($PFN_conf->g('columnas','multiple')
 					}
 				}
 			} else {
-				$estado_accion .= $PFN_conf->t('estado.multiple_eliminar',intval($estado)).' '.$cal.'<br />';
+				$estado_accion .= PFN___('estado_multiple_eliminar_'.intval($estado)).' '.$cal.'<br />';
 				$cnt_erros++;
 
 				if ($e_dir && $estado != 4) {
@@ -123,9 +123,9 @@ if ($PFN_conf->g('columnas','multiple')
 	}
 
 	if ($cnt_erros == 0) {
-		$estado_accion = $PFN_conf->t('estado.multiple_eliminar', 1);
+		$estado_accion = PFN___('estado_multiple_eliminar_1');
 	} elseif ($cnt_erros != count($multiple_escollidos)) {
-		$estado_accion .= $PFN_conf->t('estado.multiple_eliminar', 3);
+		$estado_accion .= PFN___('estado_multiple_eliminar_3');
 	}
 
 	include ($PFN_paths['web'].'navega.inc.php');
@@ -135,7 +135,7 @@ if ($PFN_conf->g('columnas','multiple')
 		$arquivo = $PFN_conf->g('raiz','path').$PFN_accions->path_correcto($dir.'/').'/'.$v;
 
 		if (empty($v) || ($v == '.') || ($v == './') || !file_exists($arquivo)) {
-			$adv = $PFN_conf->t('estado.multiple_eliminar', 7).' '.$v.'<br />';
+			$adv = PFN___('estado_multiple_eliminar_7').' '.$v.'<br />';
 			unset($multiple_escollidos[$k]);
 		} else {
 			$multiple_escollidos[$k] = $v;

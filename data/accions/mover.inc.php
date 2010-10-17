@@ -50,14 +50,14 @@ if ($PFN_vars->post('executa')) {
 			.'/'.$cal;
 
 		if (strstr($destino, $orixinal)) {
-			$estado_accion = $PFN_conf->t('estado.mover_dir',7);
+			$estado_accion = PFN___('estado_mover_dir_7');
 			$erro = true;
 		}
 
 		if (!$erro && $tipo == 'dir') {
 			$PFN_accions->mover($orixinal, $destino);
 			$estado = $PFN_accions->estado_num('mover_dir');
-			$estado_accion = $PFN_conf->t('estado.mover_dir',intval($estado));
+			$estado_accion = PFN___('estado_mover_dir_'.intval($estado));
 
 			if ($PFN_accions->estado('mover_dir')) {
 				if (is_dir(PFN_get_path_extra($orixinal))) {
@@ -70,7 +70,7 @@ if ($PFN_vars->post('executa')) {
 		} elseif (!$erro) {
 			$PFN_accions->mover($orixinal,$destino);
 			$estado = $PFN_accions->estado_num('mover_arq');
-			$estado_accion = $PFN_conf->t('estado.mover_arq',intval($estado));
+			$estado_accion = PFN___('estado_mover_arq_'.intval($estado));
 
 			if ($PFN_accions->estado('mover_arq')) {
 				if (is_file($PFN_inc->nome_inc($orixinal))) {
@@ -102,12 +102,12 @@ if ($PFN_vars->post('executa')) {
 			$PFN_arbore->pon_copia($arquivo);
 	
 			if (count($contido['dir']['nome']) || count($contido['arq']['nome'])) {
-				$adv = $PFN_conf->t('estado.mover_dir',2);
+				$adv = PFN___('estado_mover_dir_2');
 			} else {
-				$adv = $PFN_conf->t('estado.mover_dir',3);
+				$adv = PFN___('estado_mover_dir_3');
 			}
 		} else {
-			$adv = $PFN_conf->t('estado.mover_arq',2);
+			$adv = PFN___('estado_mover_arq_2');
 		}
 
 		$PFN_arbore->carga_arbore($PFN_conf->g('raiz','path'), './', false);

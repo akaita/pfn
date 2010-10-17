@@ -29,13 +29,13 @@ programa. Si no ha sido así, escriba a la Free Software Foundation, Inc., en
 defined('OK') && defined('XESTION') or die();
 ?>
 <div id="ver_info">
-	<div class="bloque_info"><h1><?php echo $PFN_conf->t('xestion').' &raquo; '.$PFN_conf->t('Xconf_editar'); ?></h1></div>
+	<div class="bloque_info"><h1><?php echo PFN___('xestion').' &raquo; '.PFN___('Xconf_editar'); ?></h1></div>
 	<div class="bloque_info">
 		<ul id="tabs">
-			<li id="tab_li1"><a href="../raices/" id="tab_a1"><?php echo $PFN_conf->t('Xraices'); ?></a></li>
-			<li id="tab_li2"><a href="../usuarios/" id="tab_a2"><?php echo $PFN_conf->t('Xusuarios'); ?></a></li>
-			<li id="tab_li3"><a href="../grupos/" id="tab_a3"><?php echo $PFN_conf->t('Xgrupos'); ?></a></li>
-			<li id="tab_li4"><a href="../configuracions/" id="tab_a4" class="activo"><?php echo $PFN_conf->t('Xconfiguracions'); ?></a></li>
+			<li id="tab_li1"><a href="../raices/" id="tab_a1"><?php echo PFN___('Xraices'); ?></a></li>
+			<li id="tab_li2"><a href="../usuarios/" id="tab_a2"><?php echo PFN___('Xusuarios'); ?></a></li>
+			<li id="tab_li3"><a href="../grupos/" id="tab_a3"><?php echo PFN___('Xgrupos'); ?></a></li>
+			<li id="tab_li4"><a href="../configuracions/" id="tab_a4" class="activo"><?php echo PFN___('Xconfiguracions'); ?></a></li>
 		</ul>
 
 		<div class="capa_tab"> 
@@ -44,17 +44,17 @@ defined('OK') && defined('XESTION') or die();
 				<?php
 				if (count($erros)) {
 					foreach ($erros as $v) {
-						echo $PFN_conf->t('Xerros', intval($v)).'<br />';
+						echo PFN___('Xerros_'.intval($v)).'<br />';
 					}
 				}
 	
 				if (count($alertas) > 0) {
 				?>
 				<hr style="border: 1px solid #F00; margin: 5px 0 5px 0;" />
-				<?php echo $PFN_conf->t('Xcol_erro'); ?>:
+				<?php echo PFN___('Xcol_erro'); ?>:
 				<br /><?php echo $alertas['erro']; ?>
 				<hr style="border: 1px solid #F00; margin: 5px 0 5px 0;" />
-				<?php echo $PFN_conf->t('Xcol_linha'); ?>:
+				<?php echo PFN___('Xcol_linha'); ?>:
 				<p style="color: #999;"><?php echo $alertas['linha-1']; ?></p>
 				<h3 style="color: #333;"><?php echo $alertas['linha']; ?></h3>
 				<p style="color: #999;"><?php echo $alertas['linha+1']; ?></p>
@@ -62,7 +62,7 @@ defined('OK') && defined('XESTION') or die();
 				}
 	
 				if ($ok) {
-					echo $PFN_conf->t('Xok', intval($ok)).'<br />';
+					echo PFN___('Xok_'.intval($ok)).'<br />';
 				}
 				?>
 			</div>
@@ -79,8 +79,8 @@ defined('OK') && defined('XESTION') or die();
 						<textarea name="texto" style="width: 100%; height: 400px;"><?php echo $texto; ?></textarea>
 
 						<br /><br />
-						<input type="reset" value=" <?php echo $PFN_conf->t('cancelar'); ?> " class="boton" onclick="enlace('resumo.php?<?php echo PFN_cambia_url('id', $id, false); ?>');" />
-						<input type="submit" value=" <?php echo $PFN_conf->t('aceptar'); ?> " style="margin-left: 40px;" class="boton" />
+						<input type="reset" value=" <?php echo PFN___('cancelar'); ?> " class="boton" onclick="enlace('resumo.php?<?php echo PFN_cambia_url('id', $id, false); ?>');" />
+						<input type="submit" value=" <?php echo PFN___('aceptar'); ?> " style="margin-left: 40px;" class="boton" />
 					</fieldset>
 				</form>
 			</div>

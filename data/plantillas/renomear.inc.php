@@ -29,7 +29,7 @@ programa. Si no ha sido así, escriba a la Free Software Foundation, Inc., en
 
 defined('OK') && defined('ACCION') or die();
 ?>
-		<div class="bloque_info"><h1><?php echo $PFN_conf->t('accion').' &raquo; '.$PFN_conf->t('renomear'); ?></h1></div>
+		<div class="bloque_info"><h1><?php echo PFN___('accion').' &raquo; '.PFN___('renomear'); ?></h1></div>
 		<form id="formulario" action="accion.php?<?php echo PFN_cambia_url('accion','renomear',false); ?>" method="post" onsubmit="return submitonce();">
 		<fieldset>
 		<input type="hidden" name="executa" value="true" />
@@ -37,18 +37,18 @@ defined('OK') && defined('ACCION') or die();
 
 		<table class="tabla_info" summary="">
 			<tr>
-				<th><label for="antigo"><?php echo $PFN_conf->t('orixinal'); ?>:</label></th>
+				<th><label for="antigo"><?php echo PFN___('orixinal'); ?>:</label></th>
 				<td><?php echo $PFN_vars->get('cal'); ?></td>
 			</tr>
 			<tr>
-				<th><label for="novo_nome"><?php echo $PFN_conf->t('novo'); ?>:</label></th>
+				<th><label for="novo_nome"><?php echo PFN___('novo'); ?>:</label></th>
 				<td><input type="text" id="novo_nome" name="novo_nome" value="<?php echo htmlentities($PFN_vars->get('cal'), ENT_NOQUOTES, $PFN_conf->g('charset')); ?>" class="text" /></td>
 			</tr>
 			<tr>
 				<th>&nbsp;</th>
 				<td>
-					<input type="reset" value=" <?php echo $PFN_conf->t('cancelar'); ?> " class="boton" onclick="enlace('navega.php?<?php echo PFN_get_url(false); ?>');" />
-					<input type="submit" value=" <?php echo $PFN_conf->t('aceptar'); ?> " class="boton" style="margin-left: 40px;" />
+					<input type="reset" value=" <?php echo PFN___('cancelar'); ?> " class="boton" onclick="enlace('navega.php?<?php echo PFN_get_url(false); ?>');" />
+					<input type="submit" value=" <?php echo PFN___('aceptar'); ?> " class="boton" style="margin-left: 40px;" />
 				</td>
 			</tr>
 		</table>
