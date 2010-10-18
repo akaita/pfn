@@ -98,7 +98,7 @@ if ($PFN_conf->g('inc','estado')) {
 			.'<input type="checkbox" id="campos_buscar_'.$i
 			.'" name="campos_buscar[]" value="'.$v.'" onclick="desmarca_campo(\'nome\');" onkeypress="desmarca_campo(\'nome\');"'
 			.(@in_array($v, $PFN_vars->post('campos_buscar'))?' checked="checked"':'').' class="checkbox" /> '
-			.'<label for="campos_buscar_'.$i.'">'.PFN___('$v).'</label></th>';
+			.'<label for="campos_buscar_'.$i.'">'.PFN___($v).'</label></th>';
 
 		$cnt++;
 

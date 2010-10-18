@@ -92,7 +92,7 @@ defined('OK') && defined('ACCION') or die();
 			<?php
 			foreach ((array)$PFN_vars->post('campos_buscar') as $v2) {
 				if (in_array($v2, $PFN_conf->g('inc','campos_indexar'))) {
-					echo '<br /><strong>'.PFN___('$v2).'</strong>: ';
+					echo '<br /><strong>'.PFN___($v2).'</strong>: ';
 					$dato = $PFN_inc->valor($v2);
 
 					foreach ((array)explode(' ',$PFN_vars->post('palabra_buscar')) as $v3) {

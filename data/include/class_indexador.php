@@ -140,7 +140,7 @@ class PFN_Indexador extends PFN_Clases {
 			$id_directorio = $this->get('id');
 		} else {
 			$this->LINE = __LINE__+1;
-			$query = 'INSERT INTO '.$this->tablas['directorios']
+			$query = 'INSERT IGNORE INTO '.$this->tablas['directorios']
 				.' SET directorio = "'.$this->corrixe($dir,0).'"'
 				.', id_raiz = "'.$this->id_raiz.'";';
 
