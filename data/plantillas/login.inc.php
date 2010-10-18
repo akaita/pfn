@@ -63,8 +63,6 @@ defined('OK') or die();
 	<ul>
 		<li><a href="contrasinal.php"><?php echo PFN___('contrasinal_olvidada'); ?></a></li>
 		<li><a href="desbloquear.php"><?php echo PFN___('desbloquear_usuario'); ?></a></li>
-		<li><a href="ssl/dnie.php"><?php echo PFN___('acceder_con_certificado'); ?></a></li>
-		<li><a href="activex/index.php"><?php echo PFN___('acceder_con_activex'); ?></a></li>
-		<li><a href="applet/index.php"><?php echo PFN___('acceder_con_applet'); ?></a></li>
+		<?php if ($_SERVER['HTTPS'] == 'on') { ?><li><a href="ssl/dnie.php"><?php echo PFN___('acceder_con_certificado'); ?></a></li><?php } ?>
 	</ul>
 </div>

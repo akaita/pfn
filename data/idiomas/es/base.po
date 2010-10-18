@@ -1770,6 +1770,9 @@ msgstr "M&aacute;s opciones"
 msgid "desbloquear_usuario"
 msgstr "Desbloquear usuario"
 
+msgid "acceder_con_certificado"
+msgstr "Acceder con certificado digital"
+
 msgid "txt_desbloquear_usuario"
 msgstr "Rellene el formulario y recibir&aacute; en su correo un mail con el enlace para desbloquear su cuenta."
 
