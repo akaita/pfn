@@ -37,6 +37,8 @@ if (is_dir($PFN_paths['web'].'instalar/')) {
 	exit;
 }
 
+$PFN_conf->carga();
+
 $PFN_tempo->rexistra('preplantillas');
 
 $erro = intval(base64_decode(urldecode($PFN_vars->get('erro'))));

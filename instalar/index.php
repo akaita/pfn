@@ -121,9 +121,8 @@ if (empty($form['charset'])) {
 }
 
 $PFN_conf->p($form['idioma'],'idioma');
-$PFN_conf->textos('web');
-$PFN_conf->textos('idiomas');
-$PFN_conf->textos('instalar');
+
+$PFN_conf->textos('base');
 
 $PFN_arquivos = new PFN_Arquivos($PFN_conf);
 

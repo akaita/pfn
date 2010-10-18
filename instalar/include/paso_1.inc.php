@@ -35,7 +35,7 @@ foreach ($PFN_conf->gettext->translations() as $k => $v) {
 	if (strstr($k, 'lista_idiomas_')) {
 		$idioma = str_replace('lista_idiomas_', '', $k);
 
-		if (is_file($PFN_paths['idiomas'].$idioma.'/web.mo')) {
+		if (is_file($PFN_paths['idiomas'].$idioma.'/base.mo')) {
 			$idiomas_valen[$idioma] = $v;
 		}
 	}
