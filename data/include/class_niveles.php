@@ -139,10 +139,20 @@ class PFN_Niveles {
 	*
 	* return array
 	*/
-	function get_contido ($nivel, $orde='nome', $pos='ASC', $PFN_arbore=false) {
-		$lista = &$this->carga_contido($nivel,true,$PFN_arbore);
+	function get_contido ($nivel, $orde='nome', $pos='ASC', $PFN_arbore=false, $limit = 0) {
+		$lista = &$this->carga_contido($nivel, true, $PFN_arbore);
 		$datos = &$this->ordena($lista, $orde, $pos);
-		$this->paxina($datos);
+
+		if ($limit == 0) {
+			$this->paxina($datos);
+		} else {
+			foreach (array('arq', 'dir') as $tipo) {
+				foreach (array('nome', 'data', 'tamano', 'permisos', 'tipo') as $clave) {
+					$datos[$tipo][$clave] = array_chunk($datos[$tipo][$clave], $limit);
+					$datos[$tipo][$clave] = (array)$datos[$tipo][$clave][0];
+				}
+			}
+		}
 
 		return $datos;
 	}
@@ -177,7 +187,7 @@ class PFN_Niveles {
 							$ext = explode('.',$arq);
 							$lista['tipo'][] = end($ext);
 						} if ($this->conf->g('columnas','data')) {
-							$lista['data'][] = @filectime($this->nivel.'/'.$arq);
+							$lista['data'][] = @filemtime($this->nivel.'/'.$arq);
 						} if ($this->conf->g('columnas','tamano')) {
 							$peso = PFN_espacio_disco($this->nivel.'/'.$arq);
 							$lista['tamano'][] = $peso;

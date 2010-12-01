@@ -755,7 +755,7 @@ class PFN_Usuarios extends PFN_Clases {
 			."\n\n".$url['scheme'].'://'.getenv('SERVER_NAME').dirname(getenv('SCRIPT_NAME'))
 			.'/activar_contrasinal.php';
 
-		$mail->AddAddress($mail);
+		$mail->AddAddress($email);
 
 		$mail->Send();
 	}

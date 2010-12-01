@@ -221,8 +221,8 @@ function envia_escollidos (accion) {
 		}
 
 		if ($PFN_conf->g('ver_subcontido')) {
-			$subcontido = $PFN_niveles->get_contido($PFN_conf->g('raiz','path').$dir.'/'.$v,'nome','asc',true);
-			$haisubcontido = count($subcontido['dir']['nome'])+count($subcontido['arq']['nome']);
+			$subcontido = $PFN_niveles->get_contido($PFN_conf->g('raiz','path').$dir.'/'.$v, 'nome', 'asc', true, 20);
+			$haisubcontido = count($subcontido['dir']['nome']) + count($subcontido['arq']['nome']);
 		}
 	?>
 	<tr id="trdir_<?php echo $on; ?>_<?php echo $k; ?>" class="trdir<?php echo $on; ?>">
@@ -282,8 +282,8 @@ function envia_escollidos (accion) {
 	$cnt_subdirs = count($subcontido['dir']['nome']);
 	$cnt_subarqs = count($subcontido['arq']['nome']);
 
-	if (($cnt_subdirs + $cnt_subarqs) == $PFN_conf->g('paxinar')) {
-		if ($cnt_subdirs == $PFN_conf->g('paxinar')) {
+	if (($cnt_subdirs + $cnt_subarqs) == 20) {
+		if ($cnt_subdirs == 20) {
 			$cnt_subdirs .= '+';
 			$cnt_subarqs = '...';
 		} else {

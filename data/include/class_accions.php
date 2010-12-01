@@ -792,10 +792,10 @@ class PFN_Accions extends PFN_Niveles {
 						'accion' => '7',
 						'inf' => $arquivo,
 						'out' => ($arquivo.'.firm'),
-						'ind' => '',
+						'ind' => ($datos['separada'] ? $arquivo : ''),
 						'cer' => $datos['cer'],
 						'cpw' => $datos['cpw'],
-						'sep' => ''
+						'sep' => $datos['separada']
 					));
 				}
 
