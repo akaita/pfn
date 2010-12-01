@@ -203,7 +203,7 @@ hr {
 #benvido, #cab_menu {
 	background: url(imx/logo-grande.png) no-repeat;
 	width: 327px;
-	height: 127px;
+	height: 90px;
 	margin: 100px auto 0 auto;
 	border: 0;
 }
@@ -218,7 +218,7 @@ hr {
 	width: 372px;
 	text-align: center;
 	color: #FFF;
-	background-color: #92c426;
+	background-color: #09C;
 }
 
 #login .formulario {

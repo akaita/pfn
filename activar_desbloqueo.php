@@ -28,7 +28,6 @@ programa. Si no ha sido así, escriba a la Free Software Foundation, Inc., en
 $sPFN = '';
 
 session_start();
-session_register('sPFN');
 session_unset('sPFN');
 session_write_close();
 
@@ -37,6 +36,8 @@ include_once ($PFN_paths['include'].'class_tempo.php');
 include_once ($PFN_paths['include'].'funcions.php');
 include_once ($PFN_paths['include'].'class_conf.php');
 include_once ($PFN_paths['include'].'class_vars.php');
+
+$PFN_conf->carga();
 
 $ok = 1;
 

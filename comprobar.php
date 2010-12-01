@@ -36,6 +36,8 @@ include_once ($PFN_paths['include'].'clases.php');
 include_once ($PFN_paths['include'].'class_usuarios.php');
 include_once ($PFN_paths['include'].'class_sesion.php');
 
+$PFN_conf->carga();
+
 $PFN_sesion->encriptar(false,true);
 
 $PFN_conf->inicial('login');

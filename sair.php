@@ -50,7 +50,6 @@ $url = $PFN_conf->g('saida');
 
 $sPFN = '';
 
-session_register('sPFN');
 session_unregister('sPFN');
 
 if ($PFN_conf->g('manter_sesion')) {
