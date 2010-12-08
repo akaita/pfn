@@ -3,27 +3,6 @@
 * data/conf/default.inc.php
 *
 * Contiene las variables de configuracion generales
-*
-
-PHPfileNavigator version 2.1.0
-
-Copyright (C) 2004-2005 Lito <lito@eordes.com>
-
-http://phpfilenavigator.litoweb.net/
-
-Este programa es software libre. Puede redistribuirlo y/o modificarlo bajo los
-terminos de la Licencia Publica General de GNU segun es publicada por la Free
-Software Foundation, bien de la version 2 de dicha Licencia o bien (segun su
-eleccion) de cualquier version posterior. 
-
-Este programa se distribuye con la esperanza de que sea util, pero SIN NINGUNA
-GARANTIA, incluso sin la garantia MERCANTIL implicita o sin garantizar la
-CONVENIENCIA PARA UN PROPOSITO PARTICULAR. Vease la Licencia Publica General de
-GNU para mas detalles. 
-
-Deberia haber recibido una copia de la Licencia Publica General junto con este
-programa. Si no ha sido asi, escriba a la Free Software Foundation, Inc., en
-675 Mass Ave, Cambridge, MA 02139, EEUU. 
 *******************************************************************************/
 
 defined('OK') or die();

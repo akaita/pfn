@@ -2,205 +2,88 @@
 /****************************************************************************
 * data/plantillas/Xtraduccion.inc.php
 *
-* plantilla para la visualización del formulario para traduccion
-*
-
-PHPfileNavigator versión 2.3.2
-
-Copyright (C) 2004-2005 Lito <lito@eordes.com>
-
-http://phpfilenavigator.litoweb.net/
-
-Este programa es software libre. Puede redistribuirlo y/o modificarlo bajo los
-términos de la Licencia Pública General de GNU según es publicada por la Free
-Software Foundation, bien de la versión 2 de dicha Licencia o bien (según su
-elección) de cualquier versión posterior. 
-
-Este programa se distribuye con la esperanza de que sea útil, pero SIN NINGUNA
-GARANTÍA, incluso sin la garantía MERCANTIL implícita o sin garantizar la
-CONVENIENCIA PARA UN PROPÓSITO PARTICULAR. Véase la Licencia Pública General de
-GNU para más detalles. 
-
-Debería haber recibido una copia de la Licencia Pública General junto con este
-programa. Si no ha sido así, escriba a la Free Software Foundation, Inc., en
-675 Mass Ave, Cambridge, MA 02139, EEUU. 
+* plantilla para la visualizaci&oacute;n de la descarga y subida de los
+* ficheros gettext
 *******************************************************************************/
 
 defined('OK') && defined('XESTION') or die();
 ?>
 <div id="ver_info">
 	<div class="bloque_info"><h1><?php echo PFN___('xestion').' &raquo; '.PFN___('Xtraduccion'); ?></h1></div>
-	<div class="bloque_info">
-		<div id="Xinformes_cab">
-			<div style="background: #EEE; text-align: center;"><a href="estado.php?<?php echo PFN_get_url(false); ?>"><?php echo PFN___('Xcomprobar_traduccions'); ?></a></div>
+	<div class="bloque_info paragrafos">
+		<div><?php echo PFN___('Xtraduccion_intro'); ?></div>
 
-			<br /><?php echo PFN___('Xtraduccion_intro'); ?><br />
-			<form action="index.php?<?php echo PFN_get_url(false); ?>" method="post" onsubmit="return submitonce();">
+		<form id="form_accion" action="?<?php echo PFN_get_url(false); ?>" method="post" enctype="multipart/form-data">
 			<fieldset>
-			<input type="hidden" name="executa" value="escoller" />
+				<input type="hidden" name="executa" value="1" />
 
-			<br /><div style="text-align: center;">
-				<strong><?php echo PFN___('charset'); ?>:</strong>
-				<select name="tr_charset" tabindex="5">
-					<option value="US-ASCII"<?php echo ($tr_charset == 'US-ASCII')?' selected="selected"':''; ?>>US-ASCII United States</option>
-					<option value="ISO-8859-1"<?php echo ($tr_charset == 'ISO-8859-1')?' selected="selected"':''; ?>>ISO-8859-1 Westerm European</option>
-					<option value="ISO-8859-2"<?php echo ($tr_charset == 'ISO-8859-2')?' selected="selected"':''; ?>>ISO-8859-2 East European</option>
-					<option value="ISO-8859-3"<?php echo ($tr_charset == 'ISO-8859-3')?' selected="selected"':''; ?>>ISO-8859-3 South European</option>
-					<option value="ISO-8859-4"<?php echo ($tr_charset == 'ISO-8859-4')?' selected="selected"':''; ?>>ISO-8859-4 North European</option>
-					<option value="ISO-8859-5"<?php echo ($tr_charset == 'ISO-8859-5')?' selected="selected"':''; ?>>ISO-8859-5 Cyrillic</option>
-					<option value="ISO-8859-6"<?php echo ($tr_charset == 'ISO-8859-6')?' selected="selected"':''; ?>>ISO-8859-6 Arabic</option>
-					<option value="ISO-8859-7"<?php echo ($tr_charset == 'ISO-8859-7')?' selected="selected"':''; ?>>ISO-8859-7 Greek</option>
-					<option value="ISO-8859-8"<?php echo ($tr_charset == 'ISO-8859-8')?' selected="selected"':''; ?>>ISO-8859-8 Hebrew</option>
-					<option value="ISO-8859-9"<?php echo ($tr_charset == 'ISO-8859-9')?' selected="selected"':''; ?>>ISO-8859-9 Turkish</option>
-					<option value="ISO-8859-10"<?php echo ($tr_charset == 'ISO-8859-10')?' selected="selected"':''; ?>>ISO-8859-10 Nordic</option>
-					<option value="ISO-8859-11"<?php echo ($tr_charset == 'ISO-8859-11')?' selected="selected"':''; ?>>ISO-8859-11 Thai</option>
-					<option value="ISO-8859-14"<?php echo ($tr_charset == 'ISO-8859-14')?' selected="selected"':''; ?>>ISO-8859-14 Celtic</option>
-					<option value="ISO-8859-15"<?php echo ($tr_charset == 'ISO-8859-15')?' selected="selected"':''; ?>>ISO-8859-15 Latin-9</option>
-					<option value="ISO-8859-16"<?php echo ($tr_charset == 'ISO-8859-16')?' selected="selected"':''; ?>>ISO-8859-16 South-Eastern European</option>
-					<option value="UTF-8"<?php echo ($tr_charset == 'UTF-8')?' selected="selected"':''; ?>>UTF-8 Unicode</option>
-					<option value="Big5"<?php echo ($tr_charset == 'Big5')?' selected="selected"':''; ?>>Big5 Chinese Traditional (Taiwan, HongKong)</option>
-					<option value="EUC-TW"<?php echo ($tr_charset == 'EUC-TW')?' selected="selected"':''; ?>>EUC-TW Chinese Traditional</option>
-					<option value="GB2312"<?php echo ($tr_charset == 'GB2312')?' selected="selected"':''; ?>>GB2312 Chinese Simplified</option>
-					<option value="GB"<?php echo ($tr_charset == 'GB')?' selected="selected"':''; ?>>GB (GuoBiao) Chinese Simplified</option>
-					<option value="GBK"<?php echo ($tr_charset == 'GBK')?' selected="selected"':''; ?>>GBK Chinese Simplified</option>
-					<option value="HZ"<?php echo ($tr_charset == 'HZ')?' selected="selected"':''; ?>>HZ Chinese Simplified</option>
-					<option value="ISO-2022-GB"<?php echo ($tr_charset == 'ISO-2022-GB')?' selected="selected"':''; ?>>ISO-2022-GB New Chinese standard</option>
-					<option value="EUC-JP"<?php echo ($tr_charset == 'EUC-JP')?' selected="selected"':''; ?>>EUC-JP Japanese</option>
-					<option value="EUC-JIS"<?php echo ($tr_charset == 'EUC-JIS')?' selected="selected"':''; ?>>EUC-JIS Japanese</option>
-					<option value="ISO-2022-JP"<?php echo ($tr_charset == 'ISO-2022-JP')?' selected="selected"':''; ?>>ISO-2022-JP Japanese</option>
-					<option value="ISO-2022-KR"<?php echo ($tr_charset == 'ISO-2022-KR')?' selected="selected"':''; ?>>ISO-2022-KR Korean</option>
-					<option value="EUC-KR"<?php echo ($tr_charset == 'EUC-KR')?' selected="selected"':''; ?>>EUC-KR Korean</option>
-					<option value="KO18-R"<?php echo ($tr_charset == 'KO18-R')?' selected="selected"':''; ?>>KO18-R Cyrillic</option>
-					<option value="KO18-U"<?php echo ($tr_charset == 'KO18-U')?' selected="selected"':''; ?>>KO18-U Cyrillic</option>
-				</select>&nbsp;&nbsp;&nbsp;
+				<br /><h2><?php echo PFN___('Xdescargar_arquivo_gettext'); ?></h2>
 
-				<strong><?php echo PFN___('Xlistar'); ?>:</strong>
-				<select name="tr_listar">
-					<option value="todas"<?php echo ($tr_listar == 'todas')?' selected="selected"':''; ?>> <?php echo PFN___('Xtodas'); ?></option>
-					<option value="vacias"<?php echo ($tr_listar == 'vacias')?' selected="selected"':''; ?>> <?php echo PFN___('Xsen_traducir'); ?></option>
-				</select>
-
-				<br />
-
-				<strong><?php echo PFN___('Xarquivo'); ?>:</strong>
-				<select name="tr_arquivo">
-					<?php foreach (array('axuda','estado','idiomas','instalar','web','xestion') as $v) { ?>
-					<option value="<?php echo $v; ?>"<?php echo ($v == $tr_arquivo)?' selected="selected"':''; ?>> <?php echo ucfirst($v); ?> </option>
-					<?php } ?>
-				</select>&nbsp;&nbsp;&nbsp;
-
-				<strong><?php echo PFN___('orixe'); ?>:</strong>
-				<select name="tr_orixe">
-					<option value=""><?php echo PFN___('Xescolle_idioma'); ?></option>
-					<?php
-					foreach ($idiomas_valen as $k => $v) {
-					?>
-					<option value="<?php echo $k; ?>"<?php echo ($k == $tr_orixe)?' selected="selected"':''; ?>> <?php echo $v; ?> </option>
-					<?php } ?>
-				</select>&nbsp;&nbsp;&nbsp;
-
-				<strong><?php echo PFN___('destino'); ?>:</strong>
-				<select name="tr_destino">
-					<option value=""><?php echo PFN___('Xescolle_idioma'); ?></option>
-					<?php foreach ($lista_idiomas as $k => $v) { ?>
-					<option value="<?php echo $k; ?>"<?php echo ($k == $tr_destino)?' selected="selected"':''; ?>> <?php echo $v; ?> </option>
-					<?php } ?>
-				</select>&nbsp;&nbsp;&nbsp;
-
-				<br /><br />
-				<input type="reset" value=" <?php echo PFN___('voltar'); ?> " class="boton" onclick="enlace('../index.php?<?php echo PFN_get_url(false); ?>');" />
-				<input type="submit" value=" <?php echo PFN___('aceptar'); ?> " style="margin-left: 40px;" class="boton" /><br />
-			</div><br />
-			</fieldset>
-			</form>
-		</div>
-
-		<div id="Xinformes_resultado">
-			<?php
-			if (count($erros) || $ok) {
-				echo '<div class="aviso">';
-
-				if (count($erros)) {
-					foreach ($erros as $v) {
-						echo PFN___('Xerros_'.$v).'<br />';
-					}
-				} else {
-					echo PFN___('Xok_6');
+				<?php
+				if ($executa && $erros_descargar) {
+					echo '<div class="erro">'.implode('</div><div class="erro">', $erros_descargar).'</div>';
 				}
+				?>
 
-				echo '</div><br />';
-			}
-			?>
-			<form action="gdar.php?<?php echo PFN_get_url(false); ?>" method="post" onsubmit="return submitonce();">
-			<fieldset>
-			<input type="hidden" name="executa" value="gardar" />
-			<input type="hidden" name="tr_orixe" value="<?php echo $tr_orixe; ?>" />
-			<input type="hidden" name="tr_destino" value="<?php echo $tr_destino; ?>" />
-			<input type="hidden" name="tr_arquivo" value="<?php echo $tr_arquivo; ?>" />
-			<input type="hidden" name="tr_listar" value="<?php echo $tr_listar; ?>" />
-			<input type="hidden" name="tr_charset" value="<?php echo $tr_charset; ?>" />
+				<div class="centro">
+					<p>
+						<label for="idioma_descargar"><?php echo PFN___('idioma'); ?>:</label>
 
-			<?php
-			foreach ($datos_orixe as $k => $v) {
-				if (is_array($v)) {
-					foreach ($v as $k2 => $v2) {
-						if (empty($datos_destino[$k][$k2]) || $tr_listar == 'todas') {
-							echo "\n".'<h1>'.PFN___('Xclave').': '.$k.'</h1><br />';
-							break;
-						}
-					}
+						<select name="idioma_descargar" id="idioma_descargar" style="margin-left: 10px;">
+							<option value=""><?php echo PFN___('Xescolle_idioma'); ?></option>
+							<?php foreach ($idiomas_existen as $k => $v) { ?>
+							<option value="<?php echo $k; ?>" <?php echo ($idioma == $k) ? 'selected="selected"' : ''; ?>><?php echo $v; ?></option>
+							<?php } ?>
+						</select>
+					</p>
 
-					foreach ($v as $k2 => $v2) {
-						$txt_destino = preg_replace('/(<br>|<br \/>)/i', "\n", $datos_destino[$k][$k2]);
+					<p>
+						<input type="submit" name="descargar_orixinal" value=" <?php echo PFN___('Xdescargar_orixinal'); ?> " class="boton" />
+						<input type="submit" name="descargar_personalizado" value=" <?php echo PFN___('Xdescargar_personalizado'); ?> " class="boton" style="margin-left: 20px;" />
+					</p>
+				</div>
 
-						if (empty($txt_destino) || $tr_listar == 'todas') {
-							$alto = intval(strlen($v2)/85);
-							$alto = (($alto == 0)?1:$alto)+1;
-							$v2 = preg_replace('/(<br>|<br \/>)/i',"\n", $v2);
-							$v2 = preg_replace('/\<((\/|\w).*)\>/sU','&lt;\\1&gt;', $v2);
-							$v2 = PFN_cambia_intros($v2);
+				<br /><h2><?php echo PFN___('Xsubir_arquivos_gettext'); ?></h2>
 
-							echo"\n". '<br /><h2>'.PFN___('Xsub_clave').': '.$k2.'</h2><br />'
-								.'<div class="fondo_gris">'.$v2.'<br />'
-								.'<textarea name="idioma_i['.$k.']['.$k2.']" style="width: 680px;" rows="'.$alto.'">'
-								.$txt_destino.'</textarea></div><br />';
-						} else {
-							echo "\n".'<textarea style="display: none;" name="idioma_i['.$k.']['.$k2.']">'.$txt_destino.'</textarea>';
-						}
-					}
-				} else {
-					$txt_destino = preg_replace('/(<br>|<br \/>)/i', "\n", $datos_destino[$k]);
-
-					if (empty($txt_destino) || $tr_listar == 'todas') {
-						echo "\n".'<h1>'.PFN___('Xclave').': '.$k.'</h1><br />';
-						$alto = intval(strlen($v)/85);
-						$alto = (($alto == 0)?1:$alto)+1;
-						$v = preg_replace('/(<br>|<br \/>)/i',"\n", $v);
-						$v = preg_replace('/\<((\/|\w).*)\>/sU','&lt;\\1&gt;', $v);
-						$v = PFN_cambia_intros($v);
-
-						echo "\n".'<div class="fondo_gris">'.$v.'<br />'
-							.'<textarea name="idioma_i['.$k.']" style="width: 680px;" rows="'.$alto.'">'
-							.$txt_destino.'</textarea></div><br />';
-					} else {
-						echo "\n".'<textarea style="display: none;" name="idioma_i['.$k.']">'.$txt_destino.'</textarea>';
+				<?php
+				if ($executa) {
+					if ($erros_subir) {
+						echo '<div class="erro">'.implode('</div><div class="erro">', $erros_subir).'</div>';
+					} else if (!$erros_descargar) {
+						echo '<div class="ok">'.PFN___('Xok_6').'</div>';
 					}
 				}
+				?>
 
-				unset($txt_destino);
-			}
-			?>
-			<br />
+				<br /><?php echo PFN___('Xtraduccion_subir_intro'); ?>
 
-			<?php if (!empty($executa)) { ?>
-			<div style="text-align: center;">
-				<input type="reset" value=" <?php echo PFN___('Xreiniciar_campos'); ?> " class="boton" />
-				<input type="submit" value=" <?php echo PFN___('Xgardar_idioma'); ?> " style="margin-left: 40px;" class="boton" />
+				<div class="centro">
+					<p>
+						<label for="idioma_subir"><?php echo PFN___('idioma'); ?>:</label>
+
+						<select name="idioma_subir" id="idioma_subir" style="margin-left: 10px;">
+							<option value=""><?php echo PFN___('Xescolle_idioma'); ?></option>
+							<?php foreach ($idiomas_valen as $k => $v) { ?>
+							<option value="<?php echo $k; ?>" <?php echo ($idioma == $k) ? 'selected="selected"' : ''; ?>><?php echo $v; ?></option>
+							<?php } ?>
+						</select>
+					</p>
+
+					<p>
+						<label for="arquivo_po" style="margin-right: 10px;"><?php echo PFN___('Xarquivo_po'); ?>:</label>
+						<input type="file" name="arquivo_po" id="arquivo_po" value="" />
+					</p>
+
+					<p>
+						<label for="arquivo_mo" style="margin-right: 10px;"><?php echo PFN___('Xarquivo_mo'); ?>:</label>
+						<input type="file" name="arquivo_mo" id="arquivo_mo" value="" />
+					</p>
+
+					<p>
+						<input type="submit" name="subir" value=" <?php echo PFN___('actualizar'); ?> " class="boton" onclick="return confirm(HtmlDecode('<?php echo PFN___('Xsubir_traduccion'); ?>'));" />
+					</p>
+				</div>
 			</div>
-			<?php } ?>
-			<br /><br />
-			</fieldset>
-			</form>
-		</div>
-	</div>
+		</fieldset>
+	</form>
 </div>

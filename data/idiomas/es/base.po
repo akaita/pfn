@@ -1932,6 +1932,9 @@ msgstr "Crear Usuario"
 msgid "Xcrear_raiz"
 msgstr "Crear Ra&iacute;z"
 
+msgid "Ximportar_csv"
+msgstr "Importar de CSV"
+
 msgid "Xraices"
 msgstr "Raices"
 
@@ -2145,6 +2148,63 @@ msgstr "El valor para l&iacute;mite de tama&ntilde;o no es un n&uacute;mero v&aa
 msgid "Xerros_36"
 msgstr "No existe la ra&iacute;z escogida para reindexar."
 
+msgid "Xerros_43"
+msgstr "No se ha seleccionado ningun fichero CSV para ser procesado"
+
+msgid "Xerros_44"
+msgstr "Error en la linea <strong>%s</strong>: No tiene el numero de campos correcto.<pre>%s</pre>"
+
+msgid "Xerros_45"
+msgstr "Error en la linea <strong>%s</strong>: Los cambios siempre obligatorios son \"nombre, usuario, contrasinal, id_grupo, id_raiz_base\".<pre>%s</pre>"
+
+msgid "Xerros_46"
+msgstr "Error en la linea <strong>%s</strong>: El usuario <strong>%s</strong> ya existe en la Plataforma ecoPFN.<pre>%s</pre>"
+
+msgid "Xerros_47"
+msgstr "Error en la linea <strong>%s</strong>: No existe la raiz con id <strong>%s</strong> para utilizar como base.<pre>%s</pre>"
+
+msgid "Xerros_48"
+msgstr "Error en la linea <strong>%s</strong>: No existe el grupo con id <strong>%s</strong>.<pre>%s</pre>"
+
+msgid "Xerros_49"
+msgstr "Error en la linea <strong>%s</strong>: No se ha podido crear el usuario <strong>%s (%s)</strong>.<pre>%s</pre>"
+
+msgid "Xerros_50"
+msgstr "Error en la linea <strong>%s</strong>: No se ha podido crear la raiz para el usuario <strong>%s (%s)</strong>.<pre>%s</pre>"
+
+msgid "Xerros_51"
+msgstr "Error en la linea <strong>%s</strong>: No se ha podido crear el directorio para la raiz <strong>%s (%s)</strong>.<pre>%s</pre>"
+
+msgid "Xerros_52"
+msgstr "Error en la linea <strong>%s</strong>: No se ha podido relacionar el usuario <strong>%s (%s)</strong> con su raiz, esta accion debe realizarse de manera manual.<pre>%s</pre>"
+
+msgid "Xerros_53"
+msgstr "El fichero CSV contiene errores. Se procesar&aacute;n un total de <strong>%s</strong> usuarios con <strong>%s</strong> registros correctos y <strong>%s</strong> err&oacute;neos."
+
+msgid "Xerros_54"
+msgstr "El fichero CSV conten&iacute;a errores. Se han procesado un total de <strong>%s</strong> usuarios con <strong>%s</strong> altas correctas y <strong>%s</strong> fallidas."
+
+msgid "Xerros_55"
+msgstr "Error en la linea <strong>%s</strong>: El campo de usuario (<strong>%s</strong>) solo puede contener letras, n&uacute;meros, guiones y puntos.<pre>%s</pre>"
+
+msgid "Xerros_56"
+msgstr "Error en la linea <strong>%s</strong>: El usuario (<strong>%s</strong>) ya existe en alguna otra l&iacute;nea del fichero CSV.<pre>%s</pre>"
+
+msgid "Xerros_57"
+msgstr "El campo de usuario solo puede llevar letras, n&uacute;meros, gui&oacute;nes y puntos."
+
+msgid "Xerros_58"
+msgstr "El campo de usuario debe ser de como m&iacute;nimo cuatro caracteres de longitud"
+
+msgid "Xerros_59"
+msgstr "Error en la linea <strong>%s</strong>: El usuario (<strong>%s</strong>) debe tener un m&iacute;nimo de 4 caracteres de longitud.<pre>%s</pre>"
+
+msgid "Xerros_63"
+msgstr "No se han seleccionado los dos ficheros obligatorios (.po y .mo)"
+
+msgid "Xerros_64"
+msgstr "No se ha seleccionado ning&uacute;n idioma"
+
 msgid "Xok_1"
 msgstr "El registro fue guardado correctamente."
 
@@ -2165,6 +2225,18 @@ msgstr "La traducci&oacute;n fue guardada correctamente."
 
 msgid "Xok_7"
 msgstr "Los ficheros de logs seleccionados fueron eliminados correctamente."
+
+msgid "Xok_8"
+msgstr "El fichero CSV es totalmente v&aacute;lido. Se importar&aacute;n <strong>%s</strong> usuarios."
+
+msgid "Xok_9"
+msgstr "El fichero CSV es totalmente v&aacute;lido. Se han importado <strong>%s</strong> usuarios."
+
+msgid "Xok_10"
+msgstr "La licencia ha sido actualizada correctamente."
+
+msgid "Xok_11"
+msgstr "Las modificaciones fueron aplicadas correctamente."
 
 msgid "Xaxuda_raiz_nome"
 msgstr "Nombre gen&eacute;rico de la ra&iacute;z, para reconocerla en los listados. <strong>p.j.: Ra&iacute;z Inicial</strong>"
@@ -2529,6 +2601,9 @@ msgstr "A&ntilde;adir Usuario"
 msgid "Xm_crear_grupo"
 msgstr "A&ntilde;adir Grupo"
 
+msgid "Xm_importar_csv"
+msgstr "Importar de CSV"
+
 msgid "Xm_indexador"
 msgstr "Indexar Datos"
 
@@ -2551,43 +2626,37 @@ msgid "Xtraduccion"
 msgstr "Traducci&oacute;n"
 
 msgid "Xtraduccion_intro"
-msgstr "Desde aqu&iacute; puedes traducir o cambiar los textos de traducci&oacute;n que necesites. S&oacute;lo tienes que escoger un idioma de origen y uno de destino e ir traduciendo los campos que van apareciendo.<br /><br />Los pasos a seguir son los siguientes:<br /><br /><strong>1) Escoge el juego de caracteres.</strong><br /><strong>2) Escoge si listar todo o s&oacute;lo lo que est&aacute; sin traducir.</strong><br /><strong>3) Escoge el fichero a traducir.</strong><br /><strong>4) Escoge el idioma de origen.</strong><br /><strong>5) Escoge el idioma de destino.</strong><br /><br />Cuando te encuentres con algo como <strong>%s</strong>, mantenlo igual.<br /><br /><strong>IMPORTANTE: </strong>Dado que la sesi&oacute;n tiene una duraci&oacute;n limitada debes guardar cada cierto tiempo para que no te caduque la sesi&oacute;n y te expulse fuera perdiendo todo lo traducido!!!!."
+msgstr "Desde aqu&iacute; puedes descargar y actualizar los ficheros de traducciones personalizadas para tu Plataforma ecoPFN.<br /><br />Este proceso de traducci&oacute;n se realiza mediante <strong>gettext</strong> por lo que neceitar&aacute;s alguna aplicaci&oacute;n como <strong><a href=\"http://www.poedit.net/download.php\">Poedit</a></strong> (para Windows, Linux y Mac) para poder realizar estos cambios.<br /><br />Cuando te encuentres con algo como <strong>%s</strong>, debes mantenerlo igual."
+
+msgid "Xdescargar_arquivo_gettext"
+msgstr "Descargar fichero gettext"
+
+msgid "Xdescargar_orixinal"
+msgstr "Descargar la traducci&oacute;n original"
+
+msgid "Xdescargar_personalizado"
+msgstr "Descargar la traducci&oacute;n personalizada"
+
+msgid "Xsubir_arquivos_gettext"
+msgstr "Subir los ficheros gettext"
+
+msgid "Xtraduccion_subir_intro"
+msgstr "Debes subir los dos ficheros de traducciones, tanto el <strong>.po</strong>, como el <strong>.mo</strong> que se genera de manera autom&aacute;tica cuando se guardan los cambios en <strong>Poedit</strong>."
+
+msgid "Xarquivo_po"
+msgstr "Fichero .po"
+
+msgid "Xarquivo_mo"
+msgstr "Fichero .mo"
+
+msgid "Xsubir_traduccion"
+msgstr "Realmente deseas substituir la anterior personalizaci&oacute;n con esta nueva traducci&oacute;n?"
 
 msgid "Xarquivo"
 msgstr "Fichero"
 
-msgid "Xclave"
-msgstr "Clave"
-
-msgid "Xsub_clave"
-msgstr "Subclave"
-
-msgid "Xreiniciar_campos"
-msgstr "Volver a la versi&oacute;n Original"
-
-msgid "Xgardar_idioma"
-msgstr "Guardar este idioma"
-
-msgid "Xlistar"
-msgstr "Listar"
-
-msgid "Xtodas"
-msgstr "Todas"
-
-msgid "Xtodos"
-msgstr "Todos"
-
-msgid "Xsen_traducir"
-msgstr "Sin traducir"
-
-msgid "Xcomprobar_traduccions"
-msgstr "Comprobar el estado de las traducciones"
-
 msgid "Xescolle_idioma"
-msgstr "- Escoge idioma -"
-
-msgid "Xtraduccion_estado"
-msgstr "Ten en cuenta que el proceso puede ser largo ya que se necesita comprobar todos los directorios disponibles de idiomas y todos los ficheros incluidos.<br /><br />El c&oacute;digo de colores para el listado es el siguiente:<br /><br /><table summary=\"\"><tr><td style=\"background: #6c6; padding: 5px;\">El color verde indica que el fichero coincidente en esa celda con el idioma listado tiene el mismo n&uacute;mero de valores que el escogido como origen, con lo cual la traducci&oacute;n es completa.</td></tr><tr><td style=\"background: #69E; padding: 5px;\">El color azul indica que el idioma listado tiene m&aacute;s claves traducidas que el seleccionado como origen.</td></tr><tr><td style=\"background: #E66; padding: 5px;\">El color rojo indica que en el fichero del idioma listado faltan algunas claves por traducir.</td></tr><tr><td style=\"background: #000; color: #FFF; padding: 5px;\">El color negro indica que no existe a&uacute;n ese fichero para el idioma listado.</td></tr></table><br /><br />Selecciona el idioma a partir del cual se comparar&aacute; el estado con los otros idiomas."
+msgstr "- Selecciona un idioma -"
 
 msgid "Xvaciar_inc"
 msgstr "Desea eliminar todos los ficheros de informaci&oacute;n adicional y las copias de reducidas de las im&aacute;genes generadas por el PHPfileNavigator? Esta acci&oacute;n no eliminar&aacute; ning&uacute;n fichero personal."
@@ -2645,6 +2714,33 @@ msgstr "Reasignar relaciones"
 
 msgid "Xedicion_directa"
 msgstr "Edici&oacute;n directa de ficheros de configuraci&oacute;n"
+
+msgid "Xcsv_intro"
+msgstr "<p>Este proceso permitir&aacute; a&ntilde;adir usuarios de manera automatizada y relacionarlos con raices.</p><p>El formato de datos debe ser el siguiente:</p><p class=\"linha\">nombre, usuario, contrase&ntilde;a, identificador_acceso, email, maximo_descargas, cambiar_datos, id_grupo, estado, acceso_contrase&ntilde;a, acceso_certificado, nueva_raiz, peso_maximo, id_raiz_base</p><p><a href=\"ejemplo.csv\">Descarga aqu&iacute;</a> un ejemplo de como debe ir formateado el fichero CSV a usar.</p>"
+
+msgid "Xcsv_taboa_campos"
+msgstr "<table class=\"tabla_info\" summary=\"\"> <caption>Explicaci&oacute;n de los campos:</caption> <tbody> <tr> <th>nombre</th> <td>El nombre real del usuario.</td> </tr> <tr> <th>usuario</th> <td>El identificador que se usar&aacute; como usuario de acceso.</td> </tr> <tr> <th>contrase&ntilde;a</th> <td>Contrase&ntilde;a para ese identificador.</td> </tr> <tr> <th>identificar_acceso</th> <td>El identificador que se usar&aacute; para acceso mediante certificado, normalmente el NIF/CIF.</td> </tr> <tr> <th>email</th> <td>Email del usuario.</td> </tr> <tr> <th>maximo_descargas</th> <td>Limitaci&oacute;n de descargas mensuales (en megas). Usar 0 para desactivar el l&iacute;mite.</td> </tr> <tr> <th>cambiar_datos</th> <td>Permitir al usuario cambiar sus datos. Valores posibles: 1 = si, 0 = no.</td> </tr> <tr> <th>id_grupo</th> <td>El identificador del grupo al que estar&aacute; asignado.</td> </tr> <tr> <th>estado</th> <td>Si el usuario estar&aacute; activo o desactivo. Valores posibles: 1 = activo, 0 = desactivo.</td> </tr> <tr> <th>acceso_contrase&ntilde;a</th> <td>Si se permite al usuario acceder mediante usuario / contrase&ntilde;a. Valores posibles: 1 = activo, 0 = desactivo.</td> </tr> <tr> <th>acceso_certificado</th> <td>Si se permite al usuario acceder mediante certificado digital. Valores posibles: 1 = activo, 0 = desactivo.</td> </tr> <tr> <th>nueva_raiz</th> <td>Si se crear&aacute; una nueva ra&iacute;z asociada a este usuario. El nombre de la ra&iacute;z ser&aacute; el mismo que el campo de \"nombre\" y el nombre del directorio que se crerar&aacute; sera el mismo que el campo \"usuario\". Valores posibles: 1 = si, 0 = no.</td> </tr> <tr> <th>peso_maximo</th> <td>En caso de crearse una nueva ra&iacute;z, el peso m&aacute;ximo (en megas) permitido. Usar 0 para desactivar el l&iacute;mite.</td> </tr> <tr> <th>id_raiz_base</th> <td>El identificador de la ra&iacute;z base sobre el que se crear&aacute; esta nueva ra&iacute;z. En caso de no crearse nueva ra&iacute;z el usuario se asociar&aacute; con este identificador.</td> </tr> </tbody> </table>"
+
+msgid "Xcargar_arquivo_csv"
+msgstr "Cargar fichero CSV"
+
+msgid "Xseparados_por"
+msgstr "Campos separados por:"
+
+msgid "Xcoma"
+msgstr "Coma"
+
+msgid "Xpunto_coma"
+msgstr "Punto y coma"
+
+msgid "Xescolle_arquivo_csv"
+msgstr "Selecciona el fichero CSV"
+
+msgid "Xprobar"
+msgstr "Probar"
+
+msgid "Xprocesar"
+msgstr "Procesar"
 
 msgid "Xactualizar"
 msgstr "Actualizar"

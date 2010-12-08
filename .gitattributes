@@ -116,6 +116,7 @@ data/plantillas/Xconfiguracion_resumo.inc.php svn_keywords=Id
 data/plantillas/Xconfiguracion_sintaxis.inc.php svn_keywords=Id
 data/plantillas/Xconfiguracion_ver.inc.php svn_keywords=Id
 data/plantillas/Xconfiguracions.inc.php -text
+data/plantillas/Xcsv.inc.php svn_keywords=Id
 data/plantillas/Xdoazon.inc.php -text
 data/plantillas/Xgrupo.inc.php svn_keywords=Id
 data/plantillas/Xgrupos.inc.php -text
@@ -130,7 +131,6 @@ data/plantillas/Xopcions.inc.php -text
 data/plantillas/Xraices.inc.php -text
 data/plantillas/Xraiz.inc.php svn_keywords=Id
 data/plantillas/Xtraduccion.inc.php -text
-data/plantillas/Xtraduccion_estado.inc.php -text
 data/plantillas/Xusuario.inc.php svn_keywords=Id
 data/plantillas/Xusuarios.inc.php -text
 data/plantillas/Xvarios.inc.php -text
@@ -335,6 +335,7 @@ estilos/pfn/imx/esquina.png -text
 estilos/pfn/imx/extraer.png -text
 estilos/pfn/imx/firmar.png -text
 estilos/pfn/imx/fondo.png -text
+estilos/pfn/imx/importar_csv.png -text
 estilos/pfn/imx/indexador.png -text
 estilos/pfn/imx/info.png -text
 estilos/pfn/imx/informes.png -text
@@ -443,6 +444,9 @@ xestion/configuracions/resumo.php svn_keywords=Id
 xestion/configuracions/sintaxis.php -text
 xestion/configuracions/ver.inc.php -text
 xestion/configuracions/ver.php -text
+xestion/csv/ejemplo.csv -text
+xestion/csv/index.inc.php svn_keywords=Id
+xestion/csv/index.php svn_keywords=Id
 xestion/doazon.php -text
 xestion/gdar.php -text
 xestion/grupos/editar.inc.php svn_keywords=Id
@@ -463,6 +467,8 @@ xestion/raices/editar.php svn_keywords=Id
 xestion/raices/eliminar.php -text
 xestion/raices/gdar.php -text
 xestion/raices/index.php -text
+xestion/traduccion/index.inc.php svn_keywords=Id
+xestion/traduccion/index.php svn_keywords=Id
 xestion/usuarios/editar.inc.php svn_keywords=Id
 xestion/usuarios/editar.php svn_keywords=Id
 xestion/usuarios/eliminar.php -text
