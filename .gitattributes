@@ -463,12 +463,6 @@ xestion/raices/editar.php svn_keywords=Id
 xestion/raices/eliminar.php -text
 xestion/raices/gdar.php -text
 xestion/raices/index.php -text
-xestion/traduccion/descargar.php -text
-xestion/traduccion/estado.inc.php -text
-xestion/traduccion/estado.php -text
-xestion/traduccion/gdar.php -text
-xestion/traduccion/index.inc.php -text
-xestion/traduccion/index.php -text
 xestion/usuarios/editar.inc.php svn_keywords=Id
 xestion/usuarios/editar.php svn_keywords=Id
 xestion/usuarios/eliminar.php -text
