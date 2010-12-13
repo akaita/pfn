@@ -15,6 +15,7 @@ $PFN_usuarios->init('menu_raices', $sPFN['usuario']['id']);
 
 if ($PFN_usuarios->filas() == 1) {
 	$sPFN['raiz']['unica'] = true;	
+	$sPFN['raiz']['id'] = $PFN_usuarios->get('id');	
 
 	$PFN_vars->session('sPFN', $sPFN);
 
