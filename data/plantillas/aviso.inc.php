@@ -8,7 +8,7 @@
 defined('OK') or die();
 ?>
 
-		<div class="bloque_info"><h1><?php echo PFN___('accion').' &raquo; '.PFN___('$accion); ?></h1></div>
+		<div class="bloque_info"><h1><?php echo PFN___('accion').' &raquo; '.PFN___($accion); ?></h1></div>
 
 		<div class="bloque_info">
 			<div class="aviso_info">

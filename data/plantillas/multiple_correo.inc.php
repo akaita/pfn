@@ -8,7 +8,7 @@
 defined('OK') && defined('ACCION') or die();
 ?>
 <div id="ver_info">
-	<div class="bloque_info"><h1><?php echo PFN___('accion').' &raquo; '.PFN___('$accion); ?></h1></div>
+	<div class="bloque_info"><h1><?php echo PFN___('accion').' &raquo; '.PFN___($accion); ?></h1></div>
 	<div class="bloque_info">
 		<form action="accion.php?<?php echo PFN_cambia_url('accion',$accion,false); ?>" method="post" onsubmit="return submitonce();">
 		<fieldset>
