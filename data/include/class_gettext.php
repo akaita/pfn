@@ -61,7 +61,7 @@ class getText {
 
 	const MAGIC1 = -1794895138;
 	const MAGIC2 = -569244523;
-	const MAGIC3 = -2500072158;
+	const MAGIC3 = 2500072158; // 64-bits fix
 
 	function readInt () {
 		if ($this->BYTEORDER == 0) {
